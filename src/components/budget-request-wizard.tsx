@@ -133,8 +133,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
     defaultValues: {
       name: '', email: '', phone: '', address: '',
       demolishPartitions: false, demolishPartitionsM2: 0, removeDoors: false, removeDoorsAmount: 0,
-      renovateBathroom: false, bathroomQuality: undefined, bathroomWallTilesM2: 0, bathroomFloorM2: 0, installShowerTray: false, installShowerScreen: false, bathroomPlumbing: false,
-      renovateKitchen: false, kitchenQuality: undefined, kitchenDemolition: false, kitchenWallTilesM2: 0, kitchenFloorM2: 0, kitchenPlumbing: false,
+      renovateBathroom: false, bathroomQuality: 'basic', bathroomWallTilesM2: 0, bathroomFloorM2: 0, installShowerTray: false, installShowerScreen: false, bathroomPlumbing: false,
+      renovateKitchen: false, kitchenQuality: 'basic', kitchenDemolition: false, kitchenWallTilesM2: 0, kitchenFloorM2: 0, kitchenPlumbing: false,
       installFalseCeiling: false, falseCeilingM2: 0, soundproofRoom: false, soundproofRoomM2: 0,
       renovateElectricalPanel: false, electricalKitchenSockets: 0, electricalKitchenLights: 0,
       electricalLivingRoomSockets: 0, electricalLivingRoomLights: 0, electricalLivingRoomTV: false,
@@ -152,8 +152,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
     defaultValues: {
         name: '', email: '', phone: '', address: '',
         squareMeters: 1,
-        projectType: undefined,
-        quality: undefined,
+        projectType: 'integral',
+        quality: 'basic',
     }
   });
 
