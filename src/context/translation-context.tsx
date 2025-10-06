@@ -13,61 +13,68 @@ interface TranslationContextType {
 
 export const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
 
-const translations: { [key in Locale]?: any } = {};
+const translationsCache: { [key in Locale]?: any } = {};
 
 async function loadTranslations(locale: Locale) {
-  if (!translations[locale]) {
+  if (!translationsCache[locale]) {
     try {
       const module = await import(`@/locales/${locale}.json`);
-      translations[locale] = module.default;
+      translationsCache[locale] = module.default;
     } catch (error) {
       console.error(`Could not load translations for locale: ${locale}`, error);
-      translations[locale] = {}; // fallback to empty
+      translationsCache[locale] = {}; // fallback to empty to avoid repeated failed loads
     }
   }
-  return translations[locale];
+  return translationsCache[locale];
 }
 
 export const TranslationProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocaleState] = useState<Locale>('es');
-  const [loaded, setLoaded] = useState(false);
+  const [locale, setLocale] = useState<Locale>('es');
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     // This effect should only run on the client
     if (typeof window !== 'undefined') {
         const browserLang = navigator.language.split('-')[0];
         const initialLocale = ['es', 'ca', 'en', 'de'].includes(browserLang) ? (browserLang as Locale) : 'es';
-        setLocale(initialLocale);
+        
+        setIsLoaded(false);
+        loadTranslations(initialLocale).then(() => {
+            setLocale(initialLocale);
+            setIsLoaded(true);
+        });
     }
   }, []);
 
-  useEffect(() => {
-    loadTranslations(locale).then(() => setLoaded(true));
-  }, [locale]);
-  
-  const setLocale = (newLocale: Locale) => {
+  const handleSetLocale = (newLocale: Locale) => {
     if (newLocale !== locale) {
-      setLoaded(false);
-      setLocaleState(newLocale);
+      setIsLoaded(false);
+      loadTranslations(newLocale).then(() => {
+        setLocale(newLocale);
+        setIsLoaded(true);
+      });
     }
   };
-
-  const t = useCallback(
-    (key: string): string => {
+  
+  const t = useCallback((key: string): string => {
+      const currentTranslations = translationsCache[locale];
+      if (!isLoaded || !currentTranslations) {
+        return key;
+      }
       const keys = key.split('.');
-      let result = translations[locale];
+      let result = currentTranslations;
       for (const k of keys) {
         result = result?.[k];
         if (result === undefined) {
           return key; // Return the key itself if translation not found
         }
       }
-      return result || key;
+      return typeof result === 'string' ? result : key;
     },
-    [locale, loaded] // Add loaded dependency
+    [locale, isLoaded]
   );
   
-  if (!loaded) {
+  if (!isLoaded) {
     return (
         <div className="w-full h-screen flex flex-col items-center justify-center space-y-4">
             <Skeleton className="h-16 w-full" />
@@ -84,7 +91,7 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <TranslationContext.Provider value={{ locale, setLocale, t }}>
+    <TranslationContext.Provider value={{ locale, setLocale: handleSetLocale, t }}>
       {children}
     </TranslationContext.Provider>
   );
