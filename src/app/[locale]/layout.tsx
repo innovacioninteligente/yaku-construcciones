@@ -3,7 +3,7 @@ import '../globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/context/auth-context';
-import i18nConfig from '../../../i18nConfig';
+import i18nConfig from '../../i18nConfig';
 import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {

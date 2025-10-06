@@ -20,7 +20,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase/client';
 import { useRouter } from 'next/navigation';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '../../../../../i18nConfig';
+import i18nConfig from '../../../../i18nConfig';
 import { useEffect, useState } from 'react';
 
 const formSchema = z.object({
