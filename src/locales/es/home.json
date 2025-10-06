@@ -9,6 +9,50 @@
         "title": "Nuestros Servicios Especializados",
         "subtitle": "Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto."
     },
+    "about": {
+        "title": "Sobre Nosotros",
+        "description1": "CONSTRUCCIÓN Y PISCINAS YAKU somos una empresa especializada en reformas y construcción de piscinas en Mallorca. Estamos desde el 2003 en el sector, por lo que te garantizamos que recibirás de nuestra parte la máxima seriedad, responsabilidad, compromiso y profesionalidad, brindándote los mejores resultados en los trabajos que realizamos.",
+        "description2": "Nuestra reputación se basa en la satisfacción del cliente, por lo que nos esforzamos por superar las expectativas en cada proyecto que emprendemos. Construcción y Piscinas Yaku es la elección ideal para aquellos que buscan calidad, profesionalismo y compromiso.",
+        "reason1": "Profesionales Experimentados",
+        "reason2": "Calidad y Atención al Detalle",
+        "reason3": "Transparencia y Compromiso"
+    },
+    "process": {
+        "title": "Nuestro Proceso de Trabajo",
+        "subtitle": "Te guiamos en cada paso del camino, desde la idea inicial hasta la entrega final de tu proyecto.",
+        "step1": {
+            "title": "Consulta Inicial",
+            "description": "Todo empieza con una conversación para entender tus necesidades, ideas y presupuesto."
+        },
+        "step2": {
+            "title": "Diseño y Presupuesto",
+            "description": "Creamos un plan detallado y un presupuesto transparente adaptado a tus especificaciones."
+        },
+        "step3": {
+            "title": "Ejecución y Supervisión",
+            "description": "Nuestro equipo de expertos ejecuta el proyecto con la máxima calidad y supervisión constante."
+        },
+        "step4": {
+            "title": "Entrega y Garantía",
+            "description": "Entregamos el proyecto terminado, asegurando tu total satisfacción y ofreciendo garantía por nuestro trabajo."
+        }
+    },
+    "projects": {
+        "title": "Proyectos Destacados",
+        "subtitle": "Una muestra de nuestro trabajo. Proyectos reales para clientes satisfechos.",
+        "project1": {
+            "title": "Reforma Integral de Cocina",
+            "category": "Diseño de Interiores"
+        },
+        "project2": {
+            "title": "Piscina de Diseño",
+            "category": "Construcción de Piscinas"
+        },
+        "project3": {
+            "title": "Rehabilitación de Fachada",
+            "category": "Paramentos Verticales"
+        }
+    },
     "testimonials": {
         "title": "La opinión de nuestros clientes",
         "subtitle": "Nos enorgullece el trabajo que hacemos y la satisfacción de quienes confían en nosotros.",

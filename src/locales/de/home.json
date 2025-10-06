@@ -7,7 +7,51 @@
     },
     "services": {
         "title": "Unsere spezialisierten Dienstleistungen",
-        "subtitle": "Vom Neubau bis zur Poolpflege, unser Expertenteam ist bereit, Ihr Projekt zu verwirklichen."
+        "subtitle": "Vom Neubau bis zur Poolpflege ist unser Expertenteam bereit, Ihr Projekt zu verwirklichen."
+    },
+    "about": {
+        "title": "Über uns",
+        "description1": "YAKU BAU UND POOLS sind ein auf Renovierungen und den Bau von Schwimmbädern auf Mallorca spezialisiertes Unternehmen. Wir sind seit 2003 in der Branche tätig und garantieren Ihnen höchste Seriosität, Verantwortung, Engagement und Professionalität, um Ihnen die besten Ergebnisse bei unseren Arbeiten zu liefern.",
+        "description2": "Unser Ruf basiert auf der Zufriedenheit unserer Kunden, weshalb wir uns bemühen, bei jedem Projekt die Erwartungen zu übertreffen. Yaku Bau und Pools ist die ideale Wahl für alle, die Qualität, Professionalität und Engagement beim Bau von Schwimmbädern auf Mallorca suchen.",
+        "reason1": "Erfahrene Fachleute",
+        "reason2": "Qualität und Detailgenauigkeit",
+        "reason3": "Transparenz und Engagement"
+    },
+    "process": {
+        "title": "Unser Arbeitsprozess",
+        "subtitle": "Wir führen Sie durch jeden Schritt, von der ersten Idee bis zur endgültigen Übergabe Ihres Projekts.",
+        "step1": {
+            "title": "Erstberatung",
+            "description": "Alles beginnt mit einem Gespräch, um Ihre Bedürfnisse, Ideen und Ihr Budget zu verstehen."
+        },
+        "step2": {
+            "title": "Planung & Angebot",
+            "description": "Wir erstellen einen detaillierten Plan und ein transparentes Angebot, das auf Ihre Vorgaben zugeschnitten ist."
+        },
+        "step3": {
+            "title": "Ausführung & Überwachung",
+            "description": "Unser Expertenteam führt das Projekt mit höchster Qualität und ständiger Überwachung aus."
+        },
+        "step4": {
+            "title": "Übergabe & Garantie",
+            "description": "Wir übergeben das fertige Projekt, stellen Ihre volle Zufriedenheit sicher und bieten eine Garantie auf unsere Arbeit."
+        }
+    },
+    "projects": {
+        "title": "Ausgewählte Projekte",
+        "subtitle": "Ein Einblick in unsere Arbeit. Echte Projekte für zufriedene Kunden.",
+        "project1": {
+            "title": "Komplette Küchenrenovierung",
+            "category": "Innenarchitektur"
+        },
+        "project2": {
+            "title": "Designer-Schwimmbad",
+            "category": "Poolbau"
+        },
+        "project3": {
+            "title": "Fassadensanierung",
+            "category": "Vertikale Verkleidungen"
+        }
     },
     "testimonials": {
         "title": "Was unsere Kunden sagen",

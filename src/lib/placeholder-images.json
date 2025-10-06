@@ -13,9 +13,33 @@
       "imageHint": "person portrait"
     },
     {
+      "id": "about-us-image",
+      "description": "A team of construction workers collaborating on a project.",
+      "imageUrl": "https://images.unsplash.com/photo-1509453721491-c3af5961df76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29uc3RydWN0aW9uJTIwdGVhbXxlbnwwfHx8fDE3NTk3MzEyMDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "construction team"
+    },
+    {
+      "id": "project-1",
+      "description": "A beautifully renovated modern kitchen.",
+      "imageUrl": "https://images.unsplash.com/photo-1632583824020-937ae9564495?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBraXRjaGVufGVufDB8fHx8MTc1OTcxNDY3NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern kitchen"
+    },
+    {
+      "id": "project-2",
+      "description": "A luxurious swimming pool in a backyard.",
+      "imageUrl": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBwb29sfGVufDB8fHx8MTc1OTc3Mjg5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury pool"
+    },
+    {
+      "id": "project-3",
+      "description": "An exterior facade of a renovated house.",
+      "imageUrl": "https://images.unsplash.com/photo-1737205785859-3727c4145aed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxob3VzZSUyMGZhY2FkZXxlbnwwfHx8fDE3NTk2NzU2MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "house facade"
+    },
+    {
       "id": "dashboard-background",
       "description": "Architectural blueprints on a table.",
-      "imageUrl": "https://images.unsplash.com/photo-1721244654346-9be0c0129e36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhcmNoaXRlY3R1cmFsJTIwYmx1ZXByaW50c3xlbnwwfHx8fDE3NTk3MzczODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1721244654346-9be0c0129e36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhcmNoaXRlY3R1cmFsJTIwYmx1ZXByaW50c3xlbnwwfHx8fDE3NTk3MzczODN8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "architectural blueprints"
     }
   ]

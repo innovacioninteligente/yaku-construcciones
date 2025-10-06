@@ -1,13 +1,57 @@
 {
     "hero": {
         "title": "Solucions expertes de construcció i reformes",
-        "subtitle": "Oferim una àmplia gamma de serveis de construcció i oficis per a llars, negocis i projectes industrials. Qualitat i confiança en cada maó.",
-        "cta": "Sol·licitar Pressupost",
+        "subtitle": "Oferim una àmplia gamma de serveis de construcció i oficis per a llars, negocis i projectes industrials. Qualitat i confiança a cada maó.",
+        "cta": "Sol·licita Pressupost",
         "ctaSecondary": "Els Nostres Serveis"
     },
     "services": {
         "title": "Els Nostres Serveis Especialitzats",
-        "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està llest per fer realitat el seu projecte."
+        "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està a punt per fer realitat el seu projecte."
+    },
+    "about": {
+        "title": "Sobre Nosaltres",
+        "description1": "CONSTRUCCIÓ I PISCINES YAKU som una empresa especialitzada en reformes i construcció de piscines a Mallorca. Estem des del 2003 al sector, per la qual cosa et garantim que rebràs de la nostra part la màxima seriositat, responsabilitat, compromís i professionalitat, brindant-te els millors resultats en els treballs que realitzem.",
+        "description2": "La nostra reputació es basa en la satisfacció del client, per la qual cosa ens esforcem per superar les expectatives a cada projecte que emprenem. Construcció i Piscines Yaku és l'elecció ideal per a aquells que busquen qualitat, professionalisme i compromís.",
+        "reason1": "Professionals Experimentats",
+        "reason2": "Qualitat i Atenció al Detall",
+        "reason3": "Transparència i Compromís"
+    },
+    "process": {
+        "title": "El Nostre Procés de Treball",
+        "subtitle": "Et guiem a cada pas del camí, des de la idea inicial fins a l'entrega final del teu projecte.",
+        "step1": {
+            "title": "Consulta Inicial",
+            "description": "Tot comença amb una conversa per entendre les teves necessitats, idees i pressupost."
+        },
+        "step2": {
+            "title": "Disseny i Pressupost",
+            "description": "Creem un pla detallat i un pressupost transparent adaptat a les teves especificacions."
+        },
+        "step3": {
+            "title": "Execució i Supervisió",
+            "description": "El nostre equip d'experts executa el projecte amb la màxima qualitat i supervisió constant."
+        },
+        "step4": {
+            "title": "Entrega i Garantia",
+            "description": "Lliurem el projecte acabat, assegurant la teva total satisfacció i oferint garantia per la nostra feina."
+        }
+    },
+    "projects": {
+        "title": "Projectes Destacats",
+        "subtitle": "Una mostra de la nostra feina. Projectes reals per a clients satisfets.",
+        "project1": {
+            "title": "Reforma Integral de Cuina",
+            "category": "Disseny d'Interiors"
+        },
+        "project2": {
+            "title": "Piscina de Disseny",
+            "category": "Construcció de Piscines"
+        },
+        "project3": {
+            "title": "Rehabilitació de Façana",
+            "category": "Paraments Verticals"
+        }
     },
     "testimonials": {
         "title": "L'opinió dels nostres clients",

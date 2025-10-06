@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/context/auth-context';
 import i18nConfig from '../../../i18nConfig';
 import { notFound } from 'next/navigation';
+import { ContactFab } from '@/components/contact-fab';
 
 export const metadata: Metadata = {
   title: 'Yaku Construcciones - Expertos en Construcción y Reformas',
@@ -37,6 +38,7 @@ export default function RootLayout({
         <AuthProvider>
           {children}
           <Toaster />
+          <ContactFab />
         </AuthProvider>
       </body>
     </html>

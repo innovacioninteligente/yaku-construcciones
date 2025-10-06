@@ -9,6 +9,50 @@
         "title": "Our Specialized Services",
         "subtitle": "From new construction to pool maintenance, our team of experts is ready to make your project a reality."
     },
+    "about": {
+        "title": "About Us",
+        "description1": "YAKU CONSTRUCTION AND POOLS is a company specializing in renovations and swimming pool construction in Mallorca. We have been in the sector since 2003, so we guarantee that you will receive the utmost seriousness, responsibility, commitment, and professionalism from us, providing you with the best results in the work we do.",
+        "description2": "Our reputation is built on client satisfaction, which is why we strive to exceed expectations on every project we undertake. Yaku Construction and Pools is the ideal choice for those seeking quality, professionalism, and commitment.",
+        "reason1": "Experienced Professionals",
+        "reason2": "Quality and Attention to Detail",
+        "reason3": "Transparency and Commitment"
+    },
+    "process": {
+        "title": "Our Work Process",
+        "subtitle": "We guide you every step of the way, from the initial idea to the final delivery of your project.",
+        "step1": {
+            "title": "Initial Consultation",
+            "description": "It all starts with a conversation to understand your needs, ideas, and budget."
+        },
+        "step2": {
+            "title": "Design & Quote",
+            "description": "We create a detailed plan and a transparent quote tailored to your specifications."
+        },
+        "step3": {
+            "title": "Execution & Supervision",
+            "description": "Our expert team executes the project with the highest quality and constant supervision."
+        },
+        "step4": {
+            "title": "Delivery & Guarantee",
+            "description": "We deliver the finished project, ensuring your complete satisfaction and offering a guarantee for our work."
+        }
+    },
+    "projects": {
+        "title": "Featured Projects",
+        "subtitle": "A showcase of our work. Real projects for satisfied clients.",
+        "project1": {
+            "title": "Complete Kitchen Renovation",
+            "category": "Interior Design"
+        },
+        "project2": {
+            "title": "Designer Swimming Pool",
+            "category": "Pool Construction"
+        },
+        "project3": {
+            "title": "Facade Rehabilitation",
+            "category": "Vertical Cladding"
+        }
+    },
     "testimonials": {
         "title": "What our clients say",
         "subtitle": "We are proud of the work we do and the satisfaction of those who trust us.",
