@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -14,6 +15,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
   const dict = await getDictionary(locale);
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === 'hero-construction');
   const testimonialImage = placeholderImages.placeholderImages.find(p => p.id === 'testimonial-avatar');
+  const t = dict.home;
 
   return (
     <>
@@ -23,20 +25,20 @@ export default async function Home({ params: { locale } }: { params: { locale: a
           <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                Soluciones expertas de construcción y reformas
+                {t.hero.title}
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Ofrecemos una amplia gama de servicios de construcción y oficios para hogares, negocios y proyectos industriales. Calidad y confianza en cada ladrillo.
+                {t.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="font-bold">
                   <Link href="/dashboard/budget-request">
-                    Solicitar Presupuesto
+                    {t.hero.cta}
                     <ArrowRight className="ml-2" />
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="#services">Nuestros Servicios</Link>
+                  <Link href="#services">{t.hero.ctaSecondary}</Link>
                 </Button>
               </div>
             </div>
@@ -55,9 +57,9 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         <section id="services" className="w-full py-20 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold">Nuestros Servicios Especializados</h2>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.services.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto.
+                {t.services.subtitle}
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -81,9 +83,9 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         <section className="w-full py-20 md:py-28 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold">La opinión de nuestros clientes</h2>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.testimonials.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Nos enorgullece el trabajo que hacemos y la satisfacción de quienes confían en nosotros.
+                {t.testimonials.subtitle}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -95,15 +97,15 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                         <Star key={j} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="mb-4 italic">"Un trabajo impecable de principio a fin. El equipo fue profesional, limpio y cumplió con los plazos. ¡Mi nueva piscina es un sueño hecho realidad!"</p>
+                    <p className="mb-4 italic">"{t.testimonials.testimonial1}"</p>
                     <div className="flex items-center gap-4">
                       <Avatar>
                         {testimonialImage && <AvatarImage src={testimonialImage.imageUrl} alt="Avatar cliente" data-ai-hint={testimonialImage.imageHint} />}
                         <AvatarFallback>C{i}</AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className="font-semibold">Cliente Satisfecho {i}</p>
-                        <p className="text-sm text-muted-foreground">Reforma de Piscina</p>
+                        <p className="font-semibold">{t.testimonials.customer} {i}</p>
+                        <p className="text-sm text-muted-foreground">{t.testimonials.project}</p>
                       </div>
                     </div>
                   </CardContent>

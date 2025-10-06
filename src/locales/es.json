@@ -1,32 +1,68 @@
+
 {
-    "nav.services": "Servicios",
-    "nav.blog": "Blog",
-    "nav.contact": "Contacto",
-    "nav.login": "Iniciar Sesión",
-    "nav.signup": "Registrarse",
-    "userNav.dashboard": "Panel",
-    "userNav.newBudget": "Nuevo Presupuesto",
-    "userNav.settings": "Ajustes",
-    "userNav.logout": "Cerrar Sesión",
-    "login.title": "Bienvenido de nuevo",
-    "login.description": "Inicia sesión en tu cuenta para continuar.",
-    "login.emailLabel": "Correo Electrónico",
-    "login.passwordLabel": "Contraseña",
-    "login.button": "Iniciar Sesión",
-    "login.noAccount": "¿No tienes una cuenta?",
-    "login.signupLink": "Regístrate",
-    "signup.title": "Crea una cuenta",
-    "signup.description": "Únete para solicitar presupuestos y gestionar tus proyectos.",
-    "signup.emailLabel": "Correo Electrónico",
-    "signup.passwordLabel": "Contraseña",
-    "signup.confirmPasswordLabel": "Confirmar Contraseña",
-    "signup.button": "Crear Cuenta",
-    "signup.hasAccount": "¿Ya tienes una cuenta?",
-    "signup.loginLink": "Inicia Sesión",
-    "dashboard.welcome.title": "Bienvenido a tu Panel",
-    "dashboard.welcome.description": "Gestiona tus proyectos y solicitudes de presupuesto desde aquí.",
-    "dashboard.requestBudget.title": "Solicitar Presupuesto",
-    "dashboard.requestBudget.description": "Describe tu proyecto y obtén una estimación de costes con ayuda de nuestra IA.",
-    "dashboard.seoGenerator.title": "Generador de Blog SEO",
-    "dashboard.seoGenerator.description": "Crea artículos de blog optimizados para SEO para atraer más clientes."
+    "nav": {
+        "services": "Servicios",
+        "blog": "Blog",
+        "contact": "Contacto",
+        "login": "Iniciar Sesión",
+        "signup": "Registrarse"
+    },
+    "userNav": {
+        "dashboard": "Panel",
+        "newBudget": "Nuevo Presupuesto",
+        "settings": "Ajustes",
+        "logout": "Cerrar Sesión"
+    },
+    "login": {
+        "title": "Bienvenido de nuevo",
+        "description": "Inicia sesión en tu cuenta para continuar.",
+        "emailLabel": "Correo Electrónico",
+        "passwordLabel": "Contraseña",
+        "button": "Iniciar Sesión",
+        "noAccount": "¿No tienes una cuenta?",
+        "signupLink": "Regístrate"
+    },
+    "signup": {
+        "title": "Crea una cuenta",
+        "description": "Únete para solicitar presupuestos y gestionar tus proyectos.",
+        "emailLabel": "Correo Electrónico",
+        "passwordLabel": "Contraseña",
+        "confirmPasswordLabel": "Confirmar Contrasraseña",
+        "button": "Crear Cuenta",
+        "hasAccount": "¿Ya tienes una cuenta?",
+        "loginLink": "Inicia Sesión"
+    },
+    "dashboard": {
+        "welcome": {
+            "title": "Bienvenido a tu Panel",
+            "description": "Gestiona tus proyectos y solicitudes de presupuesto desde aquí."
+        },
+        "requestBudget": {
+            "title": "Solicitar Presupuesto",
+            "description": "Describe tu proyecto y obtén una estimación de costes con ayuda de nuestra IA."
+        },
+        "seoGenerator": {
+            "title": "Generador de Blog SEO",
+            "description": "Crea artículos de blog optimizados para SEO para atraer más clientes."
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Soluciones expertas de construcción y reformas",
+            "subtitle": "Ofrecemos una amplia gama de servicios de construcción y oficios para hogares, negocios y proyectos industriales. Calidad y confianza en cada ladrillo.",
+            "cta": "Solicitar Presupuesto",
+            "ctaSecondary": "Nuestros Servicios"
+        },
+        "services": {
+            "title": "Nuestros Servicios Especializados",
+            "subtitle": "Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto."
+        },
+        "testimonials": {
+            "title": "La opinión de nuestros clientes",
+            "subtitle": "Nos enorgullece el trabajo que hacemos y la satisfacción de quienes confían en nosotros.",
+            "testimonial1": "Un trabajo impecable de principio a fin. El equipo fue profesional, limpio y cumplió con los plazos. ¡Mi nueva piscina es un sueño hecho realidad!",
+            "customer": "Cliente Satisfecho",
+            "project": "Reforma de Piscina"
+        }
+    }
 }

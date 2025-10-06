@@ -1,32 +1,68 @@
+
 {
-    "nav.services": "Serveis",
-    "nav.blog": "Blog",
-    "nav.contact": "Contacte",
-    "nav.login": "Iniciar Sessió",
-    "nav.signup": "Registrar-se",
-    "userNav.dashboard": "Tauler",
-    "userNav.newBudget": "Nou Pressupost",
-    "userNav.settings": "Configuració",
-    "userNav.logout": "Tancar Sessió",
-    "login.title": "Benvingut de nou",
-    "login.description": "Inicia sessió al teu compte per continuar.",
-    "login.emailLabel": "Correu Electrònic",
-    "login.passwordLabel": "Contrasenya",
-    "login.button": "Iniciar Sessió",
-    "login.noAccount": "No tens un compte?",
-    "login.signupLink": "Registra't",
-    "signup.title": "Crea un compte",
-    "signup.description": "Uneix-te per sol·licitar pressupostos i gestionar els teus projectes.",
-    "signup.emailLabel": "Correu Electrònic",
-    "signup.passwordLabel": "Contrasenya",
-    "signup.confirmPasswordLabel": "Confirmar Contrasenya",
-    "signup.button": "Crear Compte",
-    "signup.hasAccount": "Ja tens un compte?",
-    "signup.loginLink": "Inicia Sessió",
-    "dashboard.welcome.title": "Benvingut al teu Tauler",
-    "dashboard.welcome.description": "Gestiona els teus projectes i sol·licituds de pressupost des d'aquí.",
-    "dashboard.requestBudget.title": "Sol·licitar Pressupost",
-    "dashboard.requestBudget.description": "Descriu el teu projecte i obté una estimació de costos amb ajuda de la nostra IA.",
-    "dashboard.seoGenerator.title": "Generador de Blog SEO",
-    "dashboard.seoGenerator.description": "Crea articles de blog optimitzats per a SEO per atraure més clients."
+    "nav": {
+        "services": "Serveis",
+        "blog": "Blog",
+        "contact": "Contacte",
+        "login": "Iniciar Sessió",
+        "signup": "Registrar-se"
+    },
+    "userNav": {
+        "dashboard": "Tauler",
+        "newBudget": "Nou Pressupost",
+        "settings": "Configuració",
+        "logout": "Tancar Sessió"
+    },
+    "login": {
+        "title": "Benvingut de nou",
+        "description": "Inicia sessió al teu compte per continuar.",
+        "emailLabel": "Correu Electrònic",
+        "passwordLabel": "Contrasenya",
+        "button": "Iniciar Sessió",
+        "noAccount": "No tens un compte?",
+        "signupLink": "Registra't"
+    },
+    "signup": {
+        "title": "Crea un compte",
+        "description": "Uneix-te per sol·licitar pressupostos i gestionar els teus projectes.",
+        "emailLabel": "Correu Electrònic",
+        "passwordLabel": "Contrasenya",
+        "confirmPasswordLabel": "Confirmar Contrasenya",
+        "button": "Crear Compte",
+        "hasAccount": "Ja tens un compte?",
+        "loginLink": "Inicia Sessió"
+    },
+    "dashboard": {
+        "welcome": {
+            "title": "Benvingut al teu Tauler",
+            "description": "Gestiona els teus projectes i sol·licituds de pressupost des d'aquí."
+        },
+        "requestBudget": {
+            "title": "Sol·licitar Pressupost",
+            "description": "Descriu el teu projecte i obté una estimació de costos amb ajuda de la nostra IA."
+        },
+        "seoGenerator": {
+            "title": "Generador de Blog SEO",
+            "description": "Crea articles de blog optimitzats per a SEO per atraure més clients."
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Solucions expertes de construcció i reformes",
+            "subtitle": "Oferim una àmplia gamma de serveis de construcció i oficis per a llars, negocis i projectes industrials. Qualitat i confiança en cada maó.",
+            "cta": "Sol·licitar Pressupost",
+            "ctaSecondary": "Els Nostres Serveis"
+        },
+        "services": {
+            "title": "Els Nostres Serveis Especialitzats",
+            "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està llest per fer realitat el seu projecte."
+        },
+        "testimonials": {
+            "title": "L'opinió dels nostres clients",
+            "subtitle": "Ens enorgulleix la feina que fem i la satisfacció dels qui confien en nosaltres.",
+            "testimonial1": "Una feina impecable de principi a fi. L'equip va ser professional, net i va complir els terminis. La meva nova piscina és un somni fet realitat!",
+            "customer": "Client Satisfet",
+            "project": "Reforma de Piscina"
+        }
+    }
 }

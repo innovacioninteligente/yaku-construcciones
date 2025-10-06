@@ -1,32 +1,68 @@
+
 {
-    "nav.services": "Services",
-    "nav.blog": "Blog",
-    "nav.contact": "Contact",
-    "nav.login": "Log In",
-    "nav.signup": "Sign Up",
-    "userNav.dashboard": "Dashboard",
-    "userNav.newBudget": "New Budget",
-    "userNav.settings": "Settings",
-    "userNav.logout": "Log Out",
-    "login.title": "Welcome back",
-    "login.description": "Log in to your account to continue.",
-    "login.emailLabel": "Email",
-    "login.passwordLabel": "Password",
-    "login.button": "Log In",
-    "login.noAccount": "Don't have an account?",
-    "login.signupLink": "Sign up",
-    "signup.title": "Create an account",
-    "signup.description": "Join to request budgets and manage your projects.",
-    "signup.emailLabel": "Email",
-    "signup.passwordLabel": "Password",
-    "signup.confirmPasswordLabel": "Confirm Password",
-    "signup.button": "Create Account",
-    "signup.hasAccount": "Already have an account?",
-    "signup.loginLink": "Log in",
-    "dashboard.welcome.title": "Welcome to your Dashboard",
-    "dashboard.welcome.description": "Manage your projects and budget requests from here.",
-    "dashboard.requestBudget.title": "Request Budget",
-    "dashboard.requestBudget.description": "Describe your project and get a cost estimate with the help of our AI.",
-    "dashboard.seoGenerator.title": "SEO Blog Generator",
-    "dashboard.seoGenerator.description": "Create SEO-optimized blog articles to attract more clients."
+    "nav": {
+        "services": "Services",
+        "blog": "Blog",
+        "contact": "Contact",
+        "login": "Log In",
+        "signup": "Sign Up"
+    },
+    "userNav": {
+        "dashboard": "Dashboard",
+        "newBudget": "New Budget",
+        "settings": "Settings",
+        "logout": "Log Out"
+    },
+    "login": {
+        "title": "Welcome back",
+        "description": "Log in to your account to continue.",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "button": "Log In",
+        "noAccount": "Don't have an account?",
+        "signupLink": "Sign up"
+    },
+    "signup": {
+        "title": "Create an account",
+        "description": "Join to request budgets and manage your projects.",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "confirmPasswordLabel": "Confirm Password",
+        "button": "Create Account",
+        "hasAccount": "Already have an account?",
+        "loginLink": "Log in"
+    },
+    "dashboard": {
+        "welcome": {
+            "title": "Welcome to your Dashboard",
+            "description": "Manage your projects and budget requests from here."
+        },
+        "requestBudget": {
+            "title": "Request Budget",
+            "description": "Describe your project and get a cost estimate with the help of our AI."
+        },
+        "seoGenerator": {
+            "title": "SEO Blog Generator",
+            "description": "Create SEO-optimized blog articles to attract more clients."
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Expert construction and renovation solutions",
+            "subtitle": "We offer a wide range of construction and trade services for homes, businesses, and industrial projects. Quality and trust in every brick.",
+            "cta": "Request a Quote",
+            "ctaSecondary": "Our Services"
+        },
+        "services": {
+            "title": "Our Specialized Services",
+            "subtitle": "From new construction to pool maintenance, our team of experts is ready to make your project a reality."
+        },
+        "testimonials": {
+            "title": "What our clients say",
+            "subtitle": "We are proud of the work we do and the satisfaction of those who trust us.",
+            "testimonial1": "Impeccable work from start to finish. The team was professional, clean, and met the deadlines. My new pool is a dream come true!",
+            "customer": "Satisfied Customer",
+            "project": "Pool Renovation"
+        }
+    }
 }

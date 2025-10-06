@@ -1,32 +1,68 @@
+
 {
-    "nav.services": "Dienstleistungen",
-    "nav.blog": "Blog",
-    "nav.contact": "Kontakt",
-    "nav.login": "Anmelden",
-    "nav.signup": "Registrieren",
-    "userNav.dashboard": "Dashboard",
-    "userNav.newBudget": "Neues Budget",
-    "userNav.settings": "Einstellungen",
-    "userNav.logout": "Abmelden",
-    "login.title": "Willkommen zurück",
-    "login.description": "Melden Sie sich bei Ihrem Konto an, um fortzufahren.",
-    "login.emailLabel": "E-Mail",
-    "login.passwordLabel": "Passwort",
-    "login.button": "Anmelden",
-    "login.noAccount": "Haben Sie noch kein Konto?",
-    "login.signupLink": "Registrieren",
-    "signup.title": "Konto erstellen",
-    "signup.description": "Treten Sie bei, um Budgets anzufordern und Ihre Projekte zu verwalten.",
-    "signup.emailLabel": "E-Mail",
-    "signup.passwordLabel": "Passwort",
-    "signup.confirmPasswordLabel": "Passwort bestätigen",
-    "signup.button": "Konto erstellen",
-    "signup.hasAccount": "Haben Sie bereits ein Konto?",
-    "signup.loginLink": "Anmelden",
-    "dashboard.welcome.title": "Willkommen in Ihrem Dashboard",
-    "dashboard.welcome.description": "Verwalten Sie Ihre Projekte und Budgetanfragen von hier aus.",
-    "dashboard.requestBudget.title": "Budget anfordern",
-    "dashboard.requestBudget.description": "Beschreiben Sie Ihr Projekt und erhalten Sie mit Hilfe unserer KI eine Kostenschätzung.",
-    "dashboard.seoGenerator.title": "SEO-Blog-Generator",
-    "dashboard.seoGenerator.description": "Erstellen Sie SEO-optimierte Blogartikel, um mehr Kunden zu gewinnen."
+    "nav": {
+        "services": "Dienstleistungen",
+        "blog": "Blog",
+        "contact": "Kontakt",
+        "login": "Anmelden",
+        "signup": "Registrieren"
+    },
+    "userNav": {
+        "dashboard": "Dashboard",
+        "newBudget": "Neues Budget",
+        "settings": "Einstellungen",
+        "logout": "Abmelden"
+    },
+    "login": {
+        "title": "Willkommen zurück",
+        "description": "Melden Sie sich bei Ihrem Konto an, um fortzufahren.",
+        "emailLabel": "E-Mail",
+        "passwordLabel": "Passwort",
+        "button": "Anmelden",
+        "noAccount": "Haben Sie noch kein Konto?",
+        "signupLink": "Registrieren"
+    },
+    "signup": {
+        "title": "Konto erstellen",
+        "description": "Treten Sie bei, um Budgets anzufordern und Ihre Projekte zu verwalten.",
+        "emailLabel": "E-Mail",
+        "passwordLabel": "Passwort",
+        "confirmPasswordLabel": "Passwort bestätigen",
+        "button": "Konto erstellen",
+        "hasAccount": "Haben Sie bereits ein Konto?",
+        "loginLink": "Anmelden"
+    },
+    "dashboard": {
+        "welcome": {
+            "title": "Willkommen in Ihrem Dashboard",
+            "description": "Verwalten Sie Ihre Projekte und Budgetanfragen von hier aus."
+        },
+        "requestBudget": {
+            "title": "Budget anfordern",
+            "description": "Beschreiben Sie Ihr Projekt und erhalten Sie mit Hilfe unserer KI eine Kostenschätzung."
+        },
+        "seoGenerator": {
+            "title": "SEO-Blog-Generator",
+            "description": "Erstellen Sie SEO-optimierte Blogartikel, um mehr Kunden zu gewinnen."
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Kompetente Bau- und Renovierungslösungen",
+            "subtitle": "Wir bieten eine breite Palette von Bau- und Handwerksdienstleistungen für Privathaushalte, Unternehmen und Industrieprojekte. Qualität und Vertrauen in jedem Ziegel.",
+            "cta": "Angebot anfordern",
+            "ctaSecondary": "Unsere Dienstleistungen"
+        },
+        "services": {
+            "title": "Unsere spezialisierten Dienstleistungen",
+            "subtitle": "Vom Neubau bis zur Poolpflege, unser Expertenteam ist bereit, Ihr Projekt zu verwirklichen."
+        },
+        "testimonials": {
+            "title": "Was unsere Kunden sagen",
+            "subtitle": "Wir sind stolz auf unsere Arbeit und die Zufriedenheit derer, die uns vertrauen.",
+            "testimonial1": "Tadellose Arbeit von Anfang bis Ende. Das Team war professionell, sauber und hat die Fristen eingehalten. Mein neuer Pool ist ein wahrgewordener Traum!",
+            "customer": "Zufriedener Kunde",
+            "project": "Pool-Renovierung"
+        }
+    }
 }
