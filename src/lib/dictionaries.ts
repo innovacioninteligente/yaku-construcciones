@@ -1,4 +1,3 @@
-import 'server-only'
 
 type Locale = 'es' | 'en' | 'de' | 'ca';
 

@@ -1,4 +1,7 @@
 import { Wrench, Waves, Home, Layers, Zap, Hammer, Droplets, CheckCircle } from 'lucide-react';
+import placeholderImages from '@/lib/placeholder-images.json';
+
+const serviceImages = placeholderImages.placeholderImages;
 
 export const services = [
   {
@@ -8,8 +11,8 @@ export const services = [
     shortDescription: 'Obra nueva, renovaciones y ampliaciones para todo tipo de construcciones.',
     description: 'Nos especializamos en la ejecución de obras nuevas, reformas integrales y ampliaciones. Nuestro equipo de profesionales gestiona cada proyecto con la máxima dedicación para garantizar resultados que superen tus expectativas, cuidando cada detalle desde la cimentación hasta los acabados finales.',
     icon: <Wrench />,
-    image: 'https://picsum.photos/seed/house-construction/800/600',
-    imageHint: 'house construction',
+    image: serviceImages.find(p => p.id === 'service-construccion-reformas')?.imageUrl ?? 'https://picsum.photos/seed/house-construction/800/600',
+    imageHint: 'construction site',
     features: [
       'Gestión integral de proyectos de obra nueva.',
       'Reformas completas de viviendas y locales comerciales.',
@@ -24,7 +27,7 @@ export const services = [
     shortDescription: 'Diseño, construcción y mantenimiento de piscinas para que disfrutes del verano.',
     description: 'Diseñamos y construimos piscinas de obra a medida, adaptadas a tu terreno y a tus sueños. Utilizamos las técnicas más avanzadas y materiales de primera calidad para crear espacios únicos de ocio y relax para ti y tu familia.',
     icon: <Waves />,
-    image: 'https://picsum.photos/seed/swimming-pool/800/600',
+    image: serviceImages.find(p => p.id === 'service-piscinas')?.imageUrl ?? 'https://picsum.photos/seed/swimming-pool/800/600',
     imageHint: 'swimming pool',
     features: [
       'Diseño personalizado de piscinas.',
@@ -40,7 +43,7 @@ export const services = [
     shortDescription: 'Especialistas en reformas de baños y cocinas, optimizando espacio y estilo.',
     description: 'Somos expertos en la reforma de baños y cocinas, dos de las estancias más importantes del hogar. Optimizamos la distribución para ganar funcionalidad y creamos ambientes modernos y acogedores utilizando materiales de última generación.',
     icon: <Home />,
-    image: 'https://picsum.photos/seed/modern-kitchen/800/600',
+    image: serviceImages.find(p => p.id === 'service-reformas-interiores')?.imageUrl ?? 'https://picsum.photos/seed/modern-kitchen/800/600',
     imageHint: 'modern kitchen',
     features: [
       'Renovación completa de alicatados y pavimentos.',
@@ -56,7 +59,7 @@ export const services = [
     shortDescription: 'Soluciones para fachadas y muros, desde revestimientos hasta aislamientos.',
     description: 'Ofrecemos una amplia gama de soluciones para paramentos verticales, incluyendo la aplicación de morteros monocapa, revocos, y sistemas de aislamiento térmico por el exterior (SATE), mejorando la eficiencia energética y la estética de tu edificio.',
     icon: <Layers />,
-    image: 'https://picsum.photos/seed/building-facade/800/600',
+    image: serviceImages.find(p => p.id === 'service-paramentos-verticales')?.imageUrl ?? 'https://picsum.photos/seed/building-facade/800/600',
     imageHint: 'building facade',
     features: [
       'Aplicación de revestimientos continuos.',
@@ -72,8 +75,8 @@ export const services = [
     shortDescription: 'Cableado, iluminación, actualizaciones de paneles e inspecciones de seguridad.',
     description: 'Realizamos todo tipo de instalaciones eléctricas, desde el cableado completo de una vivienda hasta la instalación de nuevos puntos de luz, siempre cumpliendo con la normativa vigente para garantizar la máxima seguridad y eficiencia energética.',
     icon: <Zap />,
-    image: 'https://picsum.photos/seed/electrical-wiring/800/600',
-    imageHint: 'electrical wiring',
+    image: serviceImages.find(p => p.id === 'service-electricidad')?.imageUrl ?? 'https://picsum.photos/seed/electrical-wiring/800/600',
+    imageHint: 'electrical work',
     features: [
       'Instalaciones eléctricas completas en obra nueva.',
       'Actualización y reforma de instalaciones antiguas.',
@@ -88,7 +91,7 @@ export const services = [
     shortDescription: 'Más de 5 años de experiencia en trabajos de carpintería a medida.',
     description: 'Ofrecemos servicios de carpintería a medida, tanto de madera como de aluminio o PVC. Fabricamos e instalamos puertas, ventanas, armarios empotrados, parqués y todo tipo de mobiliario para dar un acabado perfecto a tu proyecto.',
     icon: <Hammer />,
-    image: 'https://picsum.photos/seed/wood-working/800/600',
+    image: serviceImages.find(p => p.id === 'service-carpinteria')?.imageUrl ?? 'https://picsum.photos/seed/wood-working/800/600',
     imageHint: 'wood working',
     features: [
       'Carpintería de madera, aluminio y PVC.',
@@ -104,8 +107,8 @@ export const services = [
     shortDescription: 'Servicios completos de fontanería, desde instalaciones hasta reparaciones.',
     description: 'Nuestros fontaneros cualificados se encargan de la instalación y reparación de toda la red de saneamiento y agua potable. Garantizamos un trabajo rápido, limpio y duradero, utilizando materiales de la mejor calidad.',
     icon: <Droplets />,
-    image: 'https://picsum.photos/seed/water-pipes/800/600',
-    imageHint: 'water pipes',
+    image: serviceImages.find(p => p.id === 'service-fontaneria')?.imageUrl ?? 'https://picsum.photos/seed/water-pipes/800/600',
+    imageHint: 'plumbing work',
     features: [
       'Instalación completa de redes de fontanería y desagües.',
       'Reparación de fugas y averías.',
