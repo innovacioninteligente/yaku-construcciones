@@ -11,7 +11,8 @@ const dictionaries: Record<Locale, () => Promise<any>> = {
     const signup = await import('@/locales/en/signup.json').then((module) => module.default);
     const dashboard = await import('@/locales/en/dashboard.json').then((module) => module.default);
     const services = await import('@/locales/en/services.json').then((module) => module.default);
-    return { header, home, budgetRequest, login, signup, dashboard, services };
+    const pricingSettings = await import('@/locales/en/pricing-settings.json').then((module) => module.default);
+    return { header, home, budgetRequest, login, signup, dashboard, services, pricingSettings };
   },
   de: async () => {
     const header = await import('@/locales/de/header.json').then((module) => module.default);
@@ -21,7 +22,8 @@ const dictionaries: Record<Locale, () => Promise<any>> = {
     const signup = await import('@/locales/de/signup.json').then((module) => module.default);
     const dashboard = await import('@/locales/de/dashboard.json').then((module) => module.default);
     const services = await import('@/locales/de/services.json').then((module) => module.default);
-    return { header, home, budgetRequest, login, signup, dashboard, services };
+    const pricingSettings = await import('@/locales/de/pricing-settings.json').then((module) => module.default);
+    return { header, home, budgetRequest, login, signup, dashboard, services, pricingSettings };
   },
   es: async () => {
     const header = await import('@/locales/es/header.json').then((module) => module.default);
@@ -31,7 +33,8 @@ const dictionaries: Record<Locale, () => Promise<any>> = {
     const signup = await import('@/locales/es/signup.json').then((module) => module.default);
     const dashboard = await import('@/locales/es/dashboard.json').then((module) => module.default);
     const services = await import('@/locales/es/services.json').then((module) => module.default);
-    return { header, home, budgetRequest, login, signup, dashboard, services };
+    const pricingSettings = await import('@/locales/es/pricing-settings.json').then((module) => module.default);
+    return { header, home, budgetRequest, login, signup, dashboard, services, pricingSettings };
   },
   ca: async () => {
     const header = await import('@/locales/ca/header.json').then((module) => module.default);
@@ -41,7 +44,8 @@ const dictionaries: Record<Locale, () => Promise<any>> = {
     const signup = await import('@/locales/ca/signup.json').then((module) => module.default);
     const dashboard = await import('@/locales/ca/dashboard.json').then((module) => module.default);
     const services = await import('@/locales/ca/services.json').then((module) => module.default);
-    return { header, home, budgetRequest, login, signup, dashboard, services };
+    const pricingSettings = await import('@/locales/ca/pricing-settings.json').then((module) => module.default);
+    return { header, home, budgetRequest, login, signup, dashboard, services, pricingSettings };
   },
 }
 

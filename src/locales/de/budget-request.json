@@ -73,7 +73,10 @@
     "confirmation": {
         "title": "Anfrage erhalten!",
         "description": "Vielen Dank für Ihre Anfrage. Unser Team wird sie prüfen und sich innerhalb der nächsten 24-48 Stunden bei Ihnen melden.",
-        "button": "Zurück zur Startseite"
+        "button": "Zurück zur Startseite",
+        "estimatedCostLabel": "Ihr geschätztes Budget beträgt:",
+        "taxNote": "(Dieser Preis enthält keine Mehrwertsteuer oder Lizenzen)",
+        "noCostMessage": "Einer unserer Spezialisten wird sich mit Ihnen in Verbindung setzen, um Ihnen ein detailliertes Angebot zu unterbreiten."
     },
     "form": {
         "buttons": {

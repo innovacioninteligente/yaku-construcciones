@@ -73,7 +73,10 @@
     "confirmation": {
         "title": "Request Received!",
         "description": "Thank you for completing your request. Our team will review it and contact you within the next 24-48 hours.",
-        "button": "Back to Homepage"
+        "button": "Back to Homepage",
+        "estimatedCostLabel": "Your estimated budget is:",
+        "taxNote": "(This price does not include VAT or licenses)",
+        "noCostMessage": "One of our specialists will contact you to provide a detailed quote."
     },
     "form": {
         "buttons": {

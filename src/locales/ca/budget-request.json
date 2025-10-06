@@ -73,11 +73,14 @@
     "confirmation": {
         "title": "Sol·licitud Rebuda!",
         "description": "Gràcies per completar la teva sol·licitud. El nostre equip la revisarà i es posarà en contacte amb tu en les properes 24-48 hores.",
-        "button": "Torna a la pàgina principal"
+        "button": "Torna a la pàgina principal",
+        "estimatedCostLabel": "El teu pressupost estimat és:",
+        "taxNote": "(Aquest preu no inclou IVA ni llicències)",
+        "noCostMessage": "Un dels nostres especialistes es posarà en contacte amb tu per proporcionar-te un pressupost detallat."
     },
     "form": {
         "buttons": {
-            "prev": "Anterior",
+            "prev": "Enrere",
             "next": "Següent",
             "submit": "Envia la Sol·licitud",
             "loading": "Enviant..."

@@ -9,6 +9,7 @@ import {
   Lightbulb,
   Settings,
   PlusCircle,
+  DollarSign,
 } from 'lucide-react';
 
 import { useAuth } from '@/hooks/use-auth';
@@ -38,8 +39,12 @@ export function DashboardLayout({ children, t }: { children: React.ReactNode, t:
     { href: '/dashboard/budget-request', label: 'Solicitar Presupuesto', icon: <PlusCircle /> },
     { href: '/dashboard/my-budgets', label: 'Mis Presupuestos', icon: <FileText /> },
     { href: '/dashboard/seo-generator', label: 'Generador SEO', icon: <Lightbulb /> },
-    { href: '/dashboard/settings', label: 'Ajustes', icon: <Settings /> },
   ];
+
+  const settingsNavItems = [
+    { href: '/dashboard/settings/pricing', label: 'Configurar Precios', icon: <DollarSign /> },
+    { href: '/dashboard/settings', label: 'Ajustes', icon: <Settings /> },
+  ]
 
   React.useEffect(() => {
     if (!loading && !user) {
@@ -69,6 +74,24 @@ export function DashboardLayout({ children, t }: { children: React.ReactNode, t:
                 <SidebarMenuButton
                   asChild
                   isActive={pathname.endsWith(item.href)}
+                  tooltip={{
+                    children: item.label,
+                  }}
+                >
+                  <Link href={item.href}>
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+           <SidebarMenu className="mt-auto">
+            {settingsNavItems.map((item) => (
+              <SidebarMenuItem key={item.href}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={pathname.includes(item.href)}
                   tooltip={{
                     children: item.label,
                   }}

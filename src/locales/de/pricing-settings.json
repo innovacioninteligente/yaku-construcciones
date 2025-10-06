@@ -1,0 +1,32 @@
+{
+    "title": "Preiseinstellungen für schnelle Angebote",
+    "description": "Passen Sie die Basispreise pro Quadratmeter (€/m²) an, die für automatische Schätzungen verwendet werden.",
+    "integral": {
+        "title": "Komplettrenovierung"
+    },
+    "bathrooms": {
+        "title": "Badezimmerrenovierung"
+    },
+    "kitchen": {
+        "title": "Küchenrenovierung"
+    },
+    "levels": {
+        "basic": "Basisqualität",
+        "medium": "Mittlere Qualität",
+        "premium": "Premium-Qualität"
+    },
+    "buttons": {
+        "save": "Änderungen speichern",
+        "loading": "Speichern..."
+    },
+    "toast": {
+        "success": {
+            "title": "Preise aktualisiert",
+            "description": "Die neue Preiskonfiguration wurde erfolgreich gespeichert."
+        },
+        "error": {
+            "title": "Fehler beim Speichern",
+            "description": "Die Preiskonfiguration konnte nicht gespeichert werden. Bitte versuchen Sie es erneut."
+        }
+    }
+}

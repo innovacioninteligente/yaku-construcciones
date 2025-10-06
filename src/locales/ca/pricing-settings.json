@@ -1,0 +1,32 @@
+{
+    "title": "Configuració de Preus per a Pressupostos Ràpids",
+    "description": "Ajusta els preus base per metre quadrat (€/m²) que s'utilitzen per a les estimacions automàtiques.",
+    "integral": {
+        "title": "Reforma Integral"
+    },
+    "bathrooms": {
+        "title": "Reforma de Bany"
+    },
+    "kitchen": {
+        "title": "Reforma de Cuina"
+    },
+    "levels": {
+        "basic": "Qualitat Bàsica",
+        "medium": "Qualitat Mitjana",
+        "premium": "Qualitat Premium"
+    },
+    "buttons": {
+        "save": "Desa els Canvis",
+        "loading": "Desant..."
+    },
+    "toast": {
+        "success": {
+            "title": "Preus Actualitzats",
+            "description": "La nova configuració de preus s'ha desat correctament."
+        },
+        "error": {
+            "title": "Error en Desar",
+            "description": "No s'ha pogut desar la configuració de preus. Si us plau, intenta-ho de nou."
+        }
+    }
+}
