@@ -172,12 +172,12 @@ export default async function Home({ params: { locale } }: { params: { locale: a
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {processSteps.map((step, index) => (
-                <div key={index} className="flex flex-col items-center text-center p-6">
-                  <div className="relative mb-4">
+                <div key={index} className="relative flex flex-col items-center text-center p-6 border rounded-lg bg-secondary/30">
+                  <div className="absolute -top-4 -right-2 bg-primary text-primary-foreground rounded-full h-8 w-8 flex items-center justify-center font-bold text-sm">
+                    {index + 1}
+                  </div>
+                  <div className="mb-4">
                     {step.icon}
-                    <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground rounded-full h-8 w-8 flex items-center justify-center font-bold text-sm">
-                      {index + 1}
-                    </div>
                   </div>
                   <h3 className="font-headline text-xl font-bold mb-2">{step.title}</h3>
                   <p className="text-muted-foreground text-sm">{step.description}</p>
@@ -250,8 +250,26 @@ export default async function Home({ params: { locale } }: { params: { locale: a
             </div>
           </div>
         </section>
+
+        <section className="w-full py-20 md:py-28 bg-secondary/50">
+            <div className="container-limited text-center">
+                <h2 className="font-headline text-3xl md:text-4xl font-bold">¿Listo para Empezar tu Proyecto?</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4 mb-8">
+                    Contáctanos hoy mismo para obtener una consulta gratuita y sin compromiso. Nuestro equipo está listo para ayudarte a hacer realidad tu visión.
+                </p>
+                <Button asChild size="lg" className="font-bold">
+                    <Link href="/budget-request">
+                        Solicitar Presupuesto Gratis
+                        <ArrowRight className="ml-2" />
+                    </Link>
+                </Button>
+            </div>
+        </section>
+
       </main>
       <Footer />
     </>
   );
 }
+
+    
