@@ -1,0 +1,24 @@
+{
+    "title": "Contacto",
+    "subtitle": "¿Tienes alguna pregunta o quieres iniciar un proyecto? Estamos aquí para ayudarte. Rellena el formulario o utiliza nuestros datos de contacto.",
+    "formTitle": "Envíanos un Mensaje",
+    "infoTitle": "Nuestra Información",
+    "form": {
+        "name": "Nombre",
+        "namePlaceholder": "Tu nombre completo",
+        "email": "Correo Electrónico",
+        "emailPlaceholder": "tu@email.com",
+        "message": "Mensaje",
+        "messagePlaceholder": "Cuéntanos sobre tu proyecto o consulta...",
+        "button": "Enviar Mensaje"
+    },
+    "address": {
+        "label": "Nuestra Oficina"
+    },
+    "phone": {
+        "label": "Teléfono"
+    },
+    "email": {
+        "label": "Email"
+    }
+}

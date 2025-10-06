@@ -1,0 +1,24 @@
+{
+    "title": "Contacte",
+    "subtitle": "Tens alguna pregunta o vols iniciar un projecte? Som aquí per ajudar-te. Omple el formulari o utilitza les nostres dades de contacte.",
+    "formTitle": "Envia'ns un Missatge",
+    "infoTitle": "La Nostra Informació",
+    "form": {
+        "name": "Nom",
+        "namePlaceholder": "El teu nom complet",
+        "email": "Correu Electrònic",
+        "emailPlaceholder": "tu@email.com",
+        "message": "Missatge",
+        "messagePlaceholder": "Explica'ns el teu projecte o consulta...",
+        "button": "Enviar Missatge"
+    },
+    "address": {
+        "label": "La Nostra Oficina"
+    },
+    "phone": {
+        "label": "Telèfon"
+    },
+    "email": {
+        "label": "Correu electrònic"
+    }
+}

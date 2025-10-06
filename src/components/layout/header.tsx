@@ -22,9 +22,9 @@ export function Header({ t }: { t: any }) {
   
   const navLinks = [
     { href: '/#services', label: t.header.nav.services },
-    { href: '/budget-request', label: t.header.nav.budgetRequest },
     { href: '/blog', label: t.header.nav.blog },
     { href: '/contact', label: t.header.nav.contact },
+    { href: '/budget-request', label: t.header.nav.budgetRequest },
   ];
 
   const handleLinkClick = () => {
