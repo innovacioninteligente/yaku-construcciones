@@ -133,10 +133,10 @@ export function BudgetRequestWizard({ t }: { t: any }) {
       name: '', email: '', phone: '', address: '',
       demolishPartitions: false, demolishPartitionsM2: 0,
       removeDoors: false, removeDoorsAmount: 0,
-      renovateBathroom: false, bathroomQuality: 'basic', bathroomWallTilesM2: 0,
+      renovateBathroom: false, bathroomWallTilesM2: 0,
       bathroomFloorM2: 0, installShowerTray: false, installShowerScreen: false,
       bathroomPlumbing: false,
-      renovateKitchen: false, kitchenQuality: 'basic', kitchenDemolition: false,
+      renovateKitchen: false, kitchenDemolition: false,
       kitchenWallTilesM2: 0, kitchenFloorM2: 0, kitchenPlumbing: false,
       installFalseCeiling: false, falseCeilingM2: 0,
       soundproofRoom: false, soundproofRoomM2: 0,
@@ -208,34 +208,19 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     }
   }
   
-  const SwitchableFormItem = ({ control, name, label, field }: { control: any, name: any, label: string, field: any }) => (
+  const SwitchableFormItem = ({ control, name, label, description, field }: { control: any; name: any; label: string; description?: string; field: any }) => (
     <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-      <div className="space-y-0.5">
-        <FormLabel htmlFor={field.name} className="text-base cursor-pointer">{label}</FormLabel>
-      </div>
-      <FormControl>
-        <Switch
-          id={field.name}
-          checked={field.value}
-          onCheckedChange={field.onChange}
-        />
-      </FormControl>
-    </FormItem>
-  );
-  
-  const SwitchableFormItemWithDescription = ({ control, name, label, description, field }: { control: any, name: any, label: string, description: string, field: any }) => (
-    <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-      <div className="space-y-0.5">
-        <FormLabel htmlFor={field.name} className="text-base cursor-pointer">{label}</FormLabel>
-        <FormDescription className="cursor-pointer" onClick={() => field.onChange(!field.value)}>{description}</FormDescription>
-      </div>
-      <FormControl>
-        <Switch
-          id={field.name}
-          checked={field.value}
-          onCheckedChange={field.onChange}
-        />
-      </FormControl>
+        <div className="space-y-0.5">
+            <FormLabel htmlFor={field.name} className="text-base cursor-pointer">{label}</FormLabel>
+            {description && <FormDescription className="cursor-pointer" onClick={() => field.onChange(!field.value)}>{description}</FormDescription>}
+        </div>
+        <FormControl>
+            <Switch
+                id={field.name}
+                checked={field.value}
+                onCheckedChange={field.onChange}
+            />
+        </FormControl>
     </FormItem>
   );
 
@@ -244,7 +229,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     const inclusions = budgetRequestDict.simple.inclusions;
     const showInclusions = (projectType === 'bathrooms' && inclusions.bathrooms) || (projectType === 'kitchen' && inclusions.kitchen);
     const inclusionTitle = showInclusions ? inclusions.title.replace('{projectType}', budgetRequestDict.simple.projectType.options[projectType]) : '';
-    const inclusionList = projectType === 'bathrooms' ? inclusions.bathrooms : inclusions.kitchen;
+    const inclusionList = projectType === 'bathrooms' ? inclusions.bathrooms : (projectType === 'kitchen' ? inclusions.kitchen : []);
 
     return (
         <Card>
@@ -254,7 +239,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
             </CardHeader>
             <CardContent>
                 <div className="grid md:grid-cols-2 md:gap-8">
-                    <div>
+                    <div className="col-span-2 md:col-span-1">
                         <Form {...simpleForm}>
                             <form onSubmit={simpleForm.handleSubmit(handleFormSubmit)} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
@@ -282,16 +267,16 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                                         <FormItem><FormLabel>{budgetRequestDict.form.quality.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.form.quality.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="basic">{budgetRequestDict.form.quality.options.basic}</SelectItem><SelectItem value="medium">{budgetRequestDict.form.quality.options.medium}</SelectItem><SelectItem value="premium">{budgetRequestDict.form.quality.options.premium}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
                                     )} />
                                 </div>
-                                <Button type="submit" disabled={isLoading} size="lg" className="w-full md:w-auto">
+                                <Button type="submit" disabled={isLoading} size="lg" className="w-full">
                                     {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                                     {isLoading ? budgetRequestDict.form.buttons.loading : budgetRequestDict.form.buttons.submit}
                                 </Button>
                             </form>
                         </Form>
                     </div>
-                    {showInclusions && (
-                        <div className="mt-8 md:mt-0">
-                            <Card className="bg-secondary/50">
+                    <div className="col-span-2 md:col-span-1 mt-8 md:mt-0">
+                        {showInclusions && (
+                            <Card className="bg-secondary/50 h-full">
                                 <CardHeader>
                                     <CardTitle className="text-lg font-headline">{inclusionTitle}</CardTitle>
                                 </CardHeader>
@@ -306,8 +291,8 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                                     </ul>
                                 </CardContent>
                             </Card>
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
             </CardContent>
         </Card>
@@ -585,14 +570,14 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                        control={detailedForm.control}
                        name="installAirConditioning"
                        render={({ field }) => (
-                         <SwitchableFormItemWithDescription control={detailedForm.control} name="installAirConditioning" label={budgetRequestDict.form.optionals.installAirConditioning.label} description={budgetRequestDict.form.optionals.installAirConditioning.description} field={field} />
+                         <SwitchableFormItem control={detailedForm.control} name="installAirConditioning" label={budgetRequestDict.form.optionals.installAirConditioning.label} description={budgetRequestDict.form.optionals.installAirConditioning.description} field={field} />
                        )}
                      />
                      <FormField
                        control={detailedForm.control}
                        name="renovateExteriorCarpentry"
                        render={({ field }) => (
-                         <SwitchableFormItemWithDescription control={detailedForm.control} name="renovateExteriorCarpentry" label={budgetRequestDict.form.optionals.renovateExteriorCarpentry.label} description={budgetRequestDict.form.optionals.renovateExteriorCarpentry.description} field={field} />
+                         <SwitchableFormItem control={detailedForm.control} name="renovateExteriorCarpentry" label={budgetRequestDict.form.optionals.renovateExteriorCarpentry.label} description={budgetRequestDict.form.optionals.renovateExteriorCarpentry.description} field={field} />
                        )}
                      />
                 </div>
