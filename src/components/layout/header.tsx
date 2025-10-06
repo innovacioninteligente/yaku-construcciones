@@ -10,6 +10,8 @@ import { Menu } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import React from 'react';
@@ -57,9 +59,12 @@ export function Header({ t }: { t: any }) {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-                <div className="py-4">
-                    <Logo />
-                </div>
+                <SheetHeader>
+                    <SheetTitle className='sr-only'>Mobile Menu</SheetTitle>
+                    <div className="py-4">
+                        <Logo />
+                    </div>
+                </SheetHeader>
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground">
