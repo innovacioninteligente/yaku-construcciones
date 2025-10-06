@@ -1,0 +1,30 @@
+{
+    "construccion-reformas": {
+        "title": "Construcción y Reformas",
+        "description": "Obra nueva, renovaciones y ampliaciones para todo tipo de construcciones."
+    },
+    "piscinas": {
+        "title": "Construcción y Mantenimiento de Piscinas",
+        "description": "Diseño, construcción y mantenimiento de piscinas para que disfrutes del verano."
+    },
+    "reformas": {
+        "title": "Reformas",
+        "description": "Instalación, mantenimiento y reparaciones para todo tipo de techos."
+    },
+    "paramentos-verticales": {
+        "title": "Paramentos Verticales",
+        "description": "Soluciones para fachadas y muros, desde revestimientos hasta aislamientos."
+    },
+    "electricidad": {
+        "title": "Electricidad",
+        "description": "Cableado, iluminación, actualizaciones de paneles e inspecciones de seguridad."
+    },
+    "carpinteria": {
+        "title": "Carpintería",
+        "description": "Más de 5 años de experiencia en trabajos de carpintería a medida, estructuras e instalaciones."
+    },
+    "fontaneria": {
+        "title": "Fontanería Especializada",
+        "description": "Servicios completos de fontanería, desde instalaciones hasta reparaciones urgentes."
+    }
+}

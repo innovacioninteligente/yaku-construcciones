@@ -1,0 +1,30 @@
+{
+    "construccion-reformas": {
+        "title": "Construcció i Reformes",
+        "description": "Obra nova, renovacions i ampliacions per a tot tipus de construccions."
+    },
+    "piscinas": {
+        "title": "Construcció i Manteniment de Piscines",
+        "description": "Disseny, construcció i manteniment de piscines perquè gaudeixis de l'estiu."
+    },
+    "reformas": {
+        "title": "Reformes",
+        "description": "Instal·lació, manteniment i reparacions per a tot tipus de teulades."
+    },
+    "paramentos-verticales": {
+        "title": "Paraments Verticals",
+        "description": "Solucions per a façanes i murs, des de revestiments fins a aïllaments."
+    },
+    "electricidad": {
+        "title": "Electricitat",
+        "description": "Cablejat, il·luminació, actualitzacions de panells i inspeccions de seguretat."
+    },
+    "carpinteria": {
+        "title": "Fusteria",
+        "description": "Més de 5 anys d'experiència en treballs de fusteria a mida, estructures i instal·lacions."
+    },
+    "fontaneria": {
+        "title": "Lampisteria Especialitzada",
+        "description": "Serveis complets de lampisteria, des d'instal·lacions fins a reparacions urgents."
+    }
+}

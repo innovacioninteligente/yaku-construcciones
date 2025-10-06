@@ -35,81 +35,173 @@
         }
     },
     "budgetRequest": {
-        "title": "Sol·licita el teu pressupost a mida",
-        "description": "Omple els detalls del teu projecte per rebre una estimació de costos precisa i una proposta detallada.",
+        "title": "Sol·licita el teu pressupost detallat",
+        "description": "Completa els passos següents perquè puguem donar-te una estimació precisa.",
+        "summary": {
+            "title": "Resum de la teva Sol·licitud",
+            "description": "Si us plau, revisa que totes les dades siguin correctes abans d'enviar la teva sol·licitud. Un especialista es posarà en contacte amb tu per afinar els detalls."
+        },
+        "confirmation": {
+            "title": "Sol·licitud Rebuda!",
+            "description": "Gràcies per completar la teva sol·licitud. El nostre equip la revisarà i es posarà en contacte amb tu en les properes 24-48 hores.",
+            "button": "Torna a la pàgina principal"
+        },
         "form": {
-            "sections": {
-                "contact": "Informació de Contacte",
-                "project": "Detalls del Projecte"
+            "buttons": {
+                "prev": "Anterior",
+                "next": "Següent",
+                "submit": "Envia la Sol·licitud",
+                "loading": "Enviant..."
             },
             "name": {
                 "label": "Nom Complet",
-                "placeholder": "El teu nom i cognoms",
-                "error": "El nom és obligatori."
+                "placeholder": "El teu nom i cognoms"
             },
             "email": {
                 "label": "Correu Electrònic",
-                "placeholder": "el_teu@email.com",
-                "error": "Si us plau, introdueix un correu electrònic vàlid."
+                "placeholder": "el_teu@email.com"
             },
             "phone": {
                 "label": "Telèfon de Contacte",
-                "placeholder": "600 123 456",
-                "error": "Si us plau, introdueix un número de telèfon vàlid."
+                "placeholder": "600 123 456"
             },
             "address": {
-                "label": "Adreça del Projecte",
-                "placeholder": "Carrer, número, ciutat",
-                "error": "L'adreça del projecte és necessària."
+                "label": "Adreça de l'Obra",
+                "placeholder": "Carrer, número, ciutat"
             },
-            "serviceType": {
-                "label": "Tipus de Servei",
-                "placeholder": "Selecciona el tipus de servei que necessites",
-                "error": "Has de seleccionar un tipus de servei."
-            },
-            "projectDescription": {
-                "label": "Descripció del Projecte",
-                "placeholder": "Ex: Renovar la cuina, instal·lar una piscina de 8x4m, canviar la teulada...",
-                "error": "Si us plau, descriu el teu projecte amb més detall (mín. 20 caràcters)."
-            },
-            "budget": {
-                "label": "Pressupost Desitjat (€)",
-                "error": "El pressupost ha de ser més gran que 0."
-            },
-            "priority": {
-                "label": "Prioritat Principal",
-                "placeholder": "Selecciona una prioritat",
-                "error": "Has de seleccionar una prioritat.",
+            "quality": {
+                "label": "Nivell de Qualitat Desitjat",
+                "placeholder": "Selecciona una qualitat",
                 "options": {
-                    "cost": "Cost (més econòmic)",
-                    "quality": "Qualitat (millors materials)",
-                    "sustainability": "Sostenibilitat (ecològic)"
+                    "basic": "Bàsica",
+                    "medium": "Mitjana",
+                    "premium": "Premium"
                 }
             },
-            "desiredMaterials": {
-                "label": "Materials Desitjats (Opcional)",
-                "placeholder": "Ex: Fusta de roure, marbre, rajoles porcellàniques..."
+            "demolition": {
+                "demolishPartitions": {
+                    "label": "Necessita demolició d'envans interiors?"
+                },
+                "demolishPartitionsM2": {
+                    "label": "Metres quadrats (m²) d'envà a demolir"
+                },
+                "removeDoors": {
+                    "label": "Necessita desmuntatge de portes interiors existents?"
+                },
+                "removeDoorsAmount": {
+                    "label": "Quantitat (Ut.) de portes a desmuntar"
+                }
             },
-            "button": {
-                "default": "Sol·licitar Pressupost i Generar Estimació",
-                "loading": "Enviant i Calculant..."
-            }
-        },
-        "toast": {
-            "success": {
-                "title": "Sol·licitud Enviada!",
-                "description": "Hem rebut la teva sol·licitud. En breu rebràs l'estimació generada."
+            "bathroom": {
+                "renovateBathroom": {
+                    "label": "Vol reformar el bany?"
+                },
+                "bathroomWallTilesM2": {
+                    "label": "Vol canviar les rajoles de les parets? (Indiqui m²)"
+                },
+                "bathroomFloorM2": {
+                    "label": "Vol canviar el terra? (Indiqui m²)"
+                },
+                "installShowerTray": {
+                    "label": "Necessita instal·lació de plat de dutxa?"
+                },
+                "installShowerScreen": {
+                    "label": "Necessita instal·lació de mampara de dutxa?"
+                },
+                "bathroomPlumbing": {
+                    "label": "Desitja renovació completa de la lampisteria del bany?"
+                }
             },
-            "error": {
-                "title": "Error en enviar la sol·licitud",
-                "description": "No s'ha pogut processar la teva sol·licitud. Intenta-ho de nou més tard."
+            "kitchen": {
+                "renovateKitchen": {
+                    "label": "Vol reformar la cuina?"
+                },
+                "kitchenDemolition": {
+                    "label": "Necessita demolició de mobles o cuina d'obra?"
+                },
+                "kitchenWallTilesM2": {
+                    "label": "Vol canviar l'enrajolat de les parets? (Indiqui m²)"
+                },
+                "kitchenFloorM2": {
+                    "label": "Vol canviar el terra? (Indiqui m²)"
+                },
+                "kitchenPlumbing": {
+                    "label": "Desitja renovació completa de la lampisteria de la cuina?"
+                }
+            },
+            "ceilings": {
+                "installFalseCeiling": {
+                    "label": "Desitja instal·lar un fals sostre al bany/cuina?"
+                },
+                "falseCeilingM2": {
+                    "label": "Metres quadrats (m²) de fals sostre"
+                },
+                "soundproofRoom": {
+                    "label": "Necessita insonorització d'habitació (amb llana de roca i doble placa)?"
+                },
+                "soundproofRoomM2": {
+                    "label": "Metres quadrats (m²) a insonoritzar"
+                }
+            },
+            "electricity": {
+                "renovateElectricalPanel": {
+                    "label": "Desitja renovar el quadre elèctric general i la instal·lació actual?"
+                },
+                "perRoom": {
+                    "kitchen": "Cuina",
+                    "livingRoom": "Saló",
+                    "bedroom": "Habitació",
+                    "sockets": "Punts d'endoll a afegir",
+                    "lights": "Punts de llum commutats a afegir",
+                    "tv": "Desitja presa de TV?"
+                }
+            },
+            "carpentry": {
+                "renovateInteriorDoors": {
+                    "label": "Vol renovar les portes de pas interiors?"
+                },
+                "interiorDoorsAmount": {
+                    "label": "Quantitat (Ut.) de portes de pas"
+                },
+                "installSlidingDoor": {
+                    "label": "Necessita una porta corredissa?"
+                },
+                "slidingDoorAmount": {
+                    "label": "Quantitat (Ut.) de portes corredisses"
+                },
+                "paintWalls": {
+                    "label": "Desitja pintar parets i sostres de color blanc?"
+                },
+                "paintWallsM2": {
+                    "label": "Metres quadrats (m²) de superfície a pintar"
+                },
+                "removeGotele": {
+                    "label": "Necessita allisar parets (eliminar gotelé)?"
+                },
+                "removeGoteleM2": {
+                    "label": "Metres quadrats (m²) d'allisat"
+                }
+            },
+            "optionals": {
+                "installAirConditioning": {
+                    "label": "Desitja instal·lació d'Aire Condicionat per conductes?",
+                    "description": "Estimació per a tot l'habitatge."
+                },
+                "renovateExteriorCarpentry": {
+                    "label": "Desitja renovació de fusteria de PVC amb trencament de pont tèrmic?",
+                    "description": "Estimació per a tot l'habitatge."
+                }
+            },
+            "toast": {
+                "success": {
+                    "title": "Sol·licitud Enviada!",
+                    "description": "Hem rebut la teva sol·licitud. El nostre equip es posarà en contacte amb tu aviat."
+                },
+                "error": {
+                    "title": "Error en enviar la sol·licitud",
+                    "description": "No s'ha pogut processar la teva sol·licitud. Intenta-ho de nou més tard."
+                }
             }
-        },
-        "estimation": {
-            "title": "Resultats de l'Estimació IA",
-            "estimatedCost": "Cost Estimat",
-            "suggestedMaterials": "Materials Suggerits",
-            "adjustments": "Ajustos Recomanats"
         }
     },
     "login": {
@@ -146,5 +238,4 @@
         }
     }
 }
-
     

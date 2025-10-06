@@ -1,0 +1,30 @@
+{
+    "construccion-reformas": {
+        "title": "Bau und Renovierungen",
+        "description": "Neubauten, Renovierungen und Erweiterungen für alle Arten von Bauten."
+    },
+    "piscinas": {
+        "title": "Poolbau und -wartung",
+        "description": "Planung, Bau und Wartung von Schwimmbädern, damit Sie den Sommer genießen können."
+    },
+    "reformas": {
+        "title": "Renovierungen",
+        "description": "Installation, Wartung und Reparaturen für alle Arten von Dächern."
+    },
+    "paramentos-verticales": {
+        "title": "Vertikale Verkleidungen",
+        "description": "Lösungen für Fassaden und Wände, von Verkleidungen bis zur Dämmung."
+    },
+    "electricidad": {
+        "title": "Elektrizität",
+        "description": "Verkabelung, Beleuchtung, Schalttafel-Upgrades und Sicherheitsinspektionen."
+    },
+    "carpinteria": {
+        "title": "Zimmerei",
+        "description": "Mehr als 5 Jahre Erfahrung in maßgefertigter Zimmerei, Rahmenbau und Installationen."
+    },
+    "fontaneria": {
+        "title": "Spezialisierte Sanitärtechnik",
+        "description": "Komplette Sanitärdienstleistungen, von Installationen bis zu Notfallreparaturen."
+    }
+}

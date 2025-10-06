@@ -1,0 +1,30 @@
+{
+    "construccion-reformas": {
+        "title": "Construction and Renovations",
+        "description": "New builds, renovations, and extensions for all types of constructions."
+    },
+    "piscinas": {
+        "title": "Pool Construction and Maintenance",
+        "description": "Design, construction, and maintenance of swimming pools for you to enjoy the summer."
+    },
+    "reformas": {
+        "title": "Renovations",
+        "description": "Installation, maintenance, and repairs for all types of roofs."
+    },
+    "paramentos-verticales": {
+        "title": "Vertical Walls",
+        "description": "Solutions for facades and walls, from cladding to insulation."
+    },
+    "electricidad": {
+        "title": "Electricity",
+        "description": "Wiring, lighting, panel upgrades, and safety inspections."
+    },
+    "carpinteria": {
+        "title": "Carpentry",
+        "description": "Over 5 years of experience in custom carpentry, framing, and installations."
+    },
+    "fontaneria": {
+        "title": "Specialized Plumbing",
+        "description": "Complete plumbing services, from installations to emergency repairs."
+    }
+}

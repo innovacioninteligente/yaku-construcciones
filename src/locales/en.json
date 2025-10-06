@@ -35,81 +35,173 @@
         }
     },
     "budgetRequest": {
-        "title": "Request your custom quote",
-        "description": "Fill in your project details to receive an accurate cost estimate and a detailed proposal.",
+        "title": "Request Your Detailed Quote",
+        "description": "Complete the following steps so we can provide you with an accurate estimate.",
+        "summary": {
+            "title": "Summary of Your Request",
+            "description": "Please review all the details to ensure they are correct before submitting your request. A specialist will contact you to refine the details."
+        },
+        "confirmation": {
+            "title": "Request Received!",
+            "description": "Thank you for completing your request. Our team will review it and contact you within the next 24-48 hours.",
+            "button": "Back to Homepage"
+        },
         "form": {
-            "sections": {
-                "contact": "Contact Information",
-                "project": "Project Details"
+            "buttons": {
+                "prev": "Previous",
+                "next": "Next",
+                "submit": "Submit Request",
+                "loading": "Submitting..."
             },
             "name": {
                 "label": "Full Name",
-                "placeholder": "Your first and last name",
-                "error": "Name is required."
+                "placeholder": "Your first and last name"
             },
             "email": {
                 "label": "Email Address",
-                "placeholder": "you@email.com",
-                "error": "Please enter a valid email address."
+                "placeholder": "you@email.com"
             },
             "phone": {
                 "label": "Contact Phone",
-                "placeholder": "e.g., +1 123 456 7890",
-                "error": "Please enter a valid phone number."
+                "placeholder": "+1 123 456 7890"
             },
             "address": {
                 "label": "Project Address",
-                "placeholder": "Street, number, city",
-                "error": "The project address is required."
+                "placeholder": "Street, number, city"
             },
-            "serviceType": {
-                "label": "Service Type",
-                "placeholder": "Select the type of service you need",
-                "error": "You must select a service type."
-            },
-            "projectDescription": {
-                "label": "Project Description",
-                "placeholder": "e.g., Renovate the kitchen, install an 8x4m pool, change the roof...",
-                "error": "Please describe your project in more detail (min. 20 characters)."
-            },
-            "budget": {
-                "label": "Desired Budget ($)",
-                "error": "Budget must be greater than 0."
-            },
-            "priority": {
-                "label": "Main Priority",
-                "placeholder": "Select a priority",
-                "error": "You must select a priority.",
+            "quality": {
+                "label": "Desired Quality Level",
+                "placeholder": "Select a quality level",
                 "options": {
-                    "cost": "Cost (most economical)",
-                    "quality": "Quality (best materials)",
-                    "sustainability": "Sustainability (eco-friendly)"
+                    "basic": "Basic",
+                    "medium": "Medium",
+                    "premium": "Premium"
                 }
             },
-            "desiredMaterials": {
-                "label": "Desired Materials (Optional)",
-                "placeholder": "e.g., Oak wood, marble, porcelain tiles..."
+            "demolition": {
+                "demolishPartitions": {
+                    "label": "Do you need demolition of interior partitions?"
+                },
+                "demolishPartitionsM2": {
+                    "label": "Square meters (m²) of partition to demolish"
+                },
+                "removeDoors": {
+                    "label": "Do you need to remove existing interior doors?"
+                },
+                "removeDoorsAmount": {
+                    "label": "Quantity (pcs) of doors to remove"
+                }
             },
-            "button": {
-                "default": "Request Quote & Generate Estimate",
-                "loading": "Sending & Calculating..."
-            }
-        },
-        "toast": {
-            "success": {
-                "title": "Request Sent!",
-                "description": "We have received your request. You will receive the generated estimate shortly."
+            "bathroom": {
+                "renovateBathroom": {
+                    "label": "Do you want to renovate the bathroom?"
+                },
+                "bathroomWallTilesM2": {
+                    "label": "Do you want to change the wall tiles? (Indicate m²)"
+                },
+                "bathroomFloorM2": {
+                    "label": "Do you want to change the floor? (Indicate m²)"
+                },
+                "installShowerTray": {
+                    "label": "Do you need a shower tray installation?"
+                },
+                "installShowerScreen": {
+                    "label": "Do you need a shower screen installation?"
+                },
+                "bathroomPlumbing": {
+                    "label": "Do you want a complete renovation of the bathroom plumbing?"
+                }
             },
-            "error": {
-                "title": "Error sending request",
-                "description": "Could not process your request. Please try again later."
+            "kitchen": {
+                "renovateKitchen": {
+                    "label": "Do you want to renovate the kitchen?"
+                },
+                "kitchenDemolition": {
+                    "label": "Do you need demolition of furniture or built-in kitchen?"
+                },
+                "kitchenWallTilesM2": {
+                    "label": "Do you want to change the wall tiles? (Indicate m²)"
+                },
+                "kitchenFloorM2": {
+                    "label": "Do you want to change the floor? (Indicate m²)"
+                },
+                "kitchenPlumbing": {
+                    "label": "Do you want a complete renovation of the kitchen plumbing?"
+                }
+            },
+            "ceilings": {
+                "installFalseCeiling": {
+                    "label": "Do you want to install a false ceiling in the bathroom/kitchen?"
+                },
+                "falseCeilingM2": {
+                    "label": "Square meters (m²) of false ceiling"
+                },
+                "soundproofRoom": {
+                    "label": "Do you need room soundproofing (with rock wool and double plasterboard)?"
+                },
+                "soundproofRoomM2": {
+                    "label": "Square meters (m²) to soundproof"
+                }
+            },
+            "electricity": {
+                "renovateElectricalPanel": {
+                    "label": "Do you want to renew the main electrical panel and the current installation?"
+                },
+                "perRoom": {
+                    "kitchen": "Kitchen",
+                    "livingRoom": "Living Room",
+                    "bedroom": "Bedroom",
+                    "sockets": "Socket points to add",
+                    "lights": "Switched light points to add",
+                    "tv": "Do you want a TV outlet?"
+                }
+            },
+            "carpentry": {
+                "renovateInteriorDoors": {
+                    "label": "Do you want to renovate the interior passage doors?"
+                },
+                "interiorDoorsAmount": {
+                    "label": "Quantity (pcs) of passage doors"
+                },
+                "installSlidingDoor": {
+                    "label": "Do you need a sliding door?"
+                },
+                "slidingDoorAmount": {
+                    "label": "Quantity (pcs) of sliding doors"
+                },
+                "paintWalls": {
+                    "label": "Do you want to paint walls and ceilings white?"
+                },
+                "paintWallsM2": {
+                    "label": "Square meters (m²) of surface to paint"
+                },
+                "removeGotele": {
+                    "label": "Do you need to smooth walls (remove stipple)?"
+                },
+                "removeGoteleM2": {
+                    "label": "Square meters (m²) to smooth"
+                }
+            },
+            "optionals": {
+                "installAirConditioning": {
+                    "label": "Do you want ducted air conditioning installation?",
+                    "description": "Estimate for the entire home."
+                },
+                "renovateExteriorCarpentry": {
+                    "label": "Do you want to renovate the PVC exterior carpentry with thermal break?",
+                    "description": "Estimate for the entire home."
+                }
+            },
+            "toast": {
+                "success": {
+                    "title": "Request Sent!",
+                    "description": "We have received your request. Our team will contact you shortly."
+                },
+                "error": {
+                    "title": "Error Sending Request",
+                    "description": "Could not process your request. Please try again later."
+                }
             }
-        },
-        "estimation": {
-            "title": "AI Estimation Results",
-            "estimatedCost": "Estimated Cost",
-            "suggestedMaterials": "Suggested Materials",
-            "adjustments": "Recommended Adjustments"
         }
     },
     "login": {
@@ -146,5 +238,4 @@
         }
     }
 }
-
     

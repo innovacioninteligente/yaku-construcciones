@@ -1,0 +1,170 @@
+{
+    "title": "Fordern Sie Ihr detailliertes Angebot an",
+    "description": "Füllen Sie die folgenden Schritte aus, damit wir Ihnen einen genauen Kostenvoranschlag erstellen können.",
+    "summary": {
+        "title": "Zusammenfassung Ihrer Anfrage",
+        "description": "Bitte überprüfen Sie alle Angaben auf ihre Richtigkeit, bevor Sie Ihre Anfrage absenden. Ein Spezialist wird sich mit Ihnen in Verbindung setzen, um die Details zu verfeinern."
+    },
+    "confirmation": {
+        "title": "Anfrage erhalten!",
+        "description": "Vielen Dank für Ihre Anfrage. Unser Team wird sie prüfen und sich innerhalb der nächsten 24-48 Stunden bei Ihnen melden.",
+        "button": "Zurück zur Startseite"
+    },
+    "form": {
+        "buttons": {
+            "prev": "Zurück",
+            "next": "Weiter",
+            "submit": "Anfrage senden",
+            "loading": "Wird gesendet..."
+        },
+        "name": {
+            "label": "Vollständiger Name",
+            "placeholder": "Ihr Vor- und Nachname"
+        },
+        "email": {
+            "label": "E-Mail-Adresse",
+            "placeholder": "ihre@email.com"
+        },
+        "phone": {
+            "label": "Kontakttelefon",
+            "placeholder": "+49 123 456789"
+        },
+        "address": {
+            "label": "Projektadresse",
+            "placeholder": "Straße, Hausnummer, Stadt"
+        },
+        "quality": {
+            "label": "Gewünschte Qualitätsstufe",
+            "placeholder": "Wählen Sie eine Qualität",
+            "options": {
+                "basic": "Basis",
+                "medium": "Mittel",
+                "premium": "Premium"
+            }
+        },
+        "demolition": {
+            "demolishPartitions": {
+                "label": "Benötigen Sie den Abriss von Innenwänden?"
+            },
+            "demolishPartitionsM2": {
+                "label": "Quadratmeter (m²) der abzureißenden Wand"
+            },
+            "removeDoors": {
+                "label": "Müssen vorhandene Innentüren entfernt werden?"
+            },
+            "removeDoorsAmount": {
+                "label": "Anzahl (Stk.) der zu entfernenden Türen"
+            }
+        },
+        "bathroom": {
+            "renovateBathroom": {
+                "label": "Möchten Sie das Badezimmer renovieren?"
+            },
+            "bathroomWallTilesM2": {
+                "label": "Möchten Sie die Wandfliesen austauschen? (Geben Sie m² an)"
+            },
+            "bathroomFloorM2": {
+                "label": "Möchten Sie den Boden austauschen? (Geben Sie m² an)"
+            },
+            "installShowerTray": {
+                "label": "Benötigen Sie die Installation einer Duschwanne?"
+            },
+            "installShowerScreen": {
+                "label": "Benötigen Sie die Installation einer Duschabtrennung?"
+            },
+            "bathroomPlumbing": {
+                "label": "Wünschen Sie eine komplette Erneuerung der Badezimmerinstallation?"
+            }
+        },
+        "kitchen": {
+            "renovateKitchen": {
+                "label": "Möchten Sie die Küche renovieren?"
+            },
+            "kitchenDemolition": {
+                "label": "Benötigen Sie den Abriss von Möbeln oder einer Einbauküche?"
+            },
+            "kitchenWallTilesM2": {
+                "label": "Möchten Sie die Wandfliesen austauschen? (Geben Sie m² an)"
+            },
+            "kitchenFloorM2": {
+                "label": "Möchten Sie den Boden austauschen? (Geben Sie m² an)"
+            },
+            "kitchenPlumbing": {
+                "label": "Wünschen Sie eine komplette Erneuerung der Kücheninstallation?"
+            }
+        },
+        "ceilings": {
+            "installFalseCeiling": {
+                "label": "Möchten Sie eine Zwischendecke im Bad/Küche einbauen?"
+            },
+            "falseCeilingM2": {
+                "label": "Quadratmeter (m²) der Zwischendecke"
+            },
+            "soundproofRoom": {
+                "label": "Benötigen Sie eine Schalldämmung für einen Raum (mit Steinwolle und doppelter Gipskartonplatte)?"
+            },
+            "soundproofRoomM2": {
+                "label": "Zu dämmende Quadratmeter (m²)"
+            }
+        },
+        "electricity": {
+            "renovateElectricalPanel": {
+                "label": "Möchten Sie den Hauptsicherungskasten und die aktuelle Installation erneuern?"
+            },
+            "perRoom": {
+                "kitchen": "Küche",
+                "livingRoom": "Wohnzimmer",
+                "bedroom": "Schlafzimmer",
+                "sockets": "Hinzuzufügende Steckdosen",
+                "lights": "Hinzuzufügende geschaltete Lichtpunkte",
+                "tv": "Wünschen Sie einen TV-Anschluss?"
+            }
+        },
+        "carpentry": {
+            "renovateInteriorDoors": {
+                "label": "Möchten Sie die inneren Durchgangstüren erneuern?"
+            },
+            "interiorDoorsAmount": {
+                "label": "Anzahl (Stk.) der Durchgangstüren"
+            },
+            "installSlidingDoor": {
+                "label": "Benötigen Sie eine Schiebetür?"
+            },
+            "slidingDoorAmount": {
+                "label": "Anzahl (Stk.) der Schiebetüren"
+            },
+            "paintWalls": {
+                "label": "Möchten Sie Wände und Decken weiß streichen?"
+            },
+            "paintWallsM2": {
+                "label": "Zu streichende Fläche in Quadratmetern (m²)"
+            },
+            "removeGotele": {
+                "label": "Müssen Wände geglättet werden (Raufaser entfernen)?"
+            },
+            "removeGoteleM2": {
+                "label": "Zu glättende Quadratmeter (m²)"
+            }
+        },
+        "optionals": {
+            "installAirConditioning": {
+                "label": "Wünschen Sie eine Kanal-Klimaanlage?",
+                "description": "Kostenvoranschlag für das gesamte Haus."
+            },
+            "renovateExteriorCarpentry": {
+                "label": "Wünschen Sie die Erneuerung der PVC-Außenschreinerei mit thermischer Trennung?",
+                "description": "Kostenvoranschlag für das gesamte Haus."
+            }
+        },
+        "toast": {
+            "success": {
+                "title": "Anfrage gesendet!",
+                "description": "Wir haben Ihre Anfrage erhalten. Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen."
+            },
+            "error": {
+                "title": "Fehler beim Senden der Anfrage",
+                "description": "Ihre Anfrage konnte nicht bearbeitet werden. Bitte versuchen Sie es später erneut."
+            }
+        }
+    }
+}
