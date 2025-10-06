@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -143,7 +144,9 @@ export default async function Home({ params: { locale } }: { params: { locale: a
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
                 {whyChooseUs.map((reason, index) => (
                   <div key={index} className="text-center p-4">
-                    {reason.icon}
+                    <div className="flex justify-center">
+                      {reason.icon}
+                    </div>
                     <p className="font-semibold">{reason.text}</p>
                   </div>
                 ))}
