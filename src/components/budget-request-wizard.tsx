@@ -289,9 +289,9 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                             </form>
                         </Form>
                     </div>
-                    <div className="hidden md:block">
-                        {showInclusions && (
-                            <Card className="bg-secondary/50 sticky top-24">
+                    {showInclusions && (
+                        <div className="mt-8 md:mt-0">
+                            <Card className="bg-secondary/50">
                                 <CardHeader>
                                     <CardTitle className="text-lg font-headline">{inclusionTitle}</CardTitle>
                                 </CardHeader>
@@ -306,27 +306,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                                     </ul>
                                 </CardContent>
                             </Card>
-                        )}
-                    </div>
-                </div>
-                 {/* Mobile view for inclusions */}
-                 <div className="md:hidden mt-8">
-                    {showInclusions && (
-                        <Card className="bg-secondary/50">
-                            <CardHeader>
-                                <CardTitle className="text-lg font-headline">{inclusionTitle}</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    {inclusionList.map((item: string, index: number) => (
-                                        <li key={index} className="flex items-start">
-                                            <Check className="h-4 w-4 mr-2 mt-1 shrink-0 text-primary" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
+                        </div>
                     )}
                 </div>
             </CardContent>
