@@ -1,30 +1,87 @@
+
 {
-    "construccion-reformas": {
-        "title": "Construcción y Reformas",
-        "description": "Obra nueva, renovaciones y ampliaciones para todo tipo de construcciones."
-    },
-    "piscinas": {
-        "title": "Construcción y Mantenimiento de Piscinas",
-        "description": "Diseño, construcción y mantenimiento de piscinas para que disfrutes del verano."
-    },
-    "reformas": {
-        "title": "Reformas",
-        "description": "Instalación, mantenimiento y reparaciones para todo tipo de techos."
-    },
-    "paramentos-verticales": {
-        "title": "Paramentos Verticales",
-        "description": "Soluciones para fachadas y muros, desde revestimientos hasta aislamientos."
-    },
-    "electricidad": {
-        "title": "Electricidad",
-        "description": "Cableado, iluminación, actualizaciones de paneles e inspecciones de seguridad."
-    },
-    "carpinteria": {
-        "title": "Carpintería",
-        "description": "Más de 5 años de experiencia en trabajos de carpintería a medida, estructuras e instalaciones."
-    },
-    "fontaneria": {
-        "title": "Fontanería Especializada",
-        "description": "Servicios completos de fontanería, desde instalaciones hasta reparaciones urgentes."
-    }
+  "construccion-y-reformas": {
+    "title": "Construcción y Reformas",
+    "subtitle": "Transformamos tus espacios, desde cero o renovando lo existente.",
+    "shortDescription": "Obra nueva, renovaciones y ampliaciones para todo tipo de construcciones.",
+    "description": "Nos especializamos en la ejecución de obras nuevas, reformas integrales y ampliaciones. Nuestro equipo de profesionales gestiona cada proyecto con la máxima dedicación para garantizar resultados que superen tus expectativas, cuidando cada detalle desde la cimentación hasta los acabados finales.",
+    "features": [
+      "Gestión integral de proyectos de obra nueva.",
+      "Reformas completas de viviendas y locales comerciales.",
+      "Ampliaciones y redistribución de espacios.",
+      "Asesoramiento en materiales y soluciones constructivas."
+    ]
+  },
+  "piscinas": {
+    "title": "Construcción de Piscinas",
+    "subtitle": "El oasis que siempre has soñado, en tu propio hogar.",
+    "shortDescription": "Diseño, construcción y mantenimiento de piscinas para que disfrutes del verano.",
+    "description": "Diseñamos y construimos piscinas de obra a medida, adaptadas a tu terreno y a tus sueños. Utilizamos las técnicas más avanzadas y materiales de primera calidad para crear espacios únicos de ocio y relax para ti y tu familia.",
+    "features": [
+      "Diseño personalizado de piscinas.",
+      "Construcción con hormigón proyectado (gunitado).",
+      "Instalación de sistemas de cloración salina y climatización.",
+      "Servicio de mantenimiento y reparación."
+    ]
+  },
+  "reformas-de-interiores": {
+    "title": "Reformas de Interiores",
+    "subtitle": "Renueva el corazón de tu hogar: baños y cocinas funcionales y de diseño.",
+    "shortDescription": "Especialistas en reformas de baños y cocinas, optimizando espacio y estilo.",
+    "description": "Somos expertos en la reforma de baños y cocinas, dos de las estancias más importantes del hogar. Optimizamos la distribución para ganar funcionalidad y creamos ambientes modernos y acogedores utilizando materiales de última generación.",
+    "features": [
+      "Renovación completa de alicatados y pavimentos.",
+      "Instalación de fontanería y electricidad nuevas.",
+      "Montaje de mobiliario de cocina y baño a medida.",
+      "Instalación de platos de ducha, mamparas y sanitarios."
+    ]
+  },
+  "paramentos-verticales": {
+    "title": "Paramentos Verticales",
+    "subtitle": "Protegemos y embellecemos tus fachadas y muros.",
+    "shortDescription": "Soluciones para fachadas y muros, desde revestimientos hasta aislamientos.",
+    "description": "Ofrecemos una amplia gama de soluciones para paramentos verticales, incluyendo la aplicación de morteros monocapa, revocos, y sistemas de aislamiento térmico por el exterior (SATE), mejorando la eficiencia energética y la estética de tu edificio.",
+    "features": [
+      "Aplicación de revestimientos continuos.",
+      "Sistemas de Aislamiento Térmico por el Exterior (SATE).",
+      "Reparación y rehabilitación de fachadas.",
+      "Pintura exterior e impermeabilización."
+    ]
+  },
+  "electricidad": {
+    "title": "Electricidad",
+    "subtitle": "Instalaciones eléctricas seguras y eficientes para tu tranquilidad.",
+    "shortDescription": "Cableado, iluminación, actualizaciones de paneles e inspecciones de seguridad.",
+    "description": "Realizamos todo tipo de instalaciones eléctricas, desde el cableado completo de una vivienda hasta la instalación de nuevos puntos de luz, siempre cumpliendo con la normativa vigente para garantizar la máxima seguridad y eficiencia energética.",
+    "features": [
+      "Instalaciones eléctricas completas en obra nueva.",
+      "Actualización y reforma de instalaciones antiguas.",
+      "Boletines eléctricos y certificaciones.",
+      "Instalación de iluminación LED de bajo consumo."
+    ]
+  },
+  "carpinteria": {
+    "title": "Carpintería",
+    "subtitle": "El toque artesanal que marca la diferencia en tus acabados.",
+    "shortDescription": "Más de 5 años de experiencia en trabajos de carpintería a medida.",
+    "description": "Ofrecemos servicios de carpintería a medida, tanto de madera como de aluminio o PVC. Fabricamos e instalamos puertas, ventanas, armarios empotrados, parqués y todo tipo de mobiliario para dar un acabado perfecto a tu proyecto.",
+    "features": [
+      "Carpintería de madera, aluminio y PVC.",
+      "Instalación de puertas de paso y de entrada.",
+      "Montaje de suelos de parqué y tarima flotante.",
+      "Diseño y fabricación de armarios y vestidores a medida."
+    ]
+  },
+  "fontaneria": {
+    "title": "Fontanería Especializada",
+    "subtitle": "Soluciones duraderas para el sistema de agua de tu hogar o negocio.",
+    "shortDescription": "Servicios completos de fontanería, desde instalaciones hasta reparaciones.",
+    "description": "Nuestros fontaneros cualificados se encargan de la instalación y reparación de toda la red de saneamiento y agua potable. Garantizamos un trabajo rápido, limpio y duradero, utilizando materiales de la mejor calidad.",
+    "features": [
+      "Instalación completa de redes de fontanería y desagües.",
+      "Reparación de fugas y averías.",
+      "Instalación de grifería y sanitarios.",
+      "Sistemas de agua caliente sanitaria (termos, calderas)."
+    ]
+  }
 }

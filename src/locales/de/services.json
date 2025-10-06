@@ -1,30 +1,87 @@
+
 {
-    "construccion-reformas": {
-        "title": "Bau und Renovierungen",
-        "description": "Neubauten, Renovierungen und Erweiterungen für alle Arten von Bauten."
-    },
-    "piscinas": {
-        "title": "Poolbau und -wartung",
-        "description": "Planung, Bau und Wartung von Schwimmbädern, damit Sie den Sommer genießen können."
-    },
-    "reformas": {
-        "title": "Renovierungen",
-        "description": "Installation, Wartung und Reparaturen für alle Arten von Dächern."
-    },
-    "paramentos-verticales": {
-        "title": "Vertikale Verkleidungen",
-        "description": "Lösungen für Fassaden und Wände, von Verkleidungen bis zur Dämmung."
-    },
-    "electricidad": {
-        "title": "Elektrizität",
-        "description": "Verkabelung, Beleuchtung, Schalttafel-Upgrades und Sicherheitsinspektionen."
-    },
-    "carpinteria": {
-        "title": "Zimmerei",
-        "description": "Mehr als 5 Jahre Erfahrung in maßgefertigter Zimmerei, Rahmenbau und Installationen."
-    },
-    "fontaneria": {
-        "title": "Spezialisierte Sanitärtechnik",
-        "description": "Komplette Sanitärdienstleistungen, von Installationen bis zu Notfallreparaturen."
-    }
+  "construccion-y-reformas": {
+    "title": "Bau und Renovierungen",
+    "subtitle": "Wir verwandeln Ihre Räume, von Grund auf neu oder durch Renovierung des Bestehenden.",
+    "shortDescription": "Neubau, Renovierungen und Erweiterungen für alle Arten von Gebäuden.",
+    "description": "Wir sind spezialisiert auf die Durchführung von Neubauten, kompletten Renovierungen und Erweiterungen. Unser Team von Fachleuten verwaltet jedes Projekt mit größter Hingabe, um Ergebnisse zu garantieren, die Ihre Erwartungen übertreffen, wobei auf jedes Detail von der Gründung bis zur Endbearbeitung geachtet wird.",
+    "features": [
+      "Integrale Verwaltung von Neubauprojekten.",
+      "Komplettrenovierungen von Wohnungen und Geschäftsräumen.",
+      "Erweiterungen und Neuaufteilung von Räumen.",
+      "Beratung zu Materialien und Baulösungen."
+    ]
+  },
+  "piscinas": {
+    "title": "Poolbau",
+    "subtitle": "Die Oase, von der Sie immer geträumt haben, in Ihrem eigenen Zuhause.",
+    "shortDescription": "Planung, Bau und Wartung von Schwimmbädern, damit Sie den Sommer genießen können.",
+    "description": "Wir planen und bauen maßgeschneiderte Schwimmbäder, die an Ihr Grundstück und Ihre Träume angepasst sind. Wir verwenden die fortschrittlichsten Techniken und hochwertigsten Materialien, um einzigartige Freizeit- und Entspannungsräume für Sie und Ihre Familie zu schaffen.",
+    "features": [
+      "Individuelle Poolplanung.",
+      "Bau mit Spritzbeton (Gunite).",
+      "Installation von Salzelektrolyse- und Heizsystemen.",
+      "Wartungs- und Reparaturservice."
+    ]
+  },
+  "reformas-de-interiores": {
+    "title": "Innenausbau",
+    "subtitle": "Erneuern Sie das Herz Ihres Hauses: funktionale und designorientierte Bäder und Küchen.",
+    "shortDescription": "Spezialisten für Bad- und Küchenrenovierungen, die Raum und Stil optimieren.",
+    "description": "Wir sind Experten für die Renovierung von Bädern und Küchen, zwei der wichtigsten Räume im Haus. Wir optimieren die Raumaufteilung, um Funktionalität zu gewinnen, und schaffen moderne und gemütliche Umgebungen mit den neuesten Materialien.",
+    "features": [
+      "Komplette Erneuerung von Fliesen und Bodenbelägen.",
+      "Installation neuer Sanitär- und Elektroanlagen.",
+      "Maßgeschneiderter Einbau von Küchen- und Badmöbeln.",
+      "Installation von Duschwannen, Duschabtrennungen und Sanitärkeramik."
+    ]
+  },
+  "paramentos-verticales": {
+    "title": "Vertikale Verkleidungen",
+    "subtitle": "Wir schützen und verschönern Ihre Fassaden und Wände.",
+    "shortDescription": "Lösungen für Fassaden und Wände, von Verkleidungen bis zur Isolierung.",
+    "description": "Wir bieten eine breite Palette von Lösungen für vertikale Verkleidungen an, einschließlich der Anwendung von Einschichtmörteln, Putzen und Wärmedämmverbundsystemen (WDVS), die die Energieeffizienz und Ästhetik Ihres Gebäudes verbessern.",
+    "features": [
+      "Anwendung von durchgehenden Beschichtungen.",
+      "Wärmedämmverbundsysteme (WDVS).",
+      "Reparatur und Sanierung von Fassaden.",
+      "Außenanstrich und Abdichtung."
+    ]
+  },
+  "electricidad": {
+    "title": "Elektrizität",
+    "subtitle": "Sichere und effiziente Elektroinstallationen für Ihre Sicherheit.",
+    "shortDescription": "Verkabelung, Beleuchtung, Schalttafel-Upgrades und Sicherheitsinspektionen.",
+    "description": "Wir führen alle Arten von Elektroinstallationen durch, von der kompletten Verkabelung eines Hauses bis zur Installation neuer Lichtpunkte, immer unter Einhaltung der geltenden Vorschriften, um maximale Sicherheit und Energieeffizienz zu gewährleisten.",
+    "features": [
+      "Komplette Elektroinstallationen im Neubau.",
+      "Modernisierung und Sanierung alter Anlagen.",
+      "Elektrobulletins und Zertifizierungen.",
+      "Installation von energiesparender LED-Beleuchtung."
+    ]
+  },
+  "carpinteria": {
+    "title": "Zimmerei",
+    "subtitle": "Der handwerkliche Touch, der den Unterschied in Ihren Oberflächen ausmacht.",
+    "shortDescription": "Mehr als 5 Jahre Erfahrung in maßgefertigter Zimmerei.",
+    "description": "Wir bieten maßgeschneiderte Zimmereidienstleistungen aus Holz, Aluminium oder PVC an. Wir fertigen und installieren Türen, Fenster, Einbauschränke, Parkett und alle Arten von Möbeln, um Ihrem Projekt ein perfektes Finish zu verleihen.",
+    "features": [
+      "Zimmerei aus Holz, Aluminium und PVC.",
+      "Installation von Durchgangs- und Eingangstüren.",
+      "Verlegung von Parkett- und Laminatböden.",
+      "Planung und Herstellung von maßgefertigten Schränken und Ankleidezimmern."
+    ]
+  },
+  "fontaneria": {
+    "title": "Spezialisierte Sanitärtechnik",
+    "subtitle": "Langlebige Lösungen für das Wassersystem Ihres Hauses oder Unternehmens.",
+    "shortDescription": "Komplette Sanitärdienstleistungen, von Installationen bis zu Reparaturen.",
+    "description": "Unsere qualifizierten Klempner kümmern sich um die Installation und Reparatur des gesamten Abwasser- und Trinkwassernetzes. Wir garantieren eine schnelle, saubere und langlebige Arbeit unter Verwendung von Materialien bester Qualität.",
+    "features": [
+      "Komplette Installation von Sanitär- und Abwassernetzen.",
+      "Reparatur von Lecks und Störungen.",
+      "Installation von Armaturen und Sanitärkeramik.",
+      "Warmwassersysteme (Boiler, Heizkessel)."
+    ]
+  }
 }

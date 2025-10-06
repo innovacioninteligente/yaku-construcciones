@@ -15,25 +15,32 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const service = services.find((s) => s.id === params.slug);
+export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
+  const dict = await getDictionary(params.locale as any);
+  const serviceTranslation = dict.services[params.slug];
 
-  if (!service) {
+  if (!serviceTranslation) {
     return {};
   }
 
   return {
-    title: `${service.title} | Yaku Construcciones`,
-    description: service.shortDescription,
+    title: `${serviceTranslation.title} | Yaku Construcciones`,
+    description: serviceTranslation.shortDescription,
   };
 }
 
 export default async function ServicePage({ params }: { params: { slug: string, locale: any } }) {
   const service = services.find((s) => s.id === params.slug);
   const dict = await getDictionary(params.locale);
-
+  
   if (!service) {
     notFound();
+  }
+  
+  const serviceTranslation = dict.services[service.id];
+
+  if (!serviceTranslation) {
+      notFound();
   }
 
   return (
@@ -43,16 +50,17 @@ export default async function ServicePage({ params }: { params: { slug: string, 
         <section className="relative h-64 md:h-80 w-full">
           <Image
             src={service.image}
-            alt={`Imagen representativa de ${service.title}`}
+            alt={`Imagen representativa de ${serviceTranslation.title}`}
             fill
             className="object-cover"
+            data-ai-hint={service.imageHint}
           />
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container-limited h-full flex flex-col justify-center text-white">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              {service.title}
+              {serviceTranslation.title}
             </h1>
-            <p className="text-lg md:text-xl mt-2 max-w-3xl">{service.subtitle}</p>
+            <p className="text-lg md:text-xl mt-2 max-w-3xl">{serviceTranslation.subtitle}</p>
           </div>
         </section>
 
@@ -60,11 +68,11 @@ export default async function ServicePage({ params }: { params: { slug: string, 
           <div className="container-limited grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2 space-y-6">
               <h2 className="text-2xl font-bold font-headline">Descripción del Servicio</h2>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              <p className="text-muted-foreground leading-relaxed">{serviceTranslation.description}</p>
               
               <h3 className="text-xl font-bold font-headline pt-6">Características Clave</h3>
               <ul className="space-y-4">
-                {service.features.map((feature, index) => (
+                {serviceTranslation.features.map((feature: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 shrink-0" />
                     <span className="text-muted-foreground">{feature}</span>

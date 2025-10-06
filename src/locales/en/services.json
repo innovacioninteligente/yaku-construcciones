@@ -1,30 +1,87 @@
+
 {
-    "construccion-reformas": {
-        "title": "Construction and Renovations",
-        "description": "New builds, renovations, and extensions for all types of constructions."
-    },
-    "piscinas": {
-        "title": "Pool Construction and Maintenance",
-        "description": "Design, construction, and maintenance of swimming pools for you to enjoy the summer."
-    },
-    "reformas": {
-        "title": "Renovations",
-        "description": "Installation, maintenance, and repairs for all types of roofs."
-    },
-    "paramentos-verticales": {
-        "title": "Vertical Walls",
-        "description": "Solutions for facades and walls, from cladding to insulation."
-    },
-    "electricidad": {
-        "title": "Electricity",
-        "description": "Wiring, lighting, panel upgrades, and safety inspections."
-    },
-    "carpinteria": {
-        "title": "Carpentry",
-        "description": "Over 5 years of experience in custom carpentry, framing, and installations."
-    },
-    "fontaneria": {
-        "title": "Specialized Plumbing",
-        "description": "Complete plumbing services, from installations to emergency repairs."
-    }
+  "construccion-y-reformas": {
+    "title": "Construction and Renovations",
+    "subtitle": "We transform your spaces, from scratch or renovating the existing.",
+    "shortDescription": "New construction, renovations, and extensions for all types of buildings.",
+    "description": "We specialize in executing new constructions, comprehensive renovations, and extensions. Our team of professionals manages each project with the utmost dedication to ensure results that exceed your expectations, paying attention to every detail from the foundation to the final finishes.",
+    "features": [
+      "Comprehensive management of new construction projects.",
+      "Complete renovations of homes and commercial premises.",
+      "Extensions and redistribution of spaces.",
+      "Advice on materials and construction solutions."
+    ]
+  },
+  "piscinas": {
+    "title": "Pool Construction",
+    "subtitle": "The oasis you've always dreamed of, in your own home.",
+    "shortDescription": "Design, construction, and maintenance of swimming pools for you to enjoy the summer.",
+    "description": "We design and build custom-made swimming pools, adapted to your land and your dreams. We use the most advanced techniques and top-quality materials to create unique leisure and relaxation spaces for you and your family.",
+    "features": [
+      "Custom pool design.",
+      "Construction with shotcrete (gunite).",
+      "Installation of saline chlorination and heating systems.",
+      "Maintenance and repair service."
+    ]
+  },
+  "reformas-de-interiores": {
+    "title": "Interior Renovations",
+    "subtitle": "Renew the heart of your home: functional and designer bathrooms and kitchens.",
+    "shortDescription": "Specialists in bathroom and kitchen renovations, optimizing space and style.",
+    "description": "We are experts in renovating bathrooms and kitchens, two of the most important rooms in the home. We optimize the distribution to gain functionality and create modern and cozy environments using state-of-the-art materials.",
+    "features": [
+      "Complete renewal of tiling and flooring.",
+      "Installation of new plumbing and electricity.",
+      "Custom assembly of kitchen and bathroom furniture.",
+      "Installation of shower trays, screens, and sanitary ware."
+    ]
+  },
+  "paramentos-verticales": {
+    "title": "Vertical Walls",
+    "subtitle": "We protect and beautify your facades and walls.",
+    "shortDescription": "Solutions for facades and walls, from cladding to insulation.",
+    "description": "We offer a wide range of solutions for vertical walls, including the application of single-layer mortars, renders, and external thermal insulation systems (ETICS), improving the energy efficiency and aesthetics of your building.",
+    "features": [
+      "Application of continuous coatings.",
+      "External Thermal Insulation Composite Systems (ETICS).",
+      "Repair and rehabilitation of facades.",
+      "Exterior painting and waterproofing."
+    ]
+  },
+  "electricidad": {
+    "title": "Electricity",
+    "subtitle": "Safe and efficient electrical installations for your peace of mind.",
+    "shortDescription": "Wiring, lighting, panel upgrades, and safety inspections.",
+    "description": "We carry out all types of electrical installations, from the complete wiring of a home to the installation of new light points, always complying with current regulations to ensure maximum safety and energy efficiency.",
+    "features": [
+      "Complete electrical installations in new construction.",
+      "Updating and reforming old installations.",
+      "Electrical bulletins and certifications.",
+      "Installation of low-consumption LED lighting."
+    ]
+  },
+  "carpinteria": {
+    "title": "Carpentry",
+    "subtitle": "The artisanal touch that makes a difference in your finishes.",
+    "shortDescription": "Over 5 years of experience in custom carpentry work.",
+    "description": "We offer custom carpentry services in wood, aluminum, or PVC. We manufacture and install doors, windows, built-in wardrobes, parquet floors, and all types of furniture to give your project a perfect finish.",
+    "features": [
+      "Wood, aluminum, and PVC carpentry.",
+      "Installation of passage and entrance doors.",
+      "Assembly of parquet and floating floors.",
+      "Design and manufacture of custom wardrobes and dressing rooms."
+    ]
+  },
+  "fontaneria": {
+    "title": "Specialized Plumbing",
+    "subtitle": "Durable solutions for the water system of your home or business.",
+    "shortDescription": "Complete plumbing services, from installations to repairs.",
+    "description": "Our qualified plumbers take care of the installation and repair of the entire sanitation and drinking water network. We guarantee fast, clean, and durable work, using the best quality materials.",
+    "features": [
+      "Complete installation of plumbing and drainage networks.",
+      "Repair of leaks and breakdowns.",
+      "Installation of faucets and sanitary ware.",
+      "Domestic hot water systems (boilers, heaters)."
+    ]
+  }
 }

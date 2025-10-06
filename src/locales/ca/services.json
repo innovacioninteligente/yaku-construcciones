@@ -1,30 +1,87 @@
+
 {
-    "construccion-reformas": {
-        "title": "Construcció i Reformes",
-        "description": "Obra nova, renovacions i ampliacions per a tot tipus de construccions."
-    },
-    "piscinas": {
-        "title": "Construcció i Manteniment de Piscines",
-        "description": "Disseny, construcció i manteniment de piscines perquè gaudeixis de l'estiu."
-    },
-    "reformas": {
-        "title": "Reformes",
-        "description": "Instal·lació, manteniment i reparacions per a tot tipus de teulades."
-    },
-    "paramentos-verticales": {
-        "title": "Paraments Verticals",
-        "description": "Solucions per a façanes i murs, des de revestiments fins a aïllaments."
-    },
-    "electricidad": {
-        "title": "Electricitat",
-        "description": "Cablejat, il·luminació, actualitzacions de panells i inspeccions de seguretat."
-    },
-    "carpinteria": {
-        "title": "Fusteria",
-        "description": "Més de 5 anys d'experiència en treballs de fusteria a mida, estructures i instal·lacions."
-    },
-    "fontaneria": {
-        "title": "Lampisteria Especialitzada",
-        "description": "Serveis complets de lampisteria, des d'instal·lacions fins a reparacions urgents."
-    }
+  "construccion-y-reformas": {
+    "title": "Construcció i Reformes",
+    "subtitle": "Transformem els teus espais, des de zero o renovant l'existent.",
+    "shortDescription": "Obra nova, renovacions i ampliacions per a tot tipus de construccions.",
+    "description": "Ens especialitzem en l'execució d'obres noves, reformes integrals i ampliacions. El nostre equip de professionals gestiona cada projecte amb la màxima dedicació per garantir resultats que superin les teves expectatives, cuidant cada detall des de la fonamentació fins als acabats finals.",
+    "features": [
+      "Gestió integral de projectes d'obra nova.",
+      "Reformes completes d'habitatges i locals comercials.",
+      "Ampliacions i redistribució d'espais.",
+      "Assessorament en materials i solucions constructives."
+    ]
+  },
+  "piscinas": {
+    "title": "Construcció de Piscines",
+    "subtitle": "L'oasi que sempre has somiat, a casa teva.",
+    "shortDescription": "Disseny, construcció i manteniment de piscines perquè gaudeixis de l'estiu.",
+    "description": "Dissenyeem i construïm piscines d'obra a mida, adaptades al teu terreny i als teus somnis. Utilitzem les tècniques més avançades i materials de primera qualitat per crear espais únics d'oci i relax per a tu i la teva família.",
+    "features": [
+      "Disseny personalitzat de piscines.",
+      "Construcció amb formigó projectat (gunitat).",
+      "Instal·lació de sistemes de cloració salina i climatització.",
+      "Servei de manteniment i reparació."
+    ]
+  },
+  "reformas-de-interiores": {
+    "title": "Reformes d'Interiors",
+    "subtitle": "Renova el cor de la teva llar: banys i cuines funcionals i de disseny.",
+    "shortDescription": "Especialistes en reformes de banys i cuines, optimitzant espai i estil.",
+    "description": "Som experts en la reforma de banys i cuines, dues de les estances més importants de la llar. Optimitzem la distribució per guanyar funcionalitat i creem ambients moderns i acollidors utilitzant materials d'última generació.",
+    "features": [
+      "Renovació completa d'enrajolats i paviments.",
+      "Instal·lació de lampisteria i electricitat noves.",
+      "Muntatge de mobiliari de cuina i bany a mida.",
+      "Instal·lació de plats de dutxa, mampares i sanitaris."
+    ]
+  },
+  "paramentos-verticales": {
+    "title": "Paraments Verticals",
+    "subtitle": "Protegim i embellim les teves façanes i murs.",
+    "shortDescription": "Solucions per a façanes i murs, des de revestiments fins a aïllaments.",
+    "description": "Oferim una àmplia gamma de solucions per a paraments verticals, incloent l'aplicació de morters monocapa, arrebossats, i sistemes d'aïllament tèrmic per l'exterior (SATE), millorant l'eficiència energètica i l'estètica del teu edifici.",
+    "features": [
+      "Aplicació de revestiments continus.",
+      "Sistemes d'Aïllament Tèrmic per l'Exterior (SATE).",
+      "Reparació i rehabilitació de façanes.",
+      "Pintura exterior i impermeabilització."
+    ]
+  },
+  "electricidad": {
+    "title": "Electricitat",
+    "subtitle": "Instal·lacions elèctriques segures i eficients per a la teva tranquil·litat.",
+    "shortDescription": "Cablejat, il·luminació, actualitzacions de panells i inspeccions de seguretat.",
+    "description": "Realitzem tot tipus d'instal·lacions elèctriques, des del cablejat complet d'un habitatge fins a la instal·lació de nous punts de llum, sempre complint amb la normativa vigent per garantir la màxima seguretat i eficiència energètica.",
+    "features": [
+      "Instal·lacions elèctriques completes en obra nova.",
+      "Actualització i reforma d'instal·lacions antigues.",
+      "Butlletins elèctrics i certificacions.",
+      "Instal·lació d'il·luminació LED de baix consum."
+    ]
+  },
+  "carpinteria": {
+    "title": "Fusteria",
+    "subtitle": "El toc artesanal que marca la diferència en els teus acabats.",
+    "shortDescription": "Més de 5 anys d'experiència en treballs de fusteria a mida.",
+    "description": "Oferim serveis de fusteria a mida, tant de fusta com d'alumini o PVC. Fabriquem i instal·lem portes, finestres, armaris encastats, parquets i tot tipus de mobiliari per donar un acabat perfecte al teu projecte.",
+    "features": [
+      "Fusteria de fusta, alumini i PVC.",
+      "Instal·lació de portes de pas i d'entrada.",
+      "Muntatge de terres de parquet i tarima flotant.",
+      "Disseny i fabricació d'armaris i vestidors a mida."
+    ]
+  },
+  "fontaneria": {
+    "title": "Lampisteria Especialitzada",
+    "subtitle": "Solucions duradores per al sistema d'aigua de la teva llar o negoci.",
+    "shortDescription": "Serveis complets de lampisteria, des d'instal·lacions fins a reparacions.",
+    "description": "Els nostres lampistes qualificats s'encarreguen de la instal·lació i reparació de tota la xarxa de sanejament i aigua potable. Garantim un treball ràpid, net i durador, utilitzant materials de la millor qualitat.",
+    "features": [
+      "Instal·lació completa de xarxes de lampisteria i desguassos.",
+      "Reparació de fuites i avaries.",
+      "Instal·lació d'aixetes i sanitaris.",
+      "Sistemes d'aigua calenta sanitària (termos, calderes)."
+    ]
+  }
 }
