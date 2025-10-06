@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useState, useEffect, ReactNode, useCallback } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 type Locale = 'es' | 'ca' | 'en' | 'de';
 
@@ -32,9 +33,12 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const browserLang = navigator.language.split('-')[0];
-    const initialLocale = ['es', 'ca', 'en', 'de'].includes(browserLang) ? (browserLang as Locale) : 'es';
-    setLocale(initialLocale);
+    // This effect should only run on the client
+    if (typeof window !== 'undefined') {
+        const browserLang = navigator.language.split('-')[0];
+        const initialLocale = ['es', 'ca', 'en', 'de'].includes(browserLang) ? (browserLang as Locale) : 'es';
+        setLocale(initialLocale);
+    }
   }, []);
 
   useEffect(() => {
@@ -42,8 +46,10 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   }, [locale]);
   
   const setLocale = (newLocale: Locale) => {
-    setLoaded(false);
-    setLocaleState(newLocale);
+    if (newLocale !== locale) {
+      setLoaded(false);
+      setLocaleState(newLocale);
+    }
   };
 
   const t = useCallback(
@@ -58,11 +64,23 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
       }
       return result || key;
     },
-    [locale]
+    [locale, loaded] // Add loaded dependency
   );
   
   if (!loaded) {
-    return null; // Or a loading spinner
+    return (
+        <div className="w-full h-screen flex flex-col items-center justify-center space-y-4">
+            <Skeleton className="h-16 w-full" />
+            <div className="container flex-1 p-8">
+                <Skeleton className="h-32 w-full" />
+                <div className="grid grid-cols-3 gap-4 mt-8">
+                    <Skeleton className="h-64" />
+                    <Skeleton className="h-64" />
+                    <Skeleton className="h-64" />
+                </div>
+            </div>
+        </div>
+    )
   }
 
   return (
