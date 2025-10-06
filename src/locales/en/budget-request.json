@@ -28,6 +28,28 @@
         },
         "squareMeters": {
             "label": "Approximate square meters (m²)"
+        },
+        "inclusions": {
+            "title": "What a {projectType} renovation usually includes:",
+            "bathrooms": [
+                "Removal of fixtures: shower tray/bathtub, sink, and toilet",
+                "Demolition, tiling, electricity, plumbing, flooring.",
+                "Preliminary preparations: chasing, electrical and plumbing rough-ins, wall rendering.",
+                "Complete plumbing: replacement of cold and hot water installation and drains.",
+                "Wall tiling",
+                "Floor laying",
+                "New electrical system: sockets and lighting.",
+                "Moisture-resistant plasterboard false ceiling",
+                "General shut-off valves",
+                "Shower tray or bathtub",
+                "Toilet",
+                "Shower/bathtub faucet",
+                "Sink faucet",
+                "Sink",
+                "Floor and wall tiles",
+                "LED lighting",
+                "Socket and switch"
+            ]
         }
     },
     "summary": {

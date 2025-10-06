@@ -28,6 +28,28 @@
         },
         "squareMeters": {
             "label": "Metros cuadrados aproximados (m²)"
+        },
+        "inclusions": {
+            "title": "Lo que suele incluir una reforma de {projectType}:",
+            "bathrooms": [
+                "Desmonte de accesorios: plato de ducha/bañera, lavabo y wc",
+                "Demolición, alicatados, electricidad, fontanería, suelos.",
+                "Preparaciones previas: regatas, electricidad y fontanería, enfoscado paredes.",
+                "Fontanería completa: cambio de instalación de agua fría y caliente y desagües.",
+                "Alicatado de paredes",
+                "Colocación de pavimentos",
+                "Electricidad nueva: enchufes e iluminación.",
+                "Falso techo en pladur especial humedad",
+                "Llaves de paso generales",
+                "Plato de ducha o bañera",
+                "WC",
+                "Grifería bañera/plato de ducha",
+                "Grifería lavabo",
+                "Lavabo",
+                "Baldosas y azulejos",
+                "Iluminación LED",
+                "Enchufe e interruptor"
+            ]
         }
     },
     "summary": {

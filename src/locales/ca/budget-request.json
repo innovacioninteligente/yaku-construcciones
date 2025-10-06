@@ -28,6 +28,28 @@
         },
         "squareMeters": {
             "label": "Metres quadrats aproximats (m²)"
+        },
+        "inclusions": {
+            "title": "El que sol incloure una reforma de {projectType}:",
+            "bathrooms": [
+                "Desmuntatge d'accessoris: plat de dutxa/banyera, lavabo i wc",
+                "Demolició, enrajolats, electricitat, lampisteria, terres.",
+                "Preparacions prèvies: regates, electricitat i lampisteria, arrebossat parets.",
+                "Lampisteria completa: canvi d'instal·lació d'aigua freda i calenta i desguassos.",
+                "Enrajolat de parets",
+                "Col·locació de paviments",
+                "Electricitat nova: endolls i il·luminació.",
+                "Fals sostre en pladur especial humitat",
+                "Claus de pas generals",
+                "Plat de dutxa o banyera",
+                "WC",
+                "Griferia banyera/plat de dutxa",
+                "Griferia lavabo",
+                "Lavabo",
+                "Rajoles i taulells",
+                "Il·luminació LED",
+                "Endoll i interruptor"
+            ]
         }
     },
     "summary": {

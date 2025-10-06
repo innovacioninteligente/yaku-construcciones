@@ -28,6 +28,28 @@
         },
         "squareMeters": {
             "label": "Ungefähre Quadratmeter (m²)"
+        },
+        "inclusions": {
+            "title": "Was eine {projectType}-Renovierung normalerweise beinhaltet:",
+            "bathrooms": [
+                "Demontage von Zubehör: Duschwanne/Badewanne, Waschbecken und WC",
+                "Abriss, Fliesen, Elektrik, Sanitär, Böden.",
+                "Vorbereitungen: Schlitze, Elektrik und Sanitär, Verputzen der Wände.",
+                "Komplette Sanitärinstallation: Austausch der Kalt- und Warmwasserleitungen und Abflüsse.",
+                "Wandfliesen verlegen",
+                "Bodenbeläge verlegen",
+                "Neue Elektrik: Steckdosen und Beleuchtung.",
+                "Abgehängte Decke aus feuchtigkeitsbeständigem Gipskarton",
+                "Hauptabsperrventile",
+                "Duschwanne oder Badewanne",
+                "WC",
+                "Dusch-/Badewannenarmatur",
+                "Waschbeckenarmatur",
+                "Waschbecken",
+                "Boden- und Wandfliesen",
+                "LED-Beleuchtung",
+                "Steckdose und Schalter"
+            ]
         }
     },
     "summary": {

@@ -25,7 +25,7 @@ import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
-import { ArrowLeft, ArrowRight, Loader2, MailCheck, FileText, CheckSquare } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Loader2, MailCheck, FileText, CheckSquare, Check } from 'lucide-react';
 import { Progress } from './ui/progress';
 
 const detailedFormSchema = z.object({
@@ -74,7 +74,7 @@ const detailedFormSchema = z.object({
   electricalBedroom1Sockets: z.coerce.number().optional(),
   electricalBedroom1Lights: z.coerce.number().optional(),
   electricalBedroom2Sockets: z.coerce.number().optional(),
-  electricalBedroom2Lights: z.coerce.number().optional(),
+  electricalBedroom2Lights: z_coerce.number().optional(),
   electricalBedroom3Sockets: z.coerce.number().optional(),
   electricalBedroom3Lights: z.coerce.number().optional(),
 
@@ -193,8 +193,11 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     }
   });
 
-  const { watch, trigger } = detailedForm;
-  const watchAllFields = watch();
+  const { watch: watchDetailed, trigger } = detailedForm;
+  const watchAllDetailedFields = watchDetailed();
+
+  const { watch: watchSimple } = simpleForm;
+  const simpleProjectType = watchSimple('projectType');
 
   const nextStep = async () => {
     const fields = STEPS[currentStep].fields;
@@ -229,6 +232,37 @@ export function BudgetRequestWizard({ t }: { t: any }) {
       setIsLoading(false);
     }
   }
+  
+  const SwitchableFormItem = ({ control, name, label, field }: { control: any, name: any, label: string, field: any }) => (
+    <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+      <div className="space-y-0.5">
+        <FormLabel htmlFor={field.name} className="text-base cursor-pointer">{label}</FormLabel>
+      </div>
+      <FormControl>
+        <Switch
+          id={field.name}
+          checked={field.value}
+          onCheckedChange={field.onChange}
+        />
+      </FormControl>
+    </FormItem>
+  );
+  
+  const SwitchableFormItemWithDescription = ({ control, name, label, description, field }: { control: any, name: any, label: string, description: string, field: any }) => (
+    <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+      <div className="space-y-0.5">
+        <FormLabel htmlFor={field.name} className="text-base cursor-pointer">{label}</FormLabel>
+        <FormDescription className="cursor-pointer" onClick={() => field.onChange(!field.value)}>{description}</FormDescription>
+      </div>
+      <FormControl>
+        <Switch
+          id={field.name}
+          checked={field.value}
+          onCheckedChange={field.onChange}
+        />
+      </FormControl>
+    </FormItem>
+  );
 
   const renderSimpleForm = () => (
     <Card>
@@ -256,6 +290,27 @@ export function BudgetRequestWizard({ t }: { t: any }) {
              <FormField control={simpleForm.control} name="projectType" render={({ field }) => (
                 <FormItem><FormLabel>{budgetRequestDict.simple.projectType.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.simple.projectType.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="integral">{budgetRequestDict.simple.projectType.options.integral}</SelectItem><SelectItem value="bathrooms">{budgetRequestDict.simple.projectType.options.bathrooms}</SelectItem><SelectItem value="kitchen">{budgetRequestDict.simple.projectType.options.kitchen}</SelectItem><SelectItem value="pools">{budgetRequestDict.simple.projectType.options.pools}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
             )} />
+
+            {simpleProjectType === 'bathrooms' && budgetRequestDict.simple.inclusions.bathrooms && (
+              <Card className="bg-secondary/50">
+                <CardHeader>
+                  <CardTitle className="text-lg font-headline">
+                    {budgetRequestDict.simple.inclusions.title.replace('{projectType}', budgetRequestDict.simple.projectType.options.bathrooms)}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {budgetRequestDict.simple.inclusions.bathrooms.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <Check className="h-4 w-4 mr-2 mt-1 shrink-0 text-primary" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
+
             <div className="grid md:grid-cols-2 gap-6">
                 <FormField control={simpleForm.control} name="squareMeters" render={({ field }) => (
                     <FormItem><FormLabel>{budgetRequestDict.simple.squareMeters.label}</FormLabel><FormControl><Input type="number" placeholder="80" {...field} /></FormControl><FormMessage /></FormItem>
@@ -273,50 +328,6 @@ export function BudgetRequestWizard({ t }: { t: any }) {
       </CardContent>
     </Card>
   );
-  
-  const SwitchableFormItem = ({ control, name, label }: { control: any, name: any, label: string }) => (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-          <div className="space-y-0.5">
-            <FormLabel htmlFor={field.name} className="text-base cursor-pointer">{label}</FormLabel>
-          </div>
-          <FormControl>
-            <Switch
-              id={field.name}
-              checked={field.value}
-              onCheckedChange={field.onChange}
-            />
-          </FormControl>
-        </FormItem>
-      )}
-    />
-  );
-  
-  const SwitchableFormItemWithDescription = ({ control, name, label, description }: { control: any, name: any, label: string, description: string }) => (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-          <div className="space-y-0.5">
-            <FormLabel htmlFor={field.name} className="text-base cursor-pointer">{label}</FormLabel>
-            <FormDescription className="cursor-pointer" onClick={() => field.onChange(!field.value)}>{description}</FormDescription>
-          </div>
-          <FormControl>
-            <Switch
-              id={field.name}
-              checked={field.value}
-              onCheckedChange={field.onChange}
-            />
-          </FormControl>
-        </FormItem>
-      )}
-    />
-  );
-
 
   const renderDetailedStep = () => {
     switch (STEPS[currentStep].id) {
@@ -340,34 +351,85 @@ export function BudgetRequestWizard({ t }: { t: any }) {
         case 'demolition':
             return (
                  <div className="space-y-6">
-                    <SwitchableFormItem control={detailedForm.control} name="demolishPartitions" label={budgetRequestDict.form.demolition.demolishPartitions.label} />
-                    {watchAllFields.demolishPartitions && <FormField control={detailedForm.control} name="demolishPartitionsM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.demolishPartitionsM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="demolishPartitions"
+                      render={({ field }) => (
+                        <SwitchableFormItem
+                          control={detailedForm.control}
+                          name="demolishPartitions"
+                          label={budgetRequestDict.form.demolition.demolishPartitions.label}
+                          field={field}
+                        />
+                      )}
+                    />
+                    {watchAllDetailedFields.demolishPartitions && <FormField control={detailedForm.control} name="demolishPartitionsM2" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.demolishPartitionsM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} value={field.value || 0} /></FormControl><FormMessage /></FormItem>
                     )} />}
-                    <SwitchableFormItem control={detailedForm.control} name="removeDoors" label={budgetRequestDict.form.demolition.removeDoors.label} />
-                    {watchAllFields.removeDoors && <FormField control={detailedForm.control} name="removeDoorsAmount" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.removeDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="5" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="removeDoors"
+                      render={({ field }) => (
+                        <SwitchableFormItem
+                          control={detailedForm.control}
+                          name="removeDoors"
+                          label={budgetRequestDict.form.demolition.removeDoors.label}
+                          field={field}
+                        />
+                      )}
+                    />
+                    {watchAllDetailedFields.removeDoors && <FormField control={detailedForm.control} name="removeDoorsAmount" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.removeDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="5" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                     )} />}
                 </div>
             )
         case 'bathroom':
             return (
                 <div className="space-y-6">
-                    <SwitchableFormItem control={detailedForm.control} name="renovateBathroom" label={budgetRequestDict.form.bathroom.renovateBathroom.label} />
-                    {watchAllFields.renovateBathroom && (
+                    <FormField
+                      control={detailedForm.control}
+                      name="renovateBathroom"
+                      render={({ field }) => (
+                        <SwitchableFormItem
+                          control={detailedForm.control}
+                          name="renovateBathroom"
+                          label={budgetRequestDict.form.bathroom.renovateBathroom.label}
+                          field={field}
+                        />
+                      )}
+                    />
+                    {watchAllDetailedFields.renovateBathroom && (
                         <div className="space-y-6 pl-4 border-l-2 ml-4">
                              <FormField control={detailedForm.control} name="bathroomQuality" render={({ field }) => (
                                 <FormItem><FormLabel>{budgetRequestDict.form.quality.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.form.quality.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="basic">{budgetRequestDict.form.quality.options.basic}</SelectItem><SelectItem value="medium">{budgetRequestDict.form.quality.options.medium}</SelectItem><SelectItem value="premium">{budgetRequestDict.form.quality.options.premium}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
                             )} />
                             <FormField control={detailedForm.control} name="bathroomWallTilesM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="30" {...field} /></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="30" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                             )} />
                             <FormField control={detailedForm.control} name="bathroomFloorM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} /></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                             )} />
-                            <SwitchableFormItem control={detailedForm.control} name="installShowerTray" label={budgetRequestDict.form.bathroom.installShowerTray.label} />
-                            <SwitchableFormItem control={detailedForm.control} name="installShowerScreen" label={budgetRequestDict.form.bathroom.installShowerScreen.label} />
-                            <SwitchableFormItem control={detailedForm.control} name="bathroomPlumbing" label={budgetRequestDict.form.bathroom.bathroomPlumbing.label} />
+                            <FormField
+                              control={detailedForm.control}
+                              name="installShowerTray"
+                              render={({ field }) => (
+                                <SwitchableFormItem control={detailedForm.control} name="installShowerTray" label={budgetRequestDict.form.bathroom.installShowerTray.label} field={field} />
+                              )}
+                            />
+                            <FormField
+                              control={detailedForm.control}
+                              name="installShowerScreen"
+                              render={({ field }) => (
+                                <SwitchableFormItem control={detailedForm.control} name="installShowerScreen" label={budgetRequestDict.form.bathroom.installShowerScreen.label} field={field} />
+                              )}
+                            />
+                            <FormField
+                              control={detailedForm.control}
+                              name="bathroomPlumbing"
+                              render={({ field }) => (
+                                <SwitchableFormItem control={detailedForm.control} name="bathroomPlumbing" label={budgetRequestDict.form.bathroom.bathroomPlumbing.label} field={field} />
+                              )}
+                            />
                         </div>
                     )}
                 </div>
@@ -375,20 +437,38 @@ export function BudgetRequestWizard({ t }: { t: any }) {
         case 'kitchen':
              return (
                 <div className="space-y-6">
-                     <SwitchableFormItem control={detailedForm.control} name="renovateKitchen" label={budgetRequestDict.form.kitchen.renovateKitchen.label} />
-                     {watchAllFields.renovateKitchen && (
+                     <FormField
+                       control={detailedForm.control}
+                       name="renovateKitchen"
+                       render={({ field }) => (
+                         <SwitchableFormItem control={detailedForm.control} name="renovateKitchen" label={budgetRequestDict.form.kitchen.renovateKitchen.label} field={field} />
+                       )}
+                     />
+                     {watchAllDetailedFields.renovateKitchen && (
                         <div className="space-y-6 pl-4 border-l-2 ml-4">
                              <FormField control={detailedForm.control} name="kitchenQuality" render={({ field }) => (
                                 <FormItem><FormLabel>{budgetRequestDict.form.quality.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.form.quality.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="basic">{budgetRequestDict.form.quality.options.basic}</SelectItem><SelectItem value="medium">{budgetRequestDict.form.quality.options.medium}</SelectItem><SelectItem value="premium">{budgetRequestDict.form.quality.options.premium}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
                             )} />
-                            <SwitchableFormItem control={detailedForm.control} name="kitchenDemolition" label={budgetRequestDict.form.kitchen.kitchenDemolition.label} />
+                            <FormField
+                              control={detailedForm.control}
+                              name="kitchenDemolition"
+                              render={({ field }) => (
+                                <SwitchableFormItem control={detailedForm.control} name="kitchenDemolition" label={budgetRequestDict.form.kitchen.kitchenDemolition.label} field={field} />
+                              )}
+                            />
                              <FormField control={detailedForm.control} name="kitchenWallTilesM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} /></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                             )} />
                              <FormField control={detailedForm.control} name="kitchenFloorM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="12" {...field} /></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="12" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                             )} />
-                            <SwitchableFormItem control={detailedForm.control} name="kitchenPlumbing" label={budgetRequestDict.form.kitchen.kitchenPlumbing.label} />
+                            <FormField
+                              control={detailedForm.control}
+                              name="kitchenPlumbing"
+                              render={({ field }) => (
+                                <SwitchableFormItem control={detailedForm.control} name="kitchenPlumbing" label={budgetRequestDict.form.kitchen.kitchenPlumbing.label} field={field} />
+                              )}
+                            />
                         </div>
                     )}
                 </div>
@@ -396,44 +476,68 @@ export function BudgetRequestWizard({ t }: { t: any }) {
         case 'ceilings':
              return (
                 <div className="space-y-6">
-                    <SwitchableFormItem control={detailedForm.control} name="installFalseCeiling" label={budgetRequestDict.form.ceilings.installFalseCeiling.label} />
-                    {watchAllFields.installFalseCeiling && <FormField control={detailedForm.control} name="falseCeilingM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.falseCeilingM2.label}</FormLabel><FormControl><Input type="number" placeholder="20" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="installFalseCeiling"
+                      render={({ field }) => (
+                        <SwitchableFormItem control={detailedForm.control} name="installFalseCeiling" label={budgetRequestDict.form.ceilings.installFalseCeiling.label} field={field} />
+                      )}
+                    />
+                    {watchAllDetailedFields.installFalseCeiling && <FormField control={detailedForm.control} name="falseCeilingM2" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.falseCeilingM2.label}</FormLabel><FormControl><Input type="number" placeholder="20" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                     )} />}
-                    <SwitchableFormItem control={detailedForm.control} name="soundproofRoom" label={budgetRequestDict.form.ceilings.soundproofRoom.label} />
-                    {watchAllFields.soundproofRoom && <FormField control={detailedForm.control} name="soundproofRoomM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.soundproofRoomM2.label}</FormLabel><FormControl><Input type="number" placeholder="15" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="soundproofRoom"
+                      render={({ field }) => (
+                        <SwitchableFormItem control={detailedForm.control} name="soundproofRoom" label={budgetRequestDict.form.ceilings.soundproofRoom.label} field={field} />
+                      )}
+                    />
+                    {watchAllDetailedFields.soundproofRoom && <FormField control={detailedForm.control} name="soundproofRoomM2" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.soundproofRoomM2.label}</FormLabel><FormControl><Input type="number" placeholder="15" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                     )} />}
                 </div>
             )
         case 'electricity':
             return (
                 <div className="space-y-6">
-                    <SwitchableFormItem control={detailedForm.control} name="renovateElectricalPanel" label={budgetRequestDict.form.electricity.renovateElectricalPanel.label} />
+                    <FormField
+                      control={detailedForm.control}
+                      name="renovateElectricalPanel"
+                      render={({ field }) => (
+                        <SwitchableFormItem control={detailedForm.control} name="renovateElectricalPanel" label={budgetRequestDict.form.electricity.renovateElectricalPanel.label} field={field} />
+                      )}
+                    />
 
                     <Card><CardHeader><CardTitle className='text-lg'>{budgetRequestDict.form.electricity.perRoom.kitchen}</CardTitle></CardHeader><CardContent className='space-y-4'>
                         <FormField control={detailedForm.control} name="electricalKitchenSockets" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} /></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} value={field.value || 0}/></FormControl></FormItem>
                         )} />
                         <FormField control={detailedForm.control} name="electricalKitchenLights" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="3" {...field} /></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="3" {...field} value={field.value || 0}/></FormControl></FormItem>
                         )} />
                     </CardContent></Card>
                     <Card><CardHeader><CardTitle className='text-lg'>{budgetRequestDict.form.electricity.perRoom.livingRoom}</CardTitle></CardHeader><CardContent className='space-y-4'>
                         <FormField control={detailedForm.control} name="electricalLivingRoomSockets" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} /></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} value={field.value || 0}/></FormControl></FormItem>
                         )} />
                         <FormField control={detailedForm.control} name="electricalLivingRoomLights" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} /></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} value={field.value || 0}/></FormControl></FormItem>
                         )} />
-                        <SwitchableFormItem control={detailedForm.control} name="electricalLivingRoomTV" label={budgetRequestDict.form.electricity.perRoom.tv} />
+                        <FormField
+                          control={detailedForm.control}
+                          name="electricalLivingRoomTV"
+                          render={({ field }) => (
+                            <SwitchableFormItem control={detailedForm.control} name="electricalLivingRoomTV" label={budgetRequestDict.form.electricity.perRoom.tv} field={field} />
+                          )}
+                        />
                     </CardContent></Card>
                      <Card><CardHeader><CardTitle className='text-lg'>{budgetRequestDict.form.electricity.perRoom.bedroom} 1</CardTitle></CardHeader><CardContent className='space-y-4'>
                         <FormField control={detailedForm.control} name="electricalBedroom1Sockets" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} /></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} value={field.value || 0}/></FormControl></FormItem>
                         )} />
                         <FormField control={detailedForm.control} name="electricalBedroom1Lights" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="2" {...field} /></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="2" {...field} value={field.value || 0}/></FormControl></FormItem>
                         )} />
                     </CardContent></Card>
                 </div>
@@ -441,34 +545,70 @@ export function BudgetRequestWizard({ t }: { t: any }) {
         case 'carpentry':
              return (
                 <div className="space-y-6">
-                    <SwitchableFormItem control={detailedForm.control} name="renovateInteriorDoors" label={budgetRequestDict.form.carpentry.renovateInteriorDoors.label} />
-                    {watchAllFields.renovateInteriorDoors && <FormField control={detailedForm.control} name="interiorDoorsAmount" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.interiorDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="renovateInteriorDoors"
+                      render={({ field }) => (
+                        <SwitchableFormItem control={detailedForm.control} name="renovateInteriorDoors" label={budgetRequestDict.form.carpentry.renovateInteriorDoors.label} field={field} />
+                      )}
+                    />
+                    {watchAllDetailedFields.renovateInteriorDoors && <FormField control={detailedForm.control} name="interiorDoorsAmount" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.interiorDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                     )} />}
                     
-                    <SwitchableFormItem control={detailedForm.control} name="installSlidingDoor" label={budgetRequestDict.form.carpentry.installSlidingDoor.label} />
-                    {watchAllFields.installSlidingDoor && <FormField control={detailedForm.control} name="slidingDoorAmount" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.slidingDoorAmount.label}</FormLabel><FormControl><Input type="number" placeholder="1" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="installSlidingDoor"
+                      render={({ field }) => (
+                        <SwitchableFormItem control={detailedForm.control} name="installSlidingDoor" label={budgetRequestDict.form.carpentry.installSlidingDoor.label} field={field} />
+                      )}
+                    />
+                    {watchAllDetailedFields.installSlidingDoor && <FormField control={detailedForm.control} name="slidingDoorAmount" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.slidingDoorAmount.label}</FormLabel><FormControl><Input type="number" placeholder="1" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                     )} />}
                     
                      <hr />
 
-                    <SwitchableFormItem control={detailedForm.control} name="paintWalls" label={budgetRequestDict.form.carpentry.paintWalls.label} />
-                    {watchAllFields.paintWalls && <FormField control={detailedForm.control} name="paintWallsM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.paintWallsM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="paintWalls"
+                      render={({ field }) => (
+                        <SwitchableFormItem control={detailedForm.control} name="paintWalls" label={budgetRequestDict.form.carpentry.paintWalls.label} field={field} />
+                      )}
+                    />
+                    {watchAllDetailedFields.paintWalls && <FormField control={detailedForm.control} name="paintWallsM2" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.paintWallsM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                     )} />}
 
-                    <SwitchableFormItem control={detailedForm.control} name="removeGotele" label={budgetRequestDict.form.carpentry.removeGotele.label} />
-                    {watchAllFields.removeGotele && <FormField control={detailedForm.control} name="removeGoteleM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.removeGoteleM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} /></FormControl><FormMessage /></FormItem>
+                    <FormField
+                      control={detailedForm.control}
+                      name="removeGotele"
+                      render={({ field }) => (
+                        <SwitchableFormItem control={detailedForm.control} name="removeGotele" label={budgetRequestDict.form.carpentry.removeGotele.label} field={field} />
+                      )}
+                    />
+                    {watchAllDetailedFields.removeGotele && <FormField control={detailedForm.control} name="removeGoteleM2" render={({ field }) => (
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.removeGoteleM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
                     )} />}
                 </div>
             )
         case 'optionals':
             return (
                 <div className="space-y-6">
-                     <SwitchableFormItemWithDescription control={detailedForm.control} name="installAirConditioning" label={budgetRequestDict.form.optionals.installAirConditioning.label} description={budgetRequestDict.form.optionals.installAirConditioning.description} />
-                     <SwitchableFormItemWithDescription control={detailedForm.control} name="renovateExteriorCarpentry" label={budgetRequestDict.form.optionals.renovateExteriorCarpentry.label} description={budgetRequestDict.form.optionals.renovateExteriorCarpentry.description} />
+                     <FormField
+                       control={detailedForm.control}
+                       name="installAirConditioning"
+                       render={({ field }) => (
+                         <SwitchableFormItemWithDescription control={detailedForm.control} name="installAirConditioning" label={budgetRequestDict.form.optionals.installAirConditioning.label} description={budgetRequestDict.form.optionals.installAirConditioning.description} field={field} />
+                       )}
+                     />
+                     <FormField
+                       control={detailedForm.control}
+                       name="renovateExteriorCarpentry"
+                       render={({ field }) => (
+                         <SwitchableFormItemWithDescription control={detailedForm.control} name="renovateExteriorCarpentry" label={budgetRequestDict.form.optionals.renovateExteriorCarpentry.label} description={budgetRequestDict.form.optionals.renovateExteriorCarpentry.description} field={field} />
+                       )}
+                     />
                 </div>
             )
         case 'summary':
@@ -565,8 +705,6 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     )
   }
 
-  if (!budgetRequestDict) return null;
-
   return (
     <div className="container py-12 md:py-20">
       <div className="max-w-4xl mx-auto space-y-8">
@@ -577,5 +715,3 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     </div>
   );
 }
-
-    
