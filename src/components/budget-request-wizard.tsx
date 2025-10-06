@@ -74,7 +74,7 @@ const detailedFormSchema = z.object({
   electricalBedroom1Sockets: z.coerce.number().optional(),
   electricalBedroom1Lights: z.coerce.number().optional(),
   electricalBedroom2Sockets: z.coerce.number().optional(),
-  electricalBedroom2Lights: z_coerce.number().optional(),
+  electricalBedroom2Lights: z.coerce.number().optional(),
   electricalBedroom3Sockets: z.coerce.number().optional(),
   electricalBedroom3Lights: z.coerce.number().optional(),
 
