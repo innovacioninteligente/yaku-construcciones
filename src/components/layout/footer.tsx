@@ -19,7 +19,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} ConstruMaster Web. Todos los derechos reservados.</p>
+          <p>&copy; {currentYear} Yaku Construcciones. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
