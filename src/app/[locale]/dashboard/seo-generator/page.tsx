@@ -23,10 +23,17 @@ import {
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { generateSeoBlogArticle, GenerateSeoBlogArticleOutput } from '@/ai/flows/generate-seo-blog-article';
+// import { generateSeoBlogArticle, GenerateSeoBlogArticleOutput } from '@/ai/flows/generate-seo-blog-article';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+
+// Mock type for GenerateSeoBlogArticleOutput as the file is removed
+type GenerateSeoBlogArticleOutput = {
+  title: string;
+  content: string;
+};
+
 
 const formSchema = z.object({
   keywords: z.string().min(3, { message: 'Introduce al menos una palabra clave.' }),
@@ -54,7 +61,12 @@ export default function SeoGeneratorPage() {
     setIsLoading(true);
     setArticle(null);
     try {
-      const result = await generateSeoBlogArticle(values);
+      // const result = await generateSeoBlogArticle(values);
+      // Mocked result
+      const result = {
+        title: `Artículo SEO sobre ${values.keywords}`,
+        content: `Este es un artículo de blog generado por IA sobre ${values.keywords}, analizando la competencia de ${values.competitorWebsites} en ${values.language}.`
+      }
       setArticle(result);
       toast({
         title: 'Artículo generado',

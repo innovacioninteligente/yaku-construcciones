@@ -23,9 +23,16 @@ import {
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { estimateProjectBudget, EstimateProjectBudgetOutput } from '@/ai/flows/estimate-project-budget';
+// import { estimateProjectBudget, EstimateProjectBudgetOutput } from '@/ai/flows/estimate-project-budget';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
+
+// Mock type for EstimateProjectBudgetOutput as the file is removed
+type EstimateProjectBudgetOutput = {
+  estimatedCost: number;
+  suggestedMaterials: string;
+  adjustments: string;
+};
 
 const formSchema = z.object({
   projectDescription: z.string().min(20, { message: 'Por favor, describe tu proyecto con más detalle (mín. 20 caracteres).' }),
@@ -52,7 +59,13 @@ export default function BudgetRequestPage() {
     setIsLoading(true);
     setEstimation(null);
     try {
-      const result = await estimateProjectBudget(values);
+      // const result = await estimateProjectBudget(values);
+      // Mocked result
+      const result = {
+        estimatedCost: values.budget * 1.1,
+        suggestedMaterials: 'Materiales sugeridos basados en la prioridad de ' + values.priority,
+        adjustments: 'Ajustes recomendados para optimizar el presupuesto.'
+      }
       setEstimation(result);
       toast({
         title: 'Estimación generada',
