@@ -20,7 +20,7 @@ export function ContactFab() {
               <Button asChild variant="outline" size="sm" className="bg-background text-xs px-3 h-auto py-1">
                  <Link href={`tel:${phoneNumber}`}>Llamar Ahora</Link>
               </Button>
-              <Button asChild size="icon" className="rounded-full w-12 h-12 bg-green-500 hover:bg-green-600">
+              <Button asChild size="icon" className="rounded-full w-12 h-12 bg-blue-600 hover:bg-blue-700">
                 <Link href={`tel:${phoneNumber}`} aria-label="Llamar">
                   <Phone className="h-6 w-6" />
                 </Link>
