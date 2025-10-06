@@ -14,10 +14,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import React from 'react';
+import React, { useState } from 'react';
 
 export function Header({ t }: { t: any }) {
   const { user } = useAuth();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
   const navLinks = [
     { href: '/#services', label: t.header.nav.services },
@@ -25,6 +26,10 @@ export function Header({ t }: { t: any }) {
     { href: '/blog', label: t.header.nav.blog },
     { href: '/contact', label: t.header.nav.contact },
   ];
+
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -51,7 +56,7 @@ export function Header({ t }: { t: any }) {
               </Button>
             </div>
           )}
-          <Sheet>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu />
@@ -67,7 +72,7 @@ export function Header({ t }: { t: any }) {
                 </SheetHeader>
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
-                  <Link key={link.href} href={link.href} className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground">
+                  <Link key={link.href} href={link.href} onClick={handleLinkClick} className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground">
                     {link.label}
                   </Link>
                 ))}
@@ -75,8 +80,8 @@ export function Header({ t }: { t: any }) {
               <div className="absolute bottom-4 right-4 left-4 flex flex-col gap-2">
                 {user ? null : (
                     <>
-                        <Button variant="ghost" asChild><Link href="/login">{t.header.nav.login}</Link></Button>
-                        <Button asChild><Link href="/signup">{t.header.nav.signup}</Link></Button>
+                        <Button variant="ghost" asChild onClick={handleLinkClick}><Link href="/login">{t.header.nav.login}</Link></Button>
+                        <Button asChild onClick={handleLinkClick}><Link href="/signup">{t.header.nav.signup}</Link></Button>
                     </>
                 )}
               </div>

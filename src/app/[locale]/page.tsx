@@ -61,7 +61,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     <>
       <Header t={dict} />
       <main className="flex-1">
-        <section className="relative w-full py-20 md:py-32 lg:py-40 bg-secondary/50">
+        <section className="relative w-full py-20 md:py-24 lg:py-28 bg-secondary/50">
           <div className="container-limited grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
