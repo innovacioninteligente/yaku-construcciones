@@ -8,7 +8,8 @@ export const services = [
     shortDescription: 'Obra nueva, renovaciones y ampliaciones para todo tipo de construcciones.',
     description: 'Nos especializamos en la ejecución de obras nuevas, reformas integrales y ampliaciones. Nuestro equipo de profesionales gestiona cada proyecto con la máxima dedicación para garantizar resultados que superen tus expectativas, cuidando cada detalle desde la cimentación hasta los acabados finales.',
     icon: <Wrench />,
-    image: '/images/services/construction.jpg',
+    image: 'https://picsum.photos/seed/construction/800/600',
+    imageHint: 'house construction',
     features: [
       'Gestión integral de proyectos de obra nueva.',
       'Reformas completas de viviendas y locales comerciales.',
@@ -23,7 +24,8 @@ export const services = [
     shortDescription: 'Diseño, construcción y mantenimiento de piscinas para que disfrutes del verano.',
     description: 'Diseñamos y construimos piscinas de obra a medida, adaptadas a tu terreno y a tus sueños. Utilizamos las técnicas más avanzadas y materiales de primera calidad para crear espacios únicos de ocio y relax para ti y tu familia.',
     icon: <Waves />,
-    image: '/images/services/pool.jpg',
+    image: 'https://picsum.photos/seed/pool/800/600',
+    imageHint: 'swimming pool',
     features: [
       'Diseño personalizado de piscinas.',
       'Construcción con hormigón proyectado (gunitado).',
@@ -38,7 +40,8 @@ export const services = [
     shortDescription: 'Especialistas en reformas de baños y cocinas, optimizando espacio y estilo.',
     description: 'Somos expertos en la reforma de baños y cocinas, dos de las estancias más importantes del hogar. Optimizamos la distribución para ganar funcionalidad y creamos ambientes modernos y acogedores utilizando materiales de última generación.',
     icon: <Home />,
-    image: '/images/services/interior-reform.jpg',
+    image: 'https://picsum.photos/seed/interior/800/600',
+    imageHint: 'modern kitchen',
     features: [
       'Renovación completa de alicatados y pavimentos.',
       'Instalación de fontanería y electricidad nuevas.',
@@ -53,7 +56,8 @@ export const services = [
     shortDescription: 'Soluciones para fachadas y muros, desde revestimientos hasta aislamientos.',
     description: 'Ofrecemos una amplia gama de soluciones para paramentos verticales, incluyendo la aplicación de morteros monocapa, revocos, y sistemas de aislamiento térmico por el exterior (SATE), mejorando la eficiencia energética y la estética de tu edificio.',
     icon: <Layers />,
-    image: '/images/services/facade.jpg',
+    image: 'https://picsum.photos/seed/facade/800/600',
+    imageHint: 'building facade',
     features: [
       'Aplicación de revestimientos continuos.',
       'Sistemas de Aislamiento Térmico por el Exterior (SATE).',
@@ -68,7 +72,8 @@ export const services = [
     shortDescription: 'Cableado, iluminación, actualizaciones de paneles e inspecciones de seguridad.',
     description: 'Realizamos todo tipo de instalaciones eléctricas, desde el cableado completo de una vivienda hasta la instalación de nuevos puntos de luz, siempre cumpliendo con la normativa vigente para garantizar la máxima seguridad y eficiencia energética.',
     icon: <Zap />,
-    image: '/images/services/electricity.jpg',
+    image: 'https://picsum.photos/seed/electricity/800/600',
+    imageHint: 'electrical wiring',
     features: [
       'Instalaciones eléctricas completas en obra nueva.',
       'Actualización y reforma de instalaciones antiguas.',
@@ -83,7 +88,8 @@ export const services = [
     shortDescription: 'Más de 5 años de experiencia en trabajos de carpintería a medida.',
     description: 'Ofrecemos servicios de carpintería a medida, tanto de madera como de aluminio o PVC. Fabricamos e instalamos puertas, ventanas, armarios empotrados, parqués y todo tipo de mobiliario para dar un acabado perfecto a tu proyecto.',
     icon: <Hammer />,
-    image: '/images/services/carpentry.jpg',
+    image: 'https://picsum.photos/seed/carpentry/800/600',
+    imageHint: 'wood working',
     features: [
       'Carpintería de madera, aluminio y PVC.',
       'Instalación de puertas de paso y de entrada.',
@@ -98,7 +104,8 @@ export const services = [
     shortDescription: 'Servicios completos de fontanería, desde instalaciones hasta reparaciones.',
     description: 'Nuestros fontaneros cualificados se encargan de la instalación y reparación de toda la red de saneamiento y agua potable. Garantizamos un trabajo rápido, limpio y duradero, utilizando materiales de la mejor calidad.',
     icon: <Droplets />,
-    image: '/images/services/plumbing.jpg',
+    image: 'https://picsum.photos/seed/plumbing/800/600',
+    imageHint: 'water pipes',
     features: [
       'Instalación completa de redes de fontanería y desagües.',
       'Reparación de fugas y averías.',
