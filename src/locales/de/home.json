@@ -1,0 +1,19 @@
+{
+    "hero": {
+        "title": "Kompetente Bau- und Renovierungslösungen",
+        "subtitle": "Wir bieten eine breite Palette von Bau- und Handwerksdienstleistungen für Privathaushalte, Unternehmen und Industrieprojekte. Qualität und Vertrauen in jedem Ziegel.",
+        "cta": "Angebot anfordern",
+        "ctaSecondary": "Unsere Dienstleistungen"
+    },
+    "services": {
+        "title": "Unsere spezialisierten Dienstleistungen",
+        "subtitle": "Vom Neubau bis zur Poolpflege, unser Expertenteam ist bereit, Ihr Projekt zu verwirklichen."
+    },
+    "testimonials": {
+        "title": "Was unsere Kunden sagen",
+        "subtitle": "Wir sind stolz auf unsere Arbeit und die Zufriedenheit derer, die uns vertrauen.",
+        "testimonial1": "Tadellose Arbeit von Anfang bis Ende. Das Team war professionell, sauber und hat die Fristen eingehalten. Mein neuer Pool ist ein wahrgewordener Traum!",
+        "customer": "Zufriedener Kunde",
+        "project": "Pool-Renovierung"
+    }
+}

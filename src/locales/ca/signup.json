@@ -1,0 +1,10 @@
+{
+    "title": "Crea un compte",
+    "description": "Uneix-te per sol·licitar pressupostos i gestionar els teus projectes.",
+    "emailLabel": "Correu Electrònic",
+    "passwordLabel": "Contrasenya",
+    "confirmPasswordLabel": "Confirmar Contrasenya",
+    "button": "Crear Compte",
+    "hasAccount": "Ja tens un compte?",
+    "loginLink": "Inicia Sessió"
+}

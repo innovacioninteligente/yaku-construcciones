@@ -1,6 +1,7 @@
 {
     "nav": {
         "services": "Services",
+        "budgetRequest": "Request Quote",
         "blog": "Blog",
         "contact": "Contact",
         "login": "Log In",

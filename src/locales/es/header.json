@@ -1,6 +1,7 @@
 {
     "nav": {
         "services": "Servicios",
+        "budgetRequest": "Pedir Presupuesto",
         "blog": "Blog",
         "contact": "Contacto",
         "login": "Iniciar Sesión",

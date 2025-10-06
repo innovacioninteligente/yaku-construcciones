@@ -104,7 +104,6 @@ const simpleFormSchema = z.object({
   quality: z.enum(['basic', 'medium', 'premium']),
 });
 
-
 type DetailedFormValues = z.infer<typeof detailedFormSchema>;
 type SimpleFormValues = z.infer<typeof simpleFormSchema>;
 
@@ -134,8 +133,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
     defaultValues: {
       name: '', email: '', phone: '', address: '',
       demolishPartitions: false, demolishPartitionsM2: 0, removeDoors: false, removeDoorsAmount: 0,
-      renovateBathroom: false, bathroomWallTilesM2: 0, bathroomFloorM2: 0, installShowerTray: false, installShowerScreen: false, bathroomPlumbing: false,
-      renovateKitchen: false, kitchenDemolition: false, kitchenWallTilesM2: 0, kitchenFloorM2: 0, kitchenPlumbing: false,
+      renovateBathroom: false, bathroomQuality: undefined, bathroomWallTilesM2: 0, bathroomFloorM2: 0, installShowerTray: false, installShowerScreen: false, bathroomPlumbing: false,
+      renovateKitchen: false, kitchenQuality: undefined, kitchenDemolition: false, kitchenWallTilesM2: 0, kitchenFloorM2: 0, kitchenPlumbing: false,
       installFalseCeiling: false, falseCeilingM2: 0, soundproofRoom: false, soundproofRoomM2: 0,
       renovateElectricalPanel: false, electricalKitchenSockets: 0, electricalKitchenLights: 0,
       electricalLivingRoomSockets: 0, electricalLivingRoomLights: 0, electricalLivingRoomTV: false,
@@ -153,6 +152,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
     defaultValues: {
         name: '', email: '', phone: '', address: '',
         squareMeters: 1,
+        projectType: undefined,
+        quality: undefined,
     }
   });
 
@@ -585,6 +586,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
     )
   }
 
+  if (!budgetRequestDict) return null;
+
   return (
     <div className="container py-12 md:py-20">
       <div className="max-w-4xl mx-auto space-y-8">
@@ -595,5 +598,3 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
     </div>
   );
 }
-
-    

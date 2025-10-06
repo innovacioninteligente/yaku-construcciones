@@ -7,30 +7,27 @@ import { User } from 'firebase/auth';
 // This is a server component, so we can't use useAuth hook.
 // We need to find a way to get user on the server.
 // For now, let's mock it.
-const
- 
-mockUser
- 
-= {
+const mockUser = {
     displayName: 'Usuario',
     email: 'user@example.com'
 }
 
 export default async function DashboardPage({ params: { locale } }: { params: { locale: any } }) {
-  const t = await getDictionary(locale);
+  const dict = await getDictionary(locale);
+  const t = dict.dashboard;
   const user = mockUser; // Should be replaced with actual user from server session
 
   const cards = [
     {
       href: '/dashboard/budget-request',
-      title: t['dashboard.requestBudget.title'],
-      description: t['dashboard.requestBudget.description'],
+      title: t.requestBudget.title,
+      description: t.requestBudget.description,
       icon: <PlusCircle className="w-8 h-8 text-primary" />,
     },
     {
       href: '/dashboard/seo-generator',
-      title: t['dashboard.seoGenerator.title'],
-      description: t['dashboard.seoGenerator.description'],
+      title: t.seoGenerator.title,
+      description: t.seoGenerator.description,
       icon: <Lightbulb className="w-8 h-8 text-primary" />,
     },
      {
@@ -45,9 +42,9 @@ export default async function DashboardPage({ params: { locale } }: { params: { 
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold font-headline">
-          {t['dashboard.welcome.title']}, {user?.displayName || user?.email?.split('@')[0] || 'Usuario'}!
+          {t.welcome.title}, {user?.displayName || user?.email?.split('@')[0] || 'Usuario'}!
         </h1>
-        <p className="text-muted-foreground">{t['dashboard.welcome.description']}</p>
+        <p className="text-muted-foreground">{t.welcome.description}</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

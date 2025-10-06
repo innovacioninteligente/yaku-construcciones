@@ -1,0 +1,14 @@
+{
+    "welcome": {
+        "title": "Willkommen in Ihrem Dashboard",
+        "description": "Verwalten Sie Ihre Projekte und Budgetanfragen von hier aus."
+    },
+    "requestBudget": {
+        "title": "Budget anfordern",
+        "description": "Beschreiben Sie Ihr Projekt und erhalten Sie mit Hilfe unserer KI eine Kostenschätzung."
+    },
+    "seoGenerator": {
+        "title": "SEO-Blog-Generator",
+        "description": "Erstellen Sie SEO-optimierte Blogartikel, um mehr Kunden zu gewinnen."
+    }
+}

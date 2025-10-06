@@ -1,0 +1,9 @@
+{
+    "title": "Willkommen zurück",
+    "description": "Melden Sie sich bei Ihrem Konto an, um fortzufahren.",
+    "emailLabel": "E-Mail",
+    "passwordLabel": "Passwort",
+    "button": "Anmelden",
+    "noAccount": "Haben Sie noch kein Konto?",
+    "signupLink": "Registrieren"
+}

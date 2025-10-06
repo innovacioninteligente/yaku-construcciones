@@ -1,6 +1,7 @@
 {
     "nav": {
         "services": "Serveis",
+        "budgetRequest": "Demanar Pressupost",
         "blog": "Blog",
         "contact": "Contacte",
         "login": "Iniciar Sessió",

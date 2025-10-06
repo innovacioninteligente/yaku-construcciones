@@ -7,8 +7,8 @@ import i18nConfig from '../../../i18nConfig';
 import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: 'ConstruMaster Web',
-  description: 'Soluciones expertas de construcción y oficios para cada proyecto.',
+  title: 'ConstruMaster Web - Expertos en Construcción y Reformas',
+  description: 'Soluciones expertas de construcción, reformas, piscinas y más. Calidad y confianza para tu hogar o negocio.',
 };
 
 export function generateStaticParams() {

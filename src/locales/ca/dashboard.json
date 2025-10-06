@@ -1,0 +1,14 @@
+{
+    "welcome": {
+        "title": "Benvingut al teu Tauler",
+        "description": "Gestiona els teus projectes i sol·licituds de pressupost des d'aquí."
+    },
+    "requestBudget": {
+        "title": "Sol·licitar Pressupost",
+        "description": "Descriu el teu projecte i obté una estimació de costos amb ajuda de la nostra IA."
+    },
+    "seoGenerator": {
+        "title": "Generador de Blog SEO",
+        "description": "Crea articles de blog optimitzats per a SEO per atraure més clients."
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "title": "Konto erstellen",
+    "description": "Treten Sie bei, um Budgets anzufordern und Ihre Projekte zu verwalten.",
+    "emailLabel": "E-Mail",
+    "passwordLabel": "Passwort",
+    "confirmPasswordLabel": "Passwort bestätigen",
+    "button": "Konto erstellen",
+    "hasAccount": "Haben Sie bereits ein Konto?",
+    "loginLink": "Anmelden"
+}

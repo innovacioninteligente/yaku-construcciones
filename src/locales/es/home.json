@@ -1,0 +1,19 @@
+{
+    "hero": {
+        "title": "Soluciones expertas de construcción y reformas",
+        "subtitle": "Ofrecemos una amplia gama de servicios de construcción y oficios para hogares, negocios y proyectos industriales. Calidad y confianza en cada ladrillo.",
+        "cta": "Solicitar Presupuesto",
+        "ctaSecondary": "Nuestros Servicios"
+    },
+    "services": {
+        "title": "Nuestros Servicios Especializados",
+        "subtitle": "Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto."
+    },
+    "testimonials": {
+        "title": "La opinión de nuestros clientes",
+        "subtitle": "Nos enorgullece el trabajo que hacemos y la satisfacción de quienes confían en nosotros.",
+        "testimonial1": "Un trabajo impecable de principio a fin. El equipo fue profesional, limpio y cumplió con los plazos. ¡Mi nueva piscina es un sueño hecho realidad!",
+        "customer": "Cliente Satisfecho",
+        "project": "Reforma de Piscina"
+    }
+}

@@ -19,7 +19,6 @@ import Link from 'next/link';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase/client';
 import { useRouter } from 'next/navigation';
-import i18nConfig from '../../../i18nConfig';
 import { useEffect, useState } from 'react';
 import { getDictionary } from '@/lib/dictionaries';
 
@@ -37,10 +36,10 @@ const formSchema = z
 export default function SignupPage({ params: { locale } }: { params: { locale: any }}) {
   const { toast } = useToast();
   const router = useRouter();
-  const [dict, setDict] = useState<any>({});
+  const [dict, setDict] = useState<any>(null);
 
   useEffect(() => {
-    getDictionary(locale).then(d => setDict(d.default || d));
+    getDictionary(locale).then(d => setDict(d.signup));
   }, [locale]);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -69,13 +68,13 @@ export default function SignupPage({ params: { locale } }: { params: { locale: a
     }
   }
 
-  if (!dict || !dict['signup.title']) return null;
+  if (!dict) return null;
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">{dict['signup.title']}</CardTitle>
-        <CardDescription>{dict['signup.description']}</CardDescription>
+        <CardTitle className="font-headline text-2xl">{dict.title}</CardTitle>
+        <CardDescription>{dict.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -85,7 +84,7 @@ export default function SignupPage({ params: { locale } }: { params: { locale: a
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{dict['signup.emailLabel']}</FormLabel>
+                  <FormLabel>{dict.emailLabel}</FormLabel>
                   <FormControl>
                     <Input placeholder="tu@email.com" {...field} />
                   </FormControl>
@@ -98,7 +97,7 @@ export default function SignupPage({ params: { locale } }: { params: { locale: a
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{dict['signup.passwordLabel']}</FormLabel>
+                  <FormLabel>{dict.passwordLabel}</FormLabel>
                   <FormControl>
                     <Input type="password" placeholder="********" {...field} />
                   </FormControl>
@@ -111,7 +110,7 @@ export default function SignupPage({ params: { locale } }: { params: { locale: a
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{dict['signup.confirmPasswordLabel']}</FormLabel>
+                  <FormLabel>{dict.confirmPasswordLabel}</FormLabel>
                   <FormControl>
                     <Input type="password" placeholder="********" {...field} />
                   </FormControl>
@@ -120,14 +119,14 @@ export default function SignupPage({ params: { locale } }: { params: { locale: a
               )}
             />
             <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
-              {form.formState.isSubmitting ? 'Creando cuenta...' : dict['signup.button']}
+              {form.formState.isSubmitting ? 'Creando cuenta...' : dict.button}
             </Button>
           </form>
         </Form>
         <div className="mt-4 text-center text-sm">
-          {dict['signup.hasAccount']}{' '}
+          {dict.hasAccount}{' '}
           <Link href="/login" className="underline">
-            {dict['signup.loginLink']}
+            {dict.loginLink}
           </Link>
         </div>
       </CardContent>

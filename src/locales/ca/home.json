@@ -1,0 +1,19 @@
+{
+    "hero": {
+        "title": "Solucions expertes de construcció i reformes",
+        "subtitle": "Oferim una àmplia gamma de serveis de construcció i oficis per a llars, negocis i projectes industrials. Qualitat i confiança en cada maó.",
+        "cta": "Sol·licitar Pressupost",
+        "ctaSecondary": "Els Nostres Serveis"
+    },
+    "services": {
+        "title": "Els Nostres Serveis Especialitzats",
+        "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està llest per fer realitat el seu projecte."
+    },
+    "testimonials": {
+        "title": "L'opinió dels nostres clients",
+        "subtitle": "Ens enorgulleix la feina que fem i la satisfacció dels qui confien en nosaltres.",
+        "testimonial1": "Una feina impecable de principi a fi. L'equip va ser professional, net i va complir els terminis. La meva nova piscina és un somni fet realitat!",
+        "customer": "Client Satisfet",
+        "project": "Reforma de Piscina"
+    }
+}
