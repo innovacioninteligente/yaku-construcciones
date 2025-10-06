@@ -8,14 +8,16 @@ import { services } from '@/lib/services';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { getDictionary } from '@/lib/dictionaries';
 
-export default function Home() {
+export default async function Home({ params: { locale } }: { params: { locale: any } }) {
+  const dict = await getDictionary(locale);
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === 'hero-construction');
   const testimonialImage = placeholderImages.placeholderImages.find(p => p.id === 'testimonial-avatar');
 
   return (
     <>
-      <Header />
+      <Header t={dict} />
       <main className="flex-1">
         <section className="relative w-full py-20 md:py-32 lg:py-40 bg-secondary/50">
           <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-center">

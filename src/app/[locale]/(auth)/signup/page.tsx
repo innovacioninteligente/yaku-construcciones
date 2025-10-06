@@ -16,10 +16,12 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { useTranslation } from '@/hooks/use-translation';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase/client';
 import { useRouter } from 'next/navigation';
+import { useCurrentLocale } from 'next-i18n-router/client';
+import i18nConfig from '../../../../../i18nConfig';
+import { useEffect, useState } from 'react';
 
 const formSchema = z
   .object({
@@ -32,10 +34,24 @@ const formSchema = z
     path: ['confirmPassword'],
   });
 
+// A simple dictionary fetcher, this should be in a separate file
+async function getDictionary(locale: string) {
+  try {
+    return await import(`@/locales/${locale}.json`);
+  } catch (error) {
+    console.error('Failed to load dictionary:', error);
+    return import(`@/locales/es.json`);
+  }
+}
 export default function SignupPage() {
   const { toast } = useToast();
-  const { t } = useTranslation();
   const router = useRouter();
+  const locale = useCurrentLocale(i18nConfig);
+  const [dict, setDict] = useState<any>({});
+
+  useEffect(() => {
+    getDictionary(locale!).then(d => setDict(d));
+  }, [locale]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -63,11 +79,13 @@ export default function SignupPage() {
     }
   }
 
+  if (!dict || !dict['signup.title']) return null;
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">{t('signup.title')}</CardTitle>
-        <CardDescription>{t('signup.description')}</CardDescription>
+        <CardTitle className="font-headline text-2xl">{dict['signup.title']}</CardTitle>
+        <CardDescription>{dict['signup.description']}</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -77,7 +95,7 @@ export default function SignupPage() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t('signup.emailLabel')}</FormLabel>
+                  <FormLabel>{dict['signup.emailLabel']}</FormLabel>
                   <FormControl>
                     <Input placeholder="tu@email.com" {...field} />
                   </FormControl>
@@ -90,7 +108,7 @@ export default function SignupPage() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t('signup.passwordLabel')}</FormLabel>
+                  <FormLabel>{dict['signup.passwordLabel']}</FormLabel>
                   <FormControl>
                     <Input type="password" placeholder="********" {...field} />
                   </FormControl>
@@ -103,7 +121,7 @@ export default function SignupPage() {
               name="confirmPassword"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t('signup.confirmPasswordLabel')}</FormLabel>
+                  <FormLabel>{dict['signup.confirmPasswordLabel']}</FormLabel>
                   <FormControl>
                     <Input type="password" placeholder="********" {...field} />
                   </FormControl>
@@ -112,14 +130,14 @@ export default function SignupPage() {
               )}
             />
             <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
-              {form.formState.isSubmitting ? 'Creando cuenta...' : t('signup.button')}
+              {form.formState.isSubmitting ? 'Creando cuenta...' : dict['signup.button']}
             </Button>
           </form>
         </Form>
         <div className="mt-4 text-center text-sm">
-          {t('signup.hasAccount')}{' '}
+          {dict['signup.hasAccount']}{' '}
           <Link href="/login" className="underline">
-            {t('signup.loginLink')}
+            {dict['signup.loginLink']}
           </Link>
         </div>
       </CardContent>

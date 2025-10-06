@@ -12,12 +12,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/hooks/use-auth';
-import { useTranslation } from '@/hooks/use-translation';
 import Link from 'next/link';
 
-export function UserNav() {
+export function UserNav({ t }: { t: any }) {
   const { user, signOut } = useAuth();
-  const { t } = useTranslation();
 
   if (!user) {
     return null;
@@ -48,17 +46,17 @@ export function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
-            <Link href="/dashboard">{t('userNav.dashboard')}</Link>
+            <Link href="/dashboard">{t['userNav.dashboard']}</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/dashboard/budget-request">{t('userNav.newBudget')}</Link>
+            <Link href="/dashboard/budget-request">{t['userNav.newBudget']}</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/dashboard/settings">{t('userNav.settings')}</Link>
+            <Link href="/dashboard/settings">{t['userNav.settings']}</Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={signOut}>{t('userNav.logout')}</DropdownMenuItem>
+        <DropdownMenuItem onClick={signOut}>{t['userNav.logout']}</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

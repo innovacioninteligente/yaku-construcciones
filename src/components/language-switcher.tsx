@@ -7,8 +7,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useTranslation } from '@/hooks/use-translation';
 import { Languages } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import i18nConfig from '../../../i18nConfig';
+import { useCurrentLocale } from 'next-i18n-router/client';
 
 const languageMap: { [key: string]: string } = {
   es: 'Español',
@@ -18,7 +20,27 @@ const languageMap: { [key: string]: string } = {
 };
 
 export function LanguageSwitcher() {
-  const { locale, setLocale } = useTranslation();
+  const router = useRouter();
+  const currentPathname = usePathname();
+  const currentLocale = useCurrentLocale(i18nConfig);
+
+  const handleLocaleChange = (newLocale: string) => {
+    // set cookie for next-i18n-router
+    const days = 30;
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "; expires=" + date.toUTCString();
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+
+    if (currentLocale === i18nConfig.defaultLocale) {
+        router.push('/' + newLocale + currentPathname);
+    } else {
+        router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`));
+    }
+
+    router.refresh();
+  };
+
 
   return (
     <DropdownMenu>
@@ -30,7 +52,7 @@ export function LanguageSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {Object.entries(languageMap).map(([langCode, langName]) => (
-          <DropdownMenuItem key={langCode} onClick={() => setLocale(langCode as 'es' | 'ca' | 'en' | 'de')} disabled={locale === langCode}>
+          <DropdownMenuItem key={langCode} onClick={() => handleLocaleChange(langCode)} disabled={currentLocale === langCode}>
             {langName}
           </DropdownMenuItem>
         ))}

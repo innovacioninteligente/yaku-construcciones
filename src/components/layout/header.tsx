@@ -6,22 +6,17 @@ import { Logo } from '@/components/logo';
 import { useAuth } from '@/hooks/use-auth';
 import { UserNav } from '@/components/auth/user-nav';
 import { LanguageSwitcher } from '@/components/language-switcher';
-import { useTranslation } from '@/hooks/use-translation';
 import { Menu } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import React from 'react';
 
-export function Header() {
+export function Header({ t }: { t: any }) {
   const { user } = useAuth();
-  const { t } = useTranslation();
-
+  
   const navLinks = [
     { href: '/#services', label: 'nav.services' },
     { href: '/blog', label: 'nav.blog' },
@@ -35,21 +30,21 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-6 ml-10 text-sm font-medium">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-muted-foreground transition-colors hover:text-foreground">
-              {t(link.label)}
+              {t[link.label]}
             </Link>
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
           <LanguageSwitcher />
           {user ? (
-            <UserNav />
+            <UserNav t={t} />
           ) : (
             <div className="hidden md:flex items-center gap-2">
               <Button variant="ghost" asChild>
-                <Link href="/login">{t('nav.login')}</Link>
+                <Link href="/login">{t['nav.login']}</Link>
               </Button>
               <Button asChild>
-                <Link href="/signup">{t('nav.signup')}</Link>
+                <Link href="/signup">{t['nav.signup']}</Link>
               </Button>
             </div>
           )}
@@ -61,21 +56,21 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <SheetHeader>
-                <Logo />
-              </SheetHeader>
+                <div className="py-4">
+                    <Logo />
+                </div>
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    {t(link.label)}
+                    {t[link.label]}
                   </Link>
                 ))}
               </div>
               <div className="absolute bottom-4 right-4 left-4 flex flex-col gap-2">
                 {user ? null : (
                     <>
-                        <Button variant="ghost" asChild><Link href="/login">{t('nav.login')}</Link></Button>
-                        <Button asChild><Link href="/signup">{t('nav.signup')}</Link></Button>
+                        <Button variant="ghost" asChild><Link href="/login">{t['nav.login']}</Link></Button>
+                        <Button asChild><Link href="/signup">{t['nav.signup']}</Link></Button>
                     </>
                 )}
               </div>

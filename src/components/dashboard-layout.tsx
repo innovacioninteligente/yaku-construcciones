@@ -27,13 +27,11 @@ import {
 } from '@/components/ui/sidebar';
 import { LanguageSwitcher } from './language-switcher';
 import { Button } from './ui/button';
-import { useTranslation } from '@/hooks/use-translation';
 
-export function DashboardLayout({ children }: { children: React.ReactNode }) {
+export function DashboardLayout({ children, t }: { children: React.ReactNode, t: any }) {
   const { user, loading } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
-  const { t } = useTranslation();
 
   const navItems = [
     { href: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard /> },
@@ -70,7 +68,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               <SidebarMenuItem key={item.href}>
                 <SidebarMenuButton
                   asChild
-                  isActive={pathname === item.href}
+                  isActive={pathname.endsWith(item.href)}
                   tooltip={{
                     children: item.label,
                   }}
@@ -91,7 +89,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       <SidebarInset>
         <header className="sticky top-0 z-40 w-full border-b bg-background">
           <div className="container flex h-16 items-center justify-end">
-             <UserNav />
+             <UserNav t={t} />
           </div>
         </header>
         <main className="flex-1 p-4 md:p-8">
