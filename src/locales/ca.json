@@ -2,6 +2,7 @@
     "header": {
         "nav": {
             "services": "Serveis",
+            "budgetRequest": "Demanar Pressupost",
             "blog": "Blog",
             "contact": "Contacte",
             "login": "Iniciar Sessió",
@@ -12,6 +13,103 @@
             "newBudget": "Nou Pressupost",
             "settings": "Configuració",
             "logout": "Tancar Sessió"
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Solucions expertes de construcció i reformes",
+            "subtitle": "Oferim una àmplia gamma de serveis de construcció i oficis per a llars, negocis i projectes industrials. Qualitat i confiança en cada maó.",
+            "cta": "Sol·licitar Pressupost",
+            "ctaSecondary": "Els Nostres Serveis"
+        },
+        "services": {
+            "title": "Els Nostres Serveis Especialitzats",
+            "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està llest per fer realitat el seu projecte."
+        },
+        "testimonials": {
+            "title": "L'opinió dels nostres clients",
+            "subtitle": "Ens enorgulleix la feina que fem i la satisfacció dels qui confien en nosaltres.",
+            "testimonial1": "Una feina impecable de principi a fi. L'equip va ser professional, net i va complir els terminis. La meva nova piscina és un somni fet realitat!",
+            "customer": "Client Satisfet",
+            "project": "Reforma de Piscina"
+        }
+    },
+    "budgetRequest": {
+        "title": "Sol·licita el teu pressupost a mida",
+        "description": "Omple els detalls del teu projecte per rebre una estimació de costos precisa i una proposta detallada.",
+        "form": {
+            "sections": {
+                "contact": "Informació de Contacte",
+                "project": "Detalls del Projecte"
+            },
+            "name": {
+                "label": "Nom Complet",
+                "placeholder": "El teu nom i cognoms",
+                "error": "El nom és obligatori."
+            },
+            "email": {
+                "label": "Correu Electrònic",
+                "placeholder": "el_teu@email.com",
+                "error": "Si us plau, introdueix un correu electrònic vàlid."
+            },
+            "phone": {
+                "label": "Telèfon de Contacte",
+                "placeholder": "600 123 456",
+                "error": "Si us plau, introdueix un número de telèfon vàlid."
+            },
+            "address": {
+                "label": "Adreça del Projecte",
+                "placeholder": "Carrer, número, ciutat",
+                "error": "L'adreça del projecte és necessària."
+            },
+            "serviceType": {
+                "label": "Tipus de Servei",
+                "placeholder": "Selecciona el tipus de servei que necessites",
+                "error": "Has de seleccionar un tipus de servei."
+            },
+            "projectDescription": {
+                "label": "Descripció del Projecte",
+                "placeholder": "Ex: Renovar la cuina, instal·lar una piscina de 8x4m, canviar la teulada...",
+                "error": "Si us plau, descriu el teu projecte amb més detall (mín. 20 caràcters)."
+            },
+            "budget": {
+                "label": "Pressupost Desitjat (€)",
+                "error": "El pressupost ha de ser més gran que 0."
+            },
+            "priority": {
+                "label": "Prioritat Principal",
+                "placeholder": "Selecciona una prioritat",
+                "error": "Has de seleccionar una prioritat.",
+                "options": {
+                    "cost": "Cost (més econòmic)",
+                    "quality": "Qualitat (millors materials)",
+                    "sustainability": "Sostenibilitat (ecològic)"
+                }
+            },
+            "desiredMaterials": {
+                "label": "Materials Desitjats (Opcional)",
+                "placeholder": "Ex: Fusta de roure, marbre, rajoles porcellàniques..."
+            },
+            "button": {
+                "default": "Sol·licitar Pressupost i Generar Estimació",
+                "loading": "Enviant i Calculant..."
+            }
+        },
+        "toast": {
+            "success": {
+                "title": "Sol·licitud Enviada!",
+                "description": "Hem rebut la teva sol·licitud. En breu rebràs l'estimació generada."
+            },
+            "error": {
+                "title": "Error en enviar la sol·licitud",
+                "description": "No s'ha pogut processar la teva sol·licitud. Intenta-ho de nou més tard."
+            }
+        },
+        "estimation": {
+            "title": "Resultats de l'Estimació IA",
+            "estimatedCost": "Cost Estimat",
+            "suggestedMaterials": "Materials Suggerits",
+            "adjustments": "Ajustos Recomanats"
         }
     },
     "login": {
@@ -46,24 +144,7 @@
             "title": "Generador de Blog SEO",
             "description": "Crea articles de blog optimitzats per a SEO per atraure més clients."
         }
-    },
-    "home": {
-        "hero": {
-            "title": "Solucions expertes de construcció i reformes",
-            "subtitle": "Oferim una àmplia gamma de serveis de construcció i oficis per a llars, negocis i projectes industrials. Qualitat i confiança en cada maó.",
-            "cta": "Sol·licitar Pressupost",
-            "ctaSecondary": "Els Nostres Serveis"
-        },
-        "services": {
-            "title": "Els Nostres Serveis Especialitzats",
-            "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està llest per fer realitat el seu projecte."
-        },
-        "testimonials": {
-            "title": "L'opinió dels nostres clients",
-            "subtitle": "Ens enorgulleix la feina que fem i la satisfacció dels qui confien en nosaltres.",
-            "testimonial1": "Una feina impecable de principi a fi. L'equip va ser professional, net i va complir els terminis. La meva nova piscina és un somni fet realitat!",
-            "customer": "Client Satisfet",
-            "project": "Reforma de Piscina"
-        }
     }
 }
+
+    

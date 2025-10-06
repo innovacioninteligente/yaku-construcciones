@@ -2,6 +2,7 @@
     "header": {
         "nav": {
             "services": "Servicios",
+            "budgetRequest": "Pedir Presupuesto",
             "blog": "Blog",
             "contact": "Contacto",
             "login": "Iniciar Sesión",
@@ -12,6 +13,103 @@
             "newBudget": "Nuevo Presupuesto",
             "settings": "Ajustes",
             "logout": "Cerrar Sesión"
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Soluciones expertas de construcción y reformas",
+            "subtitle": "Ofrecemos una amplia gama de servicios de construcción y oficios para hogares, negocios y proyectos industriales. Calidad y confianza en cada ladrillo.",
+            "cta": "Solicitar Presupuesto",
+            "ctaSecondary": "Nuestros Servicios"
+        },
+        "services": {
+            "title": "Nuestros Servicios Especializados",
+            "subtitle": "Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto."
+        },
+        "testimonials": {
+            "title": "La opinión de nuestros clientes",
+            "subtitle": "Nos enorgullece el trabajo que hacemos y la satisfacción de quienes confían en nosotros.",
+            "testimonial1": "Un trabajo impecable de principio a fin. El equipo fue profesional, limpio y cumplió con los plazos. ¡Mi nueva piscina es un sueño hecho realidad!",
+            "customer": "Cliente Satisfecho",
+            "project": "Reforma de Piscina"
+        }
+    },
+    "budgetRequest": {
+        "title": "Solicita tu presupuesto a medida",
+        "description": "Rellena los detalles de tu proyecto para recibir una estimación de costes precisa y una propuesta detallada.",
+        "form": {
+            "sections": {
+                "contact": "Información de Contacto",
+                "project": "Detalles del Proyecto"
+            },
+            "name": {
+                "label": "Nombre Completo",
+                "placeholder": "Tu nombre y apellidos",
+                "error": "El nombre es obligatorio."
+            },
+            "email": {
+                "label": "Correo Electrónico",
+                "placeholder": "tu@email.com",
+                "error": "Por favor, introduce un correo electrónico válido."
+            },
+            "phone": {
+                "label": "Teléfono de Contacto",
+                "placeholder": "600 123 456",
+                "error": "Por favor, introduce un número de teléfono válido."
+            },
+            "address": {
+                "label": "Dirección del Proyecto",
+                "placeholder": "Calle, número, ciudad",
+                "error": "La dirección del proyecto es necesaria."
+            },
+            "serviceType": {
+                "label": "Tipo de Servicio",
+                "placeholder": "Selecciona el tipo de servicio que necesitas",
+                "error": "Debes seleccionar un tipo de servicio."
+            },
+            "projectDescription": {
+                "label": "Descripción del Proyecto",
+                "placeholder": "Ej: Renovar la cocina, instalar una piscina de 8x4m, cambiar el tejado...",
+                "error": "Por favor, describe tu proyecto con más detalle (mín. 20 caracteres)."
+            },
+            "budget": {
+                "label": "Presupuesto Deseado (€)",
+                "error": "El presupuesto debe ser mayor que 0."
+            },
+            "priority": {
+                "label": "Prioridad Principal",
+                "placeholder": "Selecciona una prioridad",
+                "error": "Debes seleccionar una prioridad.",
+                "options": {
+                    "cost": "Coste (más económico)",
+                    "quality": "Calidad (mejores materiales)",
+                    "sustainability": "Sostenibilidad (ecológico)"
+                }
+            },
+            "desiredMaterials": {
+                "label": "Materiales Deseados (Opcional)",
+                "placeholder": "Ej: Madera de roble, mármol, azulejos porcelánicos..."
+            },
+            "button": {
+                "default": "Solicitar Presupuesto y Generar Estimación",
+                "loading": "Enviando y Calculando..."
+            }
+        },
+        "toast": {
+            "success": {
+                "title": "¡Solicitud Enviada!",
+                "description": "Hemos recibido tu solicitud. En breve recibirás la estimación generada."
+            },
+            "error": {
+                "title": "Error al enviar la solicitud",
+                "description": "No se pudo procesar tu solicitud. Inténtalo de nuevo más tarde."
+            }
+        },
+        "estimation": {
+            "title": "Resultados de la Estimación IA",
+            "estimatedCost": "Coste Estimado",
+            "suggestedMaterials": "Materiales Sugeridos",
+            "adjustments": "Ajustes Recomendados"
         }
     },
     "login": {
@@ -46,24 +144,6 @@
             "title": "Generador de Blog SEO",
             "description": "Crea artículos de blog optimizados para SEO para atraer más clientes."
         }
-    },
-    "home": {
-        "hero": {
-            "title": "Soluciones expertas de construcción y reformas",
-            "subtitle": "Ofrecemos una amplia gama de servicios de construcción y oficios para hogares, negocios y proyectos industriales. Calidad y confianza en cada ladrillo.",
-            "cta": "Solicitar Presupuesto",
-            "ctaSecondary": "Nuestros Servicios"
-        },
-        "services": {
-            "title": "Nuestros Servicios Especializados",
-            "subtitle": "Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto."
-        },
-        "testimonials": {
-            "title": "La opinión de nuestros clientes",
-            "subtitle": "Nos enorgullece el trabajo que hacemos y la satisfacción de quienes confían en nosotros.",
-            "testimonial1": "Un trabajo impecable de principio a fin. El equipo fue profesional, limpio y cumplió con los plazos. ¡Mi nueva piscina es un sueño hecho realidad!",
-            "customer": "Cliente Satisfecho",
-            "project": "Reforma de Piscina"
-        }
     }
 }
+    

@@ -2,6 +2,7 @@
     "header": {
         "nav": {
             "services": "Dienstleistungen",
+            "budgetRequest": "Angebot anfordern",
             "blog": "Blog",
             "contact": "Kontakt",
             "login": "Anmelden",
@@ -12,6 +13,103 @@
             "newBudget": "Neues Budget",
             "settings": "Einstellungen",
             "logout": "Abmelden"
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Kompetente Bau- und Renovierungslösungen",
+            "subtitle": "Wir bieten eine breite Palette von Bau- und Handwerksdienstleistungen für Privathaushalte, Unternehmen und Industrieprojekte. Qualität und Vertrauen in jedem Ziegel.",
+            "cta": "Angebot anfordern",
+            "ctaSecondary": "Unsere Dienstleistungen"
+        },
+        "services": {
+            "title": "Unsere spezialisierten Dienstleistungen",
+            "subtitle": "Vom Neubau bis zur Poolpflege, unser Expertenteam ist bereit, Ihr Projekt zu verwirklichen."
+        },
+        "testimonials": {
+            "title": "Was unsere Kunden sagen",
+            "subtitle": "Wir sind stolz auf unsere Arbeit und die Zufriedenheit derer, die uns vertrauen.",
+            "testimonial1": "Tadellose Arbeit von Anfang bis Ende. Das Team war professionell, sauber und hat die Fristen eingehalten. Mein neuer Pool ist ein wahrgewordener Traum!",
+            "customer": "Zufriedener Kunde",
+            "project": "Pool-Renovierung"
+        }
+    },
+    "budgetRequest": {
+        "title": "Fordern Sie Ihr individuelles Angebot an",
+        "description": "Füllen Sie Ihre Projektdaten aus, um eine genaue Kostenschätzung und einen detaillierten Vorschlag zu erhalten.",
+        "form": {
+            "sections": {
+                "contact": "Kontaktinformationen",
+                "project": "Projektdetails"
+            },
+            "name": {
+                "label": "Vollständiger Name",
+                "placeholder": "Ihr Vor- und Nachname",
+                "error": "Name ist erforderlich."
+            },
+            "email": {
+                "label": "E-Mail-Adresse",
+                "placeholder": "ihre@email.com",
+                "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+            },
+            "phone": {
+                "label": "Kontakttelefon",
+                "placeholder": "z.B. +49 123 456789",
+                "error": "Bitte geben Sie eine gültige Telefonnummer ein."
+            },
+            "address": {
+                "label": "Projektadresse",
+                "placeholder": "Straße, Hausnummer, Stadt",
+                "error": "Die Projektadresse ist erforderlich."
+            },
+            "serviceType": {
+                "label": "Dienstleistungstyp",
+                "placeholder": "Wählen Sie den benötigten Dienstleistungstyp aus",
+                "error": "Sie müssen einen Dienstleistungstyp auswählen."
+            },
+            "projectDescription": {
+                "label": "Projektbeschreibung",
+                "placeholder": "z.B. Küche renovieren, 8x4m Pool installieren, Dach wechseln...",
+                "error": "Bitte beschreiben Sie Ihr Projekt genauer (mind. 20 Zeichen)."
+            },
+            "budget": {
+                "label": "Gewünschtes Budget (€)",
+                "error": "Das Budget muss größer als 0 sein."
+            },
+            "priority": {
+                "label": "Hauptpriorität",
+                "placeholder": "Wählen Sie eine Priorität aus",
+                "error": "Sie müssen eine Priorität auswählen.",
+                "options": {
+                    "cost": "Kosten (am wirtschaftlichsten)",
+                    "quality": "Qualität (beste Materialien)",
+                    "sustainability": "Nachhaltigkeit (umweltfreundlich)"
+                }
+            },
+            "desiredMaterials": {
+                "label": "Gewünschte Materialien (Optional)",
+                "placeholder": "z.B. Eichenholz, Marmor, Porzellanfliesen..."
+            },
+            "button": {
+                "default": "Angebot anfordern & Schätzung erstellen",
+                "loading": "Senden & Berechnen..."
+            }
+        },
+        "toast": {
+            "success": {
+                "title": "Anfrage gesendet!",
+                "description": "Wir haben Ihre Anfrage erhalten. Sie erhalten in Kürze die generierte Schätzung."
+            },
+            "error": {
+                "title": "Fehler beim Senden der Anfrage",
+                "description": "Ihre Anfrage konnte nicht bearbeitet werden. Bitte versuchen Sie es später erneut."
+            }
+        },
+        "estimation": {
+            "title": "KI-Schätzungsergebnisse",
+            "estimatedCost": "Geschätzte Kosten",
+            "suggestedMaterials": "Vorgeschlagene Materialien",
+            "adjustments": "Empfohlene Anpassungen"
         }
     },
     "login": {
@@ -46,24 +144,7 @@
             "title": "SEO-Blog-Generator",
             "description": "Erstellen Sie SEO-optimierte Blogartikel, um mehr Kunden zu gewinnen."
         }
-    },
-    "home": {
-        "hero": {
-            "title": "Kompetente Bau- und Renovierungslösungen",
-            "subtitle": "Wir bieten eine breite Palette von Bau- und Handwerksdienstleistungen für Privathaushalte, Unternehmen und Industrieprojekte. Qualität und Vertrauen in jedem Ziegel.",
-            "cta": "Angebot anfordern",
-            "ctaSecondary": "Unsere Dienstleistungen"
-        },
-        "services": {
-            "title": "Unsere spezialisierten Dienstleistungen",
-            "subtitle": "Vom Neubau bis zur Poolpflege, unser Expertenteam ist bereit, Ihr Projekt zu verwirklichen."
-        },
-        "testimonials": {
-            "title": "Was unsere Kunden sagen",
-            "subtitle": "Wir sind stolz auf unsere Arbeit und die Zufriedenheit derer, die uns vertrauen.",
-            "testimonial1": "Tadellose Arbeit von Anfang bis Ende. Das Team war professionell, sauber und hat die Fristen eingehalten. Mein neuer Pool ist ein wahrgewordener Traum!",
-            "customer": "Zufriedener Kunde",
-            "project": "Pool-Renovierung"
-        }
     }
 }
+
+    

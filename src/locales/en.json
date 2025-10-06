@@ -2,6 +2,7 @@
     "header": {
         "nav": {
             "services": "Services",
+            "budgetRequest": "Request Quote",
             "blog": "Blog",
             "contact": "Contact",
             "login": "Log In",
@@ -12,6 +13,103 @@
             "newBudget": "New Budget",
             "settings": "Settings",
             "logout": "Log Out"
+        }
+    },
+    "home": {
+        "hero": {
+            "title": "Expert construction and renovation solutions",
+            "subtitle": "We offer a wide range of construction and trade services for homes, businesses, and industrial projects. Quality and trust in every brick.",
+            "cta": "Request a Quote",
+            "ctaSecondary": "Our Services"
+        },
+        "services": {
+            "title": "Our Specialized Services",
+            "subtitle": "From new construction to pool maintenance, our team of experts is ready to make your project a reality."
+        },
+        "testimonials": {
+            "title": "What our clients say",
+            "subtitle": "We are proud of the work we do and the satisfaction of those who trust us.",
+            "testimonial1": "Impeccable work from start to finish. The team was professional, clean, and met the deadlines. My new pool is a dream come true!",
+            "customer": "Satisfied Customer",
+            "project": "Pool Renovation"
+        }
+    },
+    "budgetRequest": {
+        "title": "Request your custom quote",
+        "description": "Fill in your project details to receive an accurate cost estimate and a detailed proposal.",
+        "form": {
+            "sections": {
+                "contact": "Contact Information",
+                "project": "Project Details"
+            },
+            "name": {
+                "label": "Full Name",
+                "placeholder": "Your first and last name",
+                "error": "Name is required."
+            },
+            "email": {
+                "label": "Email Address",
+                "placeholder": "you@email.com",
+                "error": "Please enter a valid email address."
+            },
+            "phone": {
+                "label": "Contact Phone",
+                "placeholder": "e.g., +1 123 456 7890",
+                "error": "Please enter a valid phone number."
+            },
+            "address": {
+                "label": "Project Address",
+                "placeholder": "Street, number, city",
+                "error": "The project address is required."
+            },
+            "serviceType": {
+                "label": "Service Type",
+                "placeholder": "Select the type of service you need",
+                "error": "You must select a service type."
+            },
+            "projectDescription": {
+                "label": "Project Description",
+                "placeholder": "e.g., Renovate the kitchen, install an 8x4m pool, change the roof...",
+                "error": "Please describe your project in more detail (min. 20 characters)."
+            },
+            "budget": {
+                "label": "Desired Budget ($)",
+                "error": "Budget must be greater than 0."
+            },
+            "priority": {
+                "label": "Main Priority",
+                "placeholder": "Select a priority",
+                "error": "You must select a priority.",
+                "options": {
+                    "cost": "Cost (most economical)",
+                    "quality": "Quality (best materials)",
+                    "sustainability": "Sustainability (eco-friendly)"
+                }
+            },
+            "desiredMaterials": {
+                "label": "Desired Materials (Optional)",
+                "placeholder": "e.g., Oak wood, marble, porcelain tiles..."
+            },
+            "button": {
+                "default": "Request Quote & Generate Estimate",
+                "loading": "Sending & Calculating..."
+            }
+        },
+        "toast": {
+            "success": {
+                "title": "Request Sent!",
+                "description": "We have received your request. You will receive the generated estimate shortly."
+            },
+            "error": {
+                "title": "Error sending request",
+                "description": "Could not process your request. Please try again later."
+            }
+        },
+        "estimation": {
+            "title": "AI Estimation Results",
+            "estimatedCost": "Estimated Cost",
+            "suggestedMaterials": "Suggested Materials",
+            "adjustments": "Recommended Adjustments"
         }
     },
     "login": {
@@ -46,24 +144,7 @@
             "title": "SEO Blog Generator",
             "description": "Create SEO-optimized blog articles to attract more clients."
         }
-    },
-    "home": {
-        "hero": {
-            "title": "Expert construction and renovation solutions",
-            "subtitle": "We offer a wide range of construction and trade services for homes, businesses, and industrial projects. Quality and trust in every brick.",
-            "cta": "Request a Quote",
-            "ctaSecondary": "Our Services"
-        },
-        "services": {
-            "title": "Our Specialized Services",
-            "subtitle": "From new construction to pool maintenance, our team of experts is ready to make your project a reality."
-        },
-        "testimonials": {
-            "title": "What our clients say",
-            "subtitle": "We are proud of the work we do and the satisfaction of those who trust us.",
-            "testimonial1": "Impeccable work from start to finish. The team was professional, clean, and met the deadlines. My new pool is a dream come true!",
-            "customer": "Satisfied Customer",
-            "project": "Pool Renovation"
-        }
     }
 }
+
+    

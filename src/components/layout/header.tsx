@@ -18,9 +18,10 @@ export function Header({ t }: { t: any }) {
   const { user } = useAuth();
   
   const navLinks = [
-    { href: '/#services', label: 'services' },
-    { href: '/blog', label: 'blog' },
-    { href: '/contact', label: 'contact' },
+    { href: '/#services', label: t.header.nav.services },
+    { href: '/budget-request', label: t.header.nav.budgetRequest },
+    { href: '/blog', label: t.header.nav.blog },
+    { href: '/contact', label: t.header.nav.contact },
   ];
 
   return (
@@ -30,7 +31,7 @@ export function Header({ t }: { t: any }) {
         <nav className="hidden md:flex items-center gap-6 ml-10 text-sm font-medium">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-muted-foreground transition-colors hover:text-foreground">
-              {t.header.nav[link.label]}
+              {link.label}
             </Link>
           ))}
         </nav>
@@ -62,7 +63,7 @@ export function Header({ t }: { t: any }) {
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    {t.header.nav[link.label]}
+                    {link.label}
                   </Link>
                 ))}
               </div>
@@ -81,3 +82,5 @@ export function Header({ t }: { t: any }) {
     </header>
   );
 }
+
+    
