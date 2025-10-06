@@ -9,7 +9,7 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
     <>
       <Header t={dict} />
       <main>
-        <BudgetRequestWizard t={dict.budgetRequest} services={dict.services} />
+        <BudgetRequestWizard t={dict} services={dict.services} />
       </main>
       <Footer />
     </>
