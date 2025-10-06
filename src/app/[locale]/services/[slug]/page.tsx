@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: { params: { slug: string, 
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
-          <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center text-white">
+          <div className="relative container-limited h-full flex flex-col justify-center text-white">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               {service.title}
             </h1>
@@ -57,7 +57,7 @@ export default async function ServicePage({ params }: { params: { slug: string, 
         </section>
 
         <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-3 gap-12">
+          <div className="container-limited grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2 space-y-6">
               <h2 className="text-2xl font-bold font-headline">Descripción del Servicio</h2>
               <p className="text-muted-foreground leading-relaxed">{service.description}</p>

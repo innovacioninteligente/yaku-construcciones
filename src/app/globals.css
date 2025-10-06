@@ -84,4 +84,7 @@
   .container-limited {
       @apply container mx-auto w-full md:w-[80vw] px-4 md:px-6;
   }
+  .cta-pulse {
+    @apply animate-pulse-shadow;
+  }
 }

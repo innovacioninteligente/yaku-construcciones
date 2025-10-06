@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import React, { useState } from 'react';
+import { cn } from '@/lib/utils';
 
 export function Header({ t }: { t: any }) {
   const { user } = useAuth();
@@ -24,7 +25,6 @@ export function Header({ t }: { t: any }) {
     { href: '/#services', label: t.header.nav.services },
     { href: '/blog', label: t.header.nav.blog },
     { href: '/contact', label: t.header.nav.contact },
-    { href: '/budget-request', label: t.header.nav.budgetRequest },
   ];
 
   const handleLinkClick = () => {
@@ -48,11 +48,8 @@ export function Header({ t }: { t: any }) {
             <UserNav t={t.header.userNav} />
           ) : (
             <div className="hidden md:flex items-center gap-2">
-              <Button variant="ghost" asChild>
-                <Link href="/login">{t.header.nav.login}</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/signup">{t.header.nav.signup}</Link>
+              <Button asChild className="cta-pulse">
+                <Link href="/budget-request">{t.header.nav.budgetRequest}</Link>
               </Button>
             </div>
           )}
@@ -65,7 +62,7 @@ export function Header({ t }: { t: any }) {
             </SheetTrigger>
             <SheetContent side="right">
                 <SheetHeader>
-                    <SheetTitle className='sr-only'>Mobile Menu</SheetTitle>
+                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                     <div className="py-4">
                         <Logo />
                     </div>
@@ -76,11 +73,14 @@ export function Header({ t }: { t: any }) {
                     {link.label}
                   </Link>
                 ))}
+                 <Link href="/budget-request" onClick={handleLinkClick} className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground">
+                    {t.header.nav.budgetRequest}
+                  </Link>
               </div>
               <div className="absolute bottom-4 right-4 left-4 flex flex-col gap-2">
                 {user ? null : (
                     <>
-                        <Button variant="ghost" asChild onClick={handleLinkClick}><Link href="/login">{t.header.nav.login}</Link></Button>
+                        <Button asChild onClick={handleLinkClick}><Link href="/login">{t.header.nav.login}</Link></Button>
                         <Button asChild onClick={handleLinkClick}><Link href="/signup">{t.header.nav.signup}</Link></Button>
                     </>
                 )}
