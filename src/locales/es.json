@@ -1,17 +1,18 @@
-
 {
-    "nav": {
-        "services": "Servicios",
-        "blog": "Blog",
-        "contact": "Contacto",
-        "login": "Iniciar Sesión",
-        "signup": "Registrarse"
-    },
-    "userNav": {
-        "dashboard": "Panel",
-        "newBudget": "Nuevo Presupuesto",
-        "settings": "Ajustes",
-        "logout": "Cerrar Sesión"
+    "header": {
+        "nav": {
+            "services": "Servicios",
+            "blog": "Blog",
+            "contact": "Contacto",
+            "login": "Iniciar Sesión",
+            "signup": "Registrarse"
+        },
+        "userNav": {
+            "dashboard": "Panel",
+            "newBudget": "Nuevo Presupuesto",
+            "settings": "Ajustes",
+            "logout": "Cerrar Sesión"
+        }
     },
     "login": {
         "title": "Bienvenido de nuevo",

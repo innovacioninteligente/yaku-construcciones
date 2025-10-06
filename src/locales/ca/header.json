@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "services": "Serveis",
+        "blog": "Blog",
+        "contact": "Contacte",
+        "login": "Iniciar Sessió",
+        "signup": "Registrar-se"
+    },
+    "userNav": {
+        "dashboard": "Tauler",
+        "newBudget": "Nou Pressupost",
+        "settings": "Configuració",
+        "logout": "Tancar Sessió"
+    }
+}

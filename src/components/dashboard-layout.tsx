@@ -89,7 +89,7 @@ export function DashboardLayout({ children, t }: { children: React.ReactNode, t:
       <SidebarInset>
         <header className="sticky top-0 z-40 w-full border-b bg-background">
           <div className="container flex h-16 items-center justify-end">
-             <UserNav t={t} />
+             <UserNav t={t.header.userNav} />
           </div>
         </header>
         <main className="flex-1 p-4 md:p-8">

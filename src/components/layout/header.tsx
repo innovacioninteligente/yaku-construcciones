@@ -18,9 +18,9 @@ export function Header({ t }: { t: any }) {
   const { user } = useAuth();
   
   const navLinks = [
-    { href: '/#services', label: 'nav.services' },
-    { href: '/blog', label: 'nav.blog' },
-    { href: '/contact', label: 'nav.contact' },
+    { href: '/#services', label: 'services' },
+    { href: '/blog', label: 'blog' },
+    { href: '/contact', label: 'contact' },
   ];
 
   return (
@@ -30,21 +30,21 @@ export function Header({ t }: { t: any }) {
         <nav className="hidden md:flex items-center gap-6 ml-10 text-sm font-medium">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-muted-foreground transition-colors hover:text-foreground">
-              {t[link.label]}
+              {t.header.nav[link.label]}
             </Link>
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
           <LanguageSwitcher />
           {user ? (
-            <UserNav t={t} />
+            <UserNav t={t.header.userNav} />
           ) : (
             <div className="hidden md:flex items-center gap-2">
               <Button variant="ghost" asChild>
-                <Link href="/login">{t['nav.login']}</Link>
+                <Link href="/login">{t.header.nav.login}</Link>
               </Button>
               <Button asChild>
-                <Link href="/signup">{t['nav.signup']}</Link>
+                <Link href="/signup">{t.header.nav.signup}</Link>
               </Button>
             </div>
           )}
@@ -62,15 +62,15 @@ export function Header({ t }: { t: any }) {
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href} className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    {t[link.label]}
+                    {t.header.nav[link.label]}
                   </Link>
                 ))}
               </div>
               <div className="absolute bottom-4 right-4 left-4 flex flex-col gap-2">
                 {user ? null : (
                     <>
-                        <Button variant="ghost" asChild><Link href="/login">{t['nav.login']}</Link></Button>
-                        <Button asChild><Link href="/signup">{t['nav.signup']}</Link></Button>
+                        <Button variant="ghost" asChild><Link href="/login">{t.header.nav.login}</Link></Button>
+                        <Button asChild><Link href="/signup">{t.header.nav.signup}</Link></Button>
                     </>
                 )}
               </div>

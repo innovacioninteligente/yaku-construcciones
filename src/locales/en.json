@@ -1,17 +1,18 @@
-
 {
-    "nav": {
-        "services": "Services",
-        "blog": "Blog",
-        "contact": "Contact",
-        "login": "Log In",
-        "signup": "Sign Up"
-    },
-    "userNav": {
-        "dashboard": "Dashboard",
-        "newBudget": "New Budget",
-        "settings": "Settings",
-        "logout": "Log Out"
+    "header": {
+        "nav": {
+            "services": "Services",
+            "blog": "Blog",
+            "contact": "Contact",
+            "login": "Log In",
+            "signup": "Sign Up"
+        },
+        "userNav": {
+            "dashboard": "Dashboard",
+            "newBudget": "New Budget",
+            "settings": "Settings",
+            "logout": "Log Out"
+        }
     },
     "login": {
         "title": "Welcome back",

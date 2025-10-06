@@ -32,13 +32,10 @@ export function LanguageSwitcher() {
     const expires = "; expires=" + date.toUTCString()
     document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`
 
-    if (currentLocale === i18nConfig.defaultLocale) {
-      router.push("/" + newLocale + currentPathname)
-    } else {
-      router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`))
-    }
+    const newPath = currentPathname.replace(`/${currentLocale}`, `/${newLocale}`);
 
-    router.refresh()
+    router.push(newPath);
+    router.refresh();
   }
 
   return (

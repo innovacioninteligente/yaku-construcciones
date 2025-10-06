@@ -1,17 +1,18 @@
-
 {
-    "nav": {
-        "services": "Dienstleistungen",
-        "blog": "Blog",
-        "contact": "Kontakt",
-        "login": "Anmelden",
-        "signup": "Registrieren"
-    },
-    "userNav": {
-        "dashboard": "Dashboard",
-        "newBudget": "Neues Budget",
-        "settings": "Einstellungen",
-        "logout": "Abmelden"
+    "header": {
+        "nav": {
+            "services": "Dienstleistungen",
+            "blog": "Blog",
+            "contact": "Kontakt",
+            "login": "Anmelden",
+            "signup": "Registrieren"
+        },
+        "userNav": {
+            "dashboard": "Dashboard",
+            "newBudget": "Neues Budget",
+            "settings": "Einstellungen",
+            "logout": "Abmelden"
+        }
     },
     "login": {
         "title": "Willkommen zurück",

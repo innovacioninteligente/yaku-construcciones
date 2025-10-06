@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "services": "Services",
+        "blog": "Blog",
+        "contact": "Contact",
+        "login": "Log In",
+        "signup": "Sign Up"
+    },
+    "userNav": {
+        "dashboard": "Dashboard",
+        "newBudget": "New Budget",
+        "settings": "Settings",
+        "logout": "Log Out"
+    }
+}
