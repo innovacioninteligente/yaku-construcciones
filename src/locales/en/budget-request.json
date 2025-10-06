@@ -1,6 +1,35 @@
 {
     "title": "Request Your Detailed Quote",
     "description": "Complete the following steps so we can provide you with an accurate estimate.",
+    "selection": {
+        "title": "Choose the type of quote you need",
+        "description": "A quick quote will give you a general idea of the cost, while a detailed quote will allow us to refine the estimate much more. Remember that all quotes are estimates and a technician will contact you to confirm them.",
+        "simple": {
+            "title": "Quick Quote",
+            "description": "Ideal for getting a quick cost estimate for your project with minimal data."
+        },
+        "detailed": {
+            "title": "Detailed Quote",
+            "description": "Provide all the details to get a more accurate preliminary budget tailored to your needs."
+        }
+    },
+    "simple": {
+        "title": "Quick Quote Form",
+        "description": "Fill in the following fields to get an approximate estimate.",
+        "projectType": {
+            "label": "Type of Renovation",
+            "placeholder": "Select the project type",
+            "options": {
+                "integral": "Full Renovation",
+                "bathrooms": "Bathroom Renovation",
+                "kitchen": "Kitchen Renovation",
+                "pools": "Pool Construction/Renovation"
+            }
+        },
+        "squareMeters": {
+            "label": "Approximate square meters (m²)"
+        }
+    },
     "summary": {
         "title": "Summary of Your Request",
         "description": "Please review all the details to ensure they are correct before submitting your request. A specialist will contact you to refine the details."

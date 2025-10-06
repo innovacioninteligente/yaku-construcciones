@@ -1,6 +1,35 @@
 {
     "title": "Fordern Sie Ihr detailliertes Angebot an",
     "description": "Füllen Sie die folgenden Schritte aus, damit wir Ihnen einen genauen Kostenvoranschlag erstellen können.",
+    "selection": {
+        "title": "Wählen Sie die Art des Angebots, das Sie benötigen",
+        "description": "Ein schnelles Angebot gibt Ihnen eine allgemeine Vorstellung von den Kosten, während ein detailliertes Angebot uns ermöglicht, den Kostenvoranschlag viel genauer zu verfeinern. Denken Sie daran, dass alle Angebote Schätzungen sind und ein Techniker Sie zur Bestätigung kontaktieren wird.",
+        "simple": {
+            "title": "Schnelles Angebot",
+            "description": "Ideal, um mit wenigen Daten eine schnelle Kostenschätzung für Ihr Projekt zu erhalten."
+        },
+        "detailed": {
+            "title": "Detailliertes Angebot",
+            "description": "Geben Sie alle Details an, um ein genaueres, auf Ihre Bedürfnisse zugeschnittenes vorläufiges Budget zu erhalten."
+        }
+    },
+    "simple": {
+        "title": "Schnelles Angebotsformular",
+        "description": "Füllen Sie die folgenden Felder aus, um eine ungefähre Schätzung zu erhalten.",
+        "projectType": {
+            "label": "Art der Renovierung",
+            "placeholder": "Wählen Sie die Projektart",
+            "options": {
+                "integral": "Komplettrenovierung",
+                "bathrooms": "Badezimmerrenovierung",
+                "kitchen": "Küchenrenovierung",
+                "pools": "Poolbau/-renovierung"
+            }
+        },
+        "squareMeters": {
+            "label": "Ungefähre Quadratmeter (m²)"
+        }
+    },
     "summary": {
         "title": "Zusammenfassung Ihrer Anfrage",
         "description": "Bitte überprüfen Sie alle Angaben auf ihre Richtigkeit, bevor Sie Ihre Anfrage absenden. Ein Spezialist wird sich mit Ihnen in Verbindung setzen, um die Details zu verfeinern."

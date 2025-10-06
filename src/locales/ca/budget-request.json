@@ -1,6 +1,35 @@
 {
     "title": "Sol·licita el teu pressupost detallat",
     "description": "Completa els passos següents perquè puguem donar-te una estimació precisa.",
+    "selection": {
+        "title": "Tria el tipus de pressupost que necessites",
+        "description": "Un pressupost ràpid et donarà una idea general del cost, mentre que un pressupost detallat ens permetrà afinar molt més l'estimació. Recorda que tots els pressupostos són estimatius i un tècnic es posarà en contacte per confirmar-los.",
+        "simple": {
+            "title": "Pressupost Ràpid",
+            "description": "Ideal per tenir una estimació ràpida del cost del teu projecte amb poques dades."
+        },
+        "detailed": {
+            "title": "Pressupost Detallat",
+            "description": "Proporciona tots els detalls per obtenir un pressupost preliminar més precís i ajustat a les teves necessitats."
+        }
+    },
+    "simple": {
+        "title": "Formulari de Pressupost Ràpid",
+        "description": "Omple els camps següents per obtenir una estimació aproximada.",
+        "projectType": {
+            "label": "Tipus de Reforma",
+            "placeholder": "Selecciona el tipus de projecte",
+            "options": {
+                "integral": "Reforma Integral",
+                "bathrooms": "Reforma de Banys",
+                "kitchen": "Reforma de Cuina",
+                "pools": "Construcció/Reforma de Piscines"
+            }
+        },
+        "squareMeters": {
+            "label": "Metres quadrats aproximats (m²)"
+        }
+    },
     "summary": {
         "title": "Resum de la teva Sol·licitud",
         "description": "Si us plau, revisa que totes les dades siguin correctes abans d'enviar la teva sol·licitud. Un especialista es posarà en contacte amb tu per afinar els detalls."

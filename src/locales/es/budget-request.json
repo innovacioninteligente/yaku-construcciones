@@ -1,6 +1,35 @@
 {
     "title": "Solicita tu presupuesto detallado",
     "description": "Completa los siguientes pasos para que podamos darte una estimación precisa.",
+    "selection": {
+        "title": "Elige el tipo de presupuesto que necesitas",
+        "description": "Un presupuesto rápido te dará una idea general del coste, mientras que un presupuesto detallado nos permitirá afinar mucho más la estimación. Recuerda que todos los presupuestos son estimativos y un técnico se pondrá en contacto para confirmarlos.",
+        "simple": {
+            "title": "Presupuesto Rápido",
+            "description": "Ideal para tener una estimación rápida del coste de tu proyecto con pocos datos."
+        },
+        "detailed": {
+            "title": "Presupuesto Detallado",
+            "description": "Proporciona todos los detalles para obtener un presupuesto preliminar más preciso y ajustado a tus necesidades."
+        }
+    },
+    "simple": {
+        "title": "Formulario de Presupuesto Rápido",
+        "description": "Rellena los siguientes campos para obtener una estimación aproximada.",
+        "projectType": {
+            "label": "Tipo de Reforma",
+            "placeholder": "Selecciona el tipo de proyecto",
+            "options": {
+                "integral": "Reforma Integral",
+                "bathrooms": "Reforma de Baños",
+                "kitchen": "Reforma de Cocina",
+                "pools": "Construcción/Reforma de Piscinas"
+            }
+        },
+        "squareMeters": {
+            "label": "Metros cuadrados aproximados (m²)"
+        }
+    },
     "summary": {
         "title": "Resumen de tu Solicitud",
         "description": "Por favor, revisa que todos los datos sean correctos antes de enviar tu solicitud. Un especialista se pondrá en contacto contigo para afinar los detalles."
