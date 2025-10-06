@@ -125,7 +125,7 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
   const [currentStep, setCurrentStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  
   const budgetRequestDict = t.budgetRequest;
   
   const detailedForm = useForm<DetailedFormValues>({
@@ -194,12 +194,12 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
     }
   });
 
-  const { watch } = detailedForm;
+  const { watch, trigger } = detailedForm;
   const watchAllFields = watch();
 
   const nextStep = async () => {
     const fields = STEPS[currentStep].fields;
-    const isValid = await detailedForm.trigger(fields as (keyof DetailedFormValues)[]);
+    const isValid = await trigger(fields as (keyof DetailedFormValues)[]);
     if (isValid) {
       setCurrentStep((prev) => prev + 1);
     }
@@ -298,8 +298,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
             return (
                  <div className="space-y-6">
                     <FormField control={detailedForm.control} name="demolishPartitions" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.demolition.demolishPartitions.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.demolition.demolishPartitions.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -307,8 +307,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                         <FormItem><FormLabel>{budgetRequestDict.form.demolition.demolishPartitionsM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                      <FormField control={detailedForm.control} name="removeDoors" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.demolition.removeDoors.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.demolition.removeDoors.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -321,8 +321,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
             return (
                 <div className="space-y-6">
                     <FormField control={detailedForm.control} name="renovateBathroom" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 bg-secondary/30">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.bathroom.renovateBathroom.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 bg-secondary/30 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.bathroom.renovateBathroom.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -338,20 +338,20 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                                 <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                              <FormField control={detailedForm.control} name="installShowerTray" render={({ field }) => (
-                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3">
-                                    <div className="space-y-0.5"><FormLabel>{budgetRequestDict.form.bathroom.installShowerTray.label}</FormLabel></div>
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                                    <div className="space-y-0.5"><FormLabel className="cursor-pointer">{budgetRequestDict.form.bathroom.installShowerTray.label}</FormLabel></div>
                                     <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                                 </FormItem>
                             )} />
                              <FormField control={detailedForm.control} name="installShowerScreen" render={({ field }) => (
-                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3">
-                                    <div className="space-y-0.5"><FormLabel>{budgetRequestDict.form.bathroom.installShowerScreen.label}</FormLabel></div>
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                                    <div className="space-y-0.5"><FormLabel className="cursor-pointer">{budgetRequestDict.form.bathroom.installShowerScreen.label}</FormLabel></div>
                                     <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                                 </FormItem>
                             )} />
                             <FormField control={detailedForm.control} name="bathroomPlumbing" render={({ field }) => (
-                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3">
-                                    <div className="space-y-0.5"><FormLabel>{budgetRequestDict.form.bathroom.bathroomPlumbing.label}</FormLabel></div>
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                                    <div className="space-y-0.5"><FormLabel className="cursor-pointer">{budgetRequestDict.form.bathroom.bathroomPlumbing.label}</FormLabel></div>
                                     <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                                 </FormItem>
                             )} />
@@ -363,8 +363,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
              return (
                 <div className="space-y-6">
                      <FormField control={detailedForm.control} name="renovateKitchen" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 bg-secondary/30">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.kitchen.renovateKitchen.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 bg-secondary/30 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.kitchen.renovateKitchen.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -374,8 +374,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                                 <FormItem><FormLabel>{budgetRequestDict.form.quality.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.form.quality.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="basic">{budgetRequestDict.form.quality.options.basic}</SelectItem><SelectItem value="medium">{budgetRequestDict.form.quality.options.medium}</SelectItem><SelectItem value="premium">{budgetRequestDict.form.quality.options.premium}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
                             )} />
                              <FormField control={detailedForm.control} name="kitchenDemolition" render={({ field }) => (
-                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3">
-                                    <div className="space-y-0.5"><FormLabel>{budgetRequestDict.form.kitchen.kitchenDemolition.label}</FormLabel></div>
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                                    <div className="space-y-0.5"><FormLabel className="cursor-pointer">{budgetRequestDict.form.kitchen.kitchenDemolition.label}</FormLabel></div>
                                     <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                                 </FormItem>
                             )} />
@@ -386,8 +386,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                                 <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="12" {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                              <FormField control={detailedForm.control} name="kitchenPlumbing" render={({ field }) => (
-                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3">
-                                    <div className="space-y-0.5"><FormLabel>{budgetRequestDict.form.kitchen.kitchenPlumbing.label}</FormLabel></div>
+                                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                                    <div className="space-y-0.5"><FormLabel className="cursor-pointer">{budgetRequestDict.form.kitchen.kitchenPlumbing.label}</FormLabel></div>
                                     <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                                 </FormItem>
                             )} />
@@ -399,8 +399,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
              return (
                 <div className="space-y-6">
                     <FormField control={detailedForm.control} name="installFalseCeiling" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.ceilings.installFalseCeiling.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.ceilings.installFalseCeiling.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -408,8 +408,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                         <FormItem><FormLabel>{budgetRequestDict.form.ceilings.falseCeilingM2.label}</FormLabel><FormControl><Input type="number" placeholder="20" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                     <FormField control={detailedForm.control} name="soundproofRoom" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.ceilings.soundproofRoom.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.ceilings.soundproofRoom.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -422,8 +422,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
             return (
                 <div className="space-y-6">
                     <FormField control={detailedForm.control} name="renovateElectricalPanel" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.electricity.renovateElectricalPanel.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.electricity.renovateElectricalPanel.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -444,8 +444,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                             <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} /></FormControl></FormItem>
                         )} />
                          <FormField control={detailedForm.control} name="electricalLivingRoomTV" render={({ field }) => (
-                            <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3">
-                                <div className="space-y-0.5"><FormLabel>{budgetRequestDict.form.electricity.perRoom.tv}</FormLabel></div>
+                            <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                                <div className="space-y-0.5"><FormLabel className="cursor-pointer">{budgetRequestDict.form.electricity.perRoom.tv}</FormLabel></div>
                                 <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                             </FormItem>
                         )} />
@@ -464,8 +464,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
              return (
                 <div className="space-y-6">
                     <FormField control={detailedForm.control} name="renovateInteriorDoors" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.carpentry.renovateInteriorDoors.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.carpentry.renovateInteriorDoors.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -474,8 +474,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                     )} />}
                     
                     <FormField control={detailedForm.control} name="installSlidingDoor" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.carpentry.installSlidingDoor.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.carpentry.installSlidingDoor.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -486,8 +486,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                      <hr />
 
                     <FormField control={detailedForm.control} name="paintWalls" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.carpentry.paintWalls.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.carpentry.paintWalls.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -496,8 +496,8 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
                     )} />}
 
                     <FormField control={detailedForm.control} name="removeGotele" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5"><FormLabel className="text-base">{budgetRequestDict.form.carpentry.removeGotele.label}</FormLabel></div>
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
+                            <div className="space-y-0.5"><FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.carpentry.removeGotele.label}</FormLabel></div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
@@ -510,18 +510,18 @@ export function BudgetRequestWizard({ t, services }: { t: any; services: any[] }
             return (
                 <div className="space-y-6">
                      <FormField control={detailedForm.control} name="installAirConditioning" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
                             <div className="space-y-0.5">
-                                <FormLabel className="text-base">{budgetRequestDict.form.optionals.installAirConditioning.label}</FormLabel>
+                                <FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.optionals.installAirConditioning.label}</FormLabel>
                                 <FormDescription>{budgetRequestDict.form.optionals.installAirConditioning.description}</FormDescription>
                             </div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
                         </FormItem>
                     )} />
                      <FormField control={detailedForm.control} name="renovateExteriorCarpentry" render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 cursor-pointer hover:bg-accent/50" onClick={() => field.onChange(!field.value)}>
                             <div className="space-y-0.5">
-                                <FormLabel className="text-base">{budgetRequestDict.form.optionals.renovateExteriorCarpentry.label}</FormLabel>
+                                <FormLabel className="text-base cursor-pointer">{budgetRequestDict.form.optionals.renovateExteriorCarpentry.label}</FormLabel>
                                 <FormDescription>{budgetRequestDict.form.optionals.renovateExteriorCarpentry.description}</FormDescription>
                             </div>
                             <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
