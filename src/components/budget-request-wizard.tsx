@@ -130,53 +130,28 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   const detailedForm = useForm<DetailedFormValues>({
     resolver: zodResolver(detailedFormSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      demolishPartitions: false,
-      demolishPartitionsM2: 0,
-      removeDoors: false,
-      removeDoorsAmount: 0,
-      renovateBathroom: false,
-      bathroomQuality: 'basic',
-      bathroomWallTilesM2: 0,
-      bathroomFloorM2: 0,
-      installShowerTray: false,
-      installShowerScreen: false,
+      name: '', email: '', phone: '', address: '',
+      demolishPartitions: false, demolishPartitionsM2: 0,
+      removeDoors: false, removeDoorsAmount: 0,
+      renovateBathroom: false, bathroomQuality: 'basic', bathroomWallTilesM2: 0,
+      bathroomFloorM2: 0, installShowerTray: false, installShowerScreen: false,
       bathroomPlumbing: false,
-      renovateKitchen: false,
-      kitchenQuality: 'basic',
-      kitchenDemolition: false,
-      kitchenWallTilesM2: 0,
-      kitchenFloorM2: 0,
-      kitchenPlumbing: false,
-      installFalseCeiling: false,
-      falseCeilingM2: 0,
-      soundproofRoom: false,
-      soundproofRoomM2: 0,
+      renovateKitchen: false, kitchenQuality: 'basic', kitchenDemolition: false,
+      kitchenWallTilesM2: 0, kitchenFloorM2: 0, kitchenPlumbing: false,
+      installFalseCeiling: false, falseCeilingM2: 0,
+      soundproofRoom: false, soundproofRoomM2: 0,
       renovateElectricalPanel: false,
-      electricalKitchenSockets: 0,
-      electricalKitchenLights: 0,
-      electricalLivingRoomSockets: 0,
-      electricalLivingRoomLights: 0,
+      electricalKitchenSockets: 0, electricalKitchenLights: 0,
+      electricalLivingRoomSockets: 0, electricalLivingRoomLights: 0,
       electricalLivingRoomTV: false,
-      electricalBedroom1Sockets: 0,
-      electricalBedroom1Lights: 0,
-      electricalBedroom2Sockets: 0,
-      electricalBedroom2Lights: 0,
-      electricalBedroom3Sockets: 0,
-      electricalBedroom3Lights: 0,
-      renovateInteriorDoors: false,
-      interiorDoorsAmount: 0,
-      installSlidingDoor: false,
-      slidingDoorAmount: 0,
-      paintWalls: false,
-      paintWallsM2: 0,
-      removeGotele: false,
-      removeGoteleM2: 0,
-      installAirConditioning: false,
-      renovateExteriorCarpentry: false,
+      electricalBedroom1Sockets: 0, electricalBedroom1Lights: 0,
+      electricalBedroom2Sockets: 0, electricalBedroom2Lights: 0,
+      electricalBedroom3Sockets: 0, electricalBedroom3Lights: 0,
+      renovateInteriorDoors: false, interiorDoorsAmount: 0,
+      installSlidingDoor: false, slidingDoorAmount: 0,
+      paintWalls: false, paintWallsM2: 0,
+      removeGotele: false, removeGoteleM2: 0,
+      installAirConditioning: false, renovateExteriorCarpentry: false,
     },
   });
 
@@ -197,7 +172,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   const watchAllDetailedFields = watchDetailed();
 
   const { watch: watchSimple } = simpleForm;
-  const simpleProjectType = watchSimple('projectType');
+  const simpleFormValues = watchSimple();
 
   const nextStep = async () => {
     const fields = STEPS[currentStep].fields;
@@ -264,70 +239,101 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     </FormItem>
   );
 
-  const renderSimpleForm = () => (
-    <Card>
-      <CardHeader>
-        <CardTitle className='font-headline text-2xl'>{budgetRequestDict.simple.title}</CardTitle>
-        <CardDescription>{budgetRequestDict.simple.description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Form {...simpleForm}>
-          <form onSubmit={simpleForm.handleSubmit(handleFormSubmit)} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-                <FormField control={simpleForm.control} name="name" render={({ field }) => (
-                    <FormItem><FormLabel>{budgetRequestDict.form.name.label}</FormLabel><FormControl><Input placeholder={budgetRequestDict.form.name.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-                <FormField control={simpleForm.control} name="email" render={({ field }) => (
-                    <FormItem><FormLabel>{budgetRequestDict.form.email.label}</FormLabel><FormControl><Input type="email" placeholder={budgetRequestDict.form.email.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-                <FormField control={simpleForm.control} name="phone" render={({ field }) => (
-                    <FormItem><FormLabel>{budgetRequestDict.form.phone.label}</FormLabel><FormControl><Input placeholder={budgetRequestDict.form.phone.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-                <FormField control={simpleForm.control} name="address" render={({ field }) => (
-                    <FormItem><FormLabel>{budgetRequestDict.form.address.label}</FormLabel><FormControl><Input placeholder={budgetRequestDict.form.address.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-            </div>
-             <FormField control={simpleForm.control} name="projectType" render={({ field }) => (
-                <FormItem><FormLabel>{budgetRequestDict.simple.projectType.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.simple.projectType.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="integral">{budgetRequestDict.simple.projectType.options.integral}</SelectItem><SelectItem value="bathrooms">{budgetRequestDict.simple.projectType.options.bathrooms}</SelectItem><SelectItem value="kitchen">{budgetRequestDict.simple.projectType.options.kitchen}</SelectItem><SelectItem value="pools">{budgetRequestDict.simple.projectType.options.pools}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
-            )} />
+  const renderSimpleForm = () => {
+    const projectType = simpleFormValues.projectType;
+    const inclusions = budgetRequestDict.simple.inclusions;
+    const showInclusions = (projectType === 'bathrooms' && inclusions.bathrooms) || (projectType === 'kitchen' && inclusions.kitchen);
+    const inclusionTitle = showInclusions ? inclusions.title.replace('{projectType}', budgetRequestDict.simple.projectType.options[projectType]) : '';
+    const inclusionList = projectType === 'bathrooms' ? inclusions.bathrooms : inclusions.kitchen;
 
-            {simpleProjectType === 'bathrooms' && budgetRequestDict.simple.inclusions.bathrooms && (
-              <Card className="bg-secondary/50">
-                <CardHeader>
-                  <CardTitle className="text-lg font-headline">
-                    {budgetRequestDict.simple.inclusions.title.replace('{projectType}', budgetRequestDict.simple.projectType.options.bathrooms)}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    {budgetRequestDict.simple.inclusions.bathrooms.map((item: string, index: number) => (
-                      <li key={index} className="flex items-start">
-                        <Check className="h-4 w-4 mr-2 mt-1 shrink-0 text-primary" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle className='font-headline text-2xl'>{budgetRequestDict.simple.title}</CardTitle>
+                <CardDescription>{budgetRequestDict.simple.description}</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div className="grid md:grid-cols-2 md:gap-8">
+                    <div>
+                        <Form {...simpleForm}>
+                            <form onSubmit={simpleForm.handleSubmit(handleFormSubmit)} className="space-y-6">
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <FormField control={simpleForm.control} name="name" render={({ field }) => (
+                                        <FormItem><FormLabel>{budgetRequestDict.form.name.label}</FormLabel><FormControl><Input placeholder={budgetRequestDict.form.name.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
+                                    )} />
+                                    <FormField control={simpleForm.control} name="email" render={({ field }) => (
+                                        <FormItem><FormLabel>{budgetRequestDict.form.email.label}</FormLabel><FormControl><Input type="email" placeholder={budgetRequestDict.form.email.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
+                                    )} />
+                                    <FormField control={simpleForm.control} name="phone" render={({ field }) => (
+                                        <FormItem><FormLabel>{budgetRequestDict.form.phone.label}</FormLabel><FormControl><Input placeholder={budgetRequestDict.form.phone.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
+                                    )} />
+                                    <FormField control={simpleForm.control} name="address" render={({ field }) => (
+                                        <FormItem><FormLabel>{budgetRequestDict.form.address.label}</FormLabel><FormControl><Input placeholder={budgetRequestDict.form.address.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
+                                    )} />
+                                </div>
+                                <FormField control={simpleForm.control} name="projectType" render={({ field }) => (
+                                    <FormItem><FormLabel>{budgetRequestDict.simple.projectType.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.simple.projectType.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="integral">{budgetRequestDict.simple.projectType.options.integral}</SelectItem><SelectItem value="bathrooms">{budgetRequestDict.simple.projectType.options.bathrooms}</SelectItem><SelectItem value="kitchen">{budgetRequestDict.simple.projectType.options.kitchen}</SelectItem><SelectItem value="pools">{budgetRequestDict.simple.projectType.options.pools}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
+                                )} />
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <FormField control={simpleForm.control} name="squareMeters" render={({ field }) => (
+                                        <FormItem><FormLabel>{budgetRequestDict.simple.squareMeters.label}</FormLabel><FormControl><Input type="number" placeholder="80" {...field} /></FormControl><FormMessage /></FormItem>
+                                    )} />
+                                    <FormField control={simpleForm.control} name="quality" render={({ field }) => (
+                                        <FormItem><FormLabel>{budgetRequestDict.form.quality.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.form.quality.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="basic">{budgetRequestDict.form.quality.options.basic}</SelectItem><SelectItem value="medium">{budgetRequestDict.form.quality.options.medium}</SelectItem><SelectItem value="premium">{budgetRequestDict.form.quality.options.premium}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
+                                    )} />
+                                </div>
+                                <Button type="submit" disabled={isLoading} size="lg" className="w-full md:w-auto">
+                                    {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                                    {isLoading ? budgetRequestDict.form.buttons.loading : budgetRequestDict.form.buttons.submit}
+                                </Button>
+                            </form>
+                        </Form>
+                    </div>
+                    <div className="hidden md:block">
+                        {showInclusions && (
+                            <Card className="bg-secondary/50 sticky top-24">
+                                <CardHeader>
+                                    <CardTitle className="text-lg font-headline">{inclusionTitle}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <ul className="space-y-2 text-sm text-muted-foreground">
+                                        {inclusionList.map((item: string, index: number) => (
+                                            <li key={index} className="flex items-start">
+                                                <Check className="h-4 w-4 mr-2 mt-1 shrink-0 text-primary" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        )}
+                    </div>
+                </div>
+                 {/* Mobile view for inclusions */}
+                 <div className="md:hidden mt-8">
+                    {showInclusions && (
+                        <Card className="bg-secondary/50">
+                            <CardHeader>
+                                <CardTitle className="text-lg font-headline">{inclusionTitle}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <ul className="space-y-2 text-sm text-muted-foreground">
+                                    {inclusionList.map((item: string, index: number) => (
+                                        <li key={index} className="flex items-start">
+                                            <Check className="h-4 w-4 mr-2 mt-1 shrink-0 text-primary" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardContent>
+                        </Card>
+                    )}
+                </div>
+            </CardContent>
+        </Card>
+    );
+};
 
-            <div className="grid md:grid-cols-2 gap-6">
-                <FormField control={simpleForm.control} name="squareMeters" render={({ field }) => (
-                    <FormItem><FormLabel>{budgetRequestDict.simple.squareMeters.label}</FormLabel><FormControl><Input type="number" placeholder="80" {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-                <FormField control={simpleForm.control} name="quality" render={({ field }) => (
-                    <FormItem><FormLabel>{budgetRequestDict.form.quality.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.form.quality.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="basic">{budgetRequestDict.form.quality.options.basic}</SelectItem><SelectItem value="medium">{budgetRequestDict.form.quality.options.medium}</SelectItem><SelectItem value="premium">{budgetRequestDict.form.quality.options.premium}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
-                )} />
-            </div>
-            <Button type="submit" disabled={isLoading} size="lg">
-              {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              {isLoading ? budgetRequestDict.form.buttons.loading : budgetRequestDict.form.buttons.submit}
-            </Button>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
-  );
 
   const renderDetailedStep = () => {
     switch (STEPS[currentStep].id) {
@@ -364,7 +370,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.demolishPartitions && <FormField control={detailedForm.control} name="demolishPartitionsM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.demolishPartitionsM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} value={field.value || 0} /></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.demolishPartitionsM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                     <FormField
                       control={detailedForm.control}
@@ -379,7 +385,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.removeDoors && <FormField control={detailedForm.control} name="removeDoorsAmount" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.removeDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="5" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.demolition.removeDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="5" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                 </div>
             )
@@ -404,10 +410,10 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                                 <FormItem><FormLabel>{budgetRequestDict.form.quality.label}</FormLabel><Select onValueChange={field.onChange} defaultValue={field.value}><FormControl><SelectTrigger><SelectValue placeholder={budgetRequestDict.form.quality.placeholder} /></SelectTrigger></FormControl><SelectContent><SelectItem value="basic">{budgetRequestDict.form.quality.options.basic}</SelectItem><SelectItem value="medium">{budgetRequestDict.form.quality.options.medium}</SelectItem><SelectItem value="premium">{budgetRequestDict.form.quality.options.premium}</SelectItem></SelectContent></Select><FormMessage /></FormItem>
                             )} />
                             <FormField control={detailedForm.control} name="bathroomWallTilesM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="30" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="30" {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                             <FormField control={detailedForm.control} name="bathroomFloorM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.bathroom.bathroomFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                             <FormField
                               control={detailedForm.control}
@@ -457,10 +463,10 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                               )}
                             />
                              <FormField control={detailedForm.control} name="kitchenWallTilesM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenWallTilesM2.label}</FormLabel><FormControl><Input type="number" placeholder="25" {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                              <FormField control={detailedForm.control} name="kitchenFloorM2" render={({ field }) => (
-                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="12" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                                <FormItem><FormLabel>{budgetRequestDict.form.kitchen.kitchenFloorM2.label}</FormLabel><FormControl><Input type="number" placeholder="12" {...field} /></FormControl><FormMessage /></FormItem>
                             )} />
                             <FormField
                               control={detailedForm.control}
@@ -484,7 +490,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.installFalseCeiling && <FormField control={detailedForm.control} name="falseCeilingM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.falseCeilingM2.label}</FormLabel><FormControl><Input type="number" placeholder="20" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.falseCeilingM2.label}</FormLabel><FormControl><Input type="number" placeholder="20" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                     <FormField
                       control={detailedForm.control}
@@ -494,7 +500,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.soundproofRoom && <FormField control={detailedForm.control} name="soundproofRoomM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.soundproofRoomM2.label}</FormLabel><FormControl><Input type="number" placeholder="15" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.ceilings.soundproofRoomM2.label}</FormLabel><FormControl><Input type="number" placeholder="15" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                 </div>
             )
@@ -511,18 +517,18 @@ export function BudgetRequestWizard({ t }: { t: any }) {
 
                     <Card><CardHeader><CardTitle className='text-lg'>{budgetRequestDict.form.electricity.perRoom.kitchen}</CardTitle></CardHeader><CardContent className='space-y-4'>
                         <FormField control={detailedForm.control} name="electricalKitchenSockets" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} value={field.value || 0}/></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="8" {...field} /></FormControl></FormItem>
                         )} />
                         <FormField control={detailedForm.control} name="electricalKitchenLights" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="3" {...field} value={field.value || 0}/></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="3" {...field} /></FormControl></FormItem>
                         )} />
                     </CardContent></Card>
                     <Card><CardHeader><CardTitle className='text-lg'>{budgetRequestDict.form.electricity.perRoom.livingRoom}</CardTitle></CardHeader><CardContent className='space-y-4'>
                         <FormField control={detailedForm.control} name="electricalLivingRoomSockets" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} value={field.value || 0}/></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} /></FormControl></FormItem>
                         )} />
                         <FormField control={detailedForm.control} name="electricalLivingRoomLights" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} value={field.value || 0}/></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} /></FormControl></FormItem>
                         )} />
                         <FormField
                           control={detailedForm.control}
@@ -534,10 +540,10 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                     </CardContent></Card>
                      <Card><CardHeader><CardTitle className='text-lg'>{budgetRequestDict.form.electricity.perRoom.bedroom} 1</CardTitle></CardHeader><CardContent className='space-y-4'>
                         <FormField control={detailedForm.control} name="electricalBedroom1Sockets" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} value={field.value || 0}/></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.sockets}</FormLabel><FormControl><Input type="number" placeholder="4" {...field} /></FormControl></FormItem>
                         )} />
                         <FormField control={detailedForm.control} name="electricalBedroom1Lights" render={({ field }) => (
-                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="2" {...field} value={field.value || 0}/></FormControl></FormItem>
+                            <FormItem><FormLabel>{budgetRequestDict.form.electricity.perRoom.lights}</FormLabel><FormControl><Input type="number" placeholder="2" {...field} /></FormControl></FormItem>
                         )} />
                     </CardContent></Card>
                 </div>
@@ -553,7 +559,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.renovateInteriorDoors && <FormField control={detailedForm.control} name="interiorDoorsAmount" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.interiorDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.interiorDoorsAmount.label}</FormLabel><FormControl><Input type="number" placeholder="6" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                     
                     <FormField
@@ -564,7 +570,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.installSlidingDoor && <FormField control={detailedForm.control} name="slidingDoorAmount" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.slidingDoorAmount.label}</FormLabel><FormControl><Input type="number" placeholder="1" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.slidingDoorAmount.label}</FormLabel><FormControl><Input type="number" placeholder="1" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                     
                      <hr />
@@ -577,7 +583,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.paintWalls && <FormField control={detailedForm.control} name="paintWallsM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.paintWallsM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.paintWallsM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
 
                     <FormField
@@ -588,7 +594,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
                       )}
                     />
                     {watchAllDetailedFields.removeGotele && <FormField control={detailedForm.control} name="removeGoteleM2" render={({ field }) => (
-                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.removeGoteleM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} value={field.value || 0}/></FormControl><FormMessage /></FormItem>
+                        <FormItem><FormLabel>{budgetRequestDict.form.carpentry.removeGoteleM2.label}</FormLabel><FormControl><Input type="number" placeholder="300" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />}
                 </div>
             )
@@ -707,7 +713,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
 
   return (
     <div className="container py-12 md:py-20">
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto space-y-8">
         {!formType ? renderFormSelection() : (
             formType === 'simple' ? renderSimpleForm() : renderDetailedForm()
         )}

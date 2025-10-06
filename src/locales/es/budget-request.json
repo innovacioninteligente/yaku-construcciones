@@ -49,6 +49,20 @@
                 "Baldosas y azulejos",
                 "Iluminación LED",
                 "Enchufe e interruptor"
+            ],
+            "kitchen": [
+                "Desmonte de muebles de cocina",
+                "Demolición, alicatados, electricidad, fontanería, suelos.",
+                "Preparaciones previas: regatas, electricidad y fontanería, enfoscado paredes.",
+                "Fontanería completa: cambio de instalación de agua fría y caliente y desagües.",
+                "Alicatado de paredes",
+                "Colocación de pavimentos",
+                "Electricidad nueva: enchufes e iluminación.",
+                "Falso techo en pladur especial humedad",
+                "Llaves de paso generales",
+                "Baldosas y azulejos",
+                "Iluminación LED",
+                "Enchufes e interruptores"
             ]
         }
     },

@@ -49,6 +49,20 @@
                 "Floor and wall tiles",
                 "LED lighting",
                 "Socket and switch"
+            ],
+            "kitchen": [
+                "Dismantling of kitchen furniture",
+                "Demolition, tiling, electricity, plumbing, floors.",
+                "Preliminary preparations: chasing, electricity and plumbing, wall rendering.",
+                "Complete plumbing: replacement of hot and cold water installation and drains.",
+                "Wall tiling",
+                "Pavement laying",
+                "New electricity: sockets and lighting.",
+                "Moisture-resistant plasterboard false ceiling",
+                "General shut-off valves",
+                "Tiles and tiles",
+                "LED lighting",
+                "Plugs and switches"
             ]
         }
     },
