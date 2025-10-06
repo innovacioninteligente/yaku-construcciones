@@ -20,32 +20,22 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase/client';
 import { useRouter } from 'next/navigation';
 import { useCurrentLocale } from 'next-i18n-router/client';
-import i18nConfig from '../../../../i18nConfig';
+import i18nConfig from '../../../i18nConfig';
 import { useEffect, useState } from 'react';
+import { getDictionary } from '@/lib/dictionaries';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Por favor, introduce un correo electrónico válido.' }),
   password: z.string().min(6, { message: 'La contraseña debe tener al menos 6 caracteres.' }),
 });
 
-// A simple dictionary fetcher, this should be in a separate file
-async function getDictionary(locale: string) {
-  try {
-    return await import(`@/locales/${locale}.json`);
-  } catch (error) {
-    console.error('Failed to load dictionary:', error);
-    return import(`@/locales/es.json`);
-  }
-}
-
-export default function LoginPage() {
+export default function LoginPage({ params: { locale } }: { params: { locale: any }}) {
   const { toast } = useToast();
   const router = useRouter();
-  const locale = useCurrentLocale(i18nConfig);
   const [dict, setDict] = useState<any>({});
 
   useEffect(() => {
-    getDictionary(locale!).then(d => setDict(d));
+    getDictionary(locale).then(d => setDict(d.default || d));
   }, [locale]);
   
   const form = useForm<z.infer<typeof formSchema>>({
@@ -63,7 +53,7 @@ export default function LoginPage() {
         title: '¡Éxito!',
         description: 'Has iniciado sesión correctamente.',
       });
-      router.push('/dashboard');
+      router.push(`/${locale}/dashboard`);
     } catch (error: any) {
       toast({
         variant: 'destructive',
