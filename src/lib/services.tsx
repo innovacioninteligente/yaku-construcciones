@@ -72,7 +72,7 @@ export const services = [
     shortDescription: 'Cableado, iluminación, actualizaciones de paneles e inspecciones de seguridad.',
     description: 'Realizamos todo tipo de instalaciones eléctricas, desde el cableado completo de una vivienda hasta la instalación de nuevos puntos de luz, siempre cumpliendo con la normativa vigente para garantizar la máxima seguridad y eficiencia energética.',
     icon: <Zap />,
-    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Freforma_edificio.jpg?alt=media&token=6cb121d7-251f-4c97-b067-65a6d57f529b',
+    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Felectricista.jpg?alt=media&token=b842d339-81a6-4929-b356-f6cfd53cd3b6',
     imageHint: 'electrical work',
     features: [
       'Instalaciones eléctricas completas en obra nueva.',
@@ -88,7 +88,7 @@ export const services = [
     shortDescription: 'Más de 5 años de experiencia en trabajos de carpintería a medida.',
     description: 'Ofrecemos servicios de carpintería a medida, tanto de madera como de aluminio o PVC. Fabricamos e instalamos puertas, ventanas, armarios empotrados, parqués y todo tipo de mobiliario para dar un acabado perfecto a tu proyecto.',
     icon: <Hammer />,
-    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Freforma_edificio.jpg?alt=media&token=6cb121d7-251f-4c97-b067-65a6d57f529b',
+    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fcarpinteria.jpg?alt=media&token=3fb53160-23b8-4b88-bee8-ce0c2e075cbd',
     imageHint: 'wood working',
     features: [
       'Carpintería de madera, aluminio y PVC.',
