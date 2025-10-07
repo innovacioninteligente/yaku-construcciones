@@ -37,16 +37,16 @@ export const ProjectDefinitionStep = ({ form, t }: ProjectDefinitionStepProps) =
                   { value: 'office', label: commonT.propertyType.office },
                 ].map((item) => (
                   <FormItem key={item.value}>
-                    <FormControl>
-                      <RadioGroupItem value={item.value} className="sr-only" />
-                    </FormControl>
                     <FormLabel
-                      htmlFor={field.name + item.value}
+                      htmlFor={item.value}
                       className={cn(
                         "flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground cursor-pointer transition-colors",
                         field.value === item.value && "border-primary bg-primary/10"
                       )}
                     >
+                      <FormControl>
+                        <RadioGroupItem value={item.value} id={item.value} className="sr-only" />
+                      </FormControl>
                       {item.label}
                     </FormLabel>
                   </FormItem>
@@ -75,15 +75,16 @@ export const ProjectDefinitionStep = ({ form, t }: ProjectDefinitionStepProps) =
                   { value: 'partial', label: commonT.projectScope.partial },
                 ].map((item) => (
                   <FormItem key={item.value}>
-                    <FormControl>
-                      <RadioGroupItem value={item.value} className="sr-only" />
-                    </FormControl>
                     <FormLabel
+                      htmlFor={item.value}
                       className={cn(
                         "flex flex-col items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground cursor-pointer transition-colors",
                         field.value === item.value && "border-primary bg-primary/10"
                       )}
                     >
+                      <FormControl>
+                        <RadioGroupItem value={item.value} id={item.value} className="sr-only" />
+                      </FormControl>
                       {item.label}
                     </FormLabel>
                   </FormItem>
