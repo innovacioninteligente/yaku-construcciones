@@ -57,7 +57,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
     },
   });
 
-  const { control, trigger, watch, reset, getValues } = form;
+  const { control, trigger, watch, reset, getValues, handleSubmit } = form;
   const { fields: bathroomFields, append: appendBathroom, remove: removeBathroom } = useFieldArray({ control, name: "bathrooms" });
   const { fields: bedroomFields, append: appendBedroom, remove: removeBedroom } = useFieldArray({ control, name: "electricalBedrooms" });
 
@@ -145,7 +145,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
     }
   };
   
-  async function handleFormSubmit(values: DetailedFormValues) {
+  const handleFormSubmit = async (values: DetailedFormValues) => {
     setIsLoading(true);
     try {
       console.log('Form values:', values);
@@ -166,6 +166,9 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
       setIsLoading(false);
     }
   }
+
+  const handleFinalSubmit = handleSubmit(handleFormSubmit);
+
 
   const handleRestart = () => {
     reset();
@@ -250,7 +253,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
             <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8 max-w-5xl mx-auto" />
         </div>
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
+            <form className="space-y-8">
                 <Card className='text-left overflow-hidden'>
                     <CardHeader>
                         <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.steps[activeSteps[currentStep]?.id]}</CardTitle>
@@ -278,7 +281,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
                     </Button>
                     
                     {currentStep === activeSteps.length - 1 ? (
-                        <Button type="submit" disabled={isLoading} size="lg">
+                        <Button type="button" onClick={handleFinalSubmit} disabled={isLoading} size="lg">
                             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                             {isLoading ? t.budgetRequest.form.buttons.loading : t.budgetRequest.form.buttons.submit}
                         </Button>
