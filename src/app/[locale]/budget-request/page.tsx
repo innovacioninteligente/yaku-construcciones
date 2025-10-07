@@ -12,9 +12,8 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
   return (
     <>
       <Header t={dict} />
-      <main>
-        <section className="w-full pt-16 md:pt-20 bg-background">
-          <div className="container-limited text-center">
+      <main className="w-full pt-16 md:pt-20 bg-background pb-12 md:pb-20">
+        <div className="container-limited text-center">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               {dict.header.nav.budgetRequest}
             </h1>
@@ -30,9 +29,11 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
                 data-ai-hint="architect plan calculator"
               />
             </div>
-          </div>
-        </section>
-        <BudgetRequestWizard t={dict} services={dict.services} />
+            
+            <div className='-mt-8'>
+              <BudgetRequestWizard t={dict} services={dict.services} />
+            </div>
+        </div>
       </main>
       <Footer />
     </>

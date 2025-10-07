@@ -126,7 +126,7 @@ const SwitchableFormItem = ({ control, name, label, description }: { control: Co
             control={control}
             name={name}
             render={({ field }) => (
-                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 text-left">
                     <div className="space-y-0.5">
                         <FormLabel htmlFor={fieldId} className="text-base cursor-pointer">{label}</FormLabel>
                         {description && <FormDescription className="cursor-pointer" onClick={() => field.onChange(!field.value)}>{description}</FormDescription>}
@@ -266,10 +266,10 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     const showInclusions = inclusions && Array.isArray(inclusions);
 
     return (
-        <Card>
+        <Card className='text-left'>
             <CardHeader>
-                <CardTitle className='font-headline text-2xl'>{t.budgetRequest.simple.title}</CardTitle>
-                <CardDescription>{t.budgetRequest.simple.description}</CardDescription>
+                <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.simple.title}</CardTitle>
+                <CardDescription className='text-center'>{t.budgetRequest.simple.description}</CardDescription>
             </CardHeader>
             <CardContent>
                 <Form {...simpleForm}>
@@ -433,7 +433,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
             )
         case 'electricity':
             return (
-                <div className="space-y-6">
+                <div className="space-y-6 text-left">
                     <SwitchableFormItem control={detailedForm.control} name="renovateElectricalPanel" label={t.budgetRequest.form.electricity.renovateElectricalPanel.label} />
 
                     <Card><CardHeader><CardTitle className='text-lg'>{t.budgetRequest.form.electricity.perRoom.kitchen}</CardTitle></CardHeader><CardContent className='space-y-4'>
@@ -508,7 +508,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   }
 
   const renderDetailedForm = () => (
-    <Card>
+    <Card className='text-left'>
       <CardHeader className="text-center">
         <CardTitle className="font-headline text-3xl md:text-4xl">{t.budgetRequest.title}</CardTitle>
         <CardDescription className="text-lg">{t.budgetRequest.description}</CardDescription>
@@ -519,7 +519,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
           <form onSubmit={detailedForm.handleSubmit(handleFormSubmit)} className="space-y-8">
             <Card>
                 <CardHeader>
-                    <CardTitle className='font-headline text-2xl'>{STEPS[currentStep].title}</CardTitle>
+                    <CardTitle className='font-headline text-2xl text-center'>{STEPS[currentStep].title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     {renderDetailedStep()}
@@ -549,7 +549,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   );
 
   const renderFormSelection = () => (
-    <div className="max-w-5xl mx-auto text-center">
+    <div className="w-full text-center">
         <CardHeader className="px-0">
             <CardTitle className="font-headline text-3xl md:text-4xl">{t.budgetRequest.selection.title}</CardTitle>
             <CardDescription className="text-lg max-w-2xl mx-auto">{t.budgetRequest.selection.description}</CardDescription>
@@ -571,7 +571,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   
   if (isSubmitted) {
     return (
-        <div className="container py-12 md:py-20 text-center">
+        <div className="text-center">
             <Card className='max-w-2xl mx-auto'>
                 <CardHeader>
                     <div className='mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4'>
@@ -602,12 +602,10 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   }
 
   return (
-    <div className="container pb-12 md:pb-20">
-      <div className="max-w-5xl mx-auto">
+    <>
         {!formType ? renderFormSelection() : (
             formType === 'simple' ? renderSimpleForm() : renderDetailedForm()
         )}
-      </div>
-    </div>
+    </>
   );
 }
