@@ -16,16 +16,38 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string, locale: string } }): Promise<Metadata> {
+  const service = services.find((s) => s.id === params.slug);
   const dict = await getDictionary(params.locale as any);
   const serviceTranslation = dict.services[params.slug];
 
-  if (!serviceTranslation) {
+  if (!service || !serviceTranslation) {
     return {};
   }
 
+  const title = `${serviceTranslation.title} | Yaku Construcciones`;
+  const description = serviceTranslation.shortDescription;
+
   return {
-    title: `${serviceTranslation.title} | Yaku Construcciones`,
-    description: serviceTranslation.shortDescription,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: service.image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [service.image],
+    },
   };
 }
 

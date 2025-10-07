@@ -7,9 +7,41 @@ import i18nConfig from '../../../i18nConfig';
 import { notFound } from 'next/navigation';
 import { ContactFab } from '@/components/contact-fab';
 
-export const metadata: Metadata = {
-  title: 'Yaku Construcciones - Expertos en Construcción y Reformas',
+const siteConfig = {
+  name: 'Yaku Construcciones',
   description: 'Soluciones expertas de construcción, reformas, piscinas y más. Calidad y confianza para tu hogar o negocio.',
+  url: 'https://yaku-construcciones.com', // Replace with your actual domain
+  ogImage: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Ficon.png?alt=media&token=1803ca86-deff-4e44-84ea-20f1fae4cbf4',
+};
+
+export const metadata: Metadata = {
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 256,
+        height: 256,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
 };
 
 export function generateStaticParams() {

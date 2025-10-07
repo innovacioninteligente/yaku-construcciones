@@ -23,9 +23,31 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {};
   }
 
+  const title = `${post.title} | Yaku Construcciones`;
+  const description = post.excerpt;
+
   return {
-    title: `${post.title} | Yaku Construcciones`,
-    description: post.excerpt,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [post.image],
+    },
   };
 }
 
