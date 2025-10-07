@@ -22,12 +22,14 @@ import { OptionalsStep } from './budget-request/steps/OptionalsStep';
 import { SummaryStep } from './budget-request/steps/SummaryStep';
 import { ProjectDefinitionStep } from './budget-request/steps/ProjectDefinitionStep';
 import { WorkAreaStep } from './budget-request/steps/WorkAreaStep';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBack: () => void }) {
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [direction, setDirection] = useState(1);
 
   const form = useForm<DetailedFormValues>({
     resolver: zodResolver(detailedFormSchema),
@@ -99,7 +101,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
     if (propertyType === 'residential') {
         baseSteps = baseSteps.filter(step => step.id !== 'workArea');
     } else { // commercial or office
-        baseSteps = baseSteps.filter(step => !['bathroom', 'kitchen', 'electricity'].includes(step.id) || (step.id === 'electricity' && propertyType !== 'residential'));
+        baseSteps = baseSteps.filter(step => !['bathroom', 'kitchen'].includes(step.id));
     }
 
     if (projectScope === 'partial') {
@@ -122,11 +124,13 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
     }
 
     if (currentStep < activeSteps.length - 1) {
+      setDirection(1);
       setCurrentStep((prev) => prev + 1);
     }
   };
 
   const prevStep = () => {
+    setDirection(-1);
     if (currentStep === 0) {
       onBack();
     } else {
@@ -161,6 +165,31 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
     setCurrentStep(0);
     setIsSubmitted(false);
   }
+
+  const stepVariants = {
+    hidden: (direction: number) => ({
+      opacity: 0,
+      x: direction > 0 ? '100%' : '-100%',
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 260,
+        damping: 30,
+      },
+    },
+    exit: (direction: number) => ({
+      opacity: 0,
+      x: direction < 0 ? '100%' : '-100%',
+      transition: {
+        type: 'spring',
+        stiffness: 260,
+        damping: 30,
+      },
+    }),
+  };
   
   const renderDetailedStep = () => {
     const stepId = activeSteps[currentStep]?.id;
@@ -213,12 +242,23 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
         <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8 max-w-5xl mx-auto" />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
-                <Card className='text-left'>
+                <Card className='text-left overflow-x-hidden'>
                     <CardHeader>
                         <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.steps[activeSteps[currentStep]?.id]}</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                        {renderDetailedStep()}
+                    <CardContent className='min-h-[450px]'>
+                       <AnimatePresence mode="wait" custom={direction}>
+                            <motion.div
+                                key={currentStep}
+                                custom={direction}
+                                variants={stepVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                            >
+                                {renderDetailedStep()}
+                            </motion.div>
+                        </AnimatePresence>
                     </CardContent>
                 </Card>
                 
