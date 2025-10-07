@@ -54,7 +54,8 @@
         "description": "Thank you for completing your request. Our team will review it and contact you within the next 24-48 hours.",
         "button": "Back to Homepage",
         "noCostMessage": "This is an indicative and non-contractual price. A specialist will contact you to provide a detailed budget.",
-        "poolMessage": "One of our pool experts will be in touch shortly to detail your project."
+        "poolMessage": "One of our pool experts will be in touch shortly to detail your project.",
+        "restartForm": "Start Over"
     },
     "form": {
         "buttons": {
@@ -137,9 +138,6 @@
             }
         },
         "bathroom": {
-            "renovateBathroom": {
-                "label": "Do you want to renovate the bathroom?"
-            },
             "bathroomWallTilesM2": {
                 "label": "Do you want to change the wall tiles? (Indicate m²)"
             },

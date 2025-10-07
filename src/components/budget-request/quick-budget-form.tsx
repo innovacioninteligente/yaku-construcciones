@@ -24,7 +24,7 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
-import { ArrowLeft, Check, Loader2, MailCheck } from 'lucide-react';
+import { ArrowLeft, Check, Loader2, MailCheck, RotateCw } from 'lucide-react';
 
 const pricingConfig = {
     integral: { basic: 400, medium: 600, premium: 800 },
@@ -97,6 +97,12 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
       setIsLoading(false);
     }
   }
+
+  const handleRestart = () => {
+    form.reset();
+    setIsSubmitted(false);
+    setCalculatedBudget(null);
+  }
   
   if (isSubmitted) {
     const isPool = watchRenovationType === 'pool';
@@ -122,9 +128,15 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
                             <p className="text-muted-foreground mt-4 text-sm">{t.budgetRequest.confirmation.noCostMessage}</p>
                         </>
                     )}
-                    <Button asChild className="mt-6">
-                        <a href='/'>{t.budgetRequest.confirmation.button}</a>
-                    </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                        <Button asChild>
+                            <a href='/'>{t.budgetRequest.confirmation.button}</a>
+                        </Button>
+                        <Button variant="outline" onClick={handleRestart}>
+                            <RotateCw className="mr-2 h-4 w-4" />
+                            {t.budgetRequest.confirmation.restartForm}
+                        </Button>
+                    </div>
                 </CardContent>
             </Card>
         </div>

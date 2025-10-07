@@ -54,7 +54,8 @@
         "description": "Vielen Dank für Ihre Anfrage. Unser Team wird sie prüfen und sich innerhalb der nächsten 24-48 Stunden bei Ihnen melden.",
         "button": "Zurück zur Startseite",
         "noCostMessage": "Dies ist ein Richtpreis und unverbindlich. Einer unserer Spezialisten wird sich mit Ihnen in Verbindung setzen, um Ihnen ein detailliertes Angebot zu unterbreiten.",
-        "poolMessage": "Einer unserer Poolexperten wird sich in Kürze mit Ihnen in Verbindung setzen, um Ihr Projekt zu besprechen."
+        "poolMessage": "Einer unserer Poolexperten wird sich in Kürze mit Ihnen in Verbindung setzen, um Ihr Projekt zu besprechen.",
+        "restartForm": "Neu starten"
     },
     "form": {
         "buttons": {
@@ -137,9 +138,6 @@
             }
         },
         "bathroom": {
-            "renovateBathroom": {
-                "label": "Möchten Sie das Badezimmer renovieren?"
-            },
             "bathroomWallTilesM2": {
                 "label": "Möchten Sie die Wandfliesen austauschen? (Geben Sie m² an)"
             },

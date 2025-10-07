@@ -7,7 +7,7 @@ import { Form } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState, useMemo, useEffect } from 'react';
-import { ArrowLeft, ArrowRight, Loader2, MailCheck } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Loader2, MailCheck, RotateCw } from 'lucide-react';
 import { Progress } from './ui/progress';
 import { DetailedFormValues, detailedFormSchema } from './budget-request/schema';
 import { WIZARD_STEPS } from './budget-request/wizard-steps';
@@ -54,7 +54,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
     },
   });
 
-  const { control, trigger, watch } = form;
+  const { control, trigger, watch, reset } = form;
   const { fields: bathroomFields, append: appendBathroom, remove: removeBathroom } = useFieldArray({ control, name: "bathrooms" });
   const { fields: bedroomFields, append: appendBedroom, remove: removeBedroom } = useFieldArray({ control, name: "electricalBedrooms" });
 
@@ -155,6 +155,12 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
       setIsLoading(false);
     }
   }
+
+  const handleRestart = () => {
+    reset();
+    setCurrentStep(0);
+    setIsSubmitted(false);
+  }
   
   const renderDetailedStep = () => {
     const stepId = activeSteps[currentStep]?.id;
@@ -187,9 +193,15 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
                 </CardHeader>
                 <CardContent>
                     <p className="text-muted-foreground mt-4">{t.budgetRequest.confirmation.noCostMessage}</p>
-                    <Button asChild className="mt-6">
-                        <a href='/'>{t.budgetRequest.confirmation.button}</a>
-                    </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                        <Button asChild>
+                            <a href='/'>{t.budgetRequest.confirmation.button}</a>
+                        </Button>
+                         <Button variant="outline" onClick={handleRestart}>
+                            <RotateCw className="mr-2 h-4 w-4" />
+                            {t.budgetRequest.confirmation.restartForm}
+                        </Button>
+                    </div>
                 </CardContent>
             </Card>
         </div>

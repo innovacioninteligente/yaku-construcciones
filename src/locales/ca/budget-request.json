@@ -54,7 +54,8 @@
         "description": "Gràcies per completar la teva sol·licitud. El nostre equip la revisarà i es posarà en contacte amb tu en les properes 24-48 hores.",
         "button": "Torna a la pàgina principal",
         "noCostMessage": "Aquest és un preu orientatiu i no contractual. Un especialista es posarà en contacte amb tu per proporcionar-te un pressupost detallat.",
-        "poolMessage": "Un dels nostres experts en piscines es posarà en contacte molt aviat per detallar el teu projecte."
+        "poolMessage": "Un dels nostres experts en piscines es posarà en contacte molt aviat per detallar el teu projecte.",
+        "restartForm": "Començar de nou"
     },
     "form": {
         "buttons": {
@@ -137,9 +138,6 @@
             }
         },
         "bathroom": {
-            "renovateBathroom": {
-                "label": "Vol reformar el bany?"
-            },
             "bathroomWallTilesM2": {
                 "label": "Vol canviar les rajoles de les parets? (Indiqui m²)"
             },
