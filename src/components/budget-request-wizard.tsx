@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight, Loader2, MailCheck, RotateCw } from 'lucide-react';
 import { Progress } from './ui/progress';
 import { DetailedFormValues, detailedFormSchema } from './budget-request/schema';
@@ -30,6 +30,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [direction, setDirection] = useState(1);
+  const progressRef = useRef<HTMLDivElement>(null);
 
   const form = useForm<DetailedFormValues>({
     resolver: zodResolver(detailedFormSchema),
@@ -93,6 +94,12 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
       }
     }
   }, [numberOfRooms, appendBedroom, removeBedroom, bedroomFields.length]);
+
+  useEffect(() => {
+    if (progressRef.current) {
+        progressRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [currentStep]);
 
 
   const activeSteps = useMemo(() => {
@@ -238,7 +245,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
   }
 
   return (
-    <div className='w-full max-w-5xl mx-auto'>
+    <div className='w-full max-w-5xl mx-auto' ref={progressRef}>
         <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8 max-w-5xl mx-auto" />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
@@ -246,7 +253,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
                     <CardHeader>
                         <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.steps[activeSteps[currentStep]?.id]}</CardTitle>
                     </CardHeader>
-                    <CardContent className='min-h-[450px]'>
+                    <CardContent>
                        <AnimatePresence mode="wait" custom={direction}>
                             <motion.div
                                 key={currentStep}
