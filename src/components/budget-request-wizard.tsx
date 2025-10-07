@@ -123,26 +123,22 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
   const nextStep = async () => {
     const currentStepConfig = activeSteps[currentStep];
     const isLastStep = currentStep === activeSteps.length - 1;
-    const isBeforeSummary = currentStep === activeSteps.length - 2;
 
+    // Do nothing if it's the last step. The submit button will handle it.
+    if (isLastStep) return;
+
+    // Validate fields of the current step before proceeding
     if (currentStepConfig?.fields) {
         const isValid = await trigger(currentStepConfig.fields as (keyof DetailedFormValues)[]);
         if (!isValid) {
             console.log("Validation failed", form.formState.errors);
             return;
-        };
-    }
-
-    if (isBeforeSummary) {
-        setDirection(1);
-        setCurrentStep((prev) => prev + 1);
-        return;
+        }
     }
     
-    if (!isLastStep) {
-      setDirection(1);
-      setCurrentStep((prev) => prev + 1);
-    }
+    // Proceed to the next step
+    setDirection(1);
+    setCurrentStep((prev) => prev + 1);
   };
 
   const prevStep = () => {
@@ -285,14 +281,14 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
                         <ArrowLeft className="mr-2" /> {t.budgetRequest.form.buttons.prev}
                     </Button>
                     
-                    {currentStep < activeSteps.length - 1 ? (
-                        <Button type="button" onClick={nextStep}>
-                        {t.budgetRequest.form.buttons.next} <ArrowRight className="ml-2" />
+                    {currentStep === activeSteps.length - 1 ? (
+                        <Button type="submit" disabled={isLoading} size="lg">
+                            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                            {isLoading ? t.budgetRequest.form.buttons.loading : t.budgetRequest.form.buttons.submit}
                         </Button>
                     ) : (
-                        <Button type="submit" disabled={isLoading} size="lg">
-                        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                        {isLoading ? t.budgetRequest.form.buttons.loading : t.budgetRequest.form.buttons.submit}
+                        <Button type="button" onClick={nextStep}>
+                            {t.budgetRequest.form.buttons.next} <ArrowRight className="ml-2" />
                         </Button>
                     )}
                 </div>
