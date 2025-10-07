@@ -549,7 +549,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   );
 
   const renderFormSelection = () => (
-    <div className='text-center'>
+    <div className="max-w-5xl mx-auto text-center">
         <CardHeader className="px-0">
             <CardTitle className="font-headline text-3xl md:text-4xl">{t.budgetRequest.selection.title}</CardTitle>
             <CardDescription className="text-lg max-w-2xl mx-auto">{t.budgetRequest.selection.description}</CardDescription>
@@ -611,5 +611,3 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     </div>
   );
 }
-
-    
