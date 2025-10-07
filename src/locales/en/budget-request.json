@@ -1,7 +1,27 @@
 
 {
-    "title": "Request Your Detailed Quote",
-    "description": "Complete the following steps so we can provide you with an accurate estimate.",
+    "title": "Request Your Quote",
+    "description": "Choose the level of detail you want to provide, and we'll give you an estimate.",
+    "quickForm": {
+        "title": "Quick Budget Form",
+        "description": "Fill in the following fields to get a rough estimate.",
+        "renovationType": {
+            "label": "Type of Renovation",
+            "options": {
+                "integral": "Full Renovation",
+                "bathrooms": "Bathroom Renovation",
+                "kitchen": "Kitchen Renovation",
+                "pool": "Pool Construction"
+            }
+        },
+        "squareMeters": {
+            "label": "Square meters (m²)"
+        }
+    },
+    "detailedForm": {
+        "title": "Detailed Budget",
+        "description": "Provide all the details to get a more accurate preliminary budget."
+    },
     "steps": {
         "contact": "Contact Information",
         "projectDefinition": "Project Definition",
@@ -23,13 +43,14 @@
         "title": "Request Received!",
         "description": "Thank you for completing your request. Our team will review it and contact you within the next 24-48 hours.",
         "button": "Back to Homepage",
-        "noCostMessage": "One of our specialists will contact you to provide a detailed quote."
+        "noCostMessage": "This is an indicative and non-contractual price. A specialist will contact you to provide a detailed budget.",
+        "poolMessage": "One of our pool experts will be in touch shortly to detail your project."
     },
     "form": {
         "buttons": {
             "prev": "Previous",
             "next": "Next",
-            "submit": "Submit Quote Request",
+            "submit": "Submit Request",
             "loading": "Submitting..."
         },
         "name": {

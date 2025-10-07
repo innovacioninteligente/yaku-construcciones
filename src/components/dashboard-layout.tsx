@@ -27,7 +27,6 @@ import {
   SidebarFooter,
 } from '@/components/ui/sidebar';
 import { LanguageSwitcher } from './language-switcher';
-import { Button } from './ui/button';
 
 export function DashboardLayout({ children, t }: { children: React.ReactNode, t: any }) {
   const { user, loading } = useAuth();
@@ -35,15 +34,15 @@ export function DashboardLayout({ children, t }: { children: React.ReactNode, t:
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard /> },
-    { href: '/dashboard/budget-request', label: 'Solicitar Presupuesto', icon: <PlusCircle /> },
-    { href: '/dashboard/my-budgets', label: 'Mis Presupuestos', icon: <FileText /> },
-    { href: '/dashboard/seo-generator', label: 'Generador SEO', icon: <Lightbulb /> },
+    { href: '/dashboard', label: t.dashboard.nav.dashboard, icon: <LayoutDashboard /> },
+    { href: '/dashboard/budget-request', label: t.dashboard.nav.requestBudget, icon: <PlusCircle /> },
+    { href: '/dashboard/my-budgets', label: t.dashboard.nav.myBudgets, icon: <FileText /> },
+    { href: '/dashboard/seo-generator', label: t.dashboard.nav.seoGenerator, icon: <Lightbulb /> },
   ];
 
   const settingsNavItems = [
-    { href: '/dashboard/settings/pricing', label: 'Configurar Precios', icon: <DollarSign /> },
-    { href: '/dashboard/settings', label: 'Ajustes', icon: <Settings /> },
+    { href: '/dashboard/settings/pricing', label: t.dashboard.nav.pricing, icon: <DollarSign /> },
+    { href: '/dashboard/settings', label: t.dashboard.nav.settings, icon: <Settings /> },
   ]
 
   React.useEffect(() => {

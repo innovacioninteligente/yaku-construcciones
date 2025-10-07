@@ -3,6 +3,14 @@
         "title": "Benvingut al teu Tauler",
         "description": "Gestiona els teus projectes i sol·licituds de pressupost des d'aquí."
     },
+    "nav": {
+        "dashboard": "Tauler",
+        "requestBudget": "Sol·licitar Pressupost",
+        "myBudgets": "Els meus pressupostos",
+        "seoGenerator": "Generador SEO",
+        "settings": "Configuració",
+        "pricing": "Configurar preus"
+    },
     "requestBudget": {
         "title": "Sol·licitar Pressupost",
         "description": "Descriu el teu projecte i obté una estimació de costos amb ajuda de la nostra IA."

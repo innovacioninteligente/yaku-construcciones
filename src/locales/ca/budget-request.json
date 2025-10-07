@@ -1,7 +1,27 @@
 
 {
-    "title": "Sol·licita el teu pressupost detallat",
-    "description": "Completa els passos següents perquè puguem donar-te una estimació precisa.",
+    "title": "Sol·licita el teu pressupost",
+    "description": "Tria el nivell de detall que vols proporcionar i et donarem una estimació.",
+    "quickForm": {
+        "title": "Formulari de Pressupost Ràpid",
+        "description": "Omple els camps següents per obtenir una estimació aproximada.",
+        "renovationType": {
+            "label": "Tipus de Reforma",
+            "options": {
+                "integral": "Reforma Integral",
+                "bathrooms": "Reforma de Bany",
+                "kitchen": "Reforma de Cuina",
+                "pool": "Construcció de Piscina"
+            }
+        },
+        "squareMeters": {
+            "label": "Metres quadrats (m²)"
+        }
+    },
+    "detailedForm": {
+        "title": "Pressupost Detallat",
+        "description": "Proporciona tots els detalls per obtenir un pressupost preliminar més precís."
+    },
     "steps": {
         "contact": "Informació de Contacte",
         "projectDefinition": "Definició del Projecte",
@@ -23,13 +43,14 @@
         "title": "Sol·licitud Rebuda!",
         "description": "Gràcies per completar la teva sol·licitud. El nostre equip la revisarà i es posarà en contacte amb tu en les properes 24-48 hores.",
         "button": "Torna a la pàgina principal",
-        "noCostMessage": "Un dels nostres especialistes es posarà en contacte amb tu per proporcionar-te un pressupost detallat."
+        "noCostMessage": "Aquest és un preu orientatiu i no contractual. Un especialista es posarà en contacte amb tu per proporcionar-te un pressupost detallat.",
+        "poolMessage": "Un dels nostres experts en piscines es posarà en contacte molt aviat per detallar el teu projecte."
     },
     "form": {
         "buttons": {
             "prev": "Enrere",
             "next": "Següent",
-            "submit": "Envia la Sol·licitud de Pressupost",
+            "submit": "Envia la Sol·licitud",
             "loading": "Enviant..."
         },
         "name": {

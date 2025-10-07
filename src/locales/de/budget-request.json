@@ -1,7 +1,27 @@
 
 {
-    "title": "Fordern Sie Ihr detailliertes Angebot an",
-    "description": "Füllen Sie die folgenden Schritte aus, damit wir Ihnen einen genauen Kostenvoranschlag erstellen können.",
+    "title": "Fordern Sie Ihr Angebot an",
+    "description": "Wählen Sie den gewünschten Detaillierungsgrad und wir erstellen Ihnen einen Kostenvoranschlag.",
+    "quickForm": {
+        "title": "Schnelles Angebotsformular",
+        "description": "Füllen Sie die folgenden Felder aus, um einen groben Kostenvoranschlag zu erhalten.",
+        "renovationType": {
+            "label": "Art der Renovierung",
+            "options": {
+                "integral": "Komplettrenovierung",
+                "bathrooms": "Badezimmerrenovierung",
+                "kitchen": "Küchenrenovierung",
+                "pool": "Poolbau"
+            }
+        },
+        "squareMeters": {
+            "label": "Quadratmeter (m²)"
+        }
+    },
+    "detailedForm": {
+        "title": "Detailliertes Angebot",
+        "description": "Geben Sie alle Details an, um ein genaueres vorläufiges Angebot zu erhalten."
+    },
     "steps": {
         "contact": "Kontaktinformationen",
         "projectDefinition": "Projektdefinition",
@@ -23,13 +43,14 @@
         "title": "Anfrage erhalten!",
         "description": "Vielen Dank für Ihre Anfrage. Unser Team wird sie prüfen und sich innerhalb der nächsten 24-48 Stunden bei Ihnen melden.",
         "button": "Zurück zur Startseite",
-        "noCostMessage": "Einer unserer Spezialisten wird sich mit Ihnen in Verbindung setzen, um Ihnen ein detailliertes Angebot zu unterbreiten."
+        "noCostMessage": "Dies ist ein Richtpreis und unverbindlich. Einer unserer Spezialisten wird sich mit Ihnen in Verbindung setzen, um Ihnen ein detailliertes Angebot zu unterbreiten.",
+        "poolMessage": "Einer unserer Poolexperten wird sich in Kürze mit Ihnen in Verbindung setzen, um Ihr Projekt zu besprechen."
     },
     "form": {
         "buttons": {
             "prev": "Zurück",
             "next": "Weiter",
-            "submit": "Angebotsanfrage senden",
+            "submit": "Anfrage senden",
             "loading": "Wird gesendet..."
         },
         "name": {

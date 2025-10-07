@@ -3,6 +3,14 @@
         "title": "Welcome to your Dashboard",
         "description": "Manage your projects and budget requests from here."
     },
+    "nav": {
+        "dashboard": "Dashboard",
+        "requestBudget": "Request Budget",
+        "myBudgets": "My Budgets",
+        "seoGenerator": "SEO Blog Generator",
+        "settings": "Settings",
+        "pricing": "Pricing Config"
+    },
     "requestBudget": {
         "title": "Request Budget",
         "description": "Describe your project and get a cost estimate with the help of our AI."

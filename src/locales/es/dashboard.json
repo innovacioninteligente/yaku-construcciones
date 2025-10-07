@@ -3,6 +3,14 @@
         "title": "Bienvenido a tu Panel",
         "description": "Gestiona tus proyectos y solicitudes de presupuesto desde aquí."
     },
+    "nav": {
+        "dashboard": "Panel",
+        "requestBudget": "Solicitar Presupuesto",
+        "myBudgets": "Mis Presupuestos",
+        "seoGenerator": "Generador SEO",
+        "settings": "Ajustes",
+        "pricing": "Configurar Precios"
+    },
     "requestBudget": {
         "title": "Solicitar Presupuesto",
         "description": "Describe tu proyecto y obtén una estimación de costes con ayuda de nuestra IA."

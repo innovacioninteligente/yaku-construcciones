@@ -3,6 +3,14 @@
         "title": "Willkommen in Ihrem Dashboard",
         "description": "Verwalten Sie Ihre Projekte und Budgetanfragen von hier aus."
     },
+     "nav": {
+        "dashboard": "Dashboard",
+        "requestBudget": "Budget anfordern",
+        "myBudgets": "Meine Budgets",
+        "seoGenerator": "SEO-Generator",
+        "settings": "Einstellungen",
+        "pricing": "Preise konfigurieren"
+    },
     "requestBudget": {
         "title": "Budget anfordern",
         "description": "Beschreiben Sie Ihr Projekt und erhalten Sie mit Hilfe unserer KI eine Kostenschätzung."

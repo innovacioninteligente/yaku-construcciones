@@ -38,7 +38,7 @@ type FormValues = z.infer<typeof formSchema>;
 const initialPricingConfig = {
     integral: { basic: 400, medium: 600, premium: 800 },
     bathrooms: { basic: 1100, medium: 1250, premium: 1750 },
-    kitchen: { basic: 621, medium: 900, premium: 1100 },
+    kitchen: { basic: 621, medium: 700, premium: 760 },
 };
 
 export default function PricingSettingsPage({ params: { locale } }: { params: { locale: any } }) {

@@ -27,12 +27,18 @@ import { useState } from 'react';
 import { ArrowLeft, Check, Loader2, MailCheck } from 'lucide-react';
 import { reformInclusions } from './reform-inclusions';
 
+const pricingConfig = {
+    integral: { basic: 400, medium: 600, premium: 800 },
+    bathrooms: { basic: 1100, medium: 1250, premium: 1750 },
+    kitchen: { basic: 621, medium: 700, premium: 760 },
+};
+
 const formSchema = z.object({
   name: z.string().min(2, { message: 'El nombre es obligatorio.' }),
   email: z.string().email({ message: 'Por favor, introduce un correo electrónico válido.' }),
   phone: z.string().min(9, { message: 'Por favor, introduce un número de teléfono válido.' }),
   address: z.string().min(5, { message: 'La dirección del proyecto es necesaria.' }),
-  renovationType: z.enum(['integral', 'bathrooms', 'kitchen']),
+  renovationType: z.enum(['integral', 'bathrooms', 'kitchen', 'pool']),
   squareMeters: z.coerce.number().min(1, 'La superficie debe ser de al menos 1 m²'),
   quality: z.enum(['basic', 'medium', 'premium']),
 });
@@ -43,6 +49,7 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [calculatedBudget, setCalculatedBudget] = useState<number | null>(null);
 
   const form = useForm<QuickFormValues>({
     resolver: zodResolver(formSchema),
@@ -64,8 +71,15 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
     setIsLoading(true);
     try {
       console.log('Quick form values:', values);
-      // Here you would call your AI/backend service
+      let budget = null;
+      if (values.renovationType !== 'pool') {
+        const prices = pricingConfig[values.renovationType as keyof typeof pricingConfig];
+        budget = values.squareMeters * prices[values.quality as keyof typeof prices];
+        setCalculatedBudget(budget);
+      }
+      
       await new Promise(resolve => setTimeout(resolve, 1500));
+      
       toast({
         title: t.budgetRequest.form.toast.success.title,
         description: t.budgetRequest.form.toast.success.description,
@@ -84,6 +98,7 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
   }
   
   if (isSubmitted) {
+    const isPool = watchRenovationType === 'pool';
     return (
         <div className="text-center max-w-2xl mx-auto">
             <Card>
@@ -95,7 +110,17 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
                     <CardDescription className="text-lg">{t.budgetRequest.confirmation.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                     <p className="text-muted-foreground mt-4">{t.budgetRequest.confirmation.noCostMessage}</p>
+                    {isPool ? (
+                        <p className="text-muted-foreground mt-4">{t.budgetRequest.confirmation.poolMessage}</p>
+                    ) : (
+                        <>
+                            <p className='text-muted-foreground text-lg'>Tu presupuesto estimado es:</p>
+                            <p className='font-headline text-4xl font-bold text-primary my-4'>
+                                {new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(calculatedBudget || 0)}
+                            </p>
+                            <p className="text-muted-foreground mt-4 text-sm">{t.budgetRequest.confirmation.noCostMessage}</p>
+                        </>
+                    )}
                     <Button asChild className="mt-6">
                         <a href='/'>{t.budgetRequest.confirmation.button}</a>
                     </Button>
@@ -109,36 +134,37 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
     <div className='w-full max-w-5xl mx-auto text-left'>
       <Card>
         <CardHeader>
-          <CardTitle className='font-headline text-2xl text-center'>Formulario de Presupuesto Rápido</CardTitle>
-          <CardDescription className='text-center'>Rellena los siguientes campos para obtener una estimación aproximada.</CardDescription>
+          <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.quickForm.title}</CardTitle>
+          <CardDescription className='text-center'>{t.budgetRequest.quickForm.description}</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
               <div className="grid md:grid-cols-2 gap-6">
                 <FormField control={form.control} name="name" render={({ field }) => (
-                  <FormItem><FormLabel>Nombre Completo</FormLabel><FormControl><Input placeholder="Tu nombre y apellidos" {...field} /></FormControl><FormMessage /></FormItem>
+                  <FormItem><FormLabel>{t.budgetRequest.form.name.label}</FormLabel><FormControl><Input placeholder={t.budgetRequest.form.name.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="email" render={({ field }) => (
-                  <FormItem><FormLabel>Correo Electrónico</FormLabel><FormControl><Input type="email" placeholder="tu@email.com" {...field} /></FormControl><FormMessage /></FormItem>
+                  <FormItem><FormLabel>{t.budgetRequest.form.email.label}</FormLabel><FormControl><Input type="email" placeholder={t.budgetRequest.form.email.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="phone" render={({ field }) => (
-                  <FormItem><FormLabel>Teléfono de Contacto</FormLabel><FormControl><Input placeholder="600 123 456" {...field} /></FormControl><FormMessage /></FormItem>
+                  <FormItem><FormLabel>{t.budgetRequest.form.phone.label}</FormLabel><FormControl><Input placeholder={t.budgetRequest.form.phone.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
                 <FormField control={form.control} name="address" render={({ field }) => (
-                  <FormItem><FormLabel>Dirección de la Obra</FormLabel><FormControl><Input placeholder="Calle, número, ciudad" {...field} /></FormControl><FormMessage /></FormItem>
+                  <FormItem><FormLabel>{t.budgetRequest.form.address.label}</FormLabel><FormControl><Input placeholder={t.budgetRequest.form.address.placeholder} {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className={`grid ${watchRenovationType === 'pool' ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-6`}>
                  <FormField control={form.control} name="renovationType" render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Tipo de Reforma</FormLabel>
+                    <FormLabel>{t.budgetRequest.quickForm.renovationType.label}</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl><SelectTrigger><SelectValue /></SelectTrigger></FormControl>
                       <SelectContent>
-                        <SelectItem value="integral">Reforma Integral</SelectItem>
-                        <SelectItem value="bathrooms">Reforma de Baño</SelectItem>
-                        <SelectItem value="kitchen">Reforma de Cocina</SelectItem>
+                        <SelectItem value="integral">{t.budgetRequest.quickForm.renovationType.options.integral}</SelectItem>
+                        <SelectItem value="bathrooms">{t.budgetRequest.quickForm.renovationType.options.bathrooms}</SelectItem>
+                        <SelectItem value="kitchen">{t.budgetRequest.quickForm.renovationType.options.kitchen}</SelectItem>
+                        <SelectItem value="pool">{t.budgetRequest.quickForm.renovationType.options.pool}</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -146,30 +172,32 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
                 )} />
                  <FormField control={form.control} name="squareMeters" render={({ field }) => (
                     <FormItem>
-                        <FormLabel>Metros cuadrados aproximados (m²)</FormLabel>
+                        <FormLabel>{t.budgetRequest.quickForm.squareMeters.label}</FormLabel>
                         <FormControl><Input type="number" {...field} /></FormControl>
                         <FormMessage />
                     </FormItem>
                 )} />
-                 <FormField control={form.control} name="quality" render={({ field }) => (
-                    <FormItem>
-                        <FormLabel>Nivel de Calidad Deseado</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl><SelectTrigger><SelectValue /></SelectTrigger></FormControl>
-                            <SelectContent>
-                                <SelectItem value="basic">Básica</SelectItem>
-                                <SelectItem value="medium">Media</SelectItem>
-                                <SelectItem value="premium">Premium</SelectItem>
-                            </SelectContent>
-                        </Select>
-                        <FormMessage />
-                    </FormItem>
-                )} />
+                 {watchRenovationType !== 'pool' && (
+                    <FormField control={form.control} name="quality" render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>{t.budgetRequest.form.quality.label}</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl><SelectTrigger><SelectValue placeholder={t.budgetRequest.form.quality.placeholder} /></SelectTrigger></FormControl>
+                                <SelectContent>
+                                    <SelectItem value="basic">{t.budgetRequest.form.quality.options.basic}</SelectItem>
+                                    <SelectItem value="medium">{t.budgetRequest.form.quality.options.medium}</SelectItem>
+                                    <SelectItem value="premium">{t.budgetRequest.form.quality.options.premium}</SelectItem>
+                                </SelectContent>
+                            </Select>
+                            <FormMessage />
+                        </FormItem>
+                    )} />
+                 )}
               </div>
 
                {inclusionItems.length > 0 && (
                 <div className='p-6 bg-secondary/50 rounded-lg'>
-                    <h3 className='font-semibold mb-4 text-center'>Lo que suele incluir una reforma de {t.pricingSettings[watchRenovationType].title}:</h3>
+                    <h3 className='font-semibold mb-4 text-center'>Lo que suele incluir una reforma de {t.budgetRequest.quickForm.renovationType.options[watchRenovationType as keyof typeof t.budgetRequest.quickForm.renovationType.options]}:</h3>
                     <ul className='grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-muted-foreground'>
                         {inclusionItems.map((item, index) => (
                             <li key={index} className='flex items-start'>
@@ -183,11 +211,11 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
 
               <div className="flex justify-between items-center mt-8">
                 <Button type="button" variant="outline" onClick={onBack}>
-                  <ArrowLeft className="mr-2" /> Atrás
+                  <ArrowLeft className="mr-2" /> {t.budgetRequest.form.buttons.prev}
                 </Button>
                 <Button type="submit" disabled={isLoading} size="lg">
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  {isLoading ? 'Enviando...' : 'Enviar Solicitud'}
+                  {isLoading ? t.budgetRequest.form.buttons.loading : t.budgetRequest.form.buttons.submit}
                 </Button>
               </div>
             </form>
@@ -197,4 +225,3 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
     </div>
   );
 }
-
