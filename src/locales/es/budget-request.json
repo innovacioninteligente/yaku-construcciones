@@ -6,7 +6,7 @@
         "contact": "Información de Contacto",
         "projectDefinition": "Definición del Proyecto",
         "demolition": "Demoliciones y Trabajos Previos",
-        "bathroom": "Reforma de Baño",
+        "bathroom": "Reforma de Baño(s)",
         "kitchen": "Reforma de Cocina",
         "workArea": "Acondicionamiento de Espacio de Trabajo",
         "ceilings": "Falsos Techos y Aislamiento",
@@ -58,7 +58,11 @@
             "projectScope": {
                 "label": "Alcance del Proyecto",
                 "integral": "Reforma Integral",
-                "partial": "Reforma Parcial (baño, cocina, etc.)"
+                "partial": "Reforma Parcial"
+            },
+            "partialScope": {
+                "label": "Áreas a reformar",
+                "description": "Selecciona las áreas que quieres incluir en la reforma parcial."
             },
             "totalAreaM2": {
                 "label": "Superficie Total del Inmueble (m²)"
@@ -103,7 +107,7 @@
         },
         "bathroom": {
             "renovateBathroom": {
-                "label": "¿Quiere reformar el baño?"
+                "label": "¿Quiere reformar el baño"
             },
             "bathroomWallTilesM2": {
                 "label": "¿Quiere cambiar los azulejos de las paredes? (Indique m²)"

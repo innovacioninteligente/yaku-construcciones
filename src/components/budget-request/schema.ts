@@ -1,5 +1,29 @@
 import * as z from 'zod';
 
+const bathroomSchema = z.object({
+  renovate: z.boolean().default(false),
+  quality: z.enum(['basic', 'medium', 'premium']).optional(),
+  wallTilesM2: z.coerce.number().optional(),
+  floorM2: z.coerce.number().optional(),
+  installShowerTray: z.boolean().default(false),
+  installShowerScreen: z.boolean().default(false),
+  plumbing: z.boolean().default(false),
+});
+
+const kitchenSchema = z.object({
+    renovate: z.boolean().default(false),
+    quality: z.enum(['basic', 'medium', 'premium']).optional(),
+    demolition: z.boolean().default(false),
+    wallTilesM2: z.coerce.number().optional(),
+    floorM2: z.coerce.number().optional(),
+    plumbing: z.boolean().default(false),
+});
+
+const electricalRoomSchema = z.object({
+  sockets: z.coerce.number().optional(),
+  lights: z.coerce.number().optional(),
+});
+
 export const detailedFormSchema = z.object({
   // Contact Info
   name: z.string().min(2, { message: 'El nombre es obligatorio.' }),
@@ -10,9 +34,12 @@ export const detailedFormSchema = z.object({
   // Project Definition
   propertyType: z.enum(['residential', 'commercial', 'office']),
   projectScope: z.enum(['integral', 'partial']),
+  partialScope: z.array(z.string()).optional(),
   totalAreaM2: z.coerce.number().min(1, 'La superficie debe ser de al menos 1 m²'),
-  numberOfRooms: z.coerce.number().optional(),
-  numberOfBathrooms: z.coerce.number().optional(),
+  
+  // Residential specific
+  numberOfRooms: z.coerce.number().min(0, 'El número de habitaciones no puede ser negativo.').optional(),
+  numberOfBathrooms: z.coerce.number().min(0, 'El número de baños no puede ser negativo.').optional(),
 
   // Commercial / Office specific
   workstations: z.coerce.number().optional(),
@@ -24,22 +51,11 @@ export const detailedFormSchema = z.object({
   removeDoors: z.boolean().default(false),
   removeDoorsAmount: z.coerce.number().optional(),
   
-  // Bathroom
-  renovateBathroom: z.boolean().default(false),
-  bathroomQuality: z.enum(['basic', 'medium', 'premium']).optional(),
-  bathroomWallTilesM2: z.coerce.number().optional(),
-  bathroomFloorM2: z.coerce.number().optional(),
-  installShowerTray: z.boolean().default(false),
-  installShowerScreen: z.boolean().default(false),
-  bathroomPlumbing: z.boolean().default(false),
+  // Bathrooms
+  bathrooms: z.array(bathroomSchema).optional(),
   
   // Kitchen
-  renovateKitchen: z.boolean().default(false),
-  kitchenQuality: z.enum(['basic', 'medium', 'premium']).optional(),
-  kitchenDemolition: z.boolean().default(false),
-  kitchenWallTilesM2: z.coerce.number().optional(),
-  kitchenFloorM2: z.coerce.number().optional(),
-  kitchenPlumbing: z.boolean().default(false),
+  kitchen: kitchenSchema.optional(),
 
   // Ceilings
   installFalseCeiling: z.boolean().default(false),
@@ -49,17 +65,9 @@ export const detailedFormSchema = z.object({
 
   // Electricity
   renovateElectricalPanel: z.boolean().default(false),
-  electricalKitchenSockets: z.coerce.number().optional(),
-  electricalKitchenLights: z.coerce.number().optional(),
-  electricalLivingRoomSockets: z.coerce.number().optional(),
-  electricalLivingRoomLights: z.coerce.number().optional(),
-  electricalLivingRoomTV: z.boolean().default(false),
-  electricalBedroom1Sockets: z.coerce.number().optional(),
-  electricalBedroom1Lights: z.coerce.number().optional(),
-  electricalBedroom2Sockets: z.coerce.number().optional(),
-  electricalBedroom2Lights: z.coerce.number().optional(),
-  electricalBedroom3Sockets: z.coerce.number().optional(),
-  electricalBedroom3Lights: z.coerce.number().optional(),
+  electricalKitchen: electricalRoomSchema.optional(),
+  electricalLivingRoom: electricalRoomSchema.extend({ tv: z.boolean().default(false) }).optional(),
+  electricalBedrooms: z.array(electricalRoomSchema).optional(),
 
   // Doors and Paint
   renovateInteriorDoors: z.boolean().default(false),

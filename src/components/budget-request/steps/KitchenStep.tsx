@@ -11,14 +11,14 @@ interface KitchenStepProps {
 }
 
 export const KitchenStep = ({ form, t }: KitchenStepProps) => {
-  const watchRenovateKitchen = form.watch('renovateKitchen');
+  const watchRenovateKitchen = form.watch('kitchen.renovate');
   const commonT = t.budgetRequest.form;
 
   return (
     <div className="space-y-6">
       <FormField
         control={form.control}
-        name="renovateKitchen"
+        name="kitchen.renovate"
         render={({ field }) => (
           <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 text-left">
             <FormLabel className="text-base">{commonT.kitchen.renovateKitchen.label}</FormLabel>
@@ -30,7 +30,7 @@ export const KitchenStep = ({ form, t }: KitchenStepProps) => {
         <div className="space-y-6 pl-4 border-l-2 ml-4">
           <FormField
             control={form.control}
-            name="kitchenQuality"
+            name="kitchen.quality"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>{commonT.quality.label}</FormLabel>
@@ -50,7 +50,7 @@ export const KitchenStep = ({ form, t }: KitchenStepProps) => {
           />
           <FormField
             control={form.control}
-            name="kitchenDemolition"
+            name="kitchen.demolition"
             render={({ field }) => (
               <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 text-left">
                 <FormLabel>{commonT.kitchen.kitchenDemolition.label}</FormLabel>
@@ -60,29 +60,29 @@ export const KitchenStep = ({ form, t }: KitchenStepProps) => {
           />
           <FormField
             control={form.control}
-            name="kitchenWallTilesM2"
+            name="kitchen.wallTilesM2"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>{commonT.kitchen.kitchenWallTilesM2.label}</FormLabel>
-                <FormControl><Input type="number" placeholder="25" {...field} /></FormControl>
+                <FormControl><Input type="number" placeholder="25" {...field} value={field.value || ''} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
           <FormField
             control={form.control}
-            name="kitchenFloorM2"
+            name="kitchen.floorM2"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>{commonT.kitchen.kitchenFloorM2.label}</FormLabel>
-                <FormControl><Input type="number" placeholder="12" {...field} /></FormControl>
+                <FormControl><Input type="number" placeholder="12" {...field} value={field.value || ''} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
           <FormField
             control={form.control}
-            name="kitchenPlumbing"
+            name="kitchen.plumbing"
             render={({ field }) => (
               <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 text-left">
                 <FormLabel>{commonT.kitchen.kitchenPlumbing.label}</FormLabel>

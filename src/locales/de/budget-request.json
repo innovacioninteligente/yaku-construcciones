@@ -6,7 +6,7 @@
         "contact": "Kontaktinformationen",
         "projectDefinition": "Projektdefinition",
         "demolition": "Abriss und Vorarbeiten",
-        "bathroom": "Badezimmerrenovierung",
+        "bathroom": "Badezimmerrenovierung(en)",
         "kitchen": "Küchenrenovierung",
         "workArea": "Arbeitsbereich einrichten",
         "ceilings": "Abgehängte Decken und Isolierung",
@@ -58,7 +58,11 @@
             "projectScope": {
                 "label": "Projektumfang",
                 "integral": "Komplettrenovierung",
-                "partial": "Teilrenovierung (Bad, Küche, etc.)"
+                "partial": "Teilrenovierung"
+            },
+            "partialScope": {
+                "label": "Zu renovierende Bereiche",
+                "description": "Wählen Sie die Bereiche aus, die Sie in die Teilrenovierung einbeziehen möchten."
             },
             "totalAreaM2": {
                 "label": "Gesamtfläche der Immobilie (m²)"

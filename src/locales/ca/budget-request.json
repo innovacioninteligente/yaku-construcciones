@@ -6,7 +6,7 @@
         "contact": "Informació de Contacte",
         "projectDefinition": "Definició del Projecte",
         "demolition": "Demolicions i Treballs Previs",
-        "bathroom": "Reforma de Bany",
+        "bathroom": "Reforma de Bany(s)",
         "kitchen": "Reforma de Cuina",
         "workArea": "Condicionament d'Espai de Treball",
         "ceilings": "Falsos Sostres i Aïllament",
@@ -58,7 +58,11 @@
             "projectScope": {
                 "label": "Abast del Projecte",
                 "integral": "Reforma Integral",
-                "partial": "Reforma Parcial (bany, cuina, etc.)"
+                "partial": "Reforma Parcial"
+            },
+            "partialScope": {
+                "label": "Àrees a reformar",
+                "description": "Selecciona les àrees que vols incloure a la reforma parcial."
             },
             "totalAreaM2": {
                 "label": "Superfície Total de l'Immoble (m²)"

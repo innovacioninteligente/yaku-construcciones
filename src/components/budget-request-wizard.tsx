@@ -1,12 +1,12 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { useForm, useFieldArray } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { ArrowLeft, ArrowRight, Loader2, MailCheck } from 'lucide-react';
 import { Progress } from './ui/progress';
 import { DetailedFormValues, detailedFormSchema } from './budget-request/schema';
@@ -38,86 +38,74 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
       totalAreaM2: 0,
       numberOfRooms: 1,
       numberOfBathrooms: 1,
-      workstations: 0,
-      meetingRooms: 0,
-      demolishPartitions: false, demolishPartitionsM2: 0,
-      removeDoors: false, removeDoorsAmount: 0,
-      renovateBathroom: false, bathroomQuality: 'basic', bathroomWallTilesM2: 0,
-      bathroomFloorM2: 0, installShowerTray: false, installShowerScreen: false,
-      bathroomPlumbing: false,
-      renovateKitchen: false, kitchenQuality: 'basic', kitchenDemolition: false,
-      kitchenWallTilesM2: 0, kitchenFloorM2: 0, kitchenPlumbing: false,
-      installFalseCeiling: false, falseCeilingM2: 0,
-      soundproofRoom: false, soundproofRoomM2: 0,
-      renovateElectricalPanel: false,
-      electricalKitchenSockets: 0, electricalKitchenLights: 0,
-      electricalLivingRoomSockets: 0, electricalLivingRoomLights: 0,
-      electricalLivingRoomTV: false,
-      electricalBedroom1Sockets: 0, electricalBedroom1Lights: 0,
-      electricalBedroom2Sockets: 0, electricalBedroom2Lights: 0,
-      electricalBedroom3Sockets: 0, electricalBedroom3Lights: 0,
-      renovateInteriorDoors: false, interiorDoorsAmount: 0,
-      installSlidingDoor: false, slidingDoorAmount: 0,
-      paintWalls: false, paintWallsM2: 0,
-      removeGotele: false, removeGoteleM2: 0,
-      installAirConditioning: false, renovateExteriorCarpentry: false,
     },
   });
 
-  const { trigger, watch } = form;
-  const projectScope = watch('projectScope');
+  const { control, trigger, watch } = form;
+  const { fields: bathroomFields, append: appendBathroom, remove: removeBathroom } = useFieldArray({ control, name: "bathrooms" });
+  const { fields: bedroomFields, append: appendBedroom, remove: removeBedroom } = useFieldArray({ control, name: "electricalBedrooms" });
+
   const propertyType = watch('propertyType');
+  const projectScope = watch('projectScope');
+  const partialScope = watch('partialScope') || [];
+  const numberOfBathrooms = watch('numberOfBathrooms') || 0;
+  const numberOfRooms = watch('numberOfRooms') || 0;
+
+  useEffect(() => {
+    const desiredCount = numberOfBathrooms;
+    const currentCount = bathroomFields.length;
+    if (currentCount < desiredCount) {
+      for (let i = currentCount; i < desiredCount; i++) {
+        appendBathroom({ renovate: false, quality: 'basic' });
+      }
+    } else if (currentCount > desiredCount) {
+      for (let i = currentCount; i > desiredCount; i--) {
+        removeBathroom(i - 1);
+      }
+    }
+  }, [numberOfBathrooms, appendBathroom, removeBathroom, bathroomFields.length]);
+  
+  useEffect(() => {
+    const desiredCount = numberOfRooms;
+    const currentCount = bedroomFields.length;
+    if (currentCount < desiredCount) {
+      for (let i = currentCount; i < desiredCount; i++) {
+        appendBedroom({ sockets: 4, lights: 1 });
+      }
+    } else if (currentCount > desiredCount) {
+      for (let i = currentCount; i > desiredCount; i--) {
+        removeBedroom(i - 1);
+      }
+    }
+  }, [numberOfRooms, appendBedroom, removeBedroom, bedroomFields.length]);
+
 
   const activeSteps = useMemo(() => {
-    let steps = [...WIZARD_STEPS];
+    let baseSteps = WIZARD_STEPS;
     
     if (propertyType === 'residential') {
-        steps = steps.filter(step => step.id !== 'workArea');
-    } else {
-        steps = steps.filter(step => step.id !== 'bathroom' && step.id !== 'kitchen' && step.id !== 'electricity');
+        baseSteps = baseSteps.filter(step => step.id !== 'workArea');
+    } else { // commercial or office
+        baseSteps = baseSteps.filter(step => step.id === 'contact' || step.id === 'projectDefinition' || step.id === 'workArea' || step.id === 'summary');
     }
 
     if (projectScope === 'partial') {
-        steps = steps.filter(step => 
-            !['demolition', 'carpentry', 'optionals', 'ceilings'].includes(step.id) ||
-            (step.id === 'bathroom' && watch('renovateBathroom')) ||
-            (step.id === 'kitchen' && watch('renovateKitchen'))
-        );
-         const baseSteps = ['contact', 'projectDefinition'];
-         if (watch('renovateBathroom')) baseSteps.push('bathroom');
-         if (watch('renovateKitchen')) baseSteps.push('kitchen');
-         baseSteps.push('summary');
-         
-         const partialSteps = WIZARD_STEPS.filter(step => baseSteps.includes(step.id));
-         
-         // Reorder to keep summary at the end
-         const summaryStep = partialSteps.find(s => s.id === 'summary');
-         const otherSteps = partialSteps.filter(s => s.id !== 'summary');
-         return summaryStep ? [...otherSteps, summaryStep] : otherSteps;
-
-    } else { // integral
-        if (propertyType !== 'residential') {
-            return steps.filter(step => step.id !== 'electricity');
-        }
+        const partialStepsToShow = ['contact', 'projectDefinition', ...partialScope, 'summary'];
+        return baseSteps.filter(step => partialStepsToShow.includes(step.id));
     }
     
-    return steps;
-  }, [projectScope, propertyType, watch]);
+    return baseSteps;
+  }, [propertyType, projectScope, partialScope]);
 
 
   const nextStep = async () => {
-    const fields = activeSteps[currentStep].fields;
-    if (fields) {
-      const isValid = await trigger(fields as (keyof DetailedFormValues)[]);
-      if (!isValid) return;
-    }
-    
-    // Logic to skip steps if not selected in partial renovation
-    if (projectScope === 'partial' && currentStep === 1) {
-        if (!watch('renovateBathroom') && !watch('renovateKitchen')) {
-             setCurrentStep(activeSteps.length - 1); // Go to summary
-             return;
-        }
+    const currentStepConfig = activeSteps[currentStep];
+    if (currentStepConfig?.fields) {
+        const isValid = await trigger(currentStepConfig.fields as (keyof DetailedFormValues)[]);
+        if (!isValid) {
+            console.log("Validation failed", form.formState.errors);
+            return;
+        };
     }
 
     if (currentStep < activeSteps.length - 1) {
@@ -157,11 +145,11 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
         case 'contact': return <ContactStep form={form} t={t} />;
         case 'projectDefinition': return <ProjectDefinitionStep form={form} t={t} />;
         case 'demolition': return <DemolitionStep form={form} t={t} />;
-        case 'bathroom': return <BathroomStep form={form} t={t} />;
+        case 'bathroom': return <BathroomStep form={form} bathroomFields={bathroomFields} t={t} />;
         case 'kitchen': return <KitchenStep form={form} t={t} />;
         case 'workArea': return <WorkAreaStep form={form} t={t} />;
         case 'ceilings': return <CeilingsStep form={form} t={t} />;
-        case 'electricity': return <ElectricityStep form={form} t={t} />;
+        case 'electricity': return <ElectricityStep form={form} bedroomFields={bedroomFields} t={t} />;
         case 'carpentry': return <CarpentryStep form={form} t={t} />;
         case 'optionals': return <OptionalsStep form={form} t={t} />;
         case 'summary': return <SummaryStep t={t} />;
@@ -193,7 +181,7 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
 
   return (
     <div className='w-full max-w-5xl mx-auto'>
-        <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8" />
+        <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8 max-w-5xl mx-auto" />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
                 <Card className='text-left'>

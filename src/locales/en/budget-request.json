@@ -6,7 +6,7 @@
         "contact": "Contact Information",
         "projectDefinition": "Project Definition",
         "demolition": "Demolition and Preliminary Work",
-        "bathroom": "Bathroom Renovation",
+        "bathroom": "Bathroom Renovation(s)",
         "kitchen": "Kitchen Renovation",
         "workArea": "Workspace Setup",
         "ceilings": "False Ceilings and Insulation",
@@ -58,7 +58,11 @@
             "projectScope": {
                 "label": "Project Scope",
                 "integral": "Full Renovation",
-                "partial": "Partial Renovation (bathroom, kitchen, etc.)"
+                "partial": "Partial Renovation"
+            },
+            "partialScope": {
+                "label": "Areas to renovate",
+                "description": "Select the areas you want to include in the partial renovation."
             },
             "totalAreaM2": {
                 "label": "Total Property Area (m²)"
