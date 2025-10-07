@@ -23,7 +23,7 @@ import { SummaryStep } from './budget-request/steps/SummaryStep';
 import { ProjectDefinitionStep } from './budget-request/steps/ProjectDefinitionStep';
 import { WorkAreaStep } from './budget-request/steps/WorkAreaStep';
 
-export function BudgetRequestWizard({ t }: { t: any, services: any }) {
+export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBack: () => void }) {
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -38,6 +38,19 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
       totalAreaM2: 0,
       numberOfRooms: 1,
       numberOfBathrooms: 1,
+      partialScope: [],
+      demolishPartitions: false,
+      removeDoors: false,
+      kitchen: { renovate: false, demolition: false, plumbing: false },
+      installFalseCeiling: false,
+      soundproofRoom: false,
+      renovateElectricalPanel: false,
+      renovateInteriorDoors: false,
+      installSlidingDoor: false,
+      paintWalls: false,
+      removeGotele: false,
+      installAirConditioning: false,
+      renovateExteriorCarpentry: false,
     },
   });
 
@@ -56,7 +69,7 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
     const currentCount = bathroomFields.length;
     if (currentCount < desiredCount) {
       for (let i = currentCount; i < desiredCount; i++) {
-        appendBathroom({ renovate: false, quality: 'basic' });
+        appendBathroom({ quality: 'basic', wallTilesM2: 0, floorM2: 0, installShowerTray: false, installShowerScreen: false, plumbing: false });
       }
     } else if (currentCount > desiredCount) {
       for (let i = currentCount; i > desiredCount; i--) {
@@ -86,7 +99,7 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
     if (propertyType === 'residential') {
         baseSteps = baseSteps.filter(step => step.id !== 'workArea');
     } else { // commercial or office
-        baseSteps = baseSteps.filter(step => step.id === 'contact' || step.id === 'projectDefinition' || step.id === 'workArea' || step.id === 'summary');
+        baseSteps = baseSteps.filter(step => !['bathroom', 'kitchen', 'electricity'].includes(step.id) || (step.id === 'electricity' && propertyType !== 'residential'));
     }
 
     if (projectScope === 'partial') {
@@ -114,7 +127,11 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
   };
 
   const prevStep = () => {
-    setCurrentStep((prev) => prev - 1);
+    if (currentStep === 0) {
+      onBack();
+    } else {
+      setCurrentStep((prev) => prev - 1);
+    }
   };
   
   async function handleFormSubmit(values: DetailedFormValues) {
@@ -194,7 +211,7 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
                 </Card>
                 
                 <div className="flex justify-between items-center">
-                    <Button type="button" variant="outline" onClick={prevStep} disabled={currentStep === 0}>
+                    <Button type="button" variant="outline" onClick={prevStep}>
                         <ArrowLeft className="mr-2" /> {t.budgetRequest.form.buttons.prev}
                     </Button>
                     

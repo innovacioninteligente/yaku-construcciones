@@ -1,4 +1,3 @@
-
 'use client';
 
 import { getDictionary } from '@/lib/dictionaries';
@@ -8,7 +7,9 @@ import { BudgetRequestWizard } from '@/components/budget-request-wizard';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
-import { FileText, ClipboardCheck } from 'lucide-react';
+import { FileText, ClipboardCheck, ArrowLeft } from 'lucide-react';
+import { QuickBudgetForm } from '@/components/budget-request/quick-budget-form';
+import { Button } from '@/components/ui/button';
 
 export default function BudgetRequestPage({ params: { locale } }: { params: { locale: any } }) {
   const [dict, setDict] = useState<any>(null);
@@ -19,13 +20,8 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
     getDictionary(locale).then(d => setDict(d));
   }, [locale]);
   
-  const handleSelectFormType = (type: 'quick' | 'detailed') => {
-    if (type === 'quick') {
-      // For now, we'll just log it. In the future, we can render a different component.
-      console.log("Quick budget form selected, but not implemented yet.");
-      return;
-    }
-    setFormType(type);
+  const handleGoBack = () => {
+    setFormType(null);
   };
 
   if (!dict) {
@@ -33,10 +29,10 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
   }
 
   const renderInitialSelection = () => (
-    <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
+     <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
         <Card 
             className="p-6 text-center hover:shadow-lg hover:border-primary transition-all cursor-pointer"
-            onClick={() => handleSelectFormType('quick')}
+            onClick={() => setFormType('quick')}
         >
             <div className="flex justify-center mb-4">
                 <div className="bg-primary/10 text-primary p-4 rounded-full">
@@ -48,7 +44,7 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
         </Card>
         <Card 
             className="p-6 text-center hover:shadow-lg hover:border-primary transition-all cursor-pointer"
-            onClick={() => handleSelectFormType('detailed')}
+            onClick={() => setFormType('detailed')}
         >
             <div className="flex justify-center mb-4">
                  <div className="bg-primary/10 text-primary p-4 rounded-full">
@@ -59,32 +55,38 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
             <p className="text-muted-foreground">Proporciona todos los detalles para obtener un presupuesto preliminar más preciso y ajustado a tus necesidades.</p>
         </Card>
     </div>
-  )
+  );
 
   return (
     <>
       <Header t={dict} />
       <main className="flex-1">
         <div className="w-full py-16 md:py-20 bg-background">
-          <div className="container-limited flex flex-col items-center justify-center text-center">
-              <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                {dict.budgetRequest.title}
-              </h1>
-              <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                {dict.budgetRequest.description}
-              </p>
-              
-              <div className="relative h-64 md:h-80 w-full max-w-2xl mx-auto mt-8 mb-8 md:mb-12">
-                  <Image
-                      src={vectorUrl}
-                      alt="Ilustración de presupuesto de construcción"
-                      fill
-                      className="object-contain"
-                      data-ai-hint="architect plan calculator"
-                  />
-              </div>
-
-              {formType === 'detailed' ? <BudgetRequestWizard t={dict} services={dict.services} /> : renderInitialSelection()}
+          <div className="container-limited text-center">
+            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              {dict.budgetRequest.title}
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              {dict.budgetRequest.description}
+            </p>
+            
+            {!formType && (
+                <div className="relative h-64 md:h-80 w-full max-w-2xl mx-auto mt-8 mb-8 md:mb-12">
+                    <Image
+                        src={vectorUrl}
+                        alt="Ilustración de presupuesto de construcción"
+                        fill
+                        className="object-contain"
+                        data-ai-hint="architect plan calculator"
+                    />
+                </div>
+            )}
+            
+            <div className='w-full flex justify-center mt-12'>
+              {formType === null && renderInitialSelection()}
+              {formType === 'quick' && <QuickBudgetForm t={dict} onBack={handleGoBack} />}
+              {formType === 'detailed' && <BudgetRequestWizard t={dict} services={dict.services} onBack={handleGoBack} />}
+            </div>
           </div>
         </div>
       </main>
