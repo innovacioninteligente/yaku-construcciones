@@ -50,7 +50,7 @@
         "buttons": {
             "prev": "Previous",
             "next": "Next",
-            "submit": "Submit Request",
+            "submit": "Calculate Estimated Price",
             "loading": "Submitting..."
         },
         "name": {

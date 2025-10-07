@@ -50,7 +50,7 @@
         "buttons": {
             "prev": "Zurück",
             "next": "Weiter",
-            "submit": "Anfrage senden",
+            "submit": "Geschätzten Preis berechnen",
             "loading": "Wird gesendet..."
         },
         "name": {

@@ -50,7 +50,7 @@
         "buttons": {
             "prev": "Enrere",
             "next": "Següent",
-            "submit": "Envia la Sol·licitud",
+            "submit": "Calcula el preu estimat",
             "loading": "Enviant..."
         },
         "name": {

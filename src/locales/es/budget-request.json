@@ -50,7 +50,7 @@
         "buttons": {
             "prev": "Atrás",
             "next": "Siguiente",
-            "submit": "Enviar Solicitud",
+            "submit": "Calcular Precio Estimado",
             "loading": "Enviando..."
         },
         "name": {
