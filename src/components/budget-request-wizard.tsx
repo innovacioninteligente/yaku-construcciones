@@ -30,7 +30,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [direction, setDirection] = useState(1);
-  const progressRef = useRef<HTMLDivElement>(null);
+  const progressContainerRef = useRef<HTMLDivElement>(null);
 
   const form = useForm<DetailedFormValues>({
     resolver: zodResolver(detailedFormSchema),
@@ -96,8 +96,8 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
   }, [numberOfRooms, appendBedroom, removeBedroom, bedroomFields.length]);
 
   useEffect(() => {
-    if (progressRef.current) {
-        progressRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (progressContainerRef.current) {
+        progressContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [currentStep]);
 
@@ -122,6 +122,9 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
 
   const nextStep = async () => {
     const currentStepConfig = activeSteps[currentStep];
+    const isLastStep = currentStep === activeSteps.length - 1;
+    const isBeforeSummary = currentStep === activeSteps.length - 2;
+
     if (currentStepConfig?.fields) {
         const isValid = await trigger(currentStepConfig.fields as (keyof DetailedFormValues)[]);
         if (!isValid) {
@@ -130,7 +133,13 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
         };
     }
 
-    if (currentStep < activeSteps.length - 1) {
+    if (isBeforeSummary) {
+        setDirection(1);
+        setCurrentStep((prev) => prev + 1);
+        return;
+    }
+    
+    if (!isLastStep) {
       setDirection(1);
       setCurrentStep((prev) => prev + 1);
     }
@@ -245,8 +254,10 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
   }
 
   return (
-    <div className='w-full max-w-5xl mx-auto' ref={progressRef}>
-        <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8 max-w-5xl mx-auto" />
+    <div className='w-full max-w-5xl mx-auto'>
+        <div ref={progressContainerRef} className="scroll-mt-24">
+            <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8 max-w-5xl mx-auto" />
+        </div>
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
                 <Card className='text-left overflow-hidden'>
