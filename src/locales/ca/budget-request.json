@@ -2,70 +2,18 @@
 {
     "title": "Sol·licita el teu pressupost detallat",
     "description": "Completa els passos següents perquè puguem donar-te una estimació precisa.",
-    "selection": {
-        "title": "Tria el tipus de pressupost que necessites",
-        "description": "Un pressupost ràpid et donarà una idea general del cost, mentre que un pressupost detallat ens permetrà afinar molt més l'estimació. Recorda que tots els pressupostos són estimatius i un tècnic es posarà en contacte per confirmar-los.",
-        "simple": {
-            "title": "Pressupost Ràpid",
-            "description": "Ideal per tenir una estimació ràpida del cost del teu projecte amb poques dades."
-        },
-        "detailed": {
-            "title": "Pressupost Detallat",
-            "description": "Proporciona tots els detalls per obtenir un pressupost preliminar més precís i ajustat a les teves necessitats."
-        }
-    },
-    "simple": {
-        "title": "Formulari de Pressupost Ràpid",
-        "description": "Omple els camps següents per obtenir una estimació aproximada.",
-        "projectType": {
-            "label": "Tipus de Reforma",
-            "placeholder": "Selecciona el tipus de projecte",
-            "options": {
-                "integral": "Reforma Integral",
-                "bathrooms": "Reforma de Banys",
-                "kitchen": "Reforma de Cuina",
-                "pools": "Construcció/Reforma de Piscines"
-            }
-        },
-        "squareMeters": {
-            "label": "Metres quadrats aproximats (m²)"
-        },
-        "inclusions": {
-            "title": "El que sol incloure una reforma de {projectType}:",
-            "bathrooms": [
-                "Desmuntatge d'accessoris: plat de dutxa/banyera, lavabo i wc",
-                "Demolició, enrajolats, electricitat, lampisteria, terres.",
-                "Preparacions prèvies: regates, electricitat i lampisteria, arrebossat parets.",
-                "Lampisteria completa: canvi d'instal·lació d'aigua freda i calenta i desguassos.",
-                "Enrajolat de parets",
-                "Col·locació de paviments",
-                "Electricitat nova: endolls i il·luminació.",
-                "Fals sostre en pladur especial humitat",
-                "Claus de pas generals",
-                "Plat de dutxa o banyera",
-                "WC",
-                "Griferia banyera/plat de dutxa",
-                "Griferia lavabo",
-                "Lavabo",
-                "Rajoles i taulells",
-                "Il·luminació LED",
-                "Endoll i interruptor"
-            ],
-            "kitchen": [
-                "Desmuntatge de mobles de cuina",
-                "Demolició, enrajolats, electricitat, lampisteria, terres.",
-                "Preparacions prèvies: regates, electricitat i lampisteria, arrebossat parets.",
-                "Lampisteria completa: canvi d'instal·lació d'aigua freda i calenta i desguassos.",
-                "Enrajolat de parets",
-                "Col·locació de paviments",
-                "Electricitat nova: endolls i il·luminació.",
-                "Fals sostre en pladur especial humitat",
-                "Claus de pas generals",
-                "Rajoles i taulells",
-                "Il·luminació LED",
-                "Endolls i interruptors"
-            ]
-        }
+    "steps": {
+        "contact": "Informació de Contacte",
+        "projectDefinition": "Definició del Projecte",
+        "demolition": "Demolicions i Treballs Previs",
+        "bathroom": "Reforma de Bany",
+        "kitchen": "Reforma de Cuina",
+        "workArea": "Condicionament d'Espai de Treball",
+        "ceilings": "Falsos Sostres i Aïllament",
+        "electricity": "Instal·lació Elèctrica",
+        "carpentry": "Fusteria i Pintura",
+        "optionals": "Opcionals",
+        "summary": "Resum i Enviament"
     },
     "summary": {
         "title": "Resum de la teva Sol·licitud",
@@ -75,15 +23,13 @@
         "title": "Sol·licitud Rebuda!",
         "description": "Gràcies per completar la teva sol·licitud. El nostre equip la revisarà i es posarà en contacte amb tu en les properes 24-48 hores.",
         "button": "Torna a la pàgina principal",
-        "estimatedCostLabel": "El teu pressupost estimat és:",
-        "taxNote": "(Aquest preu no inclou IVA ni llicències)",
         "noCostMessage": "Un dels nostres especialistes es posarà en contacte amb tu per proporcionar-te un pressupost detallat."
     },
     "form": {
         "buttons": {
             "prev": "Enrere",
             "next": "Següent",
-            "submit": "Veure Preu Estimat",
+            "submit": "Envia la Sol·licitud de Pressupost",
             "loading": "Enviant..."
         },
         "name": {
@@ -101,6 +47,36 @@
         "address": {
             "label": "Adreça de l'Obra",
             "placeholder": "Carrer, número, ciutat"
+        },
+        "projectDefinition": {
+            "propertyType": {
+                "label": "Tipus d'Immoble",
+                "residential": "Habitatge (Pis/Casa)",
+                "commercial": "Local Comercial",
+                "office": "Oficina"
+            },
+            "projectScope": {
+                "label": "Abast del Projecte",
+                "integral": "Reforma Integral",
+                "partial": "Reforma Parcial (bany, cuina, etc.)"
+            },
+            "totalAreaM2": {
+                "label": "Superfície Total de l'Immoble (m²)"
+            },
+            "numberOfRooms": {
+                "label": "Nombre d'Habitacions"
+            },
+            "numberOfBathrooms": {
+                "label": "Nombre de Banys"
+            }
+        },
+        "workArea": {
+            "workstations": {
+                "label": "Nombre de Llocs de Treball/Escriptoris"
+            },
+            "meetingRooms": {
+                "label": "Nombre de Sales de Reunions"
+            }
         },
         "quality": {
             "label": "Nivell de Qualitat Desitjat",

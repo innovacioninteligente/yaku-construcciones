@@ -7,6 +7,17 @@ export const detailedFormSchema = z.object({
   phone: z.string().min(9, { message: 'Por favor, introduce un número de teléfono válido.' }),
   address: z.string().min(5, { message: 'La dirección del proyecto es necesaria.' }),
   
+  // Project Definition
+  propertyType: z.enum(['residential', 'commercial', 'office']),
+  projectScope: z.enum(['integral', 'partial']),
+  totalAreaM2: z.coerce.number().min(1, 'La superficie debe ser de al menos 1 m²'),
+  numberOfRooms: z.coerce.number().optional(),
+  numberOfBathrooms: z.coerce.number().optional(),
+
+  // Commercial / Office specific
+  workstations: z.coerce.number().optional(),
+  meetingRooms: z.coerce.number().optional(),
+  
   // Demolitions
   demolishPartitions: z.boolean().default(false),
   demolishPartitionsM2: z.coerce.number().optional(),
@@ -65,15 +76,4 @@ export const detailedFormSchema = z.object({
   renovateExteriorCarpentry: z.boolean().default(false),
 });
 
-export const simpleFormSchema = z.object({
-  name: z.string().min(2, { message: 'El nombre es obligatorio.' }),
-  email: z.string().email({ message: 'Por favor, introduce un correo electrónico válido.' }),
-  phone: z.string().min(9, { message: 'Por favor, introduce un número de teléfono válido.' }),
-  address: z.string().min(5, { message: 'La dirección del proyecto es necesaria.' }),
-  projectType: z.enum(['integral', 'bathrooms', 'kitchen', 'pools']),
-  squareMeters: z.coerce.number().min(1, { message: 'Debe ser al menos 1 m².' }),
-  quality: z.enum(['basic', 'medium', 'premium']),
-});
-
 export type DetailedFormValues = z.infer<typeof detailedFormSchema>;
-export type SimpleFormValues = z.infer<typeof simpleFormSchema>;

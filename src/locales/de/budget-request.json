@@ -2,70 +2,18 @@
 {
     "title": "Fordern Sie Ihr detailliertes Angebot an",
     "description": "Füllen Sie die folgenden Schritte aus, damit wir Ihnen einen genauen Kostenvoranschlag erstellen können.",
-    "selection": {
-        "title": "Wählen Sie die Art des Angebots, das Sie benötigen",
-        "description": "Ein schnelles Angebot gibt Ihnen eine allgemeine Vorstellung von den Kosten, während ein detailliertes Angebot uns ermöglicht, den Kostenvoranschlag viel genauer zu verfeinern. Denken Sie daran, dass alle Angebote Schätzungen sind und ein Techniker Sie zur Bestätigung kontaktieren wird.",
-        "simple": {
-            "title": "Schnelles Angebot",
-            "description": "Ideal, um mit wenigen Daten eine schnelle Kostenschätzung für Ihr Projekt zu erhalten."
-        },
-        "detailed": {
-            "title": "Detailliertes Angebot",
-            "description": "Geben Sie alle Details an, um ein genaueres, auf Ihre Bedürfnisse zugeschnittenes vorläufiges Budget zu erhalten."
-        }
-    },
-    "simple": {
-        "title": "Schnelles Angebotsformular",
-        "description": "Füllen Sie die folgenden Felder aus, um eine ungefähre Schätzung zu erhalten.",
-        "projectType": {
-            "label": "Art der Renovierung",
-            "placeholder": "Wählen Sie die Projektart",
-            "options": {
-                "integral": "Komplettrenovierung",
-                "bathrooms": "Badezimmerrenovierung",
-                "kitchen": "Küchenrenovierung",
-                "pools": "Poolbau/-renovierung"
-            }
-        },
-        "squareMeters": {
-            "label": "Ungefähre Quadratmeter (m²)"
-        },
-        "inclusions": {
-            "title": "Was eine {projectType}-Renovierung normalerweise beinhaltet:",
-            "bathrooms": [
-                "Demontage von Zubehör: Duschwanne/Badewanne, Waschbecken und WC",
-                "Abriss, Fliesen, Elektrik, Sanitär, Böden.",
-                "Vorbereitungen: Schlitze, Elektrik und Sanitär, Verputzen der Wände.",
-                "Komplette Sanitärinstallation: Austausch der Kalt- und Warmwasserleitungen und Abflüsse.",
-                "Wandfliesen verlegen",
-                "Bodenbeläge verlegen",
-                "Neue Elektrik: Steckdosen und Beleuchtung.",
-                "Abgehängte Decke aus feuchtigkeitsbeständigem Gipskarton",
-                "Hauptabsperrventile",
-                "Duschwanne oder Badewanne",
-                "WC",
-                "Dusch-/Badewannenarmatur",
-                "Waschbeckenarmatur",
-                "Waschbecken",
-                "Boden- und Wandfliesen",
-                "LED-Beleuchtung",
-                "Steckdose und Schalter"
-            ],
-            "kitchen": [
-                "Demontage von Küchenmöbeln",
-                "Abriss, Fliesen, Elektrik, Sanitär, Böden.",
-                "Vorbereitungen: Schlitze, Elektrik und Sanitär, Verputzen der Wände.",
-                "Komplette Sanitärinstallation: Austausch der Kalt- und Warmwasserleitungen und Abflüsse.",
-                "Wandfliesen verlegen",
-                "Bodenbeläge verlegen",
-                "Neue Elektrik: Steckdosen und Beleuchtung.",
-                "Abgehängte Decke aus feuchtigkeitsbeständigem Gipskarton",
-                "Hauptabsperrventile",
-                "Boden- und Wandfliesen",
-                "LED-Beleuchtung",
-                "Steckdosen und Schalter"
-            ]
-        }
+    "steps": {
+        "contact": "Kontaktinformationen",
+        "projectDefinition": "Projektdefinition",
+        "demolition": "Abriss und Vorarbeiten",
+        "bathroom": "Badezimmerrenovierung",
+        "kitchen": "Küchenrenovierung",
+        "workArea": "Arbeitsbereich einrichten",
+        "ceilings": "Abgehängte Decken und Isolierung",
+        "electricity": "Elektroinstallation",
+        "carpentry": "Schreinerei und Malerei",
+        "optionals": "Optionen",
+        "summary": "Zusammenfassung und Einreichung"
     },
     "summary": {
         "title": "Zusammenfassung Ihrer Anfrage",
@@ -75,15 +23,13 @@
         "title": "Anfrage erhalten!",
         "description": "Vielen Dank für Ihre Anfrage. Unser Team wird sie prüfen und sich innerhalb der nächsten 24-48 Stunden bei Ihnen melden.",
         "button": "Zurück zur Startseite",
-        "estimatedCostLabel": "Ihr geschätztes Budget beträgt:",
-        "taxNote": "(Dieser Preis enthält keine Mehrwertsteuer oder Lizenzen)",
         "noCostMessage": "Einer unserer Spezialisten wird sich mit Ihnen in Verbindung setzen, um Ihnen ein detailliertes Angebot zu unterbreiten."
     },
     "form": {
         "buttons": {
             "prev": "Zurück",
             "next": "Weiter",
-            "submit": "Geschätzten Preis anzeigen",
+            "submit": "Angebotsanfrage senden",
             "loading": "Wird gesendet..."
         },
         "name": {
@@ -101,6 +47,36 @@
         "address": {
             "label": "Projektadresse",
             "placeholder": "Straße, Hausnummer, Stadt"
+        },
+        "projectDefinition": {
+            "propertyType": {
+                "label": "Immobilientyp",
+                "residential": "Wohnimmobilie (Wohnung/Haus)",
+                "commercial": "Gewerbefläche",
+                "office": "Büro"
+            },
+            "projectScope": {
+                "label": "Projektumfang",
+                "integral": "Komplettrenovierung",
+                "partial": "Teilrenovierung (Bad, Küche, etc.)"
+            },
+            "totalAreaM2": {
+                "label": "Gesamtfläche der Immobilie (m²)"
+            },
+            "numberOfRooms": {
+                "label": "Anzahl der Zimmer"
+            },
+            "numberOfBathrooms": {
+                "label": "Anzahl der Badezimmer"
+            }
+        },
+        "workArea": {
+            "workstations": {
+                "label": "Anzahl der Arbeitsplätze/Schreibtische"
+            },
+            "meetingRooms": {
+                "label": "Anzahl der Besprechungsräume"
+            }
         },
         "quality": {
             "label": "Gewünschte Qualitätsstufe",
