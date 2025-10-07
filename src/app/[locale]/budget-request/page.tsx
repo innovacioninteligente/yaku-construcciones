@@ -13,8 +13,17 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
       <Header t={dict} />
       <main>
         <section className="relative w-full py-16 md:py-24 bg-background overflow-hidden">
-            <div className="container-limited relative z-10">
-                <div className="max-w-2xl space-y-4">
+            <div className="absolute top-0 right-0 h-full w-full md:w-2/3 lg:w-1/2 opacity-50 md:opacity-100">
+                <Image
+                    src={vectorUrl}
+                    alt="Ilustración de presupuesto de construcción"
+                    fill
+                    className="object-contain object-top md:object-right-top"
+                    data-ai-hint="architect plan calculator"
+                />
+            </div>
+            <div className="container-limited relative z-10 text-center">
+                <div className="max-w-2xl mx-auto space-y-4">
                     <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                         {dict.header.nav.budgetRequest}
                     </h1>
@@ -22,15 +31,6 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
                         {dict.budgetRequest.description}
                     </p>
                 </div>
-            </div>
-            <div className="absolute inset-y-0 right-0 w-1/2 h-full hidden md:block">
-                <Image
-                    src={vectorUrl}
-                    alt="Ilustración de presupuesto de construcción"
-                    fill
-                    className="object-contain object-left"
-                    data-ai-hint="architect plan calculator"
-                />
             </div>
         </section>
         <BudgetRequestWizard t={dict} services={dict.services} />
