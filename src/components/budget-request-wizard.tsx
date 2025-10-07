@@ -85,7 +85,7 @@ const detailedFormSchema = z.object({
   slidingDoorAmount: z.coerce.number().optional(),
   paintWalls: z.boolean().default(false),
   paintWallsM2: z.coerce.number().optional(),
-  removeGotele: z_boolean().default(false),
+  removeGotele: z.boolean().default(false),
   removeGoteleM2: z.coerce.number().optional(),
 
   // Optionals
@@ -603,7 +603,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
 
   return (
     <div className="container pb-12 md:pb-20">
-      <div className="max-w-5xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto">
         {!formType ? renderFormSelection() : (
             formType === 'simple' ? renderSimpleForm() : renderDetailedForm()
         )}
@@ -611,3 +611,5 @@ export function BudgetRequestWizard({ t }: { t: any }) {
     </div>
   );
 }
+
+    
