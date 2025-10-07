@@ -192,11 +192,11 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
   }
 
   return (
-    <div className='w-full'>
+    <div className='w-full max-w-5xl mx-auto'>
         <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8" />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
-                <Card className='text-left max-w-5xl mx-auto'>
+                <Card className='text-left'>
                     <CardHeader>
                         <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.steps[activeSteps[currentStep]?.id]}</CardTitle>
                     </CardHeader>
@@ -205,7 +205,7 @@ export function BudgetRequestWizard({ t }: { t: any, services: any }) {
                     </CardContent>
                 </Card>
                 
-                <div className="flex justify-between items-center max-w-5xl mx-auto">
+                <div className="flex justify-between items-center">
                     <Button type="button" variant="outline" onClick={prevStep} disabled={currentStep === 0}>
                         <ArrowLeft className="mr-2" /> {t.budgetRequest.form.buttons.prev}
                     </Button>
