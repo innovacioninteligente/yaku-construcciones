@@ -236,5 +236,53 @@
                 "description": "Ihre Anfrage konnte nicht bearbeitet werden. Bitte versuchen Sie es später erneut."
             }
         }
+    },
+    "reformInclusions": {
+        "title": "Was eine Renovierung von",
+        "kitchen": [
+            "Demontage von Küchenmöbeln",
+            "Abriss, Fliesen, Elektrik, Sanitär, Böden.",
+            "Vorbereitungsarbeiten: Schlitze, Elektrik und Sanitär, Verputzen der Wände.",
+            "Komplette Sanitärinstallation: Austausch der Kalt- und Warmwasserinstallation und der Abflüsse.",
+            "Wandfliesen",
+            "Bodenverlegung",
+            "Neue Elektrik: Steckdosen und Beleuchtung.",
+            "Feuchtigkeitsbeständige Gipskarton-Zwischendecke",
+            "Hauptabsperrventile",
+            "Fliesen und Keramik",
+            "LED-Beleuchtung",
+            "Steckdosen und Schalter"
+        ],
+        "bathrooms": [
+            "Demontage von Zubehör: Duschwanne/Badewanne, Waschbecken und WC",
+            "Abriss, Fliesen, Elektrik, Sanitär, Böden.",
+            "Vorbereitungsarbeiten: Schlitze, Elektrik und Sanitär, Verputzen der Wände.",
+            "Komplette Sanitärinstallation: Austausch der Kalt- und Warmwasserinstallation und der Abflüsse.",
+            "Wandfliesen",
+            "Bodenverlegung",
+            "Neue Elektrik: Steckdosen und Beleuchtung.",
+            "Feuchtigkeitsbeständige Gipskarton-Zwischendecke",
+            "Hauptabsperrventile",
+            "Duschwanne oder Badewanne",
+            "WC",
+            "Wannen-/Duscharmatur",
+            "Waschtischarmatur",
+            "Waschbecken",
+            "Fliesen und Keramik",
+            "LED-Beleuchtung",
+            "Steckdose und Schalter"
+        ],
+        "integral": [
+            "Abriss von nicht tragenden Wänden und Elementen",
+            "Vollständige Erneuerung der Elektroinstallation",
+            "Vollständige Erneuerung der Sanitär- und Abwasserleitungen",
+            "Neue Fliesen und Bodenbeläge im ganzen Haus",
+            "Neue Innenschreinereiarbeiten (Türen und Schränke)",
+            "Vollständiger Anstrich von Wänden und Decken",
+            "Küchenrenovierung (Grundmöbel und Geräte)",
+            "Badezimmerrenovierung (Sanitärobjekte und Armaturen)",
+            "Einbau einer Zwischendecke in Feuchträumen",
+            "Abfallmanagement und Endreinigung der Baustelle"
+        ]
     }
 }

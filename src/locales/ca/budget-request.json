@@ -236,5 +236,53 @@
                 "description": "No s'ha pogut processar la teva sol·licitud. Intenta-ho de nou més tard."
             }
         }
+    },
+    "reformInclusions": {
+        "title": "El que sol incloure una reforma de",
+        "kitchen": [
+            "Desmuntatge de mobles de cuina",
+            "Demolició, enrajolats, electricitat, lampisteria, terres.",
+            "Preparacions prèvies: regates, electricitat i lampisteria, arrebossat de parets.",
+            "Lampisteria completa: canvi d'instal·lació d'aigua freda i calenta i desguassos.",
+            "Enrajolat de parets",
+            "Col·locació de paviments",
+            "Electricitat nova: endolls i il·luminació.",
+            "Fals sostre de pladur especial per a humitat",
+            "Claus de pas generals",
+            "Rajoles i taulells",
+            "Il·luminació LED",
+            "Endolls i interruptors"
+        ],
+        "bathrooms": [
+            "Desmuntatge d'accessoris: plat de dutxa/banyera, lavabo i wc",
+            "Demolició, enrajolats, electricitat, lampisteria, terres.",
+            "Preparacions prèvies: regates, electricitat i lampisteria, arrebossat de parets.",
+            "Lampisteria completa: canvi d'instal·lació d'aigua freda i calenta i desguassos.",
+            "Enrajolat de parets",
+            "Col·locació de paviments",
+            "Electricitat nova: endolls i il·luminació.",
+            "Fals sostre de pladur especial per a humitat",
+            "Claus de pas generals",
+            "Plat de dutxa o banyera",
+            "WC",
+            "Aixeteria de banyera/plat de dutxa",
+            "Aixeteria de lavabo",
+            "Lavabo",
+            "Rajoles i taulells",
+            "Il·luminació LED",
+            "Endoll i interruptor"
+        ],
+        "integral": [
+            "Demolició d'envans i elements no estructurals",
+            "Renovació completa de la instal·lació elèctrica",
+            "Renovació completa de la lampisteria i el sanejament",
+            "Nous enrajolats i paviments a tot l'habitatge",
+            "Fusteria interior nova (portes i armaris)",
+            "Pintura completa de parets i sostres",
+            "Renovació de cuina (mobiliari i electrodomèstics bàsics)",
+            "Renovació de banys (sanitaris i aixeteria)",
+            "Instal·lació de fals sostre a les zones humides",
+            "Gestió de residus i neteja final d'obra"
+        ]
     }
 }

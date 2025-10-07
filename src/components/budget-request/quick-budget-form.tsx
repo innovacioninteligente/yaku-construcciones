@@ -25,7 +25,6 @@ import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
 import { ArrowLeft, Check, Loader2, MailCheck } from 'lucide-react';
-import { reformInclusions } from './reform-inclusions';
 
 const pricingConfig = {
     integral: { basic: 400, medium: 600, premium: 800 },
@@ -65,7 +64,9 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
   });
 
   const watchRenovationType = form.watch('renovationType');
-  const inclusionItems = reformInclusions[watchRenovationType] || [];
+  const tInclusions = t.budgetRequest.reformInclusions;
+  const inclusionItems = tInclusions[watchRenovationType] || [];
+
 
   async function handleFormSubmit(values: QuickFormValues) {
     setIsLoading(true);
@@ -197,9 +198,9 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
 
                {inclusionItems.length > 0 && (
                 <div className='p-6 bg-secondary/50 rounded-lg'>
-                    <h3 className='font-semibold mb-4 text-center'>Lo que suele incluir una reforma de {t.budgetRequest.quickForm.renovationType.options[watchRenovationType as keyof typeof t.budgetRequest.quickForm.renovationType.options]}:</h3>
+                    <h3 className='font-semibold mb-4 text-center'>{tInclusions.title} {t.budgetRequest.quickForm.renovationType.options[watchRenovationType as keyof typeof t.budgetRequest.quickForm.renovationType.options]}:</h3>
                     <ul className='grid md:grid-cols-2 gap-x-8 gap-y-2 text-sm text-muted-foreground'>
-                        {inclusionItems.map((item, index) => (
+                        {inclusionItems.map((item: string, index: number) => (
                             <li key={index} className='flex items-start'>
                                 <Check className='w-4 h-4 mr-2 mt-0.5 text-primary flex-shrink-0' />
                                 <span>{item}</span>

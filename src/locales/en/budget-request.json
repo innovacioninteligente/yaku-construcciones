@@ -236,5 +236,53 @@
                 "description": "Could not process your request. Please try again later."
             }
         }
+    },
+    "reformInclusions": {
+        "title": "What a renovation of",
+        "kitchen": [
+            "Dismantling of kitchen furniture",
+            "Demolition, tiling, electricity, plumbing, flooring.",
+            "Preliminary preparations: chasing, electricity and plumbing, wall rendering.",
+            "Complete plumbing: replacement of hot and cold water installation and drains.",
+            "Wall tiling",
+            "Floor laying",
+            "New electricity: sockets and lighting.",
+            "Moisture-resistant plasterboard false ceiling",
+            "Main stopcocks",
+            "Tiles and ceramics",
+            "LED lighting",
+            "Sockets and switches"
+        ],
+        "bathrooms": [
+            "Dismantling of accessories: shower tray/bathtub, sink and toilet",
+            "Demolition, tiling, electricity, plumbing, flooring.",
+            "Preliminary preparations: chasing, electricity and plumbing, wall rendering.",
+            "Complete plumbing: replacement of hot and cold water installation and drains.",
+            "Wall tiling",
+            "Floor laying",
+            "New electricity: sockets and lighting.",
+            "Moisture-resistant plasterboard false ceiling",
+            "Main stopcocks",
+            "Shower tray or bathtub",
+            "Toilet",
+            "Bathtub/shower faucet",
+            "Sink faucet",
+            "Sink",
+            "Tiles and ceramics",
+            "LED lighting",
+            "Socket and switch"
+        ],
+        "integral": [
+            "Demolition of non-structural partitions and elements",
+            "Complete renovation of electrical installation",
+            "Complete renovation of plumbing and sanitation",
+            "New tiling and flooring throughout the home",
+            "New interior carpentry (doors and wardrobes)",
+            "Complete painting of walls and ceilings",
+            "Kitchen renovation (basic furniture and appliances)",
+            "Bathroom renovation (sanitary ware and faucets)",
+            "Installation of false ceiling in wet areas",
+            "Waste management and final cleaning of the site"
+        ]
     }
 }
