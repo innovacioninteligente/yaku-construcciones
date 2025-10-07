@@ -12,7 +12,6 @@ interface KitchenStepProps {
 }
 
 export const KitchenStep = ({ form, t }: KitchenStepProps) => {
-  const watchRenovateKitchen = form.watch('kitchen.renovate');
   const projectScope = form.watch('projectScope');
   const partialScope = form.watch('partialScope') || [];
   const commonT = t.budgetRequest.form;
@@ -20,24 +19,10 @@ export const KitchenStep = ({ form, t }: KitchenStepProps) => {
   const showKitchenForm = projectScope === 'integral' || (projectScope === 'partial' && partialScope.includes('kitchen'));
 
   if (!showKitchenForm) {
-      return (
-        <div className="space-y-6">
-            <FormField
-                control={form.control}
-                name="kitchen.renovate"
-                render={({ field }) => (
-                <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 text-left">
-                    <FormLabel className="text-base">{commonT.kitchen.renovateKitchen.label}</FormLabel>
-                    <FormControl><Switch checked={field.value} onCheckedChange={field.onChange} /></FormControl>
-                </FormItem>
-                )}
-            />
-        </div>
-      )
+      return null;
   }
 
   const defaultAccordionValue = (projectScope === 'partial' && partialScope.includes('kitchen')) ? "kitchen-renovation" : undefined;
-
 
   return (
     <div className="space-y-6">

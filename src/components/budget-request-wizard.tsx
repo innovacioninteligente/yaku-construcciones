@@ -122,17 +122,18 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
 
   const nextStep = async () => {
     const currentStepConfig = activeSteps[currentStep];
-    
-    if (currentStepConfig?.fields) {
-        const isValid = await trigger(currentStepConfig.fields as (keyof DetailedFormValues)[]);
-        if (!isValid) {
-            console.log("Validation failed", form.formState.errors);
-            return;
-        }
+    const fieldsToValidate = currentStepConfig?.fields as (keyof DetailedFormValues)[] | undefined;
+
+    const isValid = await trigger(fieldsToValidate);
+    if (!isValid) {
+      console.log("Validation failed", form.formState.errors);
+      return;
     }
 
-    setDirection(1);
-    setCurrentStep((prev) => prev + 1);
+    if (currentStep < activeSteps.length - 1) {
+        setDirection(1);
+        setCurrentStep((prev) => prev + 1);
+    }
   };
 
   const prevStep = () => {
@@ -254,7 +255,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
                     <CardHeader>
                         <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.steps[activeSteps[currentStep]?.id]}</CardTitle>
                     </CardHeader>
-                    <CardContent className="min-h-[450px]">
+                    <CardContent>
                        <AnimatePresence mode="wait" custom={direction}>
                             <motion.div
                                 key={currentStep}
@@ -263,6 +264,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
                                 initial="hidden"
                                 animate="visible"
                                 exit="exit"
+                                className='min-h-[450px]'
                             >
                                 {renderDetailedStep()}
                             </motion.div>
