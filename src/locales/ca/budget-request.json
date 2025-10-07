@@ -1,3 +1,4 @@
+
 {
     "title": "Sol·licita el teu pressupost detallat",
     "description": "Completa els passos següents perquè puguem donar-te una estimació precisa.",
@@ -82,7 +83,7 @@
         "buttons": {
             "prev": "Enrere",
             "next": "Següent",
-            "submit": "Envia la Sol·licitud",
+            "submit": "Veure Preu Estimat",
             "loading": "Enviant..."
         },
         "name": {

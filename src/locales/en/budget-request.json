@@ -1,3 +1,4 @@
+
 {
     "title": "Request Your Detailed Quote",
     "description": "Complete the following steps so we can provide you with an accurate estimate.",
@@ -82,7 +83,7 @@
         "buttons": {
             "prev": "Previous",
             "next": "Next",
-            "submit": "Submit Request",
+            "submit": "See Estimated Price",
             "loading": "Submitting..."
         },
         "name": {

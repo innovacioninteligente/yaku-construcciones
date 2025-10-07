@@ -1,3 +1,4 @@
+
 {
     "title": "Solicita tu presupuesto detallado",
     "description": "Completa los siguientes pasos para que podamos darte una estimación precisa.",
@@ -82,7 +83,7 @@
         "buttons": {
             "prev": "Atrás",
             "next": "Siguiente",
-            "submit": "Enviar Solicitud",
+            "submit": "Ver Precio Estimado",
             "loading": "Enviando..."
         },
         "name": {

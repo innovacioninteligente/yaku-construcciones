@@ -1,6 +1,7 @@
 
 
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -263,7 +264,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                 </p>
                 <Button asChild size="lg" className="font-bold">
                     <Link href="/budget-request">
-                        Solicitar Presupuesto Gratis
+                        Presupuesto al instante
                         <ArrowRight className="ml-2" />
                     </Link>
                 </Button>

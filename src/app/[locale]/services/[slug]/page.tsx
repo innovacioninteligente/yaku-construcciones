@@ -87,7 +87,7 @@ export default async function ServicePage({ params }: { params: { slug: string, 
                 <p className="text-muted-foreground mb-6">Obtén una estimación de costes para tu proyecto ahora mismo.</p>
                 <Button asChild size="lg" className="w-full">
                   <Link href="/budget-request">
-                    Solicitar Presupuesto <ArrowRight className="ml-2" />
+                    Presupuesto al instante <ArrowRight className="ml-2" />
                   </Link>
                 </Button>
               </div>

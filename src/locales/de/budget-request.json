@@ -1,3 +1,4 @@
+
 {
     "title": "Fordern Sie Ihr detailliertes Angebot an",
     "description": "Füllen Sie die folgenden Schritte aus, damit wir Ihnen einen genauen Kostenvoranschlag erstellen können.",
@@ -82,7 +83,7 @@
         "buttons": {
             "prev": "Zurück",
             "next": "Weiter",
-            "submit": "Anfrage senden",
+            "submit": "Geschätzten Preis anzeigen",
             "loading": "Wird gesendet..."
         },
         "name": {
