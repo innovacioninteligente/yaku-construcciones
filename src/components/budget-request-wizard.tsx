@@ -57,7 +57,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
     },
   });
 
-  const { control, trigger, watch, reset } = form;
+  const { control, trigger, watch, reset, getValues } = form;
   const { fields: bathroomFields, append: appendBathroom, remove: removeBathroom } = useFieldArray({ control, name: "bathrooms" });
   const { fields: bedroomFields, append: appendBedroom, remove: removeBedroom } = useFieldArray({ control, name: "electricalBedrooms" });
 
@@ -211,7 +211,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
         case 'electricity': return <ElectricityStep form={form} bedroomFields={bedroomFields} t={t} />;
         case 'carpentry': return <CarpentryStep form={form} t={t} />;
         case 'optionals': return <OptionalsStep form={form} t={t} />;
-        case 'summary': return <SummaryStep t={t} />;
+        case 'summary': return <SummaryStep t={t} data={getValues()} />;
         default: return <div>Paso no encontrado</div>;
     }
   }
@@ -249,11 +249,11 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
         <Progress value={((currentStep + 1) / activeSteps.length) * 100} className="w-full mb-8 max-w-5xl mx-auto" />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-8">
-                <Card className='text-left overflow-x-hidden'>
+                <Card className='text-left overflow-hidden'>
                     <CardHeader>
                         <CardTitle className='font-headline text-2xl text-center'>{t.budgetRequest.steps[activeSteps[currentStep]?.id]}</CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="min-h-[450px]">
                        <AnimatePresence mode="wait" custom={direction}>
                             <motion.div
                                 key={currentStep}
