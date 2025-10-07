@@ -26,10 +26,13 @@ export default function RootLayout({
   if (!i18nConfig.locales.includes(locale)) {
     notFound();
   }
+  
+  const faviconUrl = "https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Ficon.png?alt=media&token=1803ca86-deff-4e44-84ea-20f1fae4cbf4";
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <link rel="icon" href={faviconUrl} sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
