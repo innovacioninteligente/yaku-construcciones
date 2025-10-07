@@ -85,7 +85,7 @@ const detailedFormSchema = z.object({
   slidingDoorAmount: z.coerce.number().optional(),
   paintWalls: z.boolean().default(false),
   paintWallsM2: z.coerce.number().optional(),
-  removeGotele: z.boolean().default(false),
+  removeGotele: z_boolean().default(false),
   removeGoteleM2: z.coerce.number().optional(),
 
   // Optionals
@@ -550,7 +550,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
 
   const renderFormSelection = () => (
     <div className='text-center'>
-        <CardHeader>
+        <CardHeader className="px-0">
             <CardTitle className="font-headline text-3xl md:text-4xl">{t.budgetRequest.selection.title}</CardTitle>
             <CardDescription className="text-lg max-w-2xl mx-auto">{t.budgetRequest.selection.description}</CardDescription>
         </CardHeader>
@@ -602,7 +602,7 @@ export function BudgetRequestWizard({ t }: { t: any }) {
   }
 
   return (
-    <div className="container py-12 md:py-20">
+    <div className="container pb-12 md:pb-20">
       <div className="max-w-5xl mx-auto space-y-8">
         {!formType ? renderFormSelection() : (
             formType === 'simple' ? renderSimpleForm() : renderDetailedForm()

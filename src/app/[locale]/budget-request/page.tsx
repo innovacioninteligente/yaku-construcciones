@@ -13,7 +13,7 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
     <>
       <Header t={dict} />
       <main>
-        <section className="w-full py-16 md:py-20 bg-background">
+        <section className="w-full pt-16 md:pt-20 bg-background">
           <div className="container-limited text-center">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               {dict.header.nav.budgetRequest}
@@ -21,7 +21,7 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
             <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               {dict.budgetRequest.description}
             </p>
-            <div className="relative h-64 md:h-80 w-full max-w-2xl mx-auto my-8">
+            <div className="relative h-64 md:h-80 w-full max-w-2xl mx-auto mt-8">
               <Image
                 src={vectorUrl}
                 alt="Ilustración de presupuesto de construcción"
