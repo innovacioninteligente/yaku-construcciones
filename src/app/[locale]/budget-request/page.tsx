@@ -1,3 +1,4 @@
+
 import { getDictionary } from '@/lib/dictionaries';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -12,26 +13,24 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
     <>
       <Header t={dict} />
       <main>
-        <section className="relative w-full py-16 md:py-24 bg-background overflow-hidden">
-            <div className="absolute top-0 right-0 h-full w-full md:w-2/3 lg:w-1/2 opacity-50 md:opacity-100">
-                <Image
-                    src={vectorUrl}
-                    alt="Ilustración de presupuesto de construcción"
-                    fill
-                    className="object-contain object-top md:object-right-top"
-                    data-ai-hint="architect plan calculator"
-                />
+        <section className="w-full py-16 md:py-24 bg-background">
+          <div className="container-limited text-center">
+            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              {dict.header.nav.budgetRequest}
+            </h1>
+            <div className="relative h-64 md:h-80 w-full max-w-2xl mx-auto my-8">
+              <Image
+                src={vectorUrl}
+                alt="Ilustración de presupuesto de construcción"
+                fill
+                className="object-contain"
+                data-ai-hint="architect plan calculator"
+              />
             </div>
-            <div className="container-limited relative z-10 text-center">
-                <div className="max-w-2xl mx-auto space-y-4">
-                    <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                        {dict.header.nav.budgetRequest}
-                    </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground">
-                        {dict.budgetRequest.description}
-                    </p>
-                </div>
-            </div>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              {dict.budgetRequest.description}
+            </p>
+          </div>
         </section>
         <BudgetRequestWizard t={dict} services={dict.services} />
       </main>
