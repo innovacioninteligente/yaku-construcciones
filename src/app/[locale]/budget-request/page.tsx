@@ -27,6 +27,8 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
   if (!dict) {
     return null; // or a loading skeleton
   }
+  
+  const t_br = dict.budgetRequest;
 
   const renderInitialSelection = () => (
      <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl">
@@ -39,8 +41,8 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
                     <FileText className="w-8 h-8" />
                 </div>
             </div>
-            <h3 className="font-headline text-xl font-bold mb-2">Presupuesto Rápido</h3>
-            <p className="text-muted-foreground">Ideal para tener una estimación rápida del coste de tu proyecto con pocos datos.</p>
+            <h3 className="font-headline text-xl font-bold mb-2">{t_br.selection.quick.title}</h3>
+            <p className="text-muted-foreground">{t_br.selection.quick.description}</p>
         </Card>
         <Card 
             className="p-6 text-center hover:shadow-lg hover:border-primary transition-all cursor-pointer"
@@ -51,8 +53,8 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
                     <ClipboardCheck className="w-8 h-8" />
                 </div>
             </div>
-            <h3 className="font-headline text-xl font-bold mb-2">Presupuesto Detallado</h3>
-            <p className="text-muted-foreground">Proporciona todos los detalles para obtener un presupuesto preliminar más preciso y ajustado a tus necesidades.</p>
+            <h3 className="font-headline text-xl font-bold mb-2">{t_br.selection.detailed.title}</h3>
+            <p className="text-muted-foreground">{t_br.selection.detailed.description}</p>
         </Card>
     </div>
   );
@@ -64,10 +66,10 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
         <div className="w-full py-16 md:py-20 bg-background">
           <div className="container-limited text-center">
             <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              {dict.budgetRequest.title}
+              {t_br.title}
             </h1>
             <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              {dict.budgetRequest.description}
+              {t_br.description}
             </p>
             
             {!formType && (

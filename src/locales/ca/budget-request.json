@@ -2,6 +2,16 @@
 {
     "title": "Sol·licita el teu pressupost",
     "description": "Tria el nivell de detall que vols proporcionar i et donarem una estimació.",
+    "selection": {
+        "quick": {
+            "title": "Pressupost Ràpid",
+            "description": "Ideal per tenir una estimació ràpida del cost del teu projecte amb poques dades."
+        },
+        "detailed": {
+            "title": "Pressupost Detallat",
+            "description": "Proporciona tots els detalls per obtenir un pressupost preliminar més precís i ajustat a les teves necessitats."
+        }
+    },
     "quickForm": {
         "title": "Formulari de Pressupost Ràpid",
         "description": "Omple els camps següents per obtenir una estimació aproximada.",

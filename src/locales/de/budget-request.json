@@ -2,6 +2,16 @@
 {
     "title": "Fordern Sie Ihr Angebot an",
     "description": "Wählen Sie den gewünschten Detaillierungsgrad und wir erstellen Ihnen einen Kostenvoranschlag.",
+    "selection": {
+        "quick": {
+            "title": "Schnelles Angebot",
+            "description": "Ideal, um mit wenigen Daten eine schnelle Kostenschätzung für Ihr Projekt zu erhalten."
+        },
+        "detailed": {
+            "title": "Detailliertes Angebot",
+            "description": "Geben Sie alle Details an, um ein genaueres und maßgeschneidertes vorläufiges Angebot zu erhalten."
+        }
+    },
     "quickForm": {
         "title": "Schnelles Angebotsformular",
         "description": "Füllen Sie die folgenden Felder aus, um einen groben Kostenvoranschlag zu erhalten.",

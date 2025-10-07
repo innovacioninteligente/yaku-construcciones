@@ -2,6 +2,16 @@
 {
     "title": "Solicita tu presupuesto",
     "description": "Elige el nivel de detalle que quieres proporcionar y te daremos una estimación.",
+    "selection": {
+        "quick": {
+            "title": "Presupuesto Rápido",
+            "description": "Ideal para tener una estimación rápida del coste de tu proyecto con pocos datos."
+        },
+        "detailed": {
+            "title": "Presupuesto Detallado",
+            "description": "Proporciona todos los detalles para obtener un presupuesto preliminar más preciso y ajustado a tus necesidades."
+        }
+    },
     "quickForm": {
         "title": "Formulario de Presupuesto Rápido",
         "description": "Rellena los siguientes campos para obtener una estimación aproximada.",

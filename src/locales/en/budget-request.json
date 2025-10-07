@@ -2,6 +2,16 @@
 {
     "title": "Request Your Quote",
     "description": "Choose the level of detail you want to provide, and we'll give you an estimate.",
+    "selection": {
+        "quick": {
+            "title": "Quick Budget",
+            "description": "Ideal for getting a quick estimate of your project's cost with minimal data."
+        },
+        "detailed": {
+            "title": "Detailed Budget",
+            "description": "Provide all the details to get a more accurate and tailored preliminary budget."
+        }
+    },
     "quickForm": {
         "title": "Quick Budget Form",
         "description": "Fill in the following fields to get a rough estimate.",
