@@ -122,12 +122,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
 
   const nextStep = async () => {
     const currentStepConfig = activeSteps[currentStep];
-    const isLastStep = currentStep === activeSteps.length - 1;
-
-    // Do nothing if it's the last step. The submit button will handle it.
-    if (isLastStep) return;
-
-    // Validate fields of the current step before proceeding
+    
     if (currentStepConfig?.fields) {
         const isValid = await trigger(currentStepConfig.fields as (keyof DetailedFormValues)[]);
         if (!isValid) {
@@ -135,8 +130,7 @@ export function BudgetRequestWizard({ t, onBack }: { t: any, services: any, onBa
             return;
         }
     }
-    
-    // Proceed to the next step
+
     setDirection(1);
     setCurrentStep((prev) => prev + 1);
   };
