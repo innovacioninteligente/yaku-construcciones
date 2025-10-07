@@ -30,7 +30,7 @@ export default async function BudgetRequestPage({ params: { locale } }: { params
               />
             </div>
             
-            <div className='-mt-8'>
+            <div className='mt-8'>
               <BudgetRequestWizard t={dict} services={dict.services} />
             </div>
         </div>
