@@ -8,7 +8,8 @@
     },
     "services": {
         "title": "Our Specialized Services",
-        "subtitle": "From new construction to pool maintenance, our team of experts is ready to make your project a reality."
+        "subtitle": "From new construction to pool maintenance, our team of experts is ready to make your project a reality.",
+        "detailsButton": "See more details"
     },
     "about": {
         "title": "About Us",
@@ -36,6 +37,10 @@
         "step4": {
             "title": "Delivery & Guarantee",
             "description": "We deliver the finished project, ensuring your complete satisfaction and offering a guarantee for our work."
+        },
+        "cta": {
+            "title": "See how easy it is? Start now.",
+            "subtitle": "Take the first step to make your project a reality."
         }
     },
     "projects": {
@@ -60,5 +65,9 @@
         "testimonial1": "Impeccable work from start to finish. The team was professional, clean, and met the deadlines. My new pool is a dream come true!",
         "customer": "Satisfied Customer",
         "project": "Pool Renovation"
+    },
+    "finalCta": {
+        "title": "Ready to Start Your Project?",
+        "subtitle": "Contact us today for a free, no-obligation consultation. Our team is ready to help you bring your vision to life."
     }
 }

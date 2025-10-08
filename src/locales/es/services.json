@@ -107,5 +107,12 @@
       "Aplicación de láminas asfálticas, PVC, EPDM y membranas líquidas.",
       "Aislamiento térmico para cubiertas, mejorando la eficiencia energética."
     ]
+  },
+  "cta": {
+    "title": "¿Listo para empezar tu proyecto de {serviceName}?",
+    "subtitle": "Obtén una estimación de costes para tu proyecto ahora mismo. Es rápido y sin compromiso.",
+    "button": "Presupuesto al instante",
+    "descriptionTitle": "Descripción del Servicio",
+    "featuresTitle": "Características Clave"
   }
 }

@@ -60,6 +60,7 @@ export default async function ServicePage({ params }: { params: { slug: string, 
   }
   
   const serviceTranslation = dict.services[service.id];
+  const t_cta = dict.services.cta;
 
   if (!serviceTranslation) {
       notFound();
@@ -90,10 +91,10 @@ export default async function ServicePage({ params }: { params: { slug: string, 
           <div className="container-limited">
             <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-2 space-y-6">
-                <h2 className="text-2xl font-bold font-headline">Descripción del Servicio</h2>
+                <h2 className="text-2xl font-bold font-headline">{t_cta.descriptionTitle}</h2>
                 <p className="text-muted-foreground leading-relaxed">{serviceTranslation.description}</p>
                 
-                <h3 className="text-xl font-bold font-headline pt-6">Características Clave</h3>
+                <h3 className="text-xl font-bold font-headline pt-6">{t_cta.featuresTitle}</h3>
                 <ul className="space-y-4">
                     {serviceTranslation.features.map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
@@ -113,13 +114,13 @@ export default async function ServicePage({ params }: { params: { slug: string, 
 
         <section className="w-full py-20 md:py-28 bg-secondary/50">
             <div className="container-limited text-center">
-                <h2 className="font-headline text-3xl md:text-4xl font-bold">¿Listo para empezar tu proyecto de {serviceTranslation.title.toLowerCase()}?</h2>
+                <h2 className="font-headline text-3xl md:text-4xl font-bold">{t_cta.title.replace('{serviceName}', serviceTranslation.title.toLowerCase())}</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4 mb-8">
-                    Obtén una estimación de costes para tu proyecto ahora mismo. Es rápido y sin compromiso.
+                    {t_cta.subtitle}
                 </p>
                 <Button asChild size="lg" className="font-bold">
                     <Link href="/budget-request">
-                        Presupuesto al instante
+                        {t_cta.button}
                         <ArrowRight className="ml-2" />
                     </Link>
                 </Button>

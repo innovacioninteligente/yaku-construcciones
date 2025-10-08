@@ -103,9 +103,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string,
 
         <section className="w-full py-20 md:py-28 bg-secondary/50">
             <div className="container-limited text-center">
-                <h2 className="font-headline text-3xl md:text-4xl font-bold">Transforma tu Hogar con Nuestra Ayuda</h2>
+                <h2 className="font-headline text-3xl md:text-4xl font-bold">{t_cta.postCta.title}</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4 mb-8">
-                    Inspirado por este artículo? Convierte tus ideas en realidad. Obtén una estimación rápida y sin compromiso para tu próximo proyecto.
+                    {t_cta.postCta.subtitle}
                 </p>
                 <Button asChild size="lg" className="font-bold">
                     <Link href="/budget-request">

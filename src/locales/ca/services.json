@@ -107,5 +107,12 @@
       "Aplicació de làmines asfàltiques, PVC, EPDM i membranes líquides.",
       "Aïllament tèrmic per a cobertes, millorant l'eficiència energètica."
     ]
+  },
+  "cta": {
+    "title": "A punt per començar el teu projecte de {serviceName}?",
+    "subtitle": "Obtén una estimació de costos per al teu projecte ara mateix. És ràpid i sense compromís.",
+    "button": "Pressupost al instant",
+    "descriptionTitle": "Descripció del Servei",
+    "featuresTitle": "Característiques Clau"
   }
 }

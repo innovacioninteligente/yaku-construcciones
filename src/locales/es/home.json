@@ -8,7 +8,8 @@
     },
     "services": {
         "title": "Nuestros Servicios Especializados",
-        "subtitle": "Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto."
+        "subtitle": "Desde obra nueva hasta el mantenimiento de su piscina, nuestro equipo de expertos está listo para hacer realidad su proyecto.",
+        "detailsButton": "Ver más detalles"
     },
     "about": {
         "title": "Sobre Nosotros",
@@ -36,6 +37,10 @@
         "step4": {
             "title": "Entrega y Garantía",
             "description": "Entregamos el proyecto terminado, asegurando tu total satisfacción y ofreciendo garantía por nuestro trabajo."
+        },
+        "cta": {
+            "title": "¿Ves qué fácil? Empieza ahora.",
+            "subtitle": "Da el primer paso para hacer realidad tu proyecto."
         }
     },
     "projects": {
@@ -60,5 +65,9 @@
         "testimonial1": "Un trabajo impecable de principio a fin. El equipo fue profesional, limpio y cumplió con los plazos. ¡Mi nueva piscina es un sueño hecho realidad!",
         "customer": "Cliente Satisfecho",
         "project": "Reforma de Piscina"
+    },
+    "finalCta": {
+        "title": "¿Listo para Empezar tu Proyecto?",
+        "subtitle": "Contáctanos hoy mismo para obtener una consulta gratuita y sin compromiso. Nuestro equipo está listo para ayudarte a hacer realidad tu visión."
     }
 }

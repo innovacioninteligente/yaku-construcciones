@@ -6,6 +6,10 @@
     "cta": {
         "title": "Bereit, Ihr Projekt zu starten?",
         "subtitle": "Kontaktieren Sie uns noch heute für eine kostenlose, unverbindliche Beratung. Unser Team ist bereit, Ihnen bei der Verwirklichung Ihrer Vision zu helfen.",
-        "button": "Sofortangebot"
+        "button": "Sofortangebot",
+        "postCta": {
+            "title": "Verwandeln Sie Ihr Zuhause mit unserer Hilfe",
+            "subtitle": "Inspiriert von diesem Artikel? Setzen Sie Ihre Ideen in die Tat um. Holen Sie sich einen schnellen, unverbindlichen Kostenvoranschlag für Ihr nächstes Projekt."
+        }
     }
 }

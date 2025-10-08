@@ -8,7 +8,8 @@
     },
     "services": {
         "title": "Els Nostres Serveis Especialitzats",
-        "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està a punt per fer realitat el seu projecte."
+        "subtitle": "Des d'obra nova fins al manteniment de la seva piscina, el nostre equip d'experts està a punt per fer realitat el seu projecte.",
+        "detailsButton": "Veure més detalls"
     },
     "about": {
         "title": "Sobre Nosaltres",
@@ -36,6 +37,10 @@
         "step4": {
             "title": "Entrega i Garantia",
             "description": "Lliurem el projecte acabat, assegurant la teva total satisfacció i oferint garantia per la nostra feina."
+        },
+        "cta": {
+            "title": "Veus que fàcil? Comença ara.",
+            "subtitle": "Fes el primer pas per fer realitat el teu projecte."
         }
     },
     "projects": {
@@ -60,5 +65,9 @@
         "testimonial1": "Una feina impecable de principi a fi. L'equip va ser professional, net i va complir els terminis. La meva nova piscina és un somni fet realitat!",
         "customer": "Client Satisfet",
         "project": "Reforma de Piscina"
+    },
+    "finalCta": {
+        "title": "A punt per començar el teu projecte?",
+        "subtitle": "Contacta amb nosaltres avui mateix per a una consulta gratuïta i sense compromís. El nostre equip està a punt per ajudar-te a fer realitat la teva visió."
     }
 }

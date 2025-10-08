@@ -107,5 +107,12 @@
       "Application of asphalt sheets, PVC, EPDM, and liquid membranes.",
       "Thermal insulation for roofs, improving energy efficiency."
     ]
+  },
+  "cta": {
+    "title": "Ready to start your {serviceName} project?",
+    "subtitle": "Get a cost estimate for your project right now. It's fast and non-binding.",
+    "button": "Instant Quote",
+    "descriptionTitle": "Service Description",
+    "featuresTitle": "Key Features"
   }
 }

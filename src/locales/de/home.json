@@ -8,7 +8,8 @@
     },
     "services": {
         "title": "Unsere spezialisierten Dienstleistungen",
-        "subtitle": "Vom Neubau bis zur Poolpflege ist unser Expertenteam bereit, Ihr Projekt zu verwirklichen."
+        "subtitle": "Vom Neubau bis zur Poolpflege ist unser Expertenteam bereit, Ihr Projekt zu verwirklichen.",
+        "detailsButton": "Mehr Details sehen"
     },
     "about": {
         "title": "Über uns",
@@ -36,6 +37,10 @@
         "step4": {
             "title": "Übergabe & Garantie",
             "description": "Wir übergeben das fertige Projekt, stellen Ihre volle Zufriedenheit sicher und bieten eine Garantie auf unsere Arbeit."
+        },
+        "cta": {
+            "title": "Sehen Sie, wie einfach es ist? Fangen Sie jetzt an.",
+            "subtitle": "Machen Sie den ersten Schritt, um Ihr Projekt zu verwirklichen."
         }
     },
     "projects": {
@@ -60,5 +65,9 @@
         "testimonial1": "Tadellose Arbeit von Anfang bis Ende. Das Team war professionell, sauber und hat die Fristen eingehalten. Mein neuer Pool ist ein wahrgewordener Traum!",
         "customer": "Zufriedener Kunde",
         "project": "Pool-Renovierung"
+    },
+    "finalCta": {
+        "title": "Bereit, Ihr Projekt zu starten?",
+        "subtitle": "Kontaktieren Sie uns noch heute für eine kostenlose, unverbindliche Beratung. Unser Team ist bereit, Ihnen zu helfen, Ihre Vision zu verwirklichen."
     }
 }

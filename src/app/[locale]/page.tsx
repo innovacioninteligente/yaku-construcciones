@@ -4,6 +4,7 @@
 
 
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -131,7 +132,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                       <p className="flex-grow text-muted-foreground">{serviceTranslation.shortDescription}</p>
                       <Button asChild variant="link" className="p-0 h-auto mt-4 self-start">
                           <Link href={`/services/${service.id}`} className="font-bold">
-                              Ver más detalles <ArrowRight className="ml-2" />
+                              {t.services.detailsButton} <ArrowRight className="ml-2" />
                           </Link>
                       </Button>
                     </CardContent>
@@ -142,7 +143,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
             <div className="text-center mt-16">
               <Button asChild size="lg">
                 <Link href="/budget-request">
-                  Presupuesto al instante <ArrowRight className="ml-2" />
+                  {t.hero.cta} <ArrowRight className="ml-2" />
                 </Link>
               </Button>
             </div>
@@ -199,11 +200,11 @@ export default async function Home({ params: { locale } }: { params: { locale: a
               ))}
             </div>
             <div className="text-center mt-16">
-                <h3 className="font-headline text-2xl font-bold">¿Ves qué fácil? Empieza ahora.</h3>
-                <p className="text-muted-foreground mt-2 mb-6">Da el primer paso para hacer realidad tu proyecto.</p>
+                <h3 className="font-headline text-2xl font-bold">{t.process.cta.title}</h3>
+                <p className="text-muted-foreground mt-2 mb-6">{t.process.cta.subtitle}</p>
                 <Button asChild size="lg">
                     <Link href="/budget-request">
-                        Presupuesto al instante <ArrowRight className="ml-2" />
+                        {t.hero.cta} <ArrowRight className="ml-2" />
                     </Link>
                 </Button>
             </div>
@@ -276,13 +277,13 @@ export default async function Home({ params: { locale } }: { params: { locale: a
 
         <section className="w-full py-20 md:py-28 bg-secondary/50">
             <div className="container-limited text-center">
-                <h2 className="font-headline text-3xl md:text-4xl font-bold">¿Listo para Empezar tu Proyecto?</h2>
+                <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.finalCta.title}</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4 mb-8">
-                    Contáctanos hoy mismo para obtener una consulta gratuita y sin compromiso. Nuestro equipo está listo para ayudarte a hacer realidad tu visión.
+                    {t.finalCta.subtitle}
                 </p>
                 <Button asChild size="lg" className="font-bold">
                     <Link href="/budget-request">
-                        Presupuesto al instante
+                        {t.hero.cta}
                         <ArrowRight className="ml-2" />
                     </Link>
                 </Button>

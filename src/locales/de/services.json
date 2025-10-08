@@ -107,5 +107,12 @@
       "Anwendung von Bitumenbahnen, PVC, EPDM und Flüssigmembranen.",
       "Wärmedämmung für Dächer zur Verbesserung der Energieeffizienz."
     ]
+  },
+  "cta": {
+    "title": "Bereit, Ihr {serviceName}-Projekt zu starten?",
+    "subtitle": "Holen Sie sich jetzt einen Kostenvoranschlag für Ihr Projekt. Es ist schnell und unverbindlich.",
+    "button": "Sofortangebot",
+    "descriptionTitle": "Servicebeschreibung",
+    "featuresTitle": "Hauptmerkmale"
   }
 }

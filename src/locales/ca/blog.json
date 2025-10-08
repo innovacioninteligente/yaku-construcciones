@@ -6,6 +6,10 @@
     "cta": {
         "title": "A punt per començar el teu projecte?",
         "subtitle": "Contacta amb nosaltres avui mateix per a una consulta gratuïta i sense compromís. El nostre equip està a punt per ajudar-te a fer realitat la teva visió.",
-        "button": "Pressupost al instant"
+        "button": "Pressupost al instant",
+        "postCta": {
+            "title": "Transforma la teva llar amb la nostra ajuda",
+            "subtitle": "Inspirat per aquest article? Converteix les teves idees en realitat. Obté una estimació ràpida i sense compromís per al teu proper projecte."
+        }
     }
 }
