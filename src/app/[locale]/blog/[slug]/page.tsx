@@ -79,10 +79,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string,
         </section>
         
         <section className="py-16 md:py-24">
-          <div className="container-limited grid lg:grid-cols-3 gap-12">
-            <article className="lg:col-span-2 prose dark:prose-invert max-w-none">
-              <div className="mb-8">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
+          <div className="container-limited">
+            <article className="prose dark:prose-invert max-w-none mx-auto lg:max-w-4xl">
+              <div className="mb-8 text-center">
+                  <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground mb-2">
                       <div className="flex items-center gap-2">
                         <Tag className="w-4 h-4" />
                         <span className="font-semibold text-primary">{post.category}</span>
@@ -98,19 +98,22 @@ export default async function BlogPostPage({ params }: { params: { slug: string,
               </div>
               <ReactMarkdown>{fullContent}</ReactMarkdown>
             </article>
-            
-            <aside className="space-y-8 lg:mt-24">
-              <div className="bg-secondary/50 p-6 rounded-lg text-center">
-                <h3 className="font-headline text-xl font-bold mb-4">{t_cta.title}</h3>
-                <p className="text-muted-foreground mb-6">{t_cta.subtitle}</p>
-                <Button asChild size="lg" className="w-full">
-                  <Link href="/budget-request">
-                    {t_cta.button} <ArrowRight className="ml-2" />
-                  </Link>
-                </Button>
-              </div>
-            </aside>
           </div>
+        </section>
+
+        <section className="w-full py-20 md:py-28 bg-secondary/50">
+            <div className="container-limited text-center">
+                <h2 className="font-headline text-3xl md:text-4xl font-bold">Transforma tu Hogar con Nuestra Ayuda</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4 mb-8">
+                    Inspirado por este artículo? Convierte tus ideas en realidad. Obtén una estimación rápida y sin compromiso para tu próximo proyecto.
+                </p>
+                <Button asChild size="lg" className="font-bold">
+                    <Link href="/budget-request">
+                        {t_cta.button}
+                        <ArrowRight className="ml-2" />
+                    </Link>
+                </Button>
+            </div>
         </section>
       </main>
       <Footer />

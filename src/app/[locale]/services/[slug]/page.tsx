@@ -87,36 +87,44 @@ export default async function ServicePage({ params }: { params: { slug: string, 
         </section>
 
         <section className="py-16 md:py-24">
-          <div className="container-limited grid md:grid-cols-3 gap-12">
-            <div className="md:col-span-2 space-y-6">
-              <h2 className="text-2xl font-bold font-headline">Descripción del Servicio</h2>
-              <p className="text-muted-foreground leading-relaxed">{serviceTranslation.description}</p>
-              
-              <h3 className="text-xl font-bold font-headline pt-6">Características Clave</h3>
-              <ul className="space-y-4">
-                {serviceTranslation.features.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 shrink-0" />
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="container-limited">
+            <div className="grid md:grid-cols-3 gap-12">
+                <div className="md:col-span-2 space-y-6">
+                <h2 className="text-2xl font-bold font-headline">Descripción del Servicio</h2>
+                <p className="text-muted-foreground leading-relaxed">{serviceTranslation.description}</p>
+                
+                <h3 className="text-xl font-bold font-headline pt-6">Características Clave</h3>
+                <ul className="space-y-4">
+                    {serviceTranslation.features.map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                        <CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 shrink-0" />
+                        <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                    ))}
+                </ul>
+                </div>
+                
+                <aside className="space-y-8 md:col-span-1">
+                {/* This space can be used for related services or a sticky menu if needed */}
+                </aside>
             </div>
-            
-            <aside className="space-y-8">
-              <div className="bg-secondary/50 p-6 rounded-lg">
-                <h3 className="font-headline text-xl font-bold mb-4">¿Interesado en este servicio?</h3>
-                <p className="text-muted-foreground mb-6">Obtén una estimación de costes para tu proyecto ahora mismo.</p>
-                <Button asChild size="lg" className="w-full">
-                  <Link href="/budget-request">
-                    Presupuesto al instante <ArrowRight className="ml-2" />
-                  </Link>
-                </Button>
-              </div>
-            </aside>
           </div>
         </section>
 
+        <section className="w-full py-20 md:py-28 bg-secondary/50">
+            <div className="container-limited text-center">
+                <h2 className="font-headline text-3xl md:text-4xl font-bold">¿Listo para empezar tu proyecto de {serviceTranslation.title.toLowerCase()}?</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4 mb-8">
+                    Obtén una estimación de costes para tu proyecto ahora mismo. Es rápido y sin compromiso.
+                </p>
+                <Button asChild size="lg" className="font-bold">
+                    <Link href="/budget-request">
+                        Presupuesto al instante
+                        <ArrowRight className="ml-2" />
+                    </Link>
+                </Button>
+            </div>
+        </section>
       </main>
       <Footer />
     </>

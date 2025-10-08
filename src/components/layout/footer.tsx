@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="w-full bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="flex flex-col items-center text-center gap-6">
-          <Logo className="w-48" />
+          <Logo className="w-48" width={450} height={112} />
           <p className="mt-2 text-sm text-muted-foreground max-w-xs">
             Tu socio de confianza en construcción y reformas.
           </p>

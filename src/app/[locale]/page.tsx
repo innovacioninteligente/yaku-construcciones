@@ -2,6 +2,7 @@
 
 
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -188,6 +189,15 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                   <p className="text-muted-foreground text-sm">{step.description}</p>
                 </div>
               ))}
+            </div>
+            <div className="text-center mt-16">
+                <h3 className="font-headline text-2xl font-bold">¿Ves qué fácil? Empieza ahora.</h3>
+                <p className="text-muted-foreground mt-2 mb-6">Da el primer paso para hacer realidad tu proyecto.</p>
+                <Button asChild size="lg">
+                    <Link href="/budget-request">
+                        Presupuesto al instante <ArrowRight className="ml-2" />
+                    </Link>
+                </Button>
             </div>
           </div>
         </section>
