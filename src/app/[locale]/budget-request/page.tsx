@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 
 export default function BudgetRequestPage({ params: { locale } }: { params: { locale: any } }) {
   const [dict, setDict] = useState<any>(null);
-  const [formType, setFormType] = useState<null | 'quick' | 'detailed'>(null);
+  const [formType, setFormType] = useState<'quick' | 'detailed'>('quick');
   const vectorUrl = "https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2F529Y_890mishd9lfk4tbj5kq32nqjd5n6er355koj2.jpg?alt=media&token=a5ac9d7f-4b56-44cc-bd5e-41c25ddcc220";
 
   useEffect(() => {
@@ -87,6 +87,7 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
             <div className='w-full flex justify-center mt-12'>
               {formType === null && renderInitialSelection()}
               {formType === 'quick' && <QuickBudgetForm t={dict} onBack={handleGoBack} />}
+              {/* The detailed form is hidden for now, but not removed */}
               {formType === 'detailed' && <BudgetRequestWizard t={dict} services={dict.services} onBack={handleGoBack} />}
             </div>
           </div>

@@ -7,7 +7,7 @@ export function Logo({ className }: { className?: string }) {
   
   return (
     <Link href="/" className={cn("flex items-center gap-2 text-xl font-bold font-headline", className)}>
-      <Image src={logoUrl} alt="Yaku Construcciones Logo" width={180} height={45} className="h-auto" />
+      <Image src={logoUrl} alt="Yaku Construcciones Logo" width={225} height={56} className="h-auto" />
     </Link>
   );
 }

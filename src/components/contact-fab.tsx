@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, MessageCircle, X } from 'lucide-react';
+import { Phone, X } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -32,7 +33,7 @@ export function ContactFab() {
               </Button>
                <Button asChild size="icon" className="rounded-full w-12 h-12 bg-teal-500 hover:bg-teal-600">
                 <Link href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-                  <MessageCircle className="h-6 w-6" />
+                  <FaWhatsapp className="h-6 w-6" />
                 </Link>
               </Button>
             </div>
