@@ -83,5 +83,29 @@
       "Instal·lació d'aixetes i sanitaris.",
       "Sistemes d'aigua calenta sanitària (termos, calderes)."
     ]
+  },
+  "pintura": {
+    "title": "Pintura Professional",
+    "subtitle": "Donem color i vida nova a les teves parets, per dins i per fora.",
+    "shortDescription": "Serveis de pintura interior i exterior per a habitatges, comunitats i locals.",
+    "description": "El nostre equip de pintors professionals transforma qualsevol espai amb un acabat impecable. Utilitzem pintures d'alta qualitat per garantir durabilitat i un resultat estètic superior, ja sigui per renovar una habitació o per protegir la façana del teu edifici.",
+    "features": [
+      "Pintura plàstica, esmalts i decorativa per a interiors.",
+      "Revestiments i pintures especials per a façanes exteriors.",
+      "Allisat de parets i eliminació de gotelé.",
+      "Tractament d'humitats i preparació de superfícies."
+    ]
+  },
+  "impermeabilizacion": {
+    "title": "Impermeabilització i Cobertes",
+    "subtitle": "Protecció total contra filtracions i humitats.",
+    "shortDescription": "Solucions expertes per a cobertes, teulades i terrasses, garantint una estanqueïtat total.",
+    "description": "Una correcta impermeabilització és clau per a la salut de qualsevol edificació. Oferim solucions integrals per a cobertes, terrasses, teulades i murs, utilitzant els sistemes més avançats per prevenir i solucionar problemes de filtracions i humitats de forma definitiva.",
+    "features": [
+      "Impermeabilització de cobertes planes i terrasses transitables.",
+      "Reparació i manteniment de teulades.",
+      "Aplicació de làmines asfàltiques, PVC, EPDM i membranes líquides.",
+      "Aïllament tèrmic per a cobertes, millorant l'eficiència energètica."
+    ]
   }
 }

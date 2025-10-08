@@ -83,5 +83,29 @@
       "Installation of faucets and sanitary ware.",
       "Domestic hot water systems (boilers, heaters)."
     ]
+  },
+  "pintura": {
+    "title": "Professional Painting",
+    "subtitle": "We bring color and new life to your walls, inside and out.",
+    "shortDescription": "Interior and exterior painting services for homes, communities, and commercial spaces.",
+    "description": "Our team of professional painters transforms any space with a flawless finish. We use high-quality paints to ensure durability and a superior aesthetic result, whether it's for renovating a room or protecting your building's facade.",
+    "features": [
+      "Plastic, enamel, and decorative paints for interiors.",
+      "Special coatings and paints for exterior facades.",
+      "Wall smoothing and stipple removal.",
+      "Moisture treatment and surface preparation."
+    ]
+  },
+  "impermeabilizacion": {
+    "title": "Waterproofing and Roofing",
+    "subtitle": "Total protection against leaks and humidity.",
+    "shortDescription": "Expert solutions for roofs, and terraces, ensuring complete watertightness.",
+    "description": "Proper waterproofing is key to the health of any building. We offer comprehensive solutions for flat roofs, terraces, pitched roofs, and walls, using the most advanced systems to prevent and definitively solve problems of leaks and humidity.",
+    "features": [
+      "Waterproofing of flat roofs and walkable terraces.",
+      "Repair and maintenance of roofs.",
+      "Application of asphalt sheets, PVC, EPDM, and liquid membranes.",
+      "Thermal insulation for roofs, improving energy efficiency."
+    ]
   }
 }

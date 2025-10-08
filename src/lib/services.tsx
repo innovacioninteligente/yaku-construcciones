@@ -1,4 +1,4 @@
-import { Wrench, Waves, Home, Layers, Zap, Hammer, Droplets } from 'lucide-react';
+import { Wrench, Waves, Home, Layers, Zap, Hammer, Droplets, Paintbrush, Shield } from 'lucide-react';
 
 export const services = [
   {
@@ -24,6 +24,18 @@ export const services = [
     icon: <Layers />,
     image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Freforma_edificio.jpg?alt=media&token=6cb121d7-251f-4c97-b067-65a6d57f529b',
     imageHint: 'building facade',
+  },
+    {
+    id: 'pintura',
+    icon: <Paintbrush />,
+    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fmale-painter-uniform-working-indoors.jpg?alt=media&token=834c4e3f-0641-41e3-b3ea-c847d7650790',
+    imageHint: 'painter working',
+  },
+  {
+    id: 'impermeabilizacion',
+    icon: <Shield />,
+    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fworker-performs-overhaul-roof-residential-building.jpg?alt=media&token=47e1468b-bc39-4819-9860-860d1c3efa4a',
+    imageHint: 'roof waterproofing',
   },
   {
     id: 'electricidad',

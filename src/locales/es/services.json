@@ -83,5 +83,29 @@
       "Instalación de grifería y sanitarios.",
       "Sistemas de agua caliente sanitaria (termos, calderas)."
     ]
+  },
+  "pintura": {
+    "title": "Pintura Profesional",
+    "subtitle": "Damos color y vida nueva a tus paredes, por dentro y por fuera.",
+    "shortDescription": "Servicios de pintura interior y exterior para viviendas, comunidades y locales.",
+    "description": "Nuestro equipo de pintores profesionales transforma cualquier espacio con un acabado impecable. Utilizamos pinturas de alta calidad para garantizar durabilidad y un resultado estético superior, ya sea para renovar una habitación o para proteger la fachada de tu edificio.",
+    "features": [
+      "Pintura plástica, esmaltes y decorativa para interiores.",
+      "Revestimientos y pinturas especiales para fachadas exteriores.",
+      "Alisado de paredes y eliminación de gotelé.",
+      "Tratamiento de humedades y preparación de superficies."
+    ]
+  },
+  "impermeabilizacion": {
+    "title": "Impermeabilización y Cubiertas",
+    "subtitle": "Protección total contra filtraciones y humedades.",
+    "shortDescription": "Soluciones expertas para cubiertas, tejados y terrazas, garantizando una estanqueidad total.",
+    "description": "Una correcta impermeabilización es clave para la salud de cualquier edificación. Ofrecemos soluciones integrales para cubiertas, terrazas, tejados y muros, utilizando los sistemas más avanzados para prevenir y solucionar problemas de filtraciones y humedades de forma definitiva.",
+    "features": [
+      "Impermeabilización de cubiertas planas y terrazas transitables.",
+      "Reparación y mantenimiento de tejados.",
+      "Aplicación de láminas asfálticas, PVC, EPDM y membranas líquidas.",
+      "Aislamiento térmico para cubiertas, mejorando la eficiencia energética."
+    ]
   }
 }

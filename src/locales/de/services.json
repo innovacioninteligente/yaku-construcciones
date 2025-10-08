@@ -83,5 +83,29 @@
       "Installation von Armaturen und Sanitärkeramik.",
       "Warmwassersysteme (Boiler, Heizkessel)."
     ]
+  },
+  "pintura": {
+    "title": "Professionelle Malerei",
+    "subtitle": "Wir bringen Farbe und neues Leben an Ihre Wände, innen und außen.",
+    "shortDescription": "Malerarbeiten im Innen- und Außenbereich für Wohnungen, Gemeinschaften und Geschäftsräume.",
+    "description": "Unser Team von professionellen Malern verwandelt jeden Raum mit einem makellosen Finish. Wir verwenden hochwertige Farben, um Langlebigkeit und ein überlegenes ästhetisches Ergebnis zu gewährleisten, sei es für die Renovierung eines Raumes oder den Schutz Ihrer Gebäudefassade.",
+    "features": [
+      "Kunststoff-, Emaille- und Dekorfarben für Innenräume.",
+      "Spezialbeschichtungen und -farben für Außenfassaden.",
+      "Glätten von Wänden und Entfernen von Rauputz.",
+      "Feuchtigkeitsbehandlung und Untergrundvorbereitung."
+    ]
+  },
+  "impermeabilizacion": {
+    "title": "Abdichtung und Dacheindeckung",
+    "subtitle": "Vollständiger Schutz vor Lecks und Feuchtigkeit.",
+    "shortDescription": "Expertenlösungen für Dächer und Terrassen, die eine vollständige Wasserdichtigkeit gewährleisten.",
+    "description": "Eine ordnungsgemäße Abdichtung ist entscheidend für die Gesundheit eines jeden Gebäudes. Wir bieten umfassende Lösungen für Flachdächer, Terrassen, Schrägdächer und Wände und verwenden die fortschrittlichsten Systeme, um Probleme mit Lecks und Feuchtigkeit endgültig zu verhindern und zu lösen.",
+    "features": [
+      "Abdichtung von Flachdächern und begehbaren Terrassen.",
+      "Reparatur und Wartung von Dächern.",
+      "Anwendung von Bitumenbahnen, PVC, EPDM und Flüssigmembranen.",
+      "Wärmedämmung für Dächer zur Verbesserung der Energieeffizienz."
+    ]
   }
 }
