@@ -65,6 +65,11 @@
         "project5": {
             "title": "Elegante Küchenumgestaltung",
             "category": "Küchendesign"
+        },
+        "cta": {
+            "title": "Starten Sie Ihr Projekt",
+            "subtitle": "Haben Sie eine Idee? Verwirklichen wir sie.",
+            "button": "Sofortangebot"
         }
     },
     "testimonials": {

@@ -77,6 +77,14 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'elegant kitchen remodel',
       className: 'md:col-span-2',
     },
+    {
+      type: 'cta',
+      title: t.projects.cta.title,
+      subtitle: t.projects.cta.subtitle,
+      buttonText: t.projects.cta.button,
+      href: '/budget-request',
+      className: 'md:col-span-1',
+    }
   ];
 
   return (
@@ -234,35 +242,44 @@ export default async function Home({ params: { locale } }: { params: { locale: a
               <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4 h-[600px] md:h-[800px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4 h-auto md:h-[800px]">
               {featuredProjects.map((project, index) => (
                 <Card key={index} className={`group overflow-hidden relative ${project.className}`}>
-                  <div className="relative h-full w-full">
-                    {project.type === 'image' ? (
-                      project.src && <Image
-                        src={project.src}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={project.imageHint}
-                      />
-                    ) : (
-                      project.src && <video
-                        src={project.src}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="h-full w-full object-cover video-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={project.imageHint}
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h3 className="font-headline text-2xl font-bold">{project.title}</h3>
-                      <p className="text-sm opacity-90">{project.category}</p>
+                   {project.type === 'cta' ? (
+                     <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/50 hover:bg-secondary transition-colors p-8 text-center">
+                        <ArrowRight className="w-12 h-12 mb-4 text-primary" />
+                        <h3 className="font-headline text-2xl font-bold">{project.title}</h3>
+                        <p className="text-sm text-muted-foreground">{project.subtitle}</p>
+                        <Button variant="link" className="mt-4">{project.buttonText}</Button>
+                     </Link>
+                  ) : (
+                    <div className="relative h-full w-full">
+                      {project.type === 'image' ? (
+                        project.src && <Image
+                          src={project.src}
+                          alt={project.title || 'Project image'}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={project.imageHint}
+                        />
+                      ) : (
+                        project.src && <video
+                          src={project.src}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="h-full w-full object-cover video-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={project.imageHint}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                      <div className="absolute bottom-4 left-4 text-white">
+                        <h3 className="font-headline text-2xl font-bold">{project.title}</h3>
+                        <p className="text-sm opacity-90">{project.category}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </Card>
               ))}
             </div>

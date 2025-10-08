@@ -65,6 +65,11 @@
         "project5": {
             "title": "Renovació de Cuina Elegant",
             "category": "Disseny de Cuines"
+        },
+        "cta": {
+            "title": "Comença el teu projecte",
+            "subtitle": "Tens una idea? Fem-la realitat.",
+            "button": "Pressupost al instant"
         }
     },
     "testimonials": {

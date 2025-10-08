@@ -65,6 +65,11 @@
         "project5": {
             "title": "Elegant Kitchen Remodel",
             "category": "Kitchen Design"
+        },
+        "cta": {
+            "title": "Start Your Project",
+            "subtitle": "Got an idea? Let's make it real.",
+            "button": "Instant Quote"
         }
     },
     "testimonials": {
