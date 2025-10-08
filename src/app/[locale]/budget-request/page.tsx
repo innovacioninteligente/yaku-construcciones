@@ -12,16 +12,11 @@ import { Button } from '@/components/ui/button';
 
 export default function BudgetRequestPage({ params: { locale } }: { params: { locale: any } }) {
   const [dict, setDict] = useState<any>(null);
-  const [formType, setFormType] = useState<'quick' | 'detailed'>('quick');
 
   useEffect(() => {
     getDictionary(locale).then(d => setDict(d));
   }, [locale]);
   
-  const handleGoBack = () => {
-    setFormType(null);
-  };
-
   if (!dict) {
     return null; // or a loading skeleton
   }
@@ -42,7 +37,7 @@ export default function BudgetRequestPage({ params: { locale } }: { params: { lo
             </p>
             
             <div className='w-full flex justify-center mt-12'>
-              {formType === 'quick' && <QuickBudgetForm t={dict} onBack={handleGoBack} />}
+              <QuickBudgetForm t={dict} />
             </div>
           </div>
         </div>

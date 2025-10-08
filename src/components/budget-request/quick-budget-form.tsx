@@ -44,7 +44,7 @@ const formSchema = z.object({
 
 type QuickFormValues = z.infer<typeof formSchema>;
 
-export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
+export function QuickBudgetForm({ t }: { t: any; }) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -222,10 +222,7 @@ export function QuickBudgetForm({ t, onBack }: { t: any; onBack: () => void }) {
                 </div>
                )}
 
-              <div className="flex justify-between items-center mt-8">
-                <Button type="button" variant="outline" onClick={onBack}>
-                  <ArrowLeft className="mr-2" /> {t.budgetRequest.form.buttons.prev}
-                </Button>
+              <div className="flex justify-end items-center mt-8">
                 <Button type="submit" disabled={isLoading} size="lg">
                   {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   {isLoading ? t.budgetRequest.form.buttons.loading : t.budgetRequest.form.buttons.submit}
