@@ -107,7 +107,7 @@ export function QuickBudgetForm({ t }: { t: any; }) {
   
   if (isSubmitted) {
     const isPool = watchRenovationType === 'pool';
-    const reviewLink = "https://seo.consultoria.systems//negocio/ChIJD7w_Ef2TlxIRQSqCitTX7Gk";
+    const reviewLink = "https://maps.app.goo.gl/asg19xm4g9SZ8iUQ9";
 
     return (
         <div className="text-center max-w-2xl mx-auto">
