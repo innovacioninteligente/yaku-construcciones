@@ -29,7 +29,7 @@
             }
         },
         "squareMeters": {
-            "label": "Metros cuadrados (m²)"
+            "label": "Metros cuadrados del suelo (m²)"
         }
     },
     "detailedForm": {

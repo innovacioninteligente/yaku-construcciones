@@ -29,7 +29,7 @@
             }
         },
         "squareMeters": {
-            "label": "Square meters (m²)"
+            "label": "Floor square meters (m²)"
         }
     },
     "detailedForm": {

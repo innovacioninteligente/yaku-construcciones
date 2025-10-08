@@ -29,7 +29,7 @@
             }
         },
         "squareMeters": {
-            "label": "Quadratmeter (m²)"
+            "label": "Bodenquadratmeter (m²)"
         }
     },
     "detailedForm": {
