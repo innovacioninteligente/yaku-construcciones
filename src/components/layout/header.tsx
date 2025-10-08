@@ -34,7 +34,12 @@ export function Header({ t }: { t: any }) {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container-limited flex h-16 items-center">
-        <Logo />
+        <div className="md:hidden">
+          <Logo width={126} height={31.5} />
+        </div>
+        <div className="hidden md:block">
+          <Logo />
+        </div>
         <nav className="hidden md:flex items-center gap-6 ml-10 text-sm font-medium">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-muted-foreground transition-colors hover:text-foreground">
@@ -79,10 +84,7 @@ export function Header({ t }: { t: any }) {
               </div>
               <div className="absolute bottom-4 right-4 left-4 flex flex-col gap-2">
                 {user ? null : (
-                    <>
-                        <Button asChild onClick={handleLinkClick}><Link href="/login">{t.header.nav.login}</Link></Button>
-                        <Button asChild onClick={handleLinkClick}><Link href="/signup">{t.header.nav.signup}</Link></Button>
-                    </>
+                  <Button asChild onClick={handleLinkClick}><Link href="/budget-request">{t.header.nav.budgetRequest}</Link></Button>
                 )}
               </div>
             </SheetContent>
