@@ -3,6 +3,7 @@
 
 
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -137,6 +138,13 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                   </Card>
                 )
               })}
+            </div>
+            <div className="text-center mt-16">
+              <Button asChild size="lg">
+                <Link href="/budget-request">
+                  Presupuesto al instante <ArrowRight className="ml-2" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
