@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -233,7 +234,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
               <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 h-[600px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4 h-[600px] md:h-[800px]">
               {featuredProjects.map((project, index) => (
                 <Card key={index} className={`group overflow-hidden relative ${project.className}`}>
                   <div className="relative h-full w-full">
