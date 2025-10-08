@@ -1,7 +1,7 @@
 import { Logo } from '@/components/logo';
 import Link from 'next/link';
 
-export function Footer() {
+export function Footer({ t }: { t?: any }) {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="w-full bg-secondary/50">
@@ -11,10 +11,17 @@ export function Footer() {
           <p className="mt-2 text-sm text-muted-foreground max-w-xs">
             Tu socio de confianza en construcción y reformas.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">Política de Privacidad</Link>
             <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">Términos de Servicio</Link>
           </div>
+          {t && (
+             <div className='mt-4'>
+                <a href="https://seo.consultoria.systems//negocio/ChIJD7w_Ef2TlxIRQSqCitTX7Gk" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-primary hover:underline">
+                  {t.reviewLink}
+                </a>
+              </div>
+          )}
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
           <p>&copy; {currentYear} Yaku Construcciones. Todos los derechos reservados.</p>

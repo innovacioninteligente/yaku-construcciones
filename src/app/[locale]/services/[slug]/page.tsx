@@ -127,7 +127,7 @@ export default async function ServicePage({ params }: { params: { slug: string, 
             </div>
         </section>
       </main>
-      <Footer />
+      <Footer t={dict.home.finalCta} />
     </>
   );
 }

@@ -59,7 +59,8 @@
         "button": "Zurück zur Startseite",
         "noCostMessage": "Dies ist ein Richtpreis und unverbindlich. Einer unserer Spezialisten wird sich mit Ihnen in Verbindung setzen, um Ihnen ein detailliertes Angebot zu unterbreiten.",
         "poolMessage": "Einer unserer Poolexperten wird sich in Kürze mit Ihnen in Verbindung setzen, um Ihr Projekt zu besprechen.",
-        "restartForm": "Neu starten"
+        "restartForm": "Neu starten",
+        "reviewButton": "Bewerten Sie unseren Service"
     },
     "form": {
         "buttons": {

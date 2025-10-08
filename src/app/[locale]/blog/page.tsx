@@ -72,7 +72,7 @@ export default async function BlogPage({ params: { locale } }: { params: { local
             </div>
         </section>
       </main>
-      <Footer />
+      <Footer t={dict.home.finalCta} />
     </>
   );
 }

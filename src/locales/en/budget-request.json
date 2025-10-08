@@ -59,7 +59,8 @@
         "button": "Back to Homepage",
         "noCostMessage": "This is an indicative and non-contractual price. A specialist will contact you to provide a detailed budget.",
         "poolMessage": "One of our pool experts will be in touch shortly to detail your project.",
-        "restartForm": "Start Over"
+        "restartForm": "Start Over",
+        "reviewButton": "Rate our service"
     },
     "form": {
         "buttons": {

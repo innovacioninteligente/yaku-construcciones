@@ -122,7 +122,7 @@ export default async function ContactPage({ params: { locale } }: { params: { lo
             </div>
         </section>
       </main>
-      <Footer />
+      <Footer t={dict.home.finalCta} />
     </>
   );
 }

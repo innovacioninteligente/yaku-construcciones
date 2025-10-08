@@ -24,7 +24,8 @@ import {
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
-import { ArrowLeft, Check, Loader2, MailCheck, RotateCw } from 'lucide-react';
+import { ArrowLeft, Check, Loader2, MailCheck, RotateCw, Star } from 'lucide-react';
+import Link from 'next/link';
 
 const pricingConfig = {
     integral: { basic: 400, medium: 600, premium: 800 },
@@ -106,6 +107,8 @@ export function QuickBudgetForm({ t }: { t: any; }) {
   
   if (isSubmitted) {
     const isPool = watchRenovationType === 'pool';
+    const reviewLink = "https://seo.consultoria.systems//negocio/ChIJD7w_Ef2TlxIRQSqCitTX7Gk";
+
     return (
         <div className="text-center max-w-2xl mx-auto">
             <Card>
@@ -135,6 +138,14 @@ export function QuickBudgetForm({ t }: { t: any; }) {
                         <Button variant="outline" onClick={handleRestart}>
                             <RotateCw className="mr-2 h-4 w-4" />
                             {t.budgetRequest.confirmation.restartForm}
+                        </Button>
+                    </div>
+                     <div className="mt-8">
+                        <Button asChild variant="secondary">
+                            <Link href={reviewLink} target="_blank" rel="noopener noreferrer">
+                                <Star className="mr-2 h-4 w-4" />
+                                {t.budgetRequest.confirmation.reviewButton}
+                            </Link>
                         </Button>
                     </div>
                 </CardContent>
