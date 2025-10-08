@@ -46,8 +46,8 @@ export const services = [
   {
     id: 'carpinteria',
     icon: <Hammer />,
-    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fcarpinteria.jpg?alt=media&token=3fb53160-23b8-4b88-bee8-ce0c2e075cbd',
-    imageHint: 'wood working',
+    image: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fpvc-industry-worker-operator-making-frames-windows-doors.jpg?alt=media&token=0f698a4c-d464-4be0-9a01-7a3d8d7034e3',
+    imageHint: 'aluminum carpentry',
   },
   {
     id: 'fontaneria',
