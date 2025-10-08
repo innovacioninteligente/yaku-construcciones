@@ -2,6 +2,10 @@
 {
     "title": "Fordern Sie Ihr Angebot an",
     "description": "Wählen Sie den gewünschten Detaillierungsgrad und wir erstellen Ihnen einen Kostenvoranschlag.",
+    "page": {
+        "title": "Sofortangebot",
+        "description": "Füllen Sie unser schnelles Formular aus und erhalten Sie in wenigen Minuten einen Kostenvoranschlag für Ihr Projekt."
+    },
     "selection": {
         "quick": {
             "title": "Schnelles Angebot",

@@ -2,6 +2,10 @@
 {
     "title": "Solicita tu presupuesto",
     "description": "Elige el nivel de detalle que quieres proporcionar y te daremos una estimación.",
+    "page": {
+        "title": "Presupuesto al instante",
+        "description": "Rellena nuestro formulario rápido y obtén una estimación de costes para tu proyecto en pocos minutos."
+    },
     "selection": {
         "quick": {
             "title": "Presupuesto Rápido",

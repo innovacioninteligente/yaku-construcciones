@@ -2,6 +2,10 @@
 {
     "title": "Sol·licita el teu pressupost",
     "description": "Tria el nivell de detall que vols proporcionar i et donarem una estimació.",
+    "page": {
+        "title": "Pressupost a l'instant",
+        "description": "Omple el nostre formulari ràpid i obté una estimació de costos per al teu projecte en pocs minuts."
+    },
     "selection": {
         "quick": {
             "title": "Pressupost Ràpid",

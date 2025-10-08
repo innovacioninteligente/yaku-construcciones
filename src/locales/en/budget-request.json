@@ -2,6 +2,10 @@
 {
     "title": "Request Your Quote",
     "description": "Choose the level of detail you want to provide, and we'll give you an estimate.",
+    "page": {
+        "title": "Instant Quote",
+        "description": "Fill out our quick form and get a cost estimate for your project in just a few minutes."
+    },
     "selection": {
         "quick": {
             "title": "Quick Budget",
