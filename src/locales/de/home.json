@@ -57,6 +57,14 @@
         "project3": {
             "title": "Fassadensanierung",
             "category": "Vertikale Verkleidungen"
+        },
+        "project4": {
+            "title": "Moderne Badezimmerrenovierung",
+            "category": "Innenrenovierungen"
+        },
+        "project5": {
+            "title": "Elegante Küchenumgestaltung",
+            "category": "Küchendesign"
         }
     },
     "testimonials": {

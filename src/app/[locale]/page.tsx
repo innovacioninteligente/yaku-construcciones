@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -44,22 +37,44 @@ export default async function Home({ params: { locale } }: { params: { locale: a
   
   const featuredProjects = [
     {
+      type: 'image',
       title: t.projects.project1.title,
       category: t.projects.project1.category,
-      image: project1Image?.imageUrl,
+      src: project1Image?.imageUrl,
       imageHint: project1Image?.imageHint,
+      className: 'md:col-span-2',
     },
     {
+      type: 'video',
+      title: t.projects.project4.title,
+      category: t.projects.project4.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-a-serene-bathroom-scene-transitions-fro__5956.mp4?alt=media&token=3107172f-a829-4c26-90d3-f5cf92d31b45',
+      imageHint: 'modern bathroom renovation',
+      className: 'md:row-span-2',
+    },
+    {
+      type: 'image',
       title: t.projects.project2.title,
       category: t.projects.project2.category,
-      image: project2Image?.imageUrl,
+      src: project2Image?.imageUrl,
       imageHint: project2Image?.imageHint,
+      className: 'md:col-span-1',
     },
     {
+      type: 'image',
       title: t.projects.project3.title,
       category: t.projects.project3.category,
-      image: project3Image?.imageUrl,
+      src: project3Image?.imageUrl,
       imageHint: project3Image?.imageHint,
+      className: 'md:col-span-1',
+    },
+     {
+      type: 'video',
+      title: t.projects.project5.title,
+      category: t.projects.project5.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-transition-from-a-cluttered-outdated-ki__5958.mp4?alt=media&token=12755114-0e1a-4e5b-88df-8d9f775d9f5a',
+      imageHint: 'elegant kitchen remodel',
+      className: 'md:col-span-2',
     },
   ];
 
@@ -218,17 +233,29 @@ export default async function Home({ params: { locale } }: { params: { locale: a
               <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 h-[600px]">
               {featuredProjects.map((project, index) => (
-                <Card key={index} className="group overflow-hidden">
-                  <div className="relative h-64 w-full">
-                    {project.image && <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      data-ai-hint={project.imageHint}
-                    />}
+                <Card key={index} className={`group overflow-hidden relative ${project.className}`}>
+                  <div className="relative h-full w-full">
+                    {project.type === 'image' ? (
+                      project.src && <Image
+                        src={project.src}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={project.imageHint}
+                      />
+                    ) : (
+                      project.src && <video
+                        src={project.src}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="h-full w-full object-cover video-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={project.imageHint}
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute bottom-4 left-4 text-white">
                       <h3 className="font-headline text-2xl font-bold">{project.title}</h3>

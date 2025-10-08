@@ -57,6 +57,14 @@
         "project3": {
             "title": "Facade Rehabilitation",
             "category": "Vertical Cladding"
+        },
+        "project4": {
+            "title": "Modern Bathroom Renovation",
+            "category": "Interior Renovations"
+        },
+        "project5": {
+            "title": "Elegant Kitchen Remodel",
+            "category": "Kitchen Design"
         }
     },
     "testimonials": {

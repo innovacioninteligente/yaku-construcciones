@@ -57,6 +57,14 @@
         "project3": {
             "title": "Rehabilitació de Façana",
             "category": "Paraments Verticals"
+        },
+        "project4": {
+            "title": "Reforma de Bany Modern",
+            "category": "Reformes d'Interiors"
+        },
+        "project5": {
+            "title": "Renovació de Cuina Elegant",
+            "category": "Disseny de Cuines"
         }
     },
     "testimonials": {

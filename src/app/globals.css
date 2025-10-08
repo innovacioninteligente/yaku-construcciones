@@ -87,4 +87,7 @@
   .cta-pulse {
     @apply animate-pulse-shadow;
   }
+  .video-cover video {
+    object-fit: cover;
+  }
 }

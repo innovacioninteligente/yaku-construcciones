@@ -57,6 +57,14 @@
         "project3": {
             "title": "Rehabilitación de Fachada",
             "category": "Paramentos Verticales"
+        },
+        "project4": {
+            "title": "Reforma de Baño Moderno",
+            "category": "Reformas de Interiores"
+        },
+        "project5": {
+            "title": "Renovación de Cocina Elegante",
+            "category": "Diseño de Cocinas"
         }
     },
     "testimonials": {
