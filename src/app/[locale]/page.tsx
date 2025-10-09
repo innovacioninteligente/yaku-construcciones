@@ -37,7 +37,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
   ];
   
   const featuredProjects = [
-    { // 0: Reforma Cocina (Grande)
+    { // 0: Reforma Cocina (Grande) -> 2x3
       type: 'image',
       title: t.projects.project1.title,
       category: t.projects.project1.category,
@@ -45,7 +45,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: project1Image?.imageHint,
       className: 'md:col-span-2 md:row-span-3',
     },
-    { // 1: Baño Moderno (Pequeño)
+    { // 1: Baño Moderno (Pequeño) -> 1x1
       type: 'video',
       title: t.projects.project4.title,
       category: t.projects.project4.category,
@@ -53,7 +53,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'modern bathroom renovation',
       className: 'md:col-span-1 md:row-span-1',
     },
-    { // 2: Piscina Diseño (Pequeño)
+    { // 2: Piscina Diseño (Pequeño) -> 1x1
       type: 'image',
       title: t.projects.project2.title,
       category: t.projects.project2.category,
@@ -61,31 +61,23 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: project2Image?.imageHint,
       className: 'md:col-span-1 md:row-span-1',
     },
-    { // 3: Idea Baño (Pequeño)
-      type: 'video',
-      title: t.projects.project6.title,
-      category: t.projects.project6.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c26-b279-06409636739e',
-      imageHint: 'bathroom idea',
-      className: 'md:col-span-1 md:row-span-1',
-    },
-    { // 4: Renov. Cocina (Pequeño)
+     { // 3: Renov. Cocina (Vertical) -> 1x2
       type: 'video',
       title: t.projects.project5.title,
       category: t.projects.project5.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-transition-from-a-cluttered-outdated-ki__5958.mp4?alt=media&token=12755114-0e1a-4e5b-88df-8d9f775d9f5a',
       imageHint: 'elegant kitchen remodel',
-      className: 'md:col-span-1 md:row-span-1',
+      className: 'md:col-span-1 md:row-span-2',
     },
-    { // 5: Jardín (Pequeño)
+    { // 4: Idea Baño (Pequeño) -> 1x1
       type: 'video',
-      title: t.projects.project9.title,
-      category: t.projects.project9.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fjardineria.antes-y-despu%C3%A9s.mp4?alt=media&token=ce70c24e-74fc-4201-a7f8-cfc82a0212e5',
-      imageHint: 'gardening before after',
+      title: t.projects.project6.title,
+      category: t.projects.project6.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
+      imageHint: 'bathroom idea',
       className: 'md:col-span-1 md:row-span-1',
     },
-    { // 6: Rehab. Fachada (Mediano)
+    { // 5: Rehab. Fachada (Mediano) -> 2x2
       type: 'image',
       title: t.projects.project3.title,
       category: t.projects.project3.category,
@@ -93,29 +85,37 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: project3Image?.imageHint,
       className: 'md:col-span-2 md:row-span-2',
     },
-     { // 7: Renov. Terraza (Pequeño)
+    { // 6: Jardín (Ancho) -> 2x1
+      type: 'video',
+      title: t.projects.project9.title,
+      category: t.projects.project9.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fjardineria.antes-y-despu%C3%A9s.mp4?alt=media&token=ce70c24e-74fc-4201-a7f8-cfc82a0212e5',
+      imageHint: 'gardening before after',
+      className: 'md:col-span-2 md:row-span-1',
+    },
+    { // 7: Renov. Terraza (Vertical) -> 1x2
       type: 'video',
       title: t.projects.project8.title,
       category: t.projects.project8.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20terraza.mp4?alt=media&token=447f5f09-1ed9-45d5-83f2-a484e9f24aed',
       imageHint: 'terrace idea',
-      className: 'md:col-span-2 md:row-span-1',
+      className: 'md:col-span-1 md:row-span-2',
     },
-    { // 8: CTA (Ancho)
+    { // 8: CTA (Ancho) -> 2x1
       type: 'cta',
       title: t.projects.cta.title,
       subtitle: t.projects.cta.subtitle,
       buttonText: t.projects.cta.button,
       href: '/budget-request',
-      className: 'md:col-span-4 md:row-span-2',
+      className: 'md:col-span-2 md:row-span-1',
     },
-    { // 9: Insp. Baño (Ancho)
+    { // 9: Insp. Baño (Vertical) -> 1x2
       type: 'video',
       title: t.projects.project7.title,
       category: t.projects.project7.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
       imageHint: 'bathroom idea 2',
-      className: 'md:col-span-4 md:row-span-2',
+      className: 'md:col-span-1 md:row-span-2',
     },
   ];
 
@@ -267,58 +267,65 @@ export default async function Home({ params: { locale } }: { params: { locale: a
             </div>
           </div>
         </section>
-
-        <section id="projects" className="w-full py-20 md:py-28 bg-secondary/50">
-          <div className="container-limited max-w-7xl mx-auto px-4">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
-            </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[10rem] gap-0 rounded-2xl overflow-hidden shadow-2xl">
-                {featuredProjects.map((project, index) => (
-                    <Card key={index} 
-                          className={`group overflow-hidden relative h-full ${project.className} transition-all duration-300 transform hover:z-10`}>
-                        {project.type === 'cta' ? (
-                            <Link href={project.href || '#'} className="h-full flex flex-col justify-center items-center bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-8 text-center">
-                                <ArrowRight className="w-12 h-12 mb-4 text-primary group-hover:scale-110 transition-transform" />
-                                <h3 className="font-headline text-3xl font-bold">{project.title}</h3>
-                                <p className="text-base text-muted-foreground mt-2">{project.subtitle}</p>
-                                <Button variant="link" className="mt-4 text-primary hover:text-primary/80">{project.buttonText}</Button>
-                            </Link>
-                        ) : (
-                            <div className="h-full relative">
-                                {project.type === 'image' ? (
-                                    project.src && <Image
-                                        src={project.src}
-                                        alt={project.title || 'Project image'}
-                                        fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                        data-ai-hint={project.imageHint}
-                                    />
-                                ) : (
-                                    project.src && <video
-                                        src={project.src}
-                                        autoPlay
-                                        loop
-                                        muted
-                                        playsInline
-                                        className="h-full w-full object-cover video-cover transition-transform duration-500 group-hover:scale-110"
-                                        data-ai-hint={project.imageHint}
-                                    />
-                                )}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <h3 className="font-headline text-lg font-bold">{project.title}</h3>
-                                    <p className="text-sm opacity-90">{project.category}</p>
-                                </div>
-                            </div>
-                        )}
-                    </Card>
-                ))}
-            </div>
+      <section id="projects" className="w-full py-20 md:py-28 bg-secondary/50">
+        <div className="container-limited max-w-7xl mx-auto px-4">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
           </div>
-        </section>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 md:grid-flow-row-dense md:auto-rows-[10rem] gap-0 rounded-2xl overflow-hidden shadow-2xl">
+            {featuredProjects.map((project, index) => (
+              <Card key={index} 
+                className={cn(
+                  "group overflow-hidden relative h-64 transition-all duration-300 transform hover:z-10",
+                   project.className
+                )}
+              >
+                {project.type === 'cta' ? (
+                  <Link href={project.href || '#'} className="h-full flex flex-col justify-center items-center bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-8 text-center">
+                    <ArrowRight className="w-12 h-12 mb-4 text-primary group-hover:scale-110 transition-transform" />
+                    <h3 className="font-headline text-2xl font-bold">{project.title}</h3> 
+                    <p className="text-base text-muted-foreground mt-2">{project.subtitle}</p>
+                    <Button variant="link" className="mt-4 text-primary hover:text-primary/80">{project.buttonText}</Button>
+                  </Link>
+                ) : (
+                  <div className="relative h-full w-full">
+                    {project.type === 'image' ? (
+                      project.src && <Image
+                        src={project.src}
+                        alt={project.title || 'Project image'}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-ai-hint={project.imageHint}
+                      />
+                    ) : (
+                      project.src && <video
+                        src={project.src}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="h-full w-full object-cover video-cover transition-transform duration-500 group-hover:scale-110"
+                        data-ai-hint={project.imageHint}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="font-headline text-lg font-bold">{project.title}</h3>
+                      <p className="text-sm opacity-90">{project.category}</p>
+                    </div>
+                  </div>
+                )}
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
 
         <section className="w-full py-20 md:py-28 bg-background">
           <div className="container-limited">
@@ -375,3 +382,4 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
+
