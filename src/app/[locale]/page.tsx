@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -90,7 +91,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       subtitle: t.projects.cta.subtitle,
       buttonText: t.projects.cta.button,
       href: '/budget-request',
-      className: 'md:col-span-1 md:row-span-1', // El layout móvil se gestiona en el mapeo
+      className: 'md:col-span-1 md:row-span-1',
     },
     { 
       type: 'video',
@@ -289,13 +290,13 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         </section>
             
         <section id="projects" className="w-full py-20 md:py-28 bg-gray-100 dark:bg-gray-900">
-          <div className="container mx-auto px-4 max-w-7xl">
+          <div className="container-limited">
             <div className="text-center space-y-4 mb-12">
               <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[12rem] auto-rows-[15rem] gap-2 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[15rem] md:auto-rows-[12rem] gap-2 rounded-lg overflow-hidden">
               {featuredProjects.map((project, index) => (
                 <Card key={index} 
                   className={cn(
@@ -334,7 +335,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white p-2">
-                        <h3 className="font-bold text-base md:text-lg">{project.title}</h3>
+                        <h3 className="font-bold text-base">{project.title}</h3>
                         <p className="text-xs opacity-90">{project.category}</p>
                       </div>
                     </div>
@@ -406,3 +407,4 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
+
