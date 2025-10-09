@@ -17,7 +17,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/lib/firebase/client';
+import { getSafeAuth } from '@/lib/firebase/client';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { getDictionary } from '@/lib/dictionaries';
@@ -53,6 +53,7 @@ export default function SignupPage({ params: { locale } }: { params: { locale: a
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
+      const auth = getSafeAuth();
       await createUserWithEmailAndPassword(auth, values.email, values.password);
       toast({
         title: '¡Cuenta Creada!',

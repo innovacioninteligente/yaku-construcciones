@@ -27,7 +27,7 @@ import { useState } from 'react';
 import { ArrowLeft, Check, Loader2, MailCheck, RotateCw, Star } from 'lucide-react';
 import Link from 'next/link';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '@/lib/firebase/client';
+import { getSafeDb } from '@/lib/firebase/client';
 
 const pricingConfig = {
     integral: { basic: 400, medium: 600, premium: 800 },
@@ -81,6 +81,7 @@ export function QuickBudgetForm({ t }: { t: any; }) {
         setCalculatedBudget(budget);
       }
       
+      const db = getSafeDb();
       const mailCollection = collection(db, 'mail');
       await addDoc(mailCollection, {
         to: ['goalcasor@gmail.com', 'yakusl2003@gmail.com'],
