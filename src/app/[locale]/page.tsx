@@ -283,9 +283,9 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                         
                         return (
                             <Card key={index} 
-                                  className={`group overflow-hidden relative h-full ${puzzleClasses} transition-all duration-300 transform hover:z-10`}>
+                                  className={`group overflow-hidden relative h-64 ${puzzleClasses} transition-all duration-300 transform hover:z-10`}>
                                 {project.type === 'cta' ? (
-                                    <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-4 text-center">
+                                    <Link href={project.href || '#'} className="h-full flex flex-col justify-center items-center bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-4 text-center">
                                         <ArrowRight className="w-8 h-8 mb-2 text-primary group-hover:scale-110 transition-transform" />
                                         <h3 className="font-headline text-lg font-bold">{project.title}</h3>
                                         <p className="text-xs text-muted-foreground mt-1">{project.subtitle}</p>
@@ -381,4 +381,5 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
+
 
