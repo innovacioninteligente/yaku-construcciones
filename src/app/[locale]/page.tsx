@@ -59,7 +59,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         category: t.projects.project6.category,
         src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
         imageHint: 'bathroom idea',
-        className: 'md:row-span-2'
+        className: ''
     },
     {
       type: 'image',
@@ -266,14 +266,14 @@ export default async function Home({ params: { locale } }: { params: { locale: a
               <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-auto md:h-[800px]">
+            <div className="grid md:grid-cols-4 auto-rows-fr gap-4">
               {featuredProjects.map((project, index) => (
                 <Card key={index} className={`group overflow-hidden relative h-64 md:h-auto ${project.className}`}>
                    {project.type === 'cta' ? (
                      <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/50 hover:bg-secondary transition-colors p-8 text-center">
                         <ArrowRight className="w-12 h-12 mb-4 text-primary" />
-                        <h3 className="font-headline text-2xl font-bold">{project.title}</h3>
-                        <p className="text-sm text-muted-foreground">{project.subtitle}</p>
+                        <h3 className="font-headline text-xl font-bold">{project.title}</h3>
+                        <p className="text-sm text-muted-foreground mt-2">{project.subtitle}</p>
                         <Button variant="link" className="mt-4">{project.buttonText}</Button>
                      </Link>
                   ) : (
@@ -299,7 +299,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white">
-                        <h3 className="font-headline text-2xl font-bold">{project.title}</h3>
+                        <h3 className="font-headline text-xl font-bold">{project.title}</h3>
                         <p className="text-sm opacity-90">{project.category}</p>
                       </div>
                     </div>
