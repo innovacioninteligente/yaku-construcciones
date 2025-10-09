@@ -37,7 +37,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
   ];
   
   const featuredProjects = [
-    {
+    { // 0
       type: 'image',
       title: t.projects.project1.title,
       category: t.projects.project1.category,
@@ -45,7 +45,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: project1Image?.imageHint,
       className: 'md:col-span-2 md:row-span-2',
     },
-    {
+    { // 1
       type: 'video',
       title: t.projects.project4.title,
       category: t.projects.project4.category,
@@ -53,39 +53,15 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'modern bathroom renovation',
       className: 'md:col-span-1 md:row-span-2',
     },
-    {
+    { // 2
       type: 'video',
       title: t.projects.project6.title,
       category: t.projects.project6.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
       imageHint: 'bathroom idea',
-      className: 'md:col-span-1 md:row-span-2',
+      className: 'md:col-span-1 md:row-span-1',
     },
-    {
-      type: 'video',
-      title: t.projects.project5.title,
-      category: t.projects.project5.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-transition-from-a-cluttered-outdated-ki__5958.mp4?alt=media&token=12755114-0e1a-4e5b-88df-8d9f775d9f5a',
-      imageHint: 'elegant kitchen remodel',
-      className: 'md:col-span-2 md:row-span-2',
-    },
-    {
-      type: 'image',
-      title: t.projects.project2.title,
-      category: t.projects.project2.category,
-      src: project2Image?.imageUrl,
-      imageHint: project2Image?.imageHint,
-      className: 'md:col-span-2 md:row-span-1',
-    },
-    {
-      type: 'image',
-      title: t.projects.project3.title,
-      category: t.projects.project3.category,
-      src: project3Image?.imageUrl,
-      imageHint: project3Image?.imageHint,
-      className: 'md:col-span-1 md:row-span-2',
-    },
-    {
+     { // 3
       type: 'video',
       title: t.projects.project8.title,
       category: t.projects.project8.category,
@@ -93,7 +69,31 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'terrace idea',
       className: 'md:col-span-1 md:row-span-1',
     },
-    {
+    { // 4
+      type: 'image',
+      title: t.projects.project2.title,
+      category: t.projects.project2.category,
+      src: project2Image?.imageUrl,
+      imageHint: project2Image?.imageHint,
+      className: 'md:col-span-2 md:row-span-2',
+    },
+    { // 5
+      type: 'image',
+      title: t.projects.project3.title,
+      category: t.projects.project3.category,
+      src: project3Image?.imageUrl,
+      imageHint: project3Image?.imageHint,
+      className: 'md:col-span-2 md:row-span-2',
+    },
+    { // 6
+      type: 'video',
+      title: t.projects.project5.title,
+      category: t.projects.project5.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-transition-from-a-cluttered-outdated-ki__5958.mp4?alt=media&token=12755114-0e1a-4e5b-88df-8d9f775d9f5a',
+      imageHint: 'elegant kitchen remodel',
+      className: 'md:col-span-2 md:row-span-1',
+    },
+    { // 7
       type: 'video',
       title: t.projects.project9.title,
       category: t.projects.project9.category,
@@ -101,21 +101,21 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'gardening before after',
       className: 'md:col-span-2 md:row-span-1',
     },
-    {
+    { // 8
       type: 'video',
       title: t.projects.project7.title,
       category: t.projects.project7.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
       imageHint: 'bathroom idea 2',
-      className: 'md:col-span-1 md:row-span-2',
+      className: 'md:col-span-2 md:row-span-1',
     },
-    {
+    { // 9
       type: 'cta',
       title: t.projects.cta.title,
       subtitle: t.projects.cta.subtitle,
       buttonText: t.projects.cta.button,
       href: '/budget-request',
-      className: 'md:col-span-1 md:row-span-1',
+      className: 'md:col-span-2 md:row-span-1',
     },
   ];
 
@@ -287,7 +287,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                                     <Button variant="link" className="mt-2 text-primary hover:text-primary/80 text-xs">{project.buttonText}</Button>
                                 </Link>
                             ) : (
-                                <div className="relative h-full w-full">
+                                <div className="relative h-full">
                                     {project.type === 'image' ? (
                                         project.src && <Image
                                             src={project.src}
@@ -375,6 +375,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
+
 
 
 
