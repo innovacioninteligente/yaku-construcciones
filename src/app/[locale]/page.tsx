@@ -37,7 +37,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
   ];
   
   const featuredProjects = [
-    { // 0: Reforma Cocina
+    { // 0: Reforma Cocina (Grande)
       type: 'image',
       title: t.projects.project1.title,
       category: t.projects.project1.category,
@@ -45,39 +45,31 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: project1Image?.imageHint,
       className: 'md:col-span-2 md:row-span-3',
     },
-    { // 1: Baño Moderno
+    { // 1: Baño Moderno (Pequeño)
       type: 'video',
       title: t.projects.project4.title,
       category: t.projects.project4.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-a-serene-bathroom-scene-transitions-fro__5956.mp4?alt=media&token=3107172f-a829-4c26-90d3-f5cf92d31b45',
       imageHint: 'modern bathroom renovation',
-      className: 'md:col-span-1 md:row-span-2',
+      className: 'md:col-span-1 md:row-span-1',
     },
-    { // 2: Piscina Diseño
+    { // 2: Piscina Diseño (Pequeño)
       type: 'image',
       title: t.projects.project2.title,
       category: t.projects.project2.category,
       src: project2Image?.imageUrl,
       imageHint: project2Image?.imageHint,
-      className: 'md:col-span-1 md:row-span-2',
+      className: 'md:col-span-1 md:row-span-1',
     },
-    { // 3: Idea Baño
+    { // 3: Idea Baño (Pequeño)
       type: 'video',
       title: t.projects.project6.title,
       category: t.projects.project6.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c26-b279-06409636739e',
       imageHint: 'bathroom idea',
       className: 'md:col-span-1 md:row-span-1',
     },
-    { // 4: Rehab. Fachada
-      type: 'image',
-      title: t.projects.project3.title,
-      category: t.projects.project3.category,
-      src: project3Image?.imageUrl,
-      imageHint: project3Image?.imageHint,
-      className: 'md:col-span-2 md:row-span-2',
-    },
-    { // 5: Renov. Cocina
+    { // 4: Renov. Cocina (Pequeño)
       type: 'video',
       title: t.projects.project5.title,
       category: t.projects.project5.category,
@@ -85,23 +77,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'elegant kitchen remodel',
       className: 'md:col-span-1 md:row-span-1',
     },
-    { // 6: Renov. Terraza
-      type: 'video',
-      title: t.projects.project8.title,
-      category: t.projects.project8.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20terraza.mp4?alt=media&token=447f5f09-1ed9-45d5-83f2-a484e9f24aed',
-      imageHint: 'terrace idea',
-      className: 'md:col-span-1 md:row-span-2',
-    },
-    { // 7: CTA
-      type: 'cta',
-      title: t.projects.cta.title,
-      subtitle: t.projects.cta.subtitle,
-      buttonText: t.projects.cta.button,
-      href: '/budget-request',
-      className: 'md:col-span-3 md:row-span-2',
-    },
-    { // 8: Jardín
+    { // 5: Jardín (Pequeño)
       type: 'video',
       title: t.projects.project9.title,
       category: t.projects.project9.category,
@@ -109,13 +85,37 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'gardening before after',
       className: 'md:col-span-1 md:row-span-1',
     },
-    { // 9: Insp. Baño
+    { // 6: Rehab. Fachada (Mediano)
+      type: 'image',
+      title: t.projects.project3.title,
+      category: t.projects.project3.category,
+      src: project3Image?.imageUrl,
+      imageHint: project3Image?.imageHint,
+      className: 'md:col-span-2 md:row-span-2',
+    },
+     { // 7: Renov. Terraza (Pequeño)
+      type: 'video',
+      title: t.projects.project8.title,
+      category: t.projects.project8.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20terraza.mp4?alt=media&token=447f5f09-1ed9-45d5-83f2-a484e9f24aed',
+      imageHint: 'terrace idea',
+      className: 'md:col-span-2 md:row-span-1',
+    },
+    { // 8: CTA (Ancho)
+      type: 'cta',
+      title: t.projects.cta.title,
+      subtitle: t.projects.cta.subtitle,
+      buttonText: t.projects.cta.button,
+      href: '/budget-request',
+      className: 'md:col-span-4 md:row-span-2',
+    },
+    { // 9: Insp. Baño (Ancho)
       type: 'video',
       title: t.projects.project7.title,
       category: t.projects.project7.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
       imageHint: 'bathroom idea 2',
-      className: 'md:col-span-2 md:row-span-2',
+      className: 'md:col-span-4 md:row-span-2',
     },
   ];
 
@@ -269,55 +269,55 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         </section>
 
         <section id="projects" className="w-full py-20 md:py-28 bg-secondary/50">
-            <div className="container-limited max-w-7xl mx-auto px-4">
-                <div className="text-center space-y-4 mb-12">
-                    <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
-                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
-                </div>
-                
-                <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[10rem] grid-flow-row-dense gap-0 rounded-2xl overflow-hidden shadow-2xl">
-                    {featuredProjects.map((project, index) => (
-                        <Card key={index} 
-                              className={`group overflow-hidden relative h-64 md:h-auto ${project.className} transition-all duration-300 transform hover:z-10`}>
-                            {project.type === 'cta' ? (
-                                <Link href={project.href || '#'} className="h-full flex flex-col justify-center items-center bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-4 text-center">
-                                    <ArrowRight className="w-8 h-8 mb-2 text-primary group-hover:scale-110 transition-transform" />
-                                    <h3 className="font-headline text-2xl font-bold">{project.title}</h3>
-                                    <p className="text-sm text-muted-foreground mt-1">{project.subtitle}</p>
-                                    <Button variant="link" className="mt-2 text-primary hover:text-primary/80 text-xs">{project.buttonText}</Button>
-                                </Link>
-                            ) : (
-                                <div className="h-full relative">
-                                    {project.type === 'image' ? (
-                                        project.src && <Image
-                                            src={project.src}
-                                            alt={project.title || 'Project image'}
-                                            fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                            data-ai-hint={project.imageHint}
-                                        />
-                                    ) : (
-                                        project.src && <video
-                                            src={project.src}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            className="h-full w-full object-cover video-cover transition-transform duration-500 group-hover:scale-110"
-                                            data-ai-hint={project.imageHint}
-                                        />
-                                    )}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                                    <div className="absolute bottom-4 left-4 text-white">
-                                        <h3 className="font-headline text-lg font-bold">{project.title}</h3>
-                                        <p className="text-sm opacity-90">{project.category}</p>
-                                    </div>
-                                </div>
-                            )}
-                        </Card>
-                    ))}
-                </div>
+          <div className="container-limited max-w-7xl mx-auto px-4">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[10rem] gap-0 rounded-2xl overflow-hidden shadow-2xl">
+                {featuredProjects.map((project, index) => (
+                    <Card key={index} 
+                          className={`group overflow-hidden relative h-full ${project.className} transition-all duration-300 transform hover:z-10`}>
+                        {project.type === 'cta' ? (
+                            <Link href={project.href || '#'} className="h-full flex flex-col justify-center items-center bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-8 text-center">
+                                <ArrowRight className="w-12 h-12 mb-4 text-primary group-hover:scale-110 transition-transform" />
+                                <h3 className="font-headline text-3xl font-bold">{project.title}</h3>
+                                <p className="text-base text-muted-foreground mt-2">{project.subtitle}</p>
+                                <Button variant="link" className="mt-4 text-primary hover:text-primary/80">{project.buttonText}</Button>
+                            </Link>
+                        ) : (
+                            <div className="h-full relative">
+                                {project.type === 'image' ? (
+                                    project.src && <Image
+                                        src={project.src}
+                                        alt={project.title || 'Project image'}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        data-ai-hint={project.imageHint}
+                                    />
+                                ) : (
+                                    project.src && <video
+                                        src={project.src}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="h-full w-full object-cover video-cover transition-transform duration-500 group-hover:scale-110"
+                                        data-ai-hint={project.imageHint}
+                                    />
+                                )}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                                <div className="absolute bottom-4 left-4 text-white">
+                                    <h3 className="font-headline text-lg font-bold">{project.title}</h3>
+                                    <p className="text-sm opacity-90">{project.category}</p>
+                                </div>
+                            </div>
+                        )}
+                    </Card>
+                ))}
+            </div>
+          </div>
         </section>
 
         <section className="w-full py-20 md:py-28 bg-background">
