@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { ArrowRight, Star, Award, ShieldCheck, HeartHandshake, Search, DraftingCompass, Hammer, Check } from 'lucide-react';
+import { ArrowRight, Star, Award, ShieldCheck, HeartHandshake, Search, DraftingCompass, Hammer, Check, Quote } from 'lucide-react';
 import { services } from '@/lib/services';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Header } from '@/components/layout/header';
@@ -15,7 +15,6 @@ import { cn } from '@/lib/utils';
 export default async function Home({ params: { locale } }: { params: { locale: any } }) {
   const dict = await getDictionary(locale);
   const heroImage = placeholderImages.placeholderImages.find(p => p.id === 'hero-construction');
-  const testimonialImage = placeholderImages.placeholderImages.find(p => p.id === 'testimonial-avatar');
   const aboutImage = placeholderImages.placeholderImages.find(p => p.id === 'about-us-image');
   const project1Image = placeholderImages.placeholderImages.find(p => p.id === 'project-1');
   const project2Image = placeholderImages.placeholderImages.find(p => p.id === 'project-2');
@@ -91,7 +90,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       subtitle: t.projects.cta.subtitle,
       buttonText: t.projects.cta.button,
       href: '/budget-request',
-      className: 'md:col-span-1 md:row-span-1',
+      className: 'md:col-span-1 md:row-span-1', // El layout móvil se gestiona en el mapeo
     },
     { 
       type: 'video',
@@ -124,6 +123,19 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-a-vibrant-yellow-wall-with-a-barred-win__83848.mp4?alt=media&token=95d8291d-dfdb-46f9-9ac3-9e9de720a2ce',
       imageHint: 'house facade',
       className: 'md:col-span-1 md:row-span-1',
+    }
+  ];
+
+  const testimonials = [
+    {
+        quote: t.testimonials.testimonial2,
+        name: t.testimonials.customer2,
+        project: t.testimonials.project,
+    },
+    {
+        quote: t.testimonials.testimonial3,
+        name: t.testimonials.customer3,
+        project: t.testimonials.project,
     }
   ];
 
@@ -276,15 +288,14 @@ export default async function Home({ params: { locale } }: { params: { locale: a
           </div>
         </section>
             
-            
-       <section id="projects" className="w-full py-20 md:py-28 bg-gray-100 dark:bg-gray-900">
+        <section id="projects" className="w-full py-20 md:py-28 bg-gray-100 dark:bg-gray-900">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">{t.projects.subtitle}</p>
+              <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
             
-            <div className="grid grid-cols-2 auto-rows-[15rem] md:grid-cols-4 md:auto-rows-[12rem] gap-2 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[12rem] auto-rows-[15rem] gap-2 rounded-lg overflow-hidden">
               {featuredProjects.map((project, index) => (
                 <Card key={index} 
                   className={cn(
@@ -334,43 +345,46 @@ export default async function Home({ params: { locale } }: { params: { locale: a
           </div>
         </section>
 
-
-
-
-        <section className="w-full py-20 md:py-28 bg-background">
-          <div className="container-limited">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.testimonials.title}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                {t.testimonials.subtitle}
-              </p>
+        <section className="relative w-full bg-background pt-20 md:pt-28">
+            <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block h-[60px] md:h-[100px] w-[calc(100%+1.3px)]">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-gray-100 dark:fill-gray-900"></path>
+                </svg>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((i) => (
-                <Card key={i} className="bg-secondary/50 border-none">
-                  <CardContent className="pt-6">
-                    <div className="flex mb-2">
-                      {[...Array(5)].map((_, j) => (
-                        <Star key={j} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="mb-4 italic">"{t.testimonials.testimonial1}"</p>
-                    <div className="flex items-center gap-4">
-                      <Avatar>
-                        {testimonialImage && <AvatarImage src={testimonialImage.imageUrl} alt="Avatar cliente" data-ai-hint={testimonialImage.imageHint} />}
-                        <AvatarFallback>C{i}</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="font-semibold">{t.testimonials.customer} {i}</p>
-                        <p className="text-sm text-muted-foreground">{t.testimonials.project}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="container-limited py-20 md:py-28">
+                <div className="text-center space-y-4 mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.testimonials.title}</h2>
+                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                        {t.testimonials.subtitle}
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {testimonials.map((testimonial, i) => (
+                    <Card key={i} className="border-none shadow-lg bg-secondary/50">
+                        <CardContent className="p-8 relative flex flex-col h-full">
+                            <Quote className="w-12 h-12 text-primary/20 absolute top-4 right-4" />
+                            <div className="flex mb-4">
+                                {[...Array(5)].map((_, j) => (
+                                    <Star key={j} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                                ))}
+                            </div>
+                            <p className="text-muted-foreground italic flex-grow">"{testimonial.quote}"</p>
+                            <div className="flex items-center gap-4 mt-6 pt-6 border-t">
+                                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
+                                    {testimonial.name.charAt(0)}
+                                </div>
+                                <div>
+                                    <p className="font-semibold">{testimonial.name}</p>
+                                    <p className="text-sm text-muted-foreground">{testimonial.project}</p>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))}
+                </div>
             </div>
-          </div>
         </section>
+
 
         <section className="w-full py-20 md:py-28 bg-secondary/50">
             <div className="container-limited text-center">
@@ -392,7 +406,3 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
-
-    
-
-    
