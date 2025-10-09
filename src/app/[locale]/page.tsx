@@ -43,7 +43,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       category: t.projects.project1.category,
       src: project1Image?.imageUrl,
       imageHint: project1Image?.imageHint,
-      className: 'md:col-span-2',
     },
     {
       type: 'video',
@@ -51,7 +50,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       category: t.projects.project4.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-a-serene-bathroom-scene-transitions-fro__5956.mp4?alt=media&token=3107172f-a829-4c26-90d3-f5cf92d31b45',
       imageHint: 'modern bathroom renovation',
-      className: 'md:row-span-2',
     },
     {
         type: 'video',
@@ -59,7 +57,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         category: t.projects.project6.category,
         src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
         imageHint: 'bathroom idea',
-        className: ''
     },
     {
       type: 'image',
@@ -67,7 +64,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       category: t.projects.project2.category,
       src: project2Image?.imageUrl,
       imageHint: project2Image?.imageHint,
-      className: 'md:col-span-1',
     },
     {
       type: 'image',
@@ -75,7 +71,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       category: t.projects.project3.category,
       src: project3Image?.imageUrl,
       imageHint: project3Image?.imageHint,
-      className: 'md:col-span-1',
     },
      {
       type: 'video',
@@ -83,7 +78,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       category: t.projects.project5.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-transition-from-a-cluttered-outdated-ki__5958.mp4?alt=media&token=12755114-0e1a-4e5b-88df-8d9f775d9f5a',
       imageHint: 'elegant kitchen remodel',
-      className: 'md:col-span-2',
     },
     {
         type: 'video',
@@ -91,7 +85,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         category: t.projects.project8.category,
         src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20terraza.mp4?alt=media&token=447f5f09-1ed9-45d5-83f2-a484e9f24aed',
         imageHint: 'terrace idea',
-        className: 'md:col-span-1'
     },
      {
       type: 'cta',
@@ -99,7 +92,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       subtitle: t.projects.cta.subtitle,
       buttonText: t.projects.cta.button,
       href: '/budget-request',
-      className: 'md:col-span-1',
     },
     {
         type: 'video',
@@ -107,7 +99,13 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         category: t.projects.project7.category,
         src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
         imageHint: 'bathroom idea 2',
-        className: 'md:col-span-1'
+    },
+    {
+      type: 'video',
+      title: t.projects.project9.title,
+      category: t.projects.project9.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fjardineria.antes-y-despu%C3%A9s.mp4?alt=media&token=ce70c24e-74fc-4201-a7f8-cfc82a0212e5',
+      imageHint: 'gardening before after',
     },
   ];
 
@@ -261,54 +259,77 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         </section>
 
         <section id="projects" className="w-full py-20 md:py-28 bg-secondary/50">
-          <div className="container-limited">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
+            <div className="container-limited max-w-7xl mx-auto px-4">
+                <div className="text-center space-y-4 mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
+                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[10rem] grid-flow-row-dense gap-1 rounded-2xl overflow-hidden shadow-2xl">
+                    {featuredProjects.map((project, index) => {
+                        
+                        let puzzleClasses = ''; 
+                        
+                        // Mobile: 2 columns, all items have h-64
+                        // Desktop: 4 columns, variable spans
+                        
+                        // Asignaciones de clases para el grid asimétrico en desktop
+                        if (index === 0) puzzleClasses = 'md:col-span-2 md:row-span-2';
+                        else if (index === 1) puzzleClasses = 'md:col-span-1 md:row-span-2';
+                        else if (index === 2) puzzleClasses = 'md:col-span-1 md:row-span-1';
+                        else if (index === 3) puzzleClasses = 'md:col-span-1 md:row-span-1';
+                        else if (index === 4) puzzleClasses = 'md:col-span-2 md:row-span-2';
+                        else if (index === 5) puzzleClasses = 'md:col-span-2 md:row-span-1';
+                        else if (index === 6) puzzleClasses = 'md:col-span-1 md:row-span-1';
+                        else if (index === 7) puzzleClasses = 'md:col-span-1 md:row-span-2'; // CTA
+                        else if (index === 8) puzzleClasses = 'md:col-span-2 md:row-span-2';
+                        else if (index === 9) puzzleClasses = 'md:col-span-1 md:row-span-1';
+
+                        return (
+                            <Card key={index} 
+                                  className={`group overflow-hidden relative h-64 md:h-auto ${puzzleClasses} transition-all duration-300 transform hover:z-10`}>
+                                {project.type === 'cta' ? (
+                                    <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-8 text-center">
+                                        <ArrowRight className="w-12 h-12 mb-4 text-primary group-hover:scale-110 transition-transform" />
+                                        <h3 className="font-headline text-xl font-bold">{project.title}</h3>
+                                        <p className="text-sm text-muted-foreground mt-2">{project.subtitle}</p>
+                                        <Button variant="link" className="mt-4 text-primary hover:text-primary/80">{project.buttonText}</Button>
+                                    </Link>
+                                ) : (
+                                    <div className="relative h-full w-full">
+                                        {project.type === 'image' ? (
+                                            project.src && <Image
+                                                src={project.src}
+                                                alt={project.title || 'Project image'}
+                                                fill
+                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                data-ai-hint={project.imageHint}
+                                            />
+                                        ) : (
+                                            project.src && <video
+                                                src={project.src}
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
+                                                className="h-full w-full object-cover video-cover transition-transform duration-500 group-hover:scale-110"
+                                                data-ai-hint={project.imageHint}
+                                            />
+                                        )}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                                        <div className="absolute bottom-4 left-4 text-white">
+                                            <h3 className="font-headline text-xl font-bold">{project.title}</h3>
+                                            <p className="text-sm opacity-90">{project.category}</p>
+                                        </div>
+                                    </div>
+                                )}
+                            </Card>
+                        );
+                    })}
+                </div>
             </div>
-            <div className="grid md:grid-cols-4 auto-rows-fr gap-4">
-              {featuredProjects.map((project, index) => (
-                <Card key={index} className={`group overflow-hidden relative h-64 md:h-auto ${project.className}`}>
-                   {project.type === 'cta' ? (
-                     <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/50 hover:bg-secondary transition-colors p-8 text-center">
-                        <ArrowRight className="w-12 h-12 mb-4 text-primary" />
-                        <h3 className="font-headline text-xl font-bold">{project.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-2">{project.subtitle}</p>
-                        <Button variant="link" className="mt-4">{project.buttonText}</Button>
-                     </Link>
-                  ) : (
-                    <div className="relative h-full w-full">
-                      {project.type === 'image' ? (
-                        project.src && <Image
-                          src={project.src}
-                          alt={project.title || 'Project image'}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={project.imageHint}
-                        />
-                      ) : (
-                        project.src && <video
-                          src={project.src}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="h-full w-full object-cover video-cover transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={project.imageHint}
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                      <div className="absolute bottom-4 left-4 text-white">
-                        <h3 className="font-headline text-xl font-bold">{project.title}</h3>
-                        <p className="text-sm opacity-90">{project.category}</p>
-                      </div>
-                    </div>
-                  )}
-                </Card>
-              ))}
-            </div>
-          </div>
         </section>
+
 
         <section className="w-full py-20 md:py-28 bg-background">
           <div className="container-limited">
