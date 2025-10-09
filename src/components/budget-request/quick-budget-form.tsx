@@ -83,7 +83,7 @@ export function QuickBudgetForm({ t }: { t: any; }) {
       
       const mailCollection = collection(db, 'mail');
       await addDoc(mailCollection, {
-        to: ['info@yakuconstrucciones.com'],
+        to: ['goalcasor@gmail.com', 'yakusl2003@gmail.com'],
         message: {
             subject: 'Nueva Solicitud de Presupuesto Rápido',
             html: `
