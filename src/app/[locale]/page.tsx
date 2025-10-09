@@ -277,14 +277,14 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         </section>
             
             
-        <section id="projects" className="w-full py-20 md:py-28 bg-gray-100 dark:bg-gray-900">
+       <section id="projects" className="w-full py-20 md:py-28 bg-gray-100 dark:bg-gray-900">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[12rem] gap-2 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-2 auto-rows-[15rem] md:grid-cols-4 md:auto-rows-[12rem] gap-2 rounded-lg overflow-hidden">
               {featuredProjects.map((project, index) => (
                 <Card key={index} 
                   className={cn(
@@ -295,9 +295,9 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                 >
                   {project.type === 'cta' ? (
                     <Link href={project.href || '#'} className="h-full flex flex-col justify-center items-center bg-gray-200/80 dark:bg-gray-800/80 backdrop-blur-sm hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors p-8 text-center">
-                      <ArrowRight className="w-10 h-10 mb-4 text-blue-600 group-hover:scale-110 transition-transform" />
+                      <ArrowRight className="w-10 h-10 mb-4 text-primary group-hover:scale-110 transition-transform" />
                       <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3> 
-                      <p className="text-base text-gray-600 dark:text-gray-300 mt-2">{project.subtitle}</p>
+                      <p className="text-base text-muted-foreground mt-2">{project.subtitle}</p>
                       <Button variant="link" className="mt-4 text-primary hover:text-primary/80">{project.buttonText}</Button>
                     </Link>
                   ) : (
@@ -324,7 +324,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white p-2">
                         <h3 className="font-bold text-base md:text-lg">{project.title}</h3>
-                        <p className="text-sm opacity-90">{project.category}</p>
+                        <p className="text-xs opacity-90">{project.category}</p>
                       </div>
                     </div>
                   )}
@@ -392,5 +392,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
+
+    
 
     
