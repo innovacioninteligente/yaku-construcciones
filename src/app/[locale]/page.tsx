@@ -54,6 +54,14 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       className: 'md:row-span-2',
     },
     {
+        type: 'video',
+        title: t.projects.project6.title,
+        category: t.projects.project6.category,
+        src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
+        imageHint: 'bathroom idea',
+        className: 'md:row-span-2'
+    },
+    {
       type: 'image',
       title: t.projects.project2.title,
       category: t.projects.project2.category,
@@ -78,13 +86,29 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       className: 'md:col-span-2',
     },
     {
+        type: 'video',
+        title: t.projects.project8.title,
+        category: t.projects.project8.category,
+        src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20terraza.mp4?alt=media&token=447f5f09-1ed9-45d5-83f2-a484e9f24aed',
+        imageHint: 'terrace idea',
+        className: 'md:col-span-1'
+    },
+     {
       type: 'cta',
       title: t.projects.cta.title,
       subtitle: t.projects.cta.subtitle,
       buttonText: t.projects.cta.button,
       href: '/budget-request',
       className: 'md:col-span-1',
-    }
+    },
+    {
+        type: 'video',
+        title: t.projects.project7.title,
+        category: t.projects.project7.category,
+        src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
+        imageHint: 'bathroom idea 2',
+        className: 'md:col-span-1'
+    },
   ];
 
   return (
@@ -242,9 +266,9 @@ export default async function Home({ params: { locale } }: { params: { locale: a
               <h2 className="font-headline text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-4 h-auto md:h-[800px]">
+            <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-auto md:h-[800px]">
               {featuredProjects.map((project, index) => (
-                <Card key={index} className={`group overflow-hidden relative ${project.className}`}>
+                <Card key={index} className={`group overflow-hidden relative h-64 md:h-auto ${project.className}`}>
                    {project.type === 'cta' ? (
                      <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/50 hover:bg-secondary transition-colors p-8 text-center">
                         <ArrowRight className="w-12 h-12 mb-4 text-primary" />

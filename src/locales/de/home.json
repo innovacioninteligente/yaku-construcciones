@@ -66,6 +66,18 @@
             "title": "Elegante Küchenumgestaltung",
             "category": "Küchendesign"
         },
+        "project6": {
+            "title": "Badezimmer-Idee",
+            "category": "Badezimmer-Renovierungen"
+        },
+        "project7": {
+            "title": "Badezimmer-Inspiration",
+            "category": "Innenarchitektur"
+        },
+        "project8": {
+            "title": "Terrassenrenovierung",
+            "category": "Außendesign"
+        },
         "cta": {
             "title": "Starten Sie Ihr Projekt",
             "subtitle": "Haben Sie eine Idee? Verwirklichen wir sie.",

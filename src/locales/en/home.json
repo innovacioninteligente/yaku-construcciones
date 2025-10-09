@@ -66,6 +66,18 @@
             "title": "Elegant Kitchen Remodel",
             "category": "Kitchen Design"
         },
+        "project6": {
+            "title": "Bathroom Idea",
+            "category": "Bathroom Renovations"
+        },
+        "project7": {
+            "title": "Bathroom Inspiration",
+            "category": "Interior Design"
+        },
+        "project8": {
+            "title": "Terrace Renovation",
+            "category": "Exterior Design"
+        },
         "cta": {
             "title": "Start Your Project",
             "subtitle": "Got an idea? Let's make it real.",

@@ -66,6 +66,18 @@
             "title": "Renovació de Cuina Elegant",
             "category": "Disseny de Cuines"
         },
+        "project6": {
+            "title": "Idea per a Bany",
+            "category": "Reformes de Banys"
+        },
+        "project7": {
+            "title": "Inspiració per a Bany",
+            "category": "Disseny d'Interiors"
+        },
+        "project8": {
+            "title": "Renovació de Terrassa",
+            "category": "Disseny d'Exteriors"
+        },
         "cta": {
             "title": "Comença el teu projecte",
             "subtitle": "Tens una idea? Fem-la realitat.",
