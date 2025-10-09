@@ -265,44 +265,25 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                     <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
                 </div>
                 
-                <div className="grid grid-cols-2 md:grid-cols-4 grid-flow-row-dense gap-0 rounded-2xl overflow-hidden shadow-2xl md:auto-rows-[10rem]">
+                <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[10rem] grid-flow-row-dense gap-0 rounded-2xl overflow-hidden shadow-2xl">
                     {featuredProjects.map((project, index) => {
                         
-                        let puzzleClasses = 'h-full'; 
+                        let puzzleClasses = ''; 
                         
-                        // Elemento 1 (0): Reforma Integral de Cocina (2x3) -> (2x2)
-                        if (index === 0) puzzleClasses = 'md:col-span-2 md:row-span-2'; 
-                        
-                        // Elemento 2 (1): Reforma de Baño Moderno (1x2) -> (1x2)
-                        else if (index === 1) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
-
-                        // Elemento 3 (2): Piscina de Diseño (1x2) -> (1x2)
-                        else if (index === 2) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
-                        
-                        // Elemento 4 (3): Idea para Baño (1x1) -> (1x1)
-                        else if (index === 3) puzzleClasses = 'md:col-span-1 md:row-span-1'; 
-
-                        // Elemento 5 (4): Rehabilitación de Fachada (2x2) -> (1x2)
-                        else if (index === 4) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
-
-                        // Elemento 6 (5): Renovación de Cocina Elegante (1x1) -> (2x2)
-                        else if (index === 5) puzzleClasses = 'md:col-span-2 md:row-span-2'; 
-
-                        // Elemento 7 (6): Renovación de Terraza (1x2) -> (1x1)
-                        else if (index === 6) puzzleClasses = 'md:col-span-1 md:row-span-1'; 
-                        
-                        // Elemento 8 (7): CTA (3x2) -> (1x1)
-                        else if (index === 7) puzzleClasses = 'md:col-span-1 md:row-span-1'; 
-
-                        // Elemento 9 (8): Transformación de Jardín (1x1) -> (1x2)
-                        else if (index === 8) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
-                        
-                        // Elemento 10 (9): Inspiración para Baño (2x2) -> (2x1)
-                        else if (index === 9) puzzleClasses = 'md:col-span-2 md:row-span-1'; 
+                        if (index === 0) puzzleClasses = 'md:col-span-2 md:row-span-2';
+                        else if (index === 1) puzzleClasses = 'md:col-span-1 md:row-span-2';
+                        else if (index === 2) puzzleClasses = 'md:col-span-1 md:row-span-2';
+                        else if (index === 3) puzzleClasses = 'md:col-span-1 md:row-span-1';
+                        else if (index === 4) puzzleClasses = 'md:col-span-1 md:row-span-2';
+                        else if (index === 5) puzzleClasses = 'md:col-span-2 md:row-span-2';
+                        else if (index === 6) puzzleClasses = 'md:col-span-1 md:row-span-1';
+                        else if (index === 7) puzzleClasses = 'md:col-span-1 md:row-span-1';
+                        else if (index === 8) puzzleClasses = 'md:col-span-1 md:row-span-2';
+                        else if (index === 9) puzzleClasses = 'md:col-span-2 md:row-span-1';
                         
                         return (
                             <Card key={index} 
-                                  className={`group overflow-hidden relative h-64 md:h-auto ${puzzleClasses} transition-all duration-300 transform hover:z-10`}>
+                                  className={`group overflow-hidden relative h-full ${puzzleClasses} transition-all duration-300 transform hover:z-10`}>
                                 {project.type === 'cta' ? (
                                     <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-4 text-center">
                                         <ArrowRight className="w-8 h-8 mb-2 text-primary group-hover:scale-110 transition-transform" />
@@ -400,3 +381,4 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
+
