@@ -19,7 +19,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
   const aboutImage = placeholderImages.placeholderImages.find(p => p.id === 'about-us-image');
   const project1Image = placeholderImages.placeholderImages.find(p => p.id === 'project-1');
   const project2Image = placeholderImages.placeholderImages.find(p => p.id === 'project-2');
-  const project3Image = placeholderImages.placeholderImages.find(p => p.id === 'project-3');
+  const project3Image = placeholderImages.placeholderImages.find(p_ => p_.id === 'project-3');
   const t = dict.home;
   const t_services = dict.services;
 
@@ -51,6 +51,13 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-a-serene-bathroom-scene-transitions-fro__5956.mp4?alt=media&token=3107172f-a829-4c26-90d3-f5cf92d31b45',
       imageHint: 'modern bathroom renovation',
     },
+     {
+      type: 'image',
+      title: t.projects.project2.title,
+      category: t.projects.project2.category,
+      src: project2Image?.imageUrl,
+      imageHint: project2Image?.imageHint,
+    },
     {
         type: 'video',
         title: t.projects.project6.title,
@@ -60,19 +67,12 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     },
     {
       type: 'image',
-      title: t.projects.project2.title,
-      category: t.projects.project2.category,
-      src: project2Image?.imageUrl,
-      imageHint: project2Image?.imageHint,
-    },
-    {
-      type: 'image',
       title: t.projects.project3.title,
       category: t.projects.project3.category,
       src: project3Image?.imageUrl,
       imageHint: project3Image?.imageHint,
     },
-     {
+    {
       type: 'video',
       title: t.projects.project5.title,
       category: t.projects.project5.category,
@@ -86,7 +86,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
         src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20terraza.mp4?alt=media&token=447f5f09-1ed9-45d5-83f2-a484e9f24aed',
         imageHint: 'terrace idea',
     },
-     {
+    {
       type: 'cta',
       title: t.projects.cta.title,
       subtitle: t.projects.cta.subtitle,
@@ -94,18 +94,18 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       href: '/budget-request',
     },
     {
-        type: 'video',
-        title: t.projects.project7.title,
-        category: t.projects.project7.category,
-        src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
-        imageHint: 'bathroom idea 2',
-    },
-    {
       type: 'video',
       title: t.projects.project9.title,
       category: t.projects.project9.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fjardineria.antes-y-despu%C3%A9s.mp4?alt=media&token=ce70c24e-74fc-4201-a7f8-cfc82a0212e5',
       imageHint: 'gardening before after',
+    },
+    {
+        type: 'video',
+        title: t.projects.project7.title,
+        category: t.projects.project7.category,
+        src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
+        imageHint: 'bathroom idea 2',
     },
   ];
 
@@ -265,31 +265,50 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                     <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{t.projects.subtitle}</p>
                 </div>
                 
-                <div className="grid grid-cols-2 md:grid-cols-4 md:auto-rows-[10rem] grid-flow-row-dense gap-1 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 grid-flow-row-dense gap-0 rounded-2xl overflow-hidden shadow-2xl md:auto-rows-[10rem]">
                     {featuredProjects.map((project, index) => {
                         
-                        let puzzleClasses = ''; 
+                        let puzzleClasses = 'h-full'; 
                         
-                        if (index === 0) puzzleClasses = 'md:col-span-2 md:row-span-2';
-                        else if (index === 1) puzzleClasses = 'md:col-span-1 md:row-span-2';
-                        else if (index === 2) puzzleClasses = 'md:col-span-1 md:row-span-1';
-                        else if (index === 3) puzzleClasses = 'md:col-span-1 md:row-span-1';
-                        else if (index === 4) puzzleClasses = 'md:col-span-2 md:row-span-2';
-                        else if (index === 5) puzzleClasses = 'md:col-span-2 md:row-span-1';
-                        else if (index === 6) puzzleClasses = 'md:col-span-1 md:row-span-1';
-                        else if (index === 7) puzzleClasses = 'md:col-span-1 md:row-span-2';
-                        else if (index === 8) puzzleClasses = 'md:col-span-2 md:row-span-2';
-                        else if (index === 9) puzzleClasses = 'md:col-span-1 md:row-span-1';
+                        // Elemento 1 (0): Reforma Integral de Cocina (2x3) -> (2x2)
+                        if (index === 0) puzzleClasses = 'md:col-span-2 md:row-span-2'; 
+                        
+                        // Elemento 2 (1): Reforma de Baño Moderno (1x2) -> (1x2)
+                        else if (index === 1) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
 
+                        // Elemento 3 (2): Piscina de Diseño (1x2) -> (1x2)
+                        else if (index === 2) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
+                        
+                        // Elemento 4 (3): Idea para Baño (1x1) -> (1x1)
+                        else if (index === 3) puzzleClasses = 'md:col-span-1 md:row-span-1'; 
+
+                        // Elemento 5 (4): Rehabilitación de Fachada (2x2) -> (1x2)
+                        else if (index === 4) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
+
+                        // Elemento 6 (5): Renovación de Cocina Elegante (1x1) -> (2x2)
+                        else if (index === 5) puzzleClasses = 'md:col-span-2 md:row-span-2'; 
+
+                        // Elemento 7 (6): Renovación de Terraza (1x2) -> (1x1)
+                        else if (index === 6) puzzleClasses = 'md:col-span-1 md:row-span-1'; 
+                        
+                        // Elemento 8 (7): CTA (3x2) -> (1x1)
+                        else if (index === 7) puzzleClasses = 'md:col-span-1 md:row-span-1'; 
+
+                        // Elemento 9 (8): Transformación de Jardín (1x1) -> (1x2)
+                        else if (index === 8) puzzleClasses = 'md:col-span-1 md:row-span-2'; 
+                        
+                        // Elemento 10 (9): Inspiración para Baño (2x2) -> (2x1)
+                        else if (index === 9) puzzleClasses = 'md:col-span-2 md:row-span-1'; 
+                        
                         return (
                             <Card key={index} 
                                   className={`group overflow-hidden relative h-64 md:h-auto ${puzzleClasses} transition-all duration-300 transform hover:z-10`}>
                                 {project.type === 'cta' ? (
-                                    <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-8 text-center">
-                                        <ArrowRight className="w-12 h-12 mb-4 text-primary group-hover:scale-110 transition-transform" />
-                                        <h3 className="font-headline text-xl font-bold">{project.title}</h3>
-                                        <p className="text-sm text-muted-foreground mt-2">{project.subtitle}</p>
-                                        <Button variant="link" className="mt-4 text-primary hover:text-primary/80">{project.buttonText}</Button>
+                                    <Link href={project.href || '#'} className="flex flex-col justify-center items-center h-full bg-secondary/80 backdrop-blur-sm hover:bg-secondary transition-colors p-4 text-center">
+                                        <ArrowRight className="w-8 h-8 mb-2 text-primary group-hover:scale-110 transition-transform" />
+                                        <h3 className="font-headline text-lg font-bold">{project.title}</h3>
+                                        <p className="text-xs text-muted-foreground mt-1">{project.subtitle}</p>
+                                        <Button variant="link" className="mt-2 text-primary hover:text-primary/80 text-xs">{project.buttonText}</Button>
                                     </Link>
                                 ) : (
                                     <div className="relative h-full w-full">
@@ -325,7 +344,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                 </div>
             </div>
         </section>
-
 
         <section className="w-full py-20 md:py-28 bg-background">
           <div className="container-limited">
