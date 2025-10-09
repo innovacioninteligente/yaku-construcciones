@@ -1,6 +1,7 @@
 
 
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -39,15 +40,15 @@ export default async function Home({ params: { locale } }: { params: { locale: a
   ];
   
   const featuredProjects = [
-    { // 0: Reforma Cocina (Grande) -> 2x3
+    { 
       type: 'image',
       title: t.projects.project1.title,
       category: t.projects.project1.category,
       src: project1Image?.imageUrl,
       imageHint: project1Image?.imageHint,
-      className: 'md:col-span-2 md:row-span-3',
+      className: 'md:col-span-2 md:row-span-2',
     },
-    { // 1: Baño Moderno (Pequeño) -> 1x2
+    { 
       type: 'video',
       title: t.projects.project4.title,
       category: t.projects.project4.category,
@@ -55,23 +56,15 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'modern bathroom renovation',
       className: 'md:col-span-1 md:row-span-2',
     },
-    { // 2: Idea Baño (Pequeño) -> 1x1
-      type: 'video',
-      title: t.projects.project6.title,
-      category: t.projects.project6.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
-      imageHint: 'bathroom idea',
-      className: 'md:col-span-1 md:row-span-1',
-    },
-    { // 3: Rehab. Fachada (Mediano) -> 2x2
+    { 
       type: 'image',
       title: t.projects.project3.title,
       category: t.projects.project3.category,
       src: project3Image?.imageUrl,
       imageHint: project3Image?.imageHint,
-      className: 'md:col-span-2 md:row-span-2',
+      className: 'md:col-span-1 md:row-span-2',
     },
-     { // 4: Renov. Cocina (Vertical) -> 1x2
+     { 
       type: 'video',
       title: t.projects.project5.title,
       category: t.projects.project5.category,
@@ -79,7 +72,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'elegant kitchen remodel',
       className: 'md:col-span-1 md:row-span-2',
     },
-    { // 5: Piscina Diseño (Pequeño) -> 1x1
+    { 
       type: 'image',
       title: t.projects.project2.title,
       category: t.projects.project2.category,
@@ -87,23 +80,31 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: project2Image?.imageHint,
       className: 'md:col-span-1 md:row-span-1',
     },
-    { // 6: Jardín (Ancho) -> 2x1
+    { 
       type: 'video',
-      title: t.projects.project9.title,
-      category: t.projects.project9.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fjardineria.antes-y-despu%C3%A9s.mp4?alt=media&token=ce70c24e-74fc-4201-a7f8-cfc82a0212e5',
-      imageHint: 'gardening before after',
-      className: 'md:col-span-2 md:row-span-1',
+      title: t.projects.project6.title,
+      category: t.projects.project6.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
+      imageHint: 'bathroom idea',
+      className: 'md:col-span-1 md:row-span-1',
     },
-    { // 7: Renov. Terraza (Vertical) -> 1x2
+    { 
       type: 'video',
       title: t.projects.project8.title,
       category: t.projects.project8.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20terraza.mp4?alt=media&token=447f5f09-1ed9-45d5-83f2-a484e9f24aed',
       imageHint: 'terrace idea',
-      className: 'md:col-span-1 md:row-span-2',
+      className: 'md:col-span-2 md:row-span-2',
     },
-    { // 8: Insp. Baño (Vertical) -> 1x2
+    { 
+      type: 'cta',
+      title: t.projects.cta.title,
+      subtitle: t.projects.cta.subtitle,
+      buttonText: t.projects.cta.button,
+      href: '/budget-request',
+      className: 'md:col-span-1 md:row-span-1',
+    },
+    { 
       type: 'video',
       title: t.projects.project7.title,
       category: t.projects.project7.category,
@@ -111,12 +112,12 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       imageHint: 'bathroom idea 2',
       className: 'md:col-span-1 md:row-span-2',
     },
-    { // 9: CTA (Ancho) -> 2x1
-      type: 'cta',
-      title: t.projects.cta.title,
-      subtitle: t.projects.cta.subtitle,
-      buttonText: t.projects.cta.button,
-      href: '/budget-request',
+    { 
+      type: 'video',
+      title: t.projects.project9.title,
+      category: t.projects.project9.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fjardineria.antes-y-despu%C3%A9s.mp4?alt=media&token=ce70c24e-74fc-4201-a7f8-cfc82a0212e5',
+      imageHint: 'gardening before after',
       className: 'md:col-span-2 md:row-span-1',
     },
   ];
@@ -281,7 +282,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
             {featuredProjects.map((project, index) => (
               <Card key={index} 
                 className={cn(
-                  "group overflow-hidden relative h-64 transition-all duration-300 transform hover:z-10",
+                  "group overflow-hidden relative h-64 md:h-auto transition-all duration-300 transform hover:z-10",
                    project.className
                 )}
               >
@@ -384,5 +385,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
+
 
 
