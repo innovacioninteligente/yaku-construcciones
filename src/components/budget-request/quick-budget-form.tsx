@@ -26,6 +26,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useState } from 'react';
 import { ArrowLeft, Check, Loader2, MailCheck, RotateCw, Star } from 'lucide-react';
 import Link from 'next/link';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '@/lib/firebase/client';
 
 const pricingConfig = {
     integral: { basic: 400, medium: 600, premium: 800 },
@@ -72,7 +74,6 @@ export function QuickBudgetForm({ t }: { t: any; }) {
   async function handleFormSubmit(values: QuickFormValues) {
     setIsLoading(true);
     try {
-      console.log('Quick form values:', values);
       let budget = null;
       if (values.renovationType !== 'pool') {
         const prices = pricingConfig[values.renovationType as keyof typeof pricingConfig];
@@ -80,8 +81,36 @@ export function QuickBudgetForm({ t }: { t: any; }) {
         setCalculatedBudget(budget);
       }
       
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      const mailCollection = collection(db, 'mail');
+      await addDoc(mailCollection, {
+        to: ['info@yakuconstrucciones.com'],
+        message: {
+            subject: 'Nueva Solicitud de Presupuesto Rápido',
+            html: `
+                <h1>Nueva Solicitud de Presupuesto Rápido</h1>
+                <p>Se ha recibido una nueva solicitud de presupuesto a través del formulario rápido de la web.</p>
+                <h2>Detalles del Cliente:</h2>
+                <ul>
+                    <li><strong>Nombre:</strong> ${values.name}</li>
+                    <li><strong>Email:</strong> ${values.email}</li>
+                    <li><strong>Teléfono:</strong> ${values.phone}</li>
+                    <li><strong>Dirección:</strong> ${values.address}</li>
+                </ul>
+                <h2>Detalles del Proyecto:</h2>
+                <ul>
+                    <li><strong>Tipo de Reforma:</strong> ${t.budgetRequest.quickForm.renovationType.options[values.renovationType]}</li>
+                    <li><strong>Metros Cuadrados:</strong> ${values.squareMeters} m²</li>
+                    ${values.renovationType !== 'pool' ? `<li><strong>Calidad:</strong> ${t.budgetRequest.form.quality.options[values.quality]}</li>` : ''}
+                </ul>
+                <h2>Presupuesto Estimado:</h2>
+                <p style="font-size: 24px; font-weight: bold;">
+                    ${budget ? new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' }).format(budget) : 'A consultar (Piscina)'}
+                </p>
+                <p>Por favor, ponte en contacto con el cliente para dar seguimiento.</p>
+            `,
+        },
+      });
+
       toast({
         title: t.budgetRequest.form.toast.success.title,
         description: t.budgetRequest.form.toast.success.description,
