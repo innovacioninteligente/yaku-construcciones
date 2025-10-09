@@ -270,10 +270,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                         
                         let puzzleClasses = ''; 
                         
-                        // Mobile: 2 columns, all items have h-64
-                        // Desktop: 4 columns, variable spans
-                        
-                        // Asignaciones de clases para el grid asimétrico en desktop
                         if (index === 0) puzzleClasses = 'md:col-span-2 md:row-span-2';
                         else if (index === 1) puzzleClasses = 'md:col-span-1 md:row-span-2';
                         else if (index === 2) puzzleClasses = 'md:col-span-1 md:row-span-1';
@@ -281,7 +277,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                         else if (index === 4) puzzleClasses = 'md:col-span-2 md:row-span-2';
                         else if (index === 5) puzzleClasses = 'md:col-span-2 md:row-span-1';
                         else if (index === 6) puzzleClasses = 'md:col-span-1 md:row-span-1';
-                        else if (index === 7) puzzleClasses = 'md:col-span-1 md:row-span-2'; // CTA
+                        else if (index === 7) puzzleClasses = 'md:col-span-1 md:row-span-2';
                         else if (index === 8) puzzleClasses = 'md:col-span-2 md:row-span-2';
                         else if (index === 9) puzzleClasses = 'md:col-span-1 md:row-span-1';
 
@@ -318,7 +314,7 @@ export default async function Home({ params: { locale } }: { params: { locale: a
                                         )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                                         <div className="absolute bottom-4 left-4 text-white">
-                                            <h3 className="font-headline text-xl font-bold">{project.title}</h3>
+                                            <h3 className="font-headline text-lg font-bold">{project.title}</h3>
                                             <p className="text-sm opacity-90">{project.category}</p>
                                         </div>
                                     </div>
