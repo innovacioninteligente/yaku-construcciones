@@ -4,10 +4,10 @@
 //    (e.g., run `echo "src/lib/firebase/config.ts" >> .gitignore`)
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyC6gXwabEToVD-fSSj9Nh-ihyFZsjcbGuY",
-  authDomain: "local-digital-eye.firebaseapp.com",
-  projectId: "local-digital-eye",
-  storageBucket: "local-digital-eye.firebasestorage.app",
-  messagingSenderId: "349385957535",
-  appId: "1:349385957535:web:40c7b9f15fd193904202aa"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
