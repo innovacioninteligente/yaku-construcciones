@@ -82,6 +82,10 @@
             "title": "Transformació de Jardí",
             "category": "Jardineria"
         },
+        "project10": {
+            "title": "Façana Vibrant",
+            "category": "Disseny Exterior"
+        },
         "cta": {
             "title": "Comença el teu projecte",
             "subtitle": "Tens una idea? Fem-la realitat.",
@@ -98,6 +102,6 @@
     "finalCta": {
         "title": "A punt per començar el teu projecte?",
         "subtitle": "Contacta amb nosaltres avui mateix per a una consulta gratuïta i sense compromís. El nostre equip està a punt per ajudar-te a fer realitat la teva visió.",
-        "reviewLink": "Valora el nostre servei, ens ajuda a créixer!"
+        "reviewLink": "Valora el nostre servei, ens ayuda a créixer!"
     }
 }

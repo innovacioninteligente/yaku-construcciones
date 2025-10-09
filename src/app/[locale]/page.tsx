@@ -1,8 +1,4 @@
 
-
-
-
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -66,14 +62,6 @@ export default async function Home({ params: { locale } }: { params: { locale: a
       className: 'md:col-span-1 md:row-span-1',
     },
     { 
-      type: 'cta',
-      title: t.projects.cta.title,
-      subtitle: t.projects.cta.subtitle,
-      buttonText: t.projects.cta.button,
-      href: '/budget-request',
-      className: 'md:col-span-1 md:row-span-2',
-    },
-    { 
       type: 'image',
       title: t.projects.project2.title,
       category: t.projects.project2.category,
@@ -83,19 +71,35 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     },
     { 
       type: 'video',
+      title: t.projects.project5.title,
+      category: t.projects.project5.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-transition-from-a-cluttered-outdated-ki__5958.mp4?alt=media&token=12755114-0e1a-4e5b-88df-8d9f775d9f5a',
+      imageHint: 'elegant kitchen remodel',
+      className: 'md:col-span-2 md:row-span-2',
+    },
+    { 
+      type: 'video',
       title: t.projects.project6.title,
       category: t.projects.project6.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o%202.mp4?alt=media&token=86b2fe43-39eb-4c46-b279-06409636739e',
       imageHint: 'bathroom idea',
       className: 'md:col-span-2 md:row-span-1',
     },
-     { 
+    { 
+      type: 'cta',
+      title: t.projects.cta.title,
+      subtitle: t.projects.cta.subtitle,
+      buttonText: t.projects.cta.button,
+      href: '/budget-request',
+      className: 'md:col-span-1 md:row-span-1',
+    },
+    { 
       type: 'video',
-      title: t.projects.project5.title,
-      category: t.projects.project5.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-transition-from-a-cluttered-outdated-ki__5958.mp4?alt=media&token=12755114-0e1a-4e5b-88df-8d9f775d9f5a',
-      imageHint: 'elegant kitchen remodel',
-      className: 'md:col-span-1 md:row-span-2',
+      title: t.projects.project7.title,
+      category: t.projects.project7.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
+      imageHint: 'bathroom idea 2',
+      className: 'md:col-span-1 md:row-span-1',
     },
     { 
       type: 'video',
@@ -107,20 +111,20 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     },
     { 
       type: 'video',
-      title: t.projects.project7.title,
-      category: t.projects.project7.category,
-      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fidea%20ban%CC%83o.mp4?alt=media&token=6a4ee89f-dc86-4b25-8186-dc74c5641466',
-      imageHint: 'bathroom idea 2',
-      className: 'md:col-span-1 md:row-span-2',
-    },
-    { 
-      type: 'video',
       title: t.projects.project9.title,
       category: t.projects.project9.category,
       src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Fjardineria.antes-y-despu%C3%A9s.mp4?alt=media&token=ce70c24e-74fc-4201-a7f8-cfc82a0212e5',
       imageHint: 'gardening before after',
-      className: 'md:col-span-2 md:row-span-1',
+      className: 'md:col-span-1 md:row-span-1',
     },
+    {
+      type: 'video',
+      title: t.projects.project10.title,
+      category: t.projects.project10.category,
+      src: 'https://firebasestorage.googleapis.com/v0/b/local-digital-eye.firebasestorage.app/o/business%2Fyaku%2Fvideos%2Ffreepik__dolly-shot-a-vibrant-yellow-wall-with-a-barred-win__83848.mp4?alt=media&token=95d8291d-dfdb-46f9-9ac3-9e9de720a2ce',
+      imageHint: 'house facade',
+      className: 'md:col-span-1 md:row-span-1',
+    }
   ];
 
   return (
@@ -386,7 +390,3 @@ export default async function Home({ params: { locale } }: { params: { locale: a
     </>
   );
 }
-
-
-
-
